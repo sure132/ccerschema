@@ -1,0 +1,264 @@
+<?xml version="1.0"?>
+<!--
+*******************************************************************************
+ * Copyright (c) 2013 Massachusetts Institute of Technology
+ * 
+ * Not with standing any copyright notice, U.S. Government rights in this work
+ * are defined by DFARS 252.227-7013 or DFARS 252.227-7014 as detailed below.
+ * Use of this work other than as specifically authorized by the U.S.
+ * Government may violate any copyrights that exist in this work.
+ * 
+ * UNLIMITED RIGHTS
+ * DFARS Clause reference: 252.227-7013 (a)(16) and 252.227-7014 (a)(16)
+ * Unlimited Rights. The Government has the right to use, modify, reproduce, perform,
+ * display, release or disclose this (technical data or computer software) in whole or in part, in
+ * any manner, and for any purpose whatsoever, and to have or authorize others to do so.
+ * 
+ * THE SOFTWARE IS PROVIDED TO YOU ON AN "AS IS" BASIS.
+ ******************************************************************************
+ -->
+
+<!DOCTYPE Ontology [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://ll.mit.edu/2013/ccer/domain/ccer/k0ala/v1/k0alaControlProtocol.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     ontologyIRI="http://ll.mit.edu/2013/ccer/domain/ccer/k0ala/v1/k0alaControlProtocol.owl">
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Import>http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl</Import>
+    <Declaration>
+        <Class IRI="#K0ALAControlCapability"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#K0ALAControlProtocol"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#K0ALAControlProtocolType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#K0ALAOtherControlProtocol"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#K0ALAOtherControlProtocolType"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasOtherk0alaControlProtocol"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasOtherk0alaControlProtocolType"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hask0alaControlCapability"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hask0alaControlProtocolType"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#installationInformation"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#k0alaDeviceAddress"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#k0alaDeviceIPPort"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#k0alaDeviceName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#k0alaDevicePassword"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#k0alaDeviceSerialNumber"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#k0alaDeviceUSBPort"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#k0alaOtherConfigurationData"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#arduinoethernet"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#arduinousb"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#captureplayback"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#digital_io"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#digitalio"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#keyboard"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#kvm2ethernet"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#kvm2usb"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#local"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#mouse"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#vga2ethernet"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#video"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#vnc"/>
+    </Declaration>
+    <ClassAssertion>
+        <Class IRI="#K0ALAControlProtocolType"/>
+        <NamedIndividual IRI="#arduinousb"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#K0ALAControlProtocolType"/>
+        <NamedIndividual IRI="#captureplayback"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#K0ALAControlCapability"/>
+        <NamedIndividual IRI="#digital_io"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#K0ALAControlCapability"/>
+        <NamedIndividual IRI="#digitalio"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#K0ALAControlCapability"/>
+        <NamedIndividual IRI="#keyboard"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#K0ALAControlProtocolType"/>
+        <NamedIndividual IRI="#kvm2ethernet"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#K0ALAControlProtocolType"/>
+        <NamedIndividual IRI="#kvm2usb"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#K0ALAControlProtocolType"/>
+        <NamedIndividual IRI="#local"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#K0ALAControlCapability"/>
+        <NamedIndividual IRI="#mouse"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#K0ALAControlProtocolType"/>
+        <NamedIndividual IRI="#vga2ethernet"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#K0ALAControlCapability"/>
+        <NamedIndividual IRI="#video"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#K0ALAControlProtocolType"/>
+        <NamedIndividual IRI="#vnc"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hask0alaControlCapability"/>
+        <NamedIndividual IRI="#captureplayback"/>
+        <NamedIndividual IRI="#video"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hask0alaControlCapability"/>
+        <NamedIndividual IRI="#kvm2ethernet"/>
+        <NamedIndividual IRI="#keyboard"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hask0alaControlCapability"/>
+        <NamedIndividual IRI="#kvm2ethernet"/>
+        <NamedIndividual IRI="#video"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hask0alaControlCapability"/>
+        <NamedIndividual IRI="#kvm2ethernet"/>
+        <NamedIndividual IRI="#mouse"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hask0alaControlCapability"/>
+        <NamedIndividual IRI="#kvm2usb"/>
+        <NamedIndividual IRI="#keyboard"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hask0alaControlCapability"/>
+        <NamedIndividual IRI="#kvm2usb"/>
+        <NamedIndividual IRI="#video"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hask0alaControlCapability"/>
+        <NamedIndividual IRI="#kvm2usb"/>
+        <NamedIndividual IRI="#mouse"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hask0alaControlCapability"/>
+        <NamedIndividual IRI="#local"/>
+        <NamedIndividual IRI="#keyboard"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hask0alaControlCapability"/>
+        <NamedIndividual IRI="#local"/>
+        <NamedIndividual IRI="#mouse"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hask0alaControlCapability"/>
+        <NamedIndividual IRI="#local"/>
+        <NamedIndividual IRI="#video"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hask0alaControlCapability"/>
+        <NamedIndividual IRI="#vga2ethernet"/>
+        <NamedIndividual IRI="#video"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyRange>
+        <DataProperty IRI="#installationInformation"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#k0alaDeviceAddress</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The address of the device used to manupulate the SUT. Valid only when device exists.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#k0alaDeviceName</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The name of the k0ala Device that is used to interface with the SUT. Sometines there may not be a device involved (e.g., vnc)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#k0alaDeviceSerialNumber</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The serial number of the device used to manipulate SUT. </Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#k0alaOtherConfigurationData</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Other configuration data required for the device in question. This data is not interpreted.</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 3.2.2.1789) http://owlapi.sourceforge.net -->
+

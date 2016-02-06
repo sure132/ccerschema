@@ -1,0 +1,445 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY schema "http://www.bmcb.btinternet.co.uk/2001/schema/" >
+    <!ENTITY rdf2 "http://www.bmcb.btinternet.co.uk/2001/schema/rdf;" >
+]>
+
+
+<rdf:RDF xmlns="&schema;bmcb#"
+     xml:base="&schema;bmcb"
+     xmlns:schema="http://www.bmcb.btinternet.co.uk/2001/schema/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:rdf2="&schema;rdf;"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="&schema;bmcb"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.bmcb.btinternet.co.uk/2001/schema/holonymOf -->
+
+    <owl:ObjectProperty rdf:about="&schema;holonymOf"/>
+    
+
+
+    <!-- http://www.bmcb.btinternet.co.uk/2001/schema/meronymOf -->
+
+    <owl:ObjectProperty rdf:about="&schema;meronymOf"/>
+    
+
+
+    <!-- http://www.bmcb.btinternet.co.uk/2001/schema/bmcb#antonymOf -->
+
+    <owl:ObjectProperty rdf:about="&schema;bmcb#antonymOf">
+        <rdfs:range rdf:resource="&schema;bmcb#SynSet"/>
+        <rdfs:domain rdf:resource="&schema;bmcb#SynSet"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.bmcb.btinternet.co.uk/2001/schema/bmcb#attribute -->
+
+    <owl:ObjectProperty rdf:about="&schema;bmcb#attribute">
+        <rdfs:range rdf:resource="&schema;bmcb#AdjectiveSynSet"/>
+        <rdfs:domain rdf:resource="&schema;bmcb#NounSynSet"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.bmcb.btinternet.co.uk/2001/schema/bmcb#categoryDomain -->
+
+    <owl:ObjectProperty rdf:about="&schema;bmcb#categoryDomain">
+        <rdfs:domain rdf:resource="&schema;bmcb#SynSet"/>
+        <rdfs:range rdf:resource="&schema;bmcb#SynSet"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.bmcb.btinternet.co.uk/2001/schema/bmcb#causedBy -->
+
+    <owl:ObjectProperty rdf:about="&schema;bmcb#causedBy">
+        <rdfs:range rdf:resource="&schema;bmcb#VerbSynSet"/>
+        <rdfs:domain rdf:resource="&schema;bmcb#VerbSynSet"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.bmcb.btinternet.co.uk/2001/schema/bmcb#containsWordSense -->
+
+    <owl:ObjectProperty rdf:about="&schema;bmcb#containsWordSense">
+        <rdfs:domain rdf:resource="&schema;bmcb#SynSet"/>
+        <rdfs:range rdf:resource="&schema;bmcb#WordSense"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.bmcb.btinternet.co.uk/2001/schema/bmcb#derivationallyRelated -->
+
+    <owl:ObjectProperty rdf:about="&schema;bmcb#derivationallyRelated">
+        <rdfs:range rdf:resource="&schema;bmcb#SynSet"/>
+        <rdfs:domain rdf:resource="&schema;bmcb#SynSet"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.bmcb.btinternet.co.uk/2001/schema/bmcb#entails -->
+
+    <owl:ObjectProperty rdf:about="&schema;bmcb#entails">
+        <rdfs:range rdf:resource="&schema;bmcb#VerbSynSet"/>
+        <rdfs:domain rdf:resource="&schema;bmcb#VerbSynSet"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.bmcb.btinternet.co.uk/2001/schema/bmcb#glossaryEntry -->
+
+    <owl:ObjectProperty rdf:about="&schema;bmcb#glossaryEntry">
+        <rdfs:domain rdf:resource="&schema;bmcb#SynSet"/>
+        <rdfs:range rdf:resource="&rdf;XMLLiteral"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.bmcb.btinternet.co.uk/2001/schema/bmcb#hasSense -->
+
+    <owl:ObjectProperty rdf:about="&schema;bmcb#hasSense">
+        <rdfs:domain rdf:resource="&schema;bmcb#Word"/>
+        <rdfs:range rdf:resource="&schema;bmcb#WordSense"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.bmcb.btinternet.co.uk/2001/schema/bmcb#hasWord -->
+
+    <owl:ObjectProperty rdf:about="&schema;bmcb#hasWord">
+        <rdfs:range rdf:resource="&schema;bmcb#Word"/>
+        <rdfs:domain rdf:resource="&schema;bmcb#WordSense"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.bmcb.btinternet.co.uk/2001/schema/bmcb#holonymOf -->
+
+    <owl:ObjectProperty rdf:about="&schema;bmcb#holonymOf">
+        <rdfs:range rdf:resource="&schema;bmcb#NounSynSet"/>
+        <rdfs:domain rdf:resource="&schema;bmcb#NounSynSet"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.bmcb.btinternet.co.uk/2001/schema/bmcb#hypernymOf -->
+
+    <owl:ObjectProperty rdf:about="&schema;bmcb#hypernymOf">
+        <rdfs:range rdf:resource="&schema;bmcb#SynSet"/>
+        <rdfs:domain rdf:resource="&schema;bmcb#SynSet"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.bmcb.btinternet.co.uk/2001/schema/bmcb#hyponymOf -->
+
+    <owl:ObjectProperty rdf:about="&schema;bmcb#hyponymOf">
+        <rdfs:range rdf:resource="&schema;bmcb#SynSet"/>
+        <rdfs:domain rdf:resource="&schema;bmcb#SynSet"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.bmcb.btinternet.co.uk/2001/schema/bmcb#inSynSet -->
+
+    <owl:ObjectProperty rdf:about="&schema;bmcb#inSynSet">
+        <rdfs:range rdf:resource="&schema;bmcb#SynSet"/>
+        <rdfs:domain rdf:resource="&schema;bmcb#WordSense"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.bmcb.btinternet.co.uk/2001/schema/bmcb#lexicalForm -->
+
+    <owl:ObjectProperty rdf:about="&schema;bmcb#lexicalForm">
+        <rdfs:domain rdf:resource="&schema;bmcb#Word"/>
+        <rdfs:range rdf:resource="&rdf;XMLLiteral"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.bmcb.btinternet.co.uk/2001/schema/bmcb#memberHolonymOf -->
+
+    <owl:ObjectProperty rdf:about="&schema;bmcb#memberHolonymOf">
+        <rdfs:subPropertyOf rdf:resource="&schema;holonymOf"/>
+        <rdfs:range rdf:resource="&schema;bmcb#NounSynSet"/>
+        <rdfs:domain rdf:resource="&schema;bmcb#NounSynSet"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.bmcb.btinternet.co.uk/2001/schema/bmcb#memberMeronymOf -->
+
+    <owl:ObjectProperty rdf:about="&schema;bmcb#memberMeronymOf">
+        <rdfs:subPropertyOf rdf:resource="&schema;meronymOf"/>
+        <rdfs:range rdf:resource="&schema;bmcb#NounSynSet"/>
+        <rdfs:domain rdf:resource="&schema;bmcb#NounSynSet"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.bmcb.btinternet.co.uk/2001/schema/bmcb#meronymOf -->
+
+    <owl:ObjectProperty rdf:about="&schema;bmcb#meronymOf">
+        <rdfs:domain rdf:resource="&schema;bmcb#NounSynSet"/>
+        <rdfs:range rdf:resource="&schema;bmcb#NounSynSet"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.bmcb.btinternet.co.uk/2001/schema/bmcb#partHolonymOf -->
+
+    <owl:ObjectProperty rdf:about="&schema;bmcb#partHolonymOf">
+        <rdfs:subPropertyOf rdf:resource="&schema;holonymOf"/>
+        <rdfs:domain rdf:resource="&schema;bmcb#NounSynSet"/>
+        <rdfs:range rdf:resource="&schema;bmcb#NounSynSet"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.bmcb.btinternet.co.uk/2001/schema/bmcb#partMeronymOf -->
+
+    <owl:ObjectProperty rdf:about="&schema;bmcb#partMeronymOf">
+        <rdfs:subPropertyOf rdf:resource="&schema;meronymOf"/>
+        <rdfs:domain rdf:resource="&schema;bmcb#NounSynSet"/>
+        <rdfs:range rdf:resource="&schema;bmcb#NounSynSet"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.bmcb.btinternet.co.uk/2001/schema/bmcb#pertainsTo -->
+
+    <owl:ObjectProperty rdf:about="&schema;bmcb#pertainsTo">
+        <rdfs:range rdf:resource="&schema;bmcb#VerbSynSet"/>
+        <rdfs:domain rdf:resource="&schema;bmcb#VerbSynSet"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.bmcb.btinternet.co.uk/2001/schema/bmcb#sameGroupAs -->
+
+    <owl:ObjectProperty rdf:about="&schema;bmcb#sameGroupAs">
+        <rdfs:domain rdf:resource="&schema;bmcb#VerbSynSet"/>
+        <rdfs:range rdf:resource="&schema;bmcb#VerbSynSet"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.bmcb.btinternet.co.uk/2001/schema/bmcb#seeAlso -->
+
+    <owl:ObjectProperty rdf:about="&schema;bmcb#seeAlso">
+        <rdfs:range rdf:resource="&schema;bmcb#SynSet"/>
+        <rdfs:domain rdf:resource="&schema;bmcb#SynSet"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.bmcb.btinternet.co.uk/2001/schema/bmcb#similarTo -->
+
+    <owl:ObjectProperty rdf:about="&schema;bmcb#similarTo">
+        <rdfs:range rdf:resource="&schema;bmcb#AdjectiveSynSet"/>
+        <rdfs:domain rdf:resource="&schema;bmcb#AdjectiveSynSet"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.bmcb.btinternet.co.uk/2001/schema/bmcb#substanceHolonymOf -->
+
+    <owl:ObjectProperty rdf:about="&schema;bmcb#substanceHolonymOf">
+        <rdfs:subPropertyOf rdf:resource="&schema;holonymOf"/>
+        <rdfs:domain rdf:resource="&schema;bmcb#NounSynSet"/>
+        <rdfs:range rdf:resource="&schema;bmcb#NounSynSet"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.bmcb.btinternet.co.uk/2001/schema/bmcb#substanceMeronymOf -->
+
+    <owl:ObjectProperty rdf:about="&schema;bmcb#substanceMeronymOf">
+        <rdfs:subPropertyOf rdf:resource="&schema;meronymOf"/>
+        <rdfs:range rdf:resource="&schema;bmcb#NounSynSet"/>
+        <rdfs:domain rdf:resource="&schema;bmcb#NounSynSet"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.bmcb.btinternet.co.uk/2001/schema/bmcb#synonym -->
+
+    <owl:ObjectProperty rdf:about="&schema;bmcb#synonym">
+        <rdfs:domain rdf:resource="&schema;bmcb#Word"/>
+        <rdfs:range rdf:resource="&schema;bmcb#Word"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.bmcb.btinternet.co.uk/2001/schema/bmcb#synsetId -->
+
+    <owl:ObjectProperty rdf:about="&schema;bmcb#synsetId">
+        <rdfs:range rdf:resource="&schema;rdf;Literal"/>
+        <rdfs:domain rdf:resource="&schema;bmcb#SynSet"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.bmcb.btinternet.co.uk/2001/schema/bmcb#tagCount -->
+
+    <owl:ObjectProperty rdf:about="&schema;bmcb#tagCount">
+        <rdfs:domain rdf:resource="&schema;bmcb#WordSense"/>
+        <rdfs:range rdf:resource="&xsd;nonNegativeInteger"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.bmcb.btinternet.co.uk/2001/schema/bmcb#usageDomain -->
+
+    <owl:ObjectProperty rdf:about="&schema;bmcb#usageDomain">
+        <rdfs:domain rdf:resource="&schema;bmcb#SynSet"/>
+        <rdfs:range rdf:resource="&schema;bmcb#SynSet"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.bmcb.btinternet.co.uk/2001/schema/rdf;Literal -->
+
+    <owl:Class rdf:about="&schema;rdf;Literal"/>
+    
+
+
+    <!-- http://www.bmcb.btinternet.co.uk/2001/schema/bmcb#AdjectiveSatellite -->
+
+    <owl:Class rdf:about="&schema;bmcb#AdjectiveSatellite">
+        <rdfs:subClassOf rdf:resource="&schema;bmcb#AdjectiveSynSet"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bmcb.btinternet.co.uk/2001/schema/bmcb#AdjectiveSynSet -->
+
+    <owl:Class rdf:about="&schema;bmcb#AdjectiveSynSet">
+        <rdfs:subClassOf rdf:resource="&schema;bmcb#SynSet"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bmcb.btinternet.co.uk/2001/schema/bmcb#AdverbSynSet -->
+
+    <owl:Class rdf:about="&schema;bmcb#AdverbSynSet">
+        <rdfs:subClassOf rdf:resource="&schema;bmcb#Synset"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bmcb.btinternet.co.uk/2001/schema/bmcb#NounSynSet -->
+
+    <owl:Class rdf:about="&schema;bmcb#NounSynSet">
+        <rdfs:subClassOf rdf:resource="&schema;bmcb#SynSet"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bmcb.btinternet.co.uk/2001/schema/bmcb#SynSet -->
+
+    <owl:Class rdf:about="&schema;bmcb#SynSet"/>
+    
+
+
+    <!-- http://www.bmcb.btinternet.co.uk/2001/schema/bmcb#Synset -->
+
+    <owl:Class rdf:about="&schema;bmcb#Synset"/>
+    
+
+
+    <!-- http://www.bmcb.btinternet.co.uk/2001/schema/bmcb#VerbSynSet -->
+
+    <owl:Class rdf:about="&schema;bmcb#VerbSynSet">
+        <rdfs:subClassOf rdf:resource="&schema;bmcb#SynSet"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bmcb.btinternet.co.uk/2001/schema/bmcb#Word -->
+
+    <owl:Class rdf:about="&schema;bmcb#Word"/>
+    
+
+
+    <!-- http://www.bmcb.btinternet.co.uk/2001/schema/bmcb#WordSense -->
+
+    <owl:Class rdf:about="&schema;bmcb#WordSense"/>
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral -->
+
+    <owl:Class rdf:about="&rdf;XMLLiteral"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#Property -->
+
+    <owl:Class rdf:about="&rdfs;Property"/>
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#nonNegativeInteger -->
+
+    <owl:Class rdf:about="&xsd;nonNegativeInteger"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.bmcb.btinternet.co.uk/2001/schema/bmcb#lexicalForm -->
+
+    <owl:NamedIndividual rdf:about="&schema;bmcb#lexicalForm">
+        <rdf:type rdf:resource="&rdfs;Property"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.1.0.1602) http://owlapi.sourceforge.net -->
+

@@ -1,0 +1,152 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY event "http://ll.mit.edu/2012/ccer/domain/ccer/event/v1/event.owl#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY cysa_query "http://ll.mit.edu/2012/ccer/domain/ccer/event/v1/cysa_query.owl#" >
+    <!ENTITY tagscheme "http://ll.mit.edu/2012/ccer/domain/ccer/event/v1/tagscheme.rdf#" >
+]>
+
+
+<rdf:RDF xmlns="http://ll.mit.edu/2012/09/query_sample1.owl#"
+     xml:base="http://ll.mit.edu/2012/09/query_sample1.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:cysa_query="http://ll.mit.edu/2012/ccer/domain/ccer/event/v1/cysa_query.owl#"
+     xmlns:event="http://ll.mit.edu/2012/ccer/domain/ccer/event/v1/event.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:tagscheme="http://ll.mit.edu/2012/ccer/domain/ccer/event/v1/tagscheme.rdf#">
+    <owl:Ontology rdf:about="http://ll.mit.edu/2012/09/query_sample1.owl">
+        <owl:imports rdf:resource="http://ll.mit.edu/2012/ccer/domain/ccer/event/v1/cysa_query.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/query_sample1.owl#DeviceIPMap -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/09/query_sample1.owl#DeviceIPMap">
+        <rdf:type rdf:resource="&event;CySAEvent"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/query_sample1.owl#Device_ID -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/09/query_sample1.owl#Device_ID">
+        <rdf:type rdf:resource="&event;Dimension"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/query_sample1.owl#End -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/09/query_sample1.owl#End">
+        <rdf:type rdf:resource="&tagscheme;Tag"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/query_sample1.owl#Example1 -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/09/query_sample1.owl#Example1">
+        <rdf:type rdf:resource="&cysa_query;Query"/>
+        <cysa_query:hasSubQueryOf rdf:resource="http://ll.mit.edu/2012/09/query_sample1.owl#select1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/query_sample1.owl#SELECT -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/09/query_sample1.owl#SELECT">
+        <rdf:type rdf:resource="&event;Operator"/>
+        <event:outputSignature>Device_ID,Start:Time,End:Time</event:outputSignature>
+        <event:hasOutputDimension rdf:resource="http://ll.mit.edu/2012/09/query_sample1.owl#Device_ID"/>
+        <event:hasOutputDimension rdf:resource="http://ll.mit.edu/2012/09/query_sample1.owl#Time"/>
+        <cysa_query:hasAnonymousEventOutput rdf:resource="http://ll.mit.edu/2012/09/query_sample1.owl#anon_event1"/>
+        <event:hasInputDimension rdf:resource="http://ll.mit.edu/2012/09/query_sample1.owl#userdefdim1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/query_sample1.owl#Start -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/09/query_sample1.owl#Start">
+        <rdf:type rdf:resource="&tagscheme;Tag"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/query_sample1.owl#Time -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/09/query_sample1.owl#Time">
+        <rdf:type rdf:resource="&event;Dimension"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/query_sample1.owl#anon_event1 -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/09/query_sample1.owl#anon_event1">
+        <rdf:type rdf:resource="&cysa_query;AnonymousEvent"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/query_sample1.owl#ipaddress_set -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/09/query_sample1.owl#ipaddress_set">
+        <rdf:type rdf:resource="&cysa_query;QuerySetTag"/>
+        <cysa_query:query_set_tag_values>IPAddress:155.34.87.132</cysa_query:query_set_tag_values>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/query_sample1.owl#select1 -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/09/query_sample1.owl#select1">
+        <rdf:type rdf:resource="&cysa_query;LeafQuery"/>
+        <cysa_query:hasInputEvent rdf:resource="http://ll.mit.edu/2012/09/query_sample1.owl#DeviceIPMap"/>
+        <event:hasOperator rdf:resource="http://ll.mit.edu/2012/09/query_sample1.owl#SELECT"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/query_sample1.owl#userdefdim1 -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/09/query_sample1.owl#userdefdim1">
+        <rdf:type rdf:resource="&cysa_query;UserDefinedDimension"/>
+        <tagscheme:hasTag rdf:resource="http://ll.mit.edu/2012/09/query_sample1.owl#ipaddress_set"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.2.1789) http://owlapi.sourceforge.net -->
+

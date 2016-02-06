@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:j.0="http://ll.mit.edu/2013/ccer/core/third_party/scap/cve.owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:cve="http://ll.mit.edu/2013/ccer/core/third_party/scap/cve.owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://ll.mit.edu/2013/ccer/core/third_party/scap/cve.owl">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="http://xmlns.com/foaf/0.1/"/>
+    <owl:imports rdf:resource="http://purl.org/dc/terms"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Ontology developed based on the NCSP/NIST Common Vulnerabilities and Exposures schema.</rdfs:comment>
+  </owl:Ontology>
+  <owl:Class rdf:ID="CVE_Vote_Reject">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="CVE_Item_Vote"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="CVE_Item_Phase">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:Class>
+  <owl:Class rdf:ID="CVE_Vote_Modify">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#CVE_Item_Vote"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="CVE_Item">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:Class>
+  <owl:Class rdf:ID="CVE_Item_Status">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:Class>
+  <owl:Class rdf:ID="CVE_Item_Comment">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:Class>
+  <owl:Class rdf:ID="CVE_Reference">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:Class>
+  <owl:Class rdf:ID="CVE_Vote_Reviewing">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#CVE_Item_Vote"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#CVE_Item_Vote">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:Class>
+  <owl:Class rdf:ID="CVE_Vote_Recast">
+    <rdfs:subClassOf rdf:resource="#CVE_Item_Vote"/>
+  </owl:Class>
+  <owl:Class rdf:ID="CVE_Vote_Noop">
+    <rdfs:subClassOf rdf:resource="#CVE_Item_Vote"/>
+  </owl:Class>
+  <owl:Class rdf:ID="CVE_Vote_Revote">
+    <rdfs:subClassOf rdf:resource="#CVE_Item_Vote"/>
+  </owl:Class>
+  <owl:Class rdf:ID="CVE_Vote_Accept">
+    <rdfs:subClassOf rdf:resource="#CVE_Item_Vote"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="hasVotes">
+    <rdfs:domain rdf:resource="#CVE_Item"/>
+    <rdfs:range rdf:resource="#CVE_Item_Vote"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasPhase">
+    <rdfs:range rdf:resource="#CVE_Item_Phase"/>
+    <rdfs:domain rdf:resource="#CVE_Item"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasReference">
+    <rdfs:domain rdf:resource="#CVE_Item"/>
+    <rdfs:range rdf:resource="#CVE_Reference"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasStatus">
+    <rdfs:range rdf:resource="#CVE_Item_Status"/>
+    <rdfs:domain rdf:resource="#CVE_Item"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:ID="hasURL">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    <rdfs:domain rdf:resource="#CVE_Reference"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasVoter">
+    <rdfs:domain rdf:resource="#CVE_Item_Comment"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasDescription">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#CVE_Item"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasSource">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#CVE_Reference"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasCount">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:domain rdf:resource="#CVE_Item_Vote"/>
+  </owl:DatatypeProperty>
+  <j.0:CVE_Item_Phase rdf:ID="CVE_Proposed"/>
+  <j.0:CVE_Item_Phase rdf:ID="CVE_Modified"/>
+  <j.0:CVE_Item_Status rdf:ID="CVE_Entry"/>
+  <j.0:CVE_Item_Phase rdf:ID="CVE_Assigned"/>
+  <j.0:CVE_Item_Phase rdf:ID="CVE_Interim"/>
+  <j.0:CVE_Item_Status rdf:ID="CVE_Candidate"/>
+</rdf:RDF>
+
+<!-- Created with TopBraid -->

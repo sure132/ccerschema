@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:kaosService="http://ontology.ihmc.us/Service.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://ontology.ihmc.us/Service.owl">
+  <owl:Ontology rdf:about="">
+    <rdfs:comment>
+            An ontology created by Andrzej Uszok (auszok@ihmc.us).
+        </rdfs:comment>
+    <owl:imports rdf:resource="http://ontology.ihmc.us/Entity.owl"/>
+  </owl:Ontology>
+  <owl:Class rdf:ID="Parameter">
+    <rdfs:subClassOf rdf:resource="http://ontology.ihmc.us/Entity.owl#AbstractEntity"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Service">
+    <rdfs:subClassOf rdf:resource="http://ontology.ihmc.us/Entity.owl#AbstractEntity"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Operation">
+    <rdfs:subClassOf rdf:resource="http://ontology.ihmc.us/Entity.owl#AbstractEntity"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="hasOperation">
+    <rdfs:domain rdf:resource="#Service"/>
+    <rdfs:range rdf:resource="#Operation"/>
+  </owl:ObjectProperty>
+</rdf:RDF>
+
+<!-- Created with TopBraid -->

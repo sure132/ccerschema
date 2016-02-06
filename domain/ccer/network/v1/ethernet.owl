@@ -1,0 +1,939 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY terms "http://purl.org/dc/terms/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY nml "http://schemas.ogf.org/nml/2013/05/base#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY ns "http://www.w3.org/2003/06/sw-vocab-status/ns#" >
+    <!ENTITY c "http://www.science.uva.nl/research/sne/ndl/?c=20-" >
+    <!ENTITY ip "http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/ip#" >
+    <!ENTITY vpn "http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/vpn#" >
+    <!ENTITY ethernet "http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/ethernet#" >
+]>
+
+
+<rdf:RDF xmlns="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/ethernet#"
+     xml:base="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/ethernet"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:ns="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+     xmlns:c="http://www.science.uva.nl/research/sne/ndl/?c=20-"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:nml="http://schemas.ogf.org/nml/2013/05/base#"
+     xmlns:ip="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/ip#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:ethernet="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/ethernet#"
+     xmlns:vpn="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/vpn#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/ethernet">
+        <rdfs:label>ethernet</rdfs:label>
+        <owl:versionInfo rdf:datatype="&xsd;string">1.0</owl:versionInfo>
+        <terms:modified rdf:datatype="&xsd;string">2007-03-28</terms:modified>
+        <terms:issued rdf:datatype="&xsd;string">2013-03-28</terms:issued>
+        <ns:moreinfo>WARNING: this schema is merely an example what can be done with the layer schema. It was never meant for serious usage. For that, look at the output of the NML workgroup in the OGF (www.ogf.org). We do feel that this schema has a few nice concepts, so feel free to take ideas you like, and put those in your own schema (and let us know you did!). Just don&#39;t merely use this schema: it is unmaintained.</ns:moreinfo>
+        <dc:description xml:lang="en">A vocabulary for defining an Ethernet network. This schema defines two layers: the MAC layer to describe links between MAC addresses, and Ethernet layer to describe a single LAN or VLAN. This schema does not specifically describe source and destination MAC addresses. Basically, a source and destination MAC address are the &quot;local MAC address&quot; properties of the termination connection point (end-points) of an network connection. Tagged Ethernet is defined as Ethernet over Ethernet. Ethernet has two encoding properties that can yield additional incompatibilities: capacity (defined in the ndl topology schema) and MTU size. We assume that the &quot;type&quot; field in Ethernet is never used as a switching label. If it is used as such in practice, a new layer (&quot;TypelessEthernet&quot;) needs to be introduced, just above the Ethernet layer, which consists of the payload of Ethernet. The MAC layer would then be apdapted into TypelessEthernet instead of directly into Ethernet, and Tagged Ethernet would then be described as Ethernet over TypelessEthernet over Ethernet.</dc:description>
+        <dc:publisher xml:lang="en">MITT LL in colaboration with IHMC based on ontology developed by  System and Network Engineering group, Universiteit van Amsterdam</dc:publisher>
+        <dc:title xml:lang="en">Network Markup  Language: Ethernet technology</dc:title>
+        <ns:term_status>testing</ns:term_status>
+        <owl:imports rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/atm"/>
+        <owl:imports rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/ip"/>
+        <owl:imports rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/vpn"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/ethernet#IEEE802-1Q -->
+
+    <owl:ObjectProperty rdf:about="&ethernet;IEEE802-1Q">
+        <rdfs:label xml:lang="en">802.1Q</rdfs:label>
+        <owl:minCardinality rdf:datatype="&xsd;integer">0</owl:minCardinality>
+        <owl:maxCardinality rdf:datatype="&xsd;integer">1</owl:maxCardinality>
+        <rdfs:comment xml:lang="en">The IEEE 802.1Q (VLAN) label. The 12-bit value in the 802.1Q header for Tagged Ethernet. This label MUST only be set if and only if the 802.1Q header is actually present in the data stream, thus it MUST be set for tagged Ethernet, but MUST NOT be set for untagged Ethernet. The reason is that otherwise the algorithm to decide if two channels are the same sees different tags, and incorrectly assumes the two untagged interfaces are not connected. To signify the VLAN tag for untagged Ethernet, use the #VLAN property.</rdfs:comment>
+        <rdfs:range rdf:resource="&ethernet;IEEE802-1QLabel"/>
+        <rdfs:seeAlso rdf:resource="&ethernet;VLAN"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/ethernet#MAC-in-Ethernet -->
+
+    <owl:ObjectProperty rdf:about="&ethernet;MAC-in-Ethernet">
+        <rdfs:label xml:lang="en">MAC in Ethernet</rdfs:label>
+        <rdfs:comment xml:lang="en">Adaptation of the payload of Ethernet in an Ethernet frame. There are 2^48 possible MAC addresses, leading to 2^96 possible (source, destination) Ethernet flows.</rdfs:comment>
+        <rdfs:range rdf:resource="&ethernet;MACNetworkElement"/>
+        <rdfs:range rdf:resource="&nml;Port"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/ethernet#MTU -->
+
+    <owl:ObjectProperty rdf:about="&ethernet;MTU">
+        <rdfs:label xml:lang="en">MTU size</rdfs:label>
+        <rdfs:comment xml:lang="en">The maximum packet size of Ethernet packets. This is sometime referred to as the &quot;Ethernet MTU&quot; and should not be confused with the &quot;IP MTU&quot;, which describes the maximum payload size. The value is specified in bytes. A typical value is 1518 bytes (leading to a maximum payload of 1500 bytes).</rdfs:comment>
+        <rdfs:seeAlso rdf:resource="&ethernet;frameSize"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/ethernet#PPPoE -->
+
+    <owl:ObjectProperty rdf:about="&ethernet;PPPoE">
+        <rdfs:label xml:lang="en">PPPoE</rdfs:label>
+        <rdfs:comment xml:lang="en">Adaptation of PPP over Ethernet MAC layer (PPPoE).</rdfs:comment>
+        <rdfs:range rdf:resource="&vpn;PPPNetworkElement"/>
+        <rdfs:range rdf:resource="&nml;Port"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/ethernet#Tagged-Ethernet -->
+
+    <owl:ObjectProperty rdf:about="&ethernet;Tagged-Ethernet">
+        <rdfs:label xml:lang="en">Tagged Ethernet</rdfs:label>
+        <rdfs:comment xml:lang="en">Embedding of Ethernet in VLAN-tagged Ethernet, by setting the type field to 0x8100, and adding a VLAN field, followed by the client type field and payload.  It is possible to stack this, leading to Q-in-Q (VLANs within VLANs).</rdfs:comment>
+        <rdfs:range rdf:resource="&ethernet;EthernetNetworkElement"/>
+        <rdfs:range rdf:resource="&nml;Port"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/ethernet#VLAN -->
+
+    <owl:ObjectProperty rdf:about="&ethernet;VLAN">
+        <rdfs:label xml:lang="en">VLAN</rdfs:label>
+        <rdfs:comment xml:lang="en">The VLAN name. While the 802.1Q label is ONLY used if the interface actually adds a 802.1Q VLAN-tag in the packet itself, this VLAN property may also be used for untagged links in logical VLANs. For example two untagged Interfaces which are configured in VLAN 5, even though they never actually tag any packet. Since the VLAN property is a subproperty of this 802.1Q property, if they are both defined, they must have the same value.</rdfs:comment>
+        <rdfs:range rdf:resource="&ethernet;IEEE802-1QLabel"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/ethernet#arpTable -->
+
+    <owl:ObjectProperty rdf:about="&ethernet;arpTable">
+        <rdfs:label xml:lang="en">ARP table</rdfs:label>
+        <ns:term_status>testing</ns:term_status>
+        <ns:moreinfo>WARNING: it is yet undefined what the range of the arpTable is.</ns:moreinfo>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/ethernet#frameSize -->
+
+    <owl:ObjectProperty rdf:about="&ethernet;frameSize">
+        <rdfs:label xml:lang="en">frame size</rdfs:label>
+        <rdfs:comment xml:lang="en">The object Interface is capable of handling packets with the subject frame size. This is not exactly the MTU. It actually says that packets of this size can be handled. So the actual MTU is larger then the size specified in the subject.</rdfs:comment>
+        <rdfs:range rdf:resource="&ethernet;FrameSizeRange"/>
+        <rdfs:seeAlso rdf:resource="&ethernet;MTU"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/ethernet#ip-in-MAC -->
+
+    <owl:ObjectProperty rdf:about="&ethernet;ip-in-MAC">
+        <rdfs:label xml:lang="en">IP in MAC</rdfs:label>
+        <rdfs:comment xml:lang="en">IP embedded in Ethernet MAC Layer, by carrying IP packets 1:1 in the payload of an Ethernet frame, with the EtherType set to 0x0800 for IPv4 and to 0x86DD for IPv6 packets.</rdfs:comment>
+        <rdfs:range rdf:resource="&ip;IPNetworkElement"/>
+        <rdfs:range rdf:resource="&nml;Port"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/ethernet#localMACaddress -->
+
+    <owl:ObjectProperty rdf:about="&ethernet;localMACaddress">
+        <rdfs:label xml:lang="en">Local MAC</rdfs:label>
+        <rdfs:comment xml:lang="en">The MAC address of the current interface.</rdfs:comment>
+        <rdfs:range rdf:resource="&ethernet;MACAddress"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/ethernet#mpls-in-MAC -->
+
+    <owl:ObjectProperty rdf:about="&ethernet;mpls-in-MAC">
+        <rdfs:label xml:lang="en">MPLS in MAC</rdfs:label>
+        <rdfs:comment xml:lang="en">Unicast MPLS embedded in Ethernet MAC Layer, by carrying MPLS packets 1:1 in the payload of an Ethernet frame, with the EtherType set to 0x8847.</rdfs:comment>
+        <rdfs:range rdf:resource="&vpn;MPLSNetworkElement"/>
+        <rdfs:range rdf:resource="&nml;Port"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/ethernet#remoteMACaddress -->
+
+    <owl:ObjectProperty rdf:about="&ethernet;remoteMACaddress">
+        <rdfs:label xml:lang="en">Remote MAC</rdfs:label>
+        <rdfs:comment xml:lang="en">The remote MAC address where this interface is linked to. An interface has usually multiple remote MAC addresses: one for each Ethernet interface in the local LAN, other then it&#39;s own MAC address.</rdfs:comment>
+        <rdfs:range rdf:resource="&ethernet;MACAddress"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schemas.ogf.org/nml/2013/05/base#adaptationFunction -->
+
+    <owl:ObjectProperty rdf:about="&nml;adaptationFunction">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&nml;AdaptationService"/>
+                    <rdf:Description rdf:about="&nml;DeadaptationService"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schemas.ogf.org/nml/2013/05/base#address -->
+
+    <owl:ObjectProperty rdf:about="&nml;address">
+        <rdfs:domain rdf:resource="&nml;Location"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schemas.ogf.org/nml/2013/05/base#canProvidePort -->
+
+    <owl:ObjectProperty rdf:about="&nml;canProvidePort">
+        <rdfs:domain rdf:resource="&nml;Service"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&nml;Port"/>
+                    <rdf:Description rdf:about="&nml;PortGroup"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schemas.ogf.org/nml/2013/05/base#encoding -->
+
+    <owl:ObjectProperty rdf:about="&nml;encoding">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&nml;Link"/>
+                    <rdf:Description rdf:about="&nml;LinkGroup"/>
+                    <rdf:Description rdf:about="&nml;Port"/>
+                    <rdf:Description rdf:about="&nml;PortGroup"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schemas.ogf.org/nml/2013/05/base#existsDuring -->
+
+    <owl:ObjectProperty rdf:about="&nml;existsDuring">
+        <rdfs:range rdf:resource="&nml;Lifetime"/>
+        <rdfs:domain rdf:resource="&nml;NetworkObject"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schemas.ogf.org/nml/2013/05/base#hasInboundPort -->
+
+    <owl:ObjectProperty rdf:about="&nml;hasInboundPort">
+        <rdfs:domain rdf:resource="&nml;NetworkObject"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&nml;Port"/>
+                    <rdf:Description rdf:about="&nml;PortGroup"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schemas.ogf.org/nml/2013/05/base#hasLabel -->
+
+    <owl:ObjectProperty rdf:about="&nml;hasLabel">
+        <rdfs:range rdf:resource="&nml;Label"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&nml;Link"/>
+                    <rdf:Description rdf:about="&nml;Port"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schemas.ogf.org/nml/2013/05/base#hasLabelGroup -->
+
+    <owl:ObjectProperty rdf:about="&nml;hasLabelGroup">
+        <rdfs:range rdf:resource="&nml;LabelGroup"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&nml;LinkGroup"/>
+                    <rdf:Description rdf:about="&nml;PortGroup"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schemas.ogf.org/nml/2013/05/base#hasLink -->
+
+    <owl:ObjectProperty rdf:about="&nml;hasLink">
+        <rdfs:domain rdf:resource="&nml;Group"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&nml;Link"/>
+                    <rdf:Description rdf:about="&nml;LinkGroup"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schemas.ogf.org/nml/2013/05/base#hasNode -->
+
+    <owl:ObjectProperty rdf:about="&nml;hasNode">
+        <rdfs:domain rdf:resource="&nml;NetworkObject"/>
+        <rdfs:range rdf:resource="&nml;Node"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schemas.ogf.org/nml/2013/05/base#hasOutboundPort -->
+
+    <owl:ObjectProperty rdf:about="&nml;hasOutboundPort">
+        <rdfs:domain rdf:resource="&nml;NetworkObject"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&nml;Port"/>
+                    <rdf:Description rdf:about="&nml;PortGroup"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schemas.ogf.org/nml/2013/05/base#hasPort -->
+
+    <owl:ObjectProperty rdf:about="&nml;hasPort">
+        <rdfs:domain rdf:resource="&nml;Group"/>
+        <rdfs:range rdf:resource="&nml;Port"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schemas.ogf.org/nml/2013/05/base#hasService -->
+
+    <owl:ObjectProperty rdf:about="&nml;hasService">
+        <rdfs:domain rdf:resource="&nml;NetworkObject"/>
+        <rdfs:range rdf:resource="&nml;Service"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schemas.ogf.org/nml/2013/05/base#hasTopology -->
+
+    <owl:ObjectProperty rdf:about="&nml;hasTopology">
+        <rdfs:domain rdf:resource="&nml;NetworkObject"/>
+        <rdfs:range rdf:resource="&nml;Topology"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schemas.ogf.org/nml/2013/05/base#implementedBy -->
+
+    <owl:ObjectProperty rdf:about="&nml;implementedBy">
+        <rdfs:domain rdf:resource="&nml;NetworkObject"/>
+        <rdfs:range rdf:resource="&nml;NetworkObject"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schemas.ogf.org/nml/2013/05/base#isAlias -->
+
+    <owl:ObjectProperty rdf:about="&nml;isAlias">
+        <rdfs:range rdf:resource="&nml;NetworkObject"/>
+        <rdfs:domain rdf:resource="&nml;NetworkObject"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schemas.ogf.org/nml/2013/05/base#isSerialCompoundLink -->
+
+    <owl:ObjectProperty rdf:about="&nml;isSerialCompoundLink">
+        <rdfs:range rdf:resource="&nml;ListItem"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&nml;Link"/>
+                    <rdf:Description rdf:about="&nml;LinkGroup"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schemas.ogf.org/nml/2013/05/base#isSink -->
+
+    <owl:ObjectProperty rdf:about="&nml;isSink">
+        <rdfs:domain rdf:resource="&nml;NetworkObject"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&nml;Link"/>
+                    <rdf:Description rdf:about="&nml;LinkGroup"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schemas.ogf.org/nml/2013/05/base#isSource -->
+
+    <owl:ObjectProperty rdf:about="&nml;isSource">
+        <rdfs:domain rdf:resource="&nml;NetworkObject"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&nml;Link"/>
+                    <rdf:Description rdf:about="&nml;LinkGroup"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schemas.ogf.org/nml/2013/05/base#item -->
+
+    <owl:ObjectProperty rdf:about="&nml;item">
+        <rdfs:domain rdf:resource="&nml;ListItem"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schemas.ogf.org/nml/2013/05/base#labeltype -->
+
+    <owl:ObjectProperty rdf:about="&nml;labeltype">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&nml;Label"/>
+                    <rdf:Description rdf:about="&nml;LabelGroup"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schemas.ogf.org/nml/2013/05/base#locatedAt -->
+
+    <owl:ObjectProperty rdf:about="&nml;locatedAt">
+        <rdfs:range rdf:resource="&nml;Location"/>
+        <rdfs:domain rdf:resource="&nml;NetworkObject"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schemas.ogf.org/nml/2013/05/base#next -->
+
+    <owl:ObjectProperty rdf:about="&nml;next">
+        <rdfs:domain rdf:resource="&nml;ListItem"/>
+        <rdfs:range rdf:resource="&nml;ListItem"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schemas.ogf.org/nml/2013/05/base#providesLink -->
+
+    <owl:ObjectProperty rdf:about="&nml;providesLink">
+        <rdfs:domain rdf:resource="&nml;Service"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&nml;Link"/>
+                    <rdf:Description rdf:about="&nml;LinkGroup"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schemas.ogf.org/nml/2013/05/base#providesPort -->
+
+    <owl:ObjectProperty rdf:about="&nml;providesPort">
+        <rdfs:domain rdf:resource="&nml;Service"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&nml;Port"/>
+                    <rdf:Description rdf:about="&nml;PortGroup"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/ethernet#MTU -->
+
+    <owl:DatatypeProperty rdf:about="&ethernet;MTU">
+        <rdfs:label xml:lang="en">MTU size</rdfs:label>
+        <rdfs:comment xml:lang="en">The maximum packet size of Ethernet packets. This is sometime referred to as the &quot;Ethernet MTU&quot; and should not be confused with the &quot;IP MTU&quot;, which describes the maximum payload size. The value is specified in bytes. A typical value is 1518 bytes (leading to a maximum payload of 1500 bytes).</rdfs:comment>
+        <rdfs:seeAlso rdf:resource="&ethernet;frameSize"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/ethernet#egressStatus -->
+
+    <owl:DatatypeProperty rdf:about="&ethernet;egressStatus">
+        <rdfs:label xml:lang="en">Egress Status</rdfs:label>
+        <rdfs:comment xml:lang="en">The egress status defines if an Interface is administrative up or down. If it is down, no data is transmitted on the link. If it is up, it is working as described. Possible values of the object are True (up) and False (down). The maximum cardinality of this property is 1.</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/ethernet#ingressStatus -->
+
+    <owl:DatatypeProperty rdf:about="&ethernet;ingressStatus">
+        <rdfs:label xml:lang="en">Ingress Status</rdfs:label>
+        <rdfs:comment xml:lang="en">The ingress status defines if an Interface is up or down. If it is down, no data can be received on the link. If it is up, data is received. Possible values of the object are True (up) and False (down). The maximum cardinality of this property is 1.</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schemas.ogf.org/nml/2013/05/base#alt -->
+
+    <owl:DatatypeProperty rdf:about="&nml;alt">
+        <rdfs:domain rdf:resource="&nml;Location"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schemas.ogf.org/nml/2013/05/base#end -->
+
+    <owl:DatatypeProperty rdf:about="&nml;end">
+        <rdfs:domain rdf:resource="&nml;Lifetime"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schemas.ogf.org/nml/2013/05/base#labelSwapping -->
+
+    <owl:DatatypeProperty rdf:about="&nml;labelSwapping">
+        <rdfs:domain rdf:resource="&nml;SwitchingService"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schemas.ogf.org/nml/2013/05/base#lat -->
+
+    <owl:DatatypeProperty rdf:about="&nml;lat">
+        <rdfs:domain rdf:resource="&nml;Location"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schemas.ogf.org/nml/2013/05/base#long -->
+
+    <owl:DatatypeProperty rdf:about="&nml;long">
+        <rdfs:domain rdf:resource="&nml;Location"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schemas.ogf.org/nml/2013/05/base#name -->
+
+    <owl:DatatypeProperty rdf:about="&nml;name">
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&nml;Location"/>
+                    <rdf:Description rdf:about="&nml;NetworkObject"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schemas.ogf.org/nml/2013/05/base#noReturnTraffic -->
+
+    <owl:DatatypeProperty rdf:about="&nml;noReturnTraffic">
+        <rdfs:domain rdf:resource="&nml;Link"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schemas.ogf.org/nml/2013/05/base#parameter -->
+
+    <owl:DatatypeProperty rdf:about="&nml;parameter">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schemas.ogf.org/nml/2013/05/base#start -->
+
+    <owl:DatatypeProperty rdf:about="&nml;start">
+        <rdfs:domain rdf:resource="&nml;Lifetime"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schemas.ogf.org/nml/2013/05/base#unlocode -->
+
+    <owl:DatatypeProperty rdf:about="&nml;unlocode">
+        <rdfs:domain rdf:resource="&nml;Location"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schemas.ogf.org/nml/2013/05/base#value -->
+
+    <owl:DatatypeProperty rdf:about="&nml;value">
+        <rdfs:domain rdf:resource="&nml;Label"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schemas.ogf.org/nml/2013/05/base#values -->
+
+    <owl:DatatypeProperty rdf:about="&nml;values">
+        <rdfs:domain rdf:resource="&nml;LabelGroup"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schemas.ogf.org/nml/2013/05/base#version -->
+
+    <owl:DatatypeProperty rdf:about="&nml;version">
+        <rdfs:domain rdf:resource="&nml;NetworkObject"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/ethernet#EthernetNetworkElement -->
+
+    <owl:Class rdf:about="&ethernet;EthernetNetworkElement">
+        <rdfs:label xml:lang="en">Ethernet</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&nml;NetworkObject"/>
+        <rdfs:comment xml:lang="en">Network Elements on the Ethernet Layer. A circuit switched layer. This layer represents a single LAN or VLAN. The encoding of the MAC layer is the payload of an Ethernet packet, without the MAC address headers.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/ethernet#EthernetPort -->
+
+    <owl:Class rdf:about="&ethernet;EthernetPort">
+        <rdfs:subClassOf rdf:resource="&nml;Port"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/ethernet#FrameSizeRange -->
+
+    <owl:Class rdf:about="&ethernet;FrameSizeRange">
+        <rdfs:label xml:lang="en">Frame Size Range</rdfs:label>
+        <rdfs:comment xml:lang="en">The supported frame size: Packets with these frame sizes are supported. This is not exactly the MTU. It actually says that packets of this size can be handled. So this is a list, while the MTU is the maximum value of this list. Instantiations of this class are Ranges of bytes. For example [765...1500] or [765...9000], or [765...16114].</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/ethernet#IEEE802-1QLabel -->
+
+    <owl:Class rdf:about="&ethernet;IEEE802-1QLabel">
+        <rdfs:label xml:lang="en">802.1Q Label</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&nml;Label"/>
+        <rdfs:comment xml:lang="en">Value of the 12-bit VLAN ID field in the 802.1Q header, as part of an the Ethernet header.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.science.uva.nl/research/sne/schema/ethernet.rdf"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/ethernet#MACAddress -->
+
+    <owl:Class rdf:about="&ethernet;MACAddress">
+        <rdfs:label xml:lang="en">MAC address</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&nml;Label"/>
+        <rdfs:comment>A MAC address written as six decimal groups, lower case, separated by a colon (&quot;:&quot;).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.science.uva.nl/research/sne/schema/ethernet.rdf"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/ethernet#MACNetworkElement -->
+
+    <owl:Class rdf:about="&ethernet;MACNetworkElement">
+        <rdfs:label xml:lang="en">MAC</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&nml;NetworkObject"/>
+        <rdfs:comment xml:lang="en">Network Elements on the Ethernet MAC Layer. A packet switched layer. The Ethernet layer describes individual links between two MAC addresses on a LAN. The encoding of the MAC layer is an Ethernet packet, including all headers.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://schemas.ogf.org/nml/2013/05/base#AdaptationService -->
+
+    <owl:Class rdf:about="&nml;AdaptationService">
+        <rdfs:subClassOf rdf:resource="&nml;Service"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schemas.ogf.org/nml/2013/05/base#BidirectionalLink -->
+
+    <owl:Class rdf:about="&nml;BidirectionalLink">
+        <rdfs:subClassOf rdf:resource="&nml;Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schemas.ogf.org/nml/2013/05/base#BidirectionalPort -->
+
+    <owl:Class rdf:about="&nml;BidirectionalPort">
+        <rdfs:subClassOf rdf:resource="&nml;Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schemas.ogf.org/nml/2013/05/base#DeadaptationService -->
+
+    <owl:Class rdf:about="&nml;DeadaptationService">
+        <rdfs:subClassOf rdf:resource="&nml;Service"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schemas.ogf.org/nml/2013/05/base#Group -->
+
+    <owl:Class rdf:about="&nml;Group">
+        <rdfs:subClassOf rdf:resource="&nml;NetworkObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schemas.ogf.org/nml/2013/05/base#Label -->
+
+    <owl:Class rdf:about="&nml;Label"/>
+    
+
+
+    <!-- http://schemas.ogf.org/nml/2013/05/base#LabelGroup -->
+
+    <owl:Class rdf:about="&nml;LabelGroup">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schemas.ogf.org/nml/2013/05/base#Lifetime -->
+
+    <owl:Class rdf:about="&nml;Lifetime"/>
+    
+
+
+    <!-- http://schemas.ogf.org/nml/2013/05/base#Link -->
+
+    <owl:Class rdf:about="&nml;Link">
+        <rdfs:subClassOf rdf:resource="&nml;NetworkObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schemas.ogf.org/nml/2013/05/base#LinkGroup -->
+
+    <owl:Class rdf:about="&nml;LinkGroup">
+        <rdfs:subClassOf rdf:resource="&nml;Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schemas.ogf.org/nml/2013/05/base#ListItem -->
+
+    <owl:Class rdf:about="&nml;ListItem">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schemas.ogf.org/nml/2013/05/base#Location -->
+
+    <owl:Class rdf:about="&nml;Location">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schemas.ogf.org/nml/2013/05/base#NetworkObject -->
+
+    <owl:Class rdf:about="&nml;NetworkObject"/>
+    
+
+
+    <!-- http://schemas.ogf.org/nml/2013/05/base#Node -->
+
+    <owl:Class rdf:about="&nml;Node">
+        <rdfs:subClassOf rdf:resource="&nml;NetworkObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schemas.ogf.org/nml/2013/05/base#Port -->
+
+    <owl:Class rdf:about="&nml;Port">
+        <rdfs:subClassOf rdf:resource="&nml;NetworkObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schemas.ogf.org/nml/2013/05/base#PortGroup -->
+
+    <owl:Class rdf:about="&nml;PortGroup">
+        <rdfs:subClassOf rdf:resource="&nml;Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schemas.ogf.org/nml/2013/05/base#Service -->
+
+    <owl:Class rdf:about="&nml;Service">
+        <rdfs:subClassOf rdf:resource="&nml;NetworkObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schemas.ogf.org/nml/2013/05/base#SwitchingService -->
+
+    <owl:Class rdf:about="&nml;SwitchingService">
+        <rdfs:subClassOf rdf:resource="&nml;Service"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schemas.ogf.org/nml/2013/05/base#Topology -->
+
+    <owl:Class rdf:about="&nml;Topology">
+        <rdfs:subClassOf rdf:resource="&nml;Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#integer -->
+
+    <owl:Class rdf:about="&xsd;integer"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.science.uva.nl/research/sne/ndl/?c=20-Technology-Schemas -->
+
+    <owl:Thing rdf:about="&c;Technology-Schemas"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.3.1824) http://owlapi.sourceforge.net -->
+

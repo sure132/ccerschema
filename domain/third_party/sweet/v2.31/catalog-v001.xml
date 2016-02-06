@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="User Entered Import Resolution" name="http://purl.org/dc/terms" uri="file:/Users/su22797/ccer/ccerschema/core/third_party/dc/dcterms.rdf"/>
+    <uri id="Imports Wizard Entry" name="http://ll.mit.edu/2014/ccer/core/ccer/v1/base.owl" uri="file:/Users/su22797/ccer/ccerschema/core/ccer/ccer/v1/base.owl"/>
+    <uri id="User Entered Import Resolution" name="http://sweet.jpl.nasa.gov/2.3/reprMath.owl" uri="reprMath.owl"/>
+    <uri id="Imports Wizard Entry" name="http://sweet.jpl.nasa.gov/2.3/propSpace.owl" uri="propSpace.owl"/>
+    <uri id="User Entered Import Resolution" name="http://sweet.jpl.nasa.gov/2.3/repr.owl" uri="repr.owl"/>
+    <uri id="User Entered Import Resolution" name="http://sweet.jpl.nasa.gov/2.3/reprSpaceDirection.owl" uri="reprSpaceDirection.owl"/>
+    <uri id="User Entered Import Resolution" name="http://sweet.jpl.nasa.gov/2.3/propSpaceDirection.owl" uri="propSpaceDirection.owl"/>
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=1" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1414693373087" name="http://sweet.jpl.nasa.gov/2.3/propSpace.owl#" uri="propSpace.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1414693373087" name="http://sweet.jpl.nasa.gov/2.3/propSpaceDirection.owl#" uri="propSpaceDirection.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1414693373087" name="http://sweet.jpl.nasa.gov/2.3/relaMath.owl" uri="relaMath.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1414693373087" name="http://sweet.jpl.nasa.gov/2.3/relaSpace.owl" uri="relaSpace.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1414693373087" name="http://sweet.jpl.nasa.gov/2.3/repr.owl#" uri="repr.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1414693373087" name="http://sweet.jpl.nasa.gov/2.3/reprMath.owl#" uri="reprMath.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1414693373087" name="http://sweet.jpl.nasa.gov/2.3/reprSpaceCoordinate.owl" uri="reprSpaceCoordinate.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1414693373087" name="http://sweet.jpl.nasa.gov/2.3/reprSpaceDirection.owl" uri="reprSpaceDirection.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1414693373087" name="http://ll.mit.edu/2014/ccer/domain/third_party/sweet/v2.31/visualShape.owl" uri="visualShape.owl"/>
+    </group>
+</catalog>

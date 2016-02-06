@@ -1,0 +1,173 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:kaosPolicyAction="http://ontology.ihmc.us/PolicyAction.owl#"
+  xml:base="http://ontology.ihmc.us/PolicyAction.owl">
+  <owl:Ontology rdf:about="">
+    <owl:versionInfo>
+            $ http://ontology.ihmc.us/PolicyAction.owl $
+        </owl:versionInfo>
+    <rdfs:comment>
+            An ontology created by Andrzej Uszok (auszok@ihmc.us).
+        </rdfs:comment>
+    <owl:imports rdf:resource="http://ontology.ihmc.us/Action.owl"/>
+    <owl:imports rdf:resource="http://ontology.ihmc.us/Actor.owl"/>
+    <owl:imports rdf:resource="http://ontology.ihmc.us/Policy.owl"/>
+  </owl:Ontology>
+  <owl:Class rdf:ID="PolicyAction">
+    <rdfs:subClassOf rdf:resource="http://ontology.ihmc.us/Action.owl#Action"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://ontology.ihmc.us/Action.owl#performedBy"/>
+        <owl:allValuesFrom>
+          <owl:Class rdf:ID="PolicyActor"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="AuthorizationFailureAction">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="PolicyDecisionAction"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="AddPolicyAction">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="PolicyModificationAction"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://ontology.ihmc.us/Action.owl#performedBy"/>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <owl:Class rdf:ID="Guard"/>
+              <rdf:Description rdf:about="http://ontology.ihmc.us/Actor.owl#Human"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="PolicyManager">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#PolicyActor"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="RemovePolicyAction">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#PolicyModificationAction"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://ontology.ihmc.us/Action.owl#performedBy"/>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <owl:Class rdf:about="#Guard"/>
+              <rdf:Description rdf:about="http://ontology.ihmc.us/Actor.owl#Human"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="ObligateAction">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#PolicyDecisionAction"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#PolicyDecisionAction">
+    <rdfs:subClassOf rdf:resource="#PolicyAction"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://ontology.ihmc.us/Action.owl#performedBy"/>
+        <owl:someValuesFrom>
+          <owl:Class rdf:about="#Guard"/>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="PolicyQueryAction">
+    <rdfs:subClassOf rdf:resource="#PolicyAction"/>
+    <rdfs:subClassOf rdf:resource="http://ontology.ihmc.us/Action.owl#QueryAction"/>
+  </owl:Class>
+  <owl:Class rdf:ID="PolicyLoggingAction">
+    <rdfs:subClassOf rdf:resource="http://ontology.ihmc.us/Action.owl#Action"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://ontology.ihmc.us/Action.owl#performedBy"/>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <owl:Class rdf:about="#PolicyManager"/>
+              <owl:Class rdf:about="#Guard"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Guard">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#PolicyActor"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#PolicyModificationAction">
+    <rdfs:subClassOf rdf:resource="#PolicyAction"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://ontology.ihmc.us/Action.owl#performedBy"/>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <owl:Class rdf:about="#PolicyManager"/>
+              <owl:Class rdf:about="#Guard"/>
+              <rdf:Description rdf:about="http://ontology.ihmc.us/Actor.owl#Human"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#PolicyActor">
+    <rdfs:subClassOf rdf:resource="http://ontology.ihmc.us/Actor.owl#Actor"/>
+  </owl:Class>
+  <owl:Class rdf:ID="GrantAuthorizationAction">
+    <rdfs:subClassOf rdf:resource="#PolicyDecisionAction"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="hasPolicyDiscloser">
+    <rdfs:subPropertyOf rdf:resource="http://ontology.ihmc.us/Action.owl#hasObjectResource"/>
+    <rdfs:domain rdf:resource="#PolicyLoggingAction"/>
+    <rdfs:range rdf:resource="#PolicyDecisionAction"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="onAction">
+    <rdfs:subPropertyOf rdf:resource="http://ontology.ihmc.us/Action.owl#hasObjectResource"/>
+    <rdfs:domain rdf:resource="#PolicyDecisionAction"/>
+    <rdfs:range rdf:resource="http://ontology.ihmc.us/Action.owl#Action"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="involvedPolicy">
+    <rdfs:subPropertyOf rdf:resource="http://ontology.ihmc.us/Action.owl#hasObjectResource"/>
+    <rdfs:domain rdf:resource="#PolicyAction"/>
+    <rdfs:range rdf:resource="http://ontology.ihmc.us/Policy.owl#Policy"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="onActor">
+    <rdfs:range rdf:resource="http://ontology.ihmc.us/Actor.owl#Actor"/>
+    <rdfs:domain rdf:resource="#PolicyDecisionAction"/>
+    <rdfs:subPropertyOf rdf:resource="http://ontology.ihmc.us/Action.owl#hasObjectResource"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasTriggerAction">
+    <rdfs:domain rdf:resource="#ObligateAction"/>
+    <rdfs:range rdf:resource="http://ontology.ihmc.us/Action.owl#Action"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasExecutionConstraint">
+    <rdfs:domain rdf:resource="#ObligateAction"/>
+    <rdfs:range rdf:resource="http://ontology.ihmc.us/Policy.owl#ObligationConstraint"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:ObjectProperty>
+</rdf:RDF>
+
+<!-- Created with TopBraid -->

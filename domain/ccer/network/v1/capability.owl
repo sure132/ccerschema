@@ -1,0 +1,127 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:ns="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+    xmlns:capability="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/capability#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:terms="http://purl.org/dc/terms/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:nml="http://schemas.ogf.org/nml/2013/05/base#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/capability">
+  <owl:Ontology rdf:about="">
+    <rdfs:label>ndlcap</rdfs:label>
+    <dc:title xml:lang="en">Network Markup Language: Network Device Capability module</dc:title>
+    <owl:imports rdf:resource="http://schemas.ogf.org/nml/2013/05/base"/>
+    <dc:description xml:lang="en">A vocabulary for defining dynamic capabilities of a network device.</dc:description>
+    <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >2013-03-20</terms:modified>
+    <ns:term_status>testing</ns:term_status>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1.0</owl:versionInfo>
+    <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >2013-03-20</terms:issued>
+    <dc:publisher xml:lang="en">MITT LL in colaboration with IHMC based on ontology developed by System and Network Engineering group, Universiteit van Amsterdam</dc:publisher>
+  </owl:Ontology>
+  <owl:Class rdf:ID="PotentialInterface">
+    <rdfs:label xml:lang="en">Potential Interface</rdfs:label>
+    <rdfs:comment xml:lang="en">An abstract interface, which could be created as the result of a adaptation capability present in an actual server or client interface.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://schemas.ogf.org/nml/2013/05/base#Port"/>
+  </owl:Class>
+  <owl:Class rdf:ID="SwitchMatrix">
+    <rdfs:label xml:lang="en">Switch Matrix</rdfs:label>
+    <rdfs:comment xml:lang="en">A network element(s) that can be represented as a subnetwork (ITU-T G.805 terminology). Typically the switching core within a device.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://schemas.ogf.org/nml/2013/05/base#NetworkObject"/>
+    <ns:moreinfo>WARNING: It is not yet clear if a switch matrix is an actual instance within each device, or merely a representation of a certain kind of switch matrix.</ns:moreinfo>
+  </owl:Class>
+  <owl:Class rdf:ID="CastType">
+    <rdfs:label xml:lang="en">Casting Type</rdfs:label>
+    <rdfs:comment>The cast (unicast/multicast/broadcast) type to specify the internal switching type.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="InstantiatedMuxInterface">
+    <rdfs:label xml:lang="en">Instantiated Interface</rdfs:label>
+    <rdfs:comment xml:lang="en">An Interface, which is an instantiated of a potential interface. it exists now, but can be removed; the use of this type instead of the Interface class simply means that this data is considered more dynamic, and should not be cached for a longer time. It does not define a strict time-scale.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://schemas.ogf.org/nml/2013/05/base#Port"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="labels">
+    <rdfs:comment xml:lang="en">The interface can potentially take any of these labels.</rdfs:comment>
+    <rdfs:label xml:lang="en">labels</rdfs:label>
+    <rdfs:range rdf:resource="http://schemas.ogf.org/nml/2013/05/base#LabelGroup"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="capacities">
+    <rdfs:comment xml:lang="en">The potential interface can take any of the given capacities. The range is a RDF:Alt, each containing a float with the capacity in Byte/s.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt"/>
+    <rdfs:label xml:lang="en">capacities</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.w3.org/2003/06/sw-vocab-status/ns#userdocs"/>
+  <owl:ObjectProperty rdf:ID="hasCastType">
+    <rdfs:comment xml:lang="en">The casting type of a Switch Matrix, explaining which switchedTo connections van be made by the Switch Matrix.</rdfs:comment>
+    <rdfs:label xml:lang="en">has cast type</rdfs:label>
+    <rdfs:range rdf:resource="#CastType"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="properties">
+    <rdfs:comment xml:lang="en">The interface is able to configure one or more of the given encoding properties. The range is either a RDF:Alt of properties if the Interface can only configure one encoding property at the same time, or a RDF:Bag of encoding properties if the Interface can configure multiple encoding properties at the same time.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Container"/>
+    <rdfs:label xml:lang="en">encoding properties</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="egressProperties">
+    <rdfs:comment xml:lang="en">The interface is able to configure one or more of the given egres  encoding properties. The range is either a RDF:Alt of properties if the Interface can only configure one egress encoding property at the same time, or a RDF:Bag of encoding properties if the Interface can configure multiple egress encoding properties at the same time.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Container"/>
+    <rdfs:label xml:lang="en">egress encoding properties</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="swappingCapability">
+    <rdfs:seeAlso>
+      <owl:ObjectProperty rdf:ID="switchingCapability"/>
+    </rdfs:seeAlso>
+    <rdfs:comment xml:lang="en">A device is capable of dynamically forwarding (switching) data based on the (value of the) internal label property of the object Interface to any other Interface of the same type, provided that the value of the label of both Interfaces are different. Two empty labels are considered equal. For example, AAL0 Interface 38 with label VCI 23 is capable of forwarding data to AAL0 Interface 17, with VCI 18. Usually, a device with swapping capability also has switching capability. A SwitchMatrix can only have one swappingCapability. A device can have multiple SwitchMatrices.</rdfs:comment>
+    <rdfs:label xml:lang="en">swapping capability</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#switchingCapability">
+    <rdfs:comment xml:lang="en">A device is capable of dynamically forwarding (switching) data based on the (value of the) internal label property of the object Interface to any other Interface of the same type, provided that the value of the label of both Interfaces are equal. Two empty labels are considered equal. For example, an Ethernet device is able to forward data from an Ethernet Interface 2 with VLAN (802.1Q) label "23" to Ethernet Interface 3 with the same VLAN label ("23"). A device which statically forwards data, like a patch panel, should NOT have the switching capability defined. A SwitchMatrix can only have one switchingCapability. A device can have multiple SwitchMatrices.</rdfs:comment>
+    <ns:moreinfo>WARNING: The switchingCapability used to be defined for a Device, but that was changed to SwitchMatrix.</ns:moreinfo>
+    <rdfs:label xml:lang="en">switching capability</rdfs:label>
+    <rdfs:seeAlso rdf:resource="#swappingCapability"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasSwitchMatrix">
+    <rdfs:seeAlso rdf:resource="#swappingCapability"/>
+    <rdfs:comment xml:lang="en">Couples a particular switch matrix to a device.</rdfs:comment>
+    <rdfs:label xml:lang="en">has switch matrix</rdfs:label>
+    <rdfs:range rdf:resource="#SwitchMatrix"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="ingressProperties">
+    <rdfs:comment xml:lang="en">The interface is able to configure one or more of the given ingress encoding properties. The range is either a RDF:Alt of properties if the Interface can only configure one ingress encoding property at the same time, or a RDF:Bag of encoding properties if the Interface can configure multiple ingress encoding properties at the same time.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Container"/>
+    <rdfs:label xml:lang="en">ingress encoding properties</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="inMatrix">
+    <rdfs:range rdf:resource="#SwitchMatrix"/>
+    <rdfs:label xml:lang="en">in matrix</rdfs:label>
+    <rdfs:comment xml:lang="en">Couples a particular interface to a switch matrix.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:ID="internalLabel">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:label xml:lang="en">internal label</rdfs:label>
+    <rdfs:comment>The internal label of the Interface, which is required for the switching capability and swapping capability of a Switch Matrix. As the internal label is a subProperty of te label property, if a label property is set, then the internal label has that same value. Only in rare conditions is the internal label set, but the regular label not. Untagged Ethernet VLANs are the only technology we're aware of where this is the case.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="memoryBuffer">
+    <rdfs:seeAlso rdf:resource="#swappingCapability"/>
+    <rdfs:comment xml:lang="en">The size of the internal memory buffer of the Switch Matrix.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:label xml:lang="en">memory buffer</rdfs:label>
+  </owl:DatatypeProperty>
+  <capability:CastType rdf:ID="Multicast">
+    <rdfs:comment xml:lang="en">The Switch Matrix is capable of creating a switched to between any object and subject Interface, regardless of existing switched to properties.</rdfs:comment>
+    <rdfs:label xml:lang="en">Multicast</rdfs:label>
+  </capability:CastType>
+  <capability:CastType rdf:ID="Unicast">
+    <rdfs:comment xml:lang="en">The Switch Matrix is capable of creating a switched to between object and subject Interface if no other switchedTo exist with the same object, and no other switchedTo exist with the same subject.</rdfs:comment>
+    <rdfs:label xml:lang="en">Unicast</rdfs:label>
+  </capability:CastType>
+  <capability:CastType rdf:ID="Broadcast">
+    <rdfs:label xml:lang="en">Broadcast</rdfs:label>
+    <rdfs:comment xml:lang="en">The Switch Matrix has a switchedTo between an object and subject Interface if and only if the object and subject interface have the same label property.</rdfs:comment>
+  </capability:CastType>
+</rdf:RDF>
+
+<!-- Created with TopBraid -->

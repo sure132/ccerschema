@@ -1,0 +1,289 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:j.0="http://ll.mit.edu/2013/ccer/core/third_party/scap/cpe.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:cpe="http://ll.mit.edu/2013/ccer/core/third_party/scap/cpe.owl#"
+  xml:base="http://ll.mit.edu/2013/ccer/core/third_party/scap/cpe.owl">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="http://xmlns.com/foaf/0.1/"/>
+    <owl:imports rdf:resource="http://purl.org/dc/terms"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Ontology developed based on the NCSP/NIST Common Platform Enumeration schema.</rdfs:comment>
+  </owl:Ontology>
+  <owl:Class rdf:ID="LogicalTestOperator"/>
+  <owl:Class rdf:ID="CPE_Item">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:Class>
+  <owl:Class rdf:ID="LogicalTest"/>
+  <owl:Class rdf:ID="ChangeDescription">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Dictonary">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:Class>
+  <owl:Class rdf:ID="WFN"/>
+  <owl:Class rdf:ID="Hardware">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="SystemPart"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Platform"/>
+  <owl:Class rdf:ID="OperatingSystem">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#SystemPart"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="ProvenanceRecord">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:Class>
+  <owl:Class rdf:about="#SystemPart">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Deprecation">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:Class>
+  <owl:Class rdf:ID="CheckFactRef"/>
+  <owl:Class rdf:ID="CPE23_Item">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Application">
+    <rdfs:subClassOf rdf:resource="#SystemPart"/>
+  </owl:Class>
+  <owl:Class rdf:ID="ChangeType">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Generator">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:Class>
+  <owl:Class rdf:ID="CPEFactRef"/>
+  <owl:ObjectProperty rdf:ID="hasNameCPE23">
+    <rdfs:domain rdf:resource="#CPE23_Item"/>
+    <rdfs:range rdf:resource="#WFN"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasCheck">
+    <rdfs:domain rdf:resource="#CPE_Item"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasLanguage">
+    <rdfs:range rdf:resource="http://purl.org/dc/terms/LinguisticSystem"/>
+    <rdfs:domain rdf:resource="#WFN"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasSumbitter">
+    <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+    <rdfs:domain rdf:resource="#ProvenanceRecord"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasTarget_HW">
+    <rdfs:domain rdf:resource="#WFN"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasPart">
+    <rdfs:domain rdf:resource="#WFN"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasTarget_SW">
+    <rdfs:domain rdf:resource="#WFN"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasOther">
+    <rdfs:domain rdf:resource="#WFN"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasCPE23_Item">
+    <rdfs:range rdf:resource="#CPE23_Item"/>
+    <rdfs:domain rdf:resource="#CPE_Item"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasProduct">
+    <rdfs:domain rdf:resource="#WFN"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasChangeDescription">
+    <rdfs:range rdf:resource="#ChangeDescription"/>
+    <rdfs:domain rdf:resource="#ProvenanceRecord"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasFactRef">
+    <rdfs:domain rdf:resource="#LogicalTest"/>
+    <rdfs:range rdf:resource="#CPEFactRef"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasLogicalTestOperator">
+    <rdfs:range rdf:resource="#LogicalTestOperator"/>
+    <rdfs:domain rdf:resource="#LogicalTest"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasChangeType">
+    <rdfs:domain rdf:resource="#ChangeDescription"/>
+    <rdfs:range rdf:resource="#ChangeDescription"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasEdition">
+    <rdfs:domain rdf:resource="#WFN"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasName">
+    <rdfs:domain rdf:resource="#CPE_Item"/>
+    <rdfs:range rdf:resource="#WFN"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasDepricatedBy">
+    <rdfs:domain rdf:resource="#CPE_Item"/>
+    <rdfs:range rdf:resource="#WFN"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasUpdate">
+    <rdfs:domain rdf:resource="#WFN"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasGenerator">
+    <rdfs:domain rdf:resource="#Dictonary"/>
+    <rdfs:range rdf:resource="#Generator"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasProvenanceRecord">
+    <rdfs:domain rdf:resource="#CPE23_Item"/>
+    <rdfs:range rdf:resource="#ProvenanceRecord"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasAuthority">
+    <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+    <rdfs:domain rdf:resource="#ProvenanceRecord"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasVendor">
+    <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+    <rdfs:domain rdf:resource="#WFN"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasAny">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Dictonary"/>
+          <owl:Class rdf:about="#CPE_Item"/>
+          <owl:Class rdf:about="#CPE23_Item"/>
+          <owl:Class rdf:about="#Generator"/>
+          <owl:Class rdf:about="#ProvenanceRecord"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasDeprication">
+    <rdfs:domain rdf:resource="#CPE23_Item"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasCheckFactRef">
+    <rdfs:range rdf:resource="#CheckFactRef"/>
+    <rdfs:domain rdf:resource="#LogicalTest"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasItem">
+    <rdfs:domain rdf:resource="#Dictonary"/>
+    <rdfs:range rdf:resource="#CPE_Item"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasLogicalTest">
+    <rdfs:range rdf:resource="#LogicalTest"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Platform"/>
+          <owl:Class rdf:about="#LogicalTest"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasSW_Edition">
+    <rdfs:domain rdf:resource="#WFN"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:ID="hasComments">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#ChangeDescription"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasSchemaVersion">
+    <rdfs:domain rdf:resource="#Generator"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasReferences">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#CPE_Item"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="isNegated">
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >1</owl:cardinality>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:domain rdf:resource="#LogicalTest"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasID">
+    <rdfs:domain rdf:resource="#Platform"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasSystemID">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasProductVersion">
+    <rdfs:domain rdf:resource="#Generator"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasOrganizationName">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasDescription">
+    <rdfs:domain rdf:resource="#CheckFactRef"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasTimestamp">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:domain rdf:resource="#Generator"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasTitle">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#CPE_Item"/>
+          <owl:Class rdf:about="#Platform"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="isDepricated">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:domain rdf:resource="#CPE_Item"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasEvidanceReference">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#ChangeDescription"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasNotes">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#CPE_Item"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasHref">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    <rdfs:domain rdf:resource="#CheckFactRef"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasRemark">
+    <rdfs:domain rdf:resource="#Platform"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasDepricationDate">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:domain rdf:resource="#CPE_Item"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasIDref">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#token"/>
+    <rdfs:domain rdf:resource="#CheckFactRef"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasProductName">
+    <rdfs:domain rdf:resource="#Generator"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasOrganizationDescription">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasDate">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:domain rdf:resource="#ChangeDescription"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasVersion">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#WFN"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasSystem">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    <rdfs:domain rdf:resource="#CheckFactRef"/>
+  </owl:DatatypeProperty>
+  <j.0:ChangeType rdf:ID="DEPRECATION"/>
+  <j.0:LogicalTestOperator rdf:ID="OR"/>
+  <j.0:ChangeType rdf:ID="AUTHORITY_CHANGE"/>
+  <j.0:ChangeType rdf:ID="ORIGINAL_RECORD"/>
+  <j.0:ChangeType rdf:ID="DEPRECATION_MODIFICATION"/>
+  <j.0:LogicalTestOperator rdf:ID="AND"/>
+</rdf:RDF>
+
+<!-- Created with TopBraid -->

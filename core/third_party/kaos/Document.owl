@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:kaosDocument="http://ontology.ihmc.us/Document.owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://ontology.ihmc.us/Document.owl">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="http://ontology.ihmc.us/Information.owl"/>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Created with TopBraid Composer</owl:versionInfo>
+  </owl:Ontology>
+  <rdfs:Class rdf:ID="Document">
+    <rdfs:subClassOf rdf:resource="http://ontology.ihmc.us/Information.owl#Information"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="Slide">
+    <rdfs:subClassOf rdf:resource="#Document"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="ExcelDocument">
+    <rdfs:subClassOf>
+      <rdfs:Class rdf:ID="MSOfficeDocument"/>
+    </rdfs:subClassOf>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="WordDocument">
+    <rdfs:subClassOf>
+      <rdfs:Class rdf:about="#MSOfficeDocument"/>
+    </rdfs:subClassOf>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="Powerpoint">
+    <rdfs:subClassOf>
+      <rdfs:Class rdf:about="#MSOfficeDocument"/>
+    </rdfs:subClassOf>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="#MSOfficeDocument">
+    <rdfs:subClassOf rdf:resource="http://ontology.ihmc.us/Information.owl#Information"/>
+  </rdfs:Class>
+  <owl:ObjectProperty rdf:ID="hasSlide">
+    <rdfs:domain rdf:resource="#Powerpoint"/>
+    <rdfs:range rdf:resource="#Slide"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://ontology.ihmc.us/Information.owl#hasCreateDate">
+    <rdfs:range rdf:resource="http://www.w3.org/2006/time#DateTimeDescription"/>
+    <rdfs:domain rdf:resource="http://ontology.ihmc.us/Information.owl#Information"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://ontology.ihmc.us/Information.owl#hasLastAuthor">
+    <rdfs:domain rdf:resource="http://ontology.ihmc.us/Information.owl#Information"/>
+    <rdfs:range rdf:resource="http://ontology.ihmc.us/Actor.owl#Actor"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://ontology.ihmc.us/Information.owl#hasLastModificationDate">
+    <rdfs:domain rdf:resource="http://ontology.ihmc.us/Information.owl#Information"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2006/time#DateTimeDescription"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:ID="hasWidth">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:domain rdf:resource="#Document"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasText">
+    <rdfs:domain rdf:resource="#Document"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasTitle">
+    <rdfs:domain rdf:resource="#Document"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasHeight">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:domain rdf:resource="#Document"/>
+  </owl:DatatypeProperty>
+</rdf:RDF>
+
+<!-- Created with TopBraid -->

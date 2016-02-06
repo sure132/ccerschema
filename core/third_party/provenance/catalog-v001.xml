@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="http://purl.org/dc/terms" uri="file:/Users/su22797/ccer/ccerschema/core/third_party/dc/dcterms.rdf"/>
+    <uri id="Imports Wizard Entry" name="http://xmlns.com/foaf/0.1/" uri="file:/Users/su22797/ccer/ccerschema/core/third_party/foaf/foaf-20100809.rdf"/>
+    <uri id="User Entered Import Resolution" name="http://purl.org/net/opmv/ns" uri="opm.owl"/>
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=1" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1390504849336" name="http://openprovenance.org/ontology" uri="opm.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1390504849336" name="http://openprovenance.org/model/opmo" uri="opmo-20101012.owl"/>
+    </group>
+</catalog>

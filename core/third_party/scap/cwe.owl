@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:cwe="http://ll.mit.edu/2013/ccer/core/third_party/scap/cwe.owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://ll.mit.edu/2013/ccer/core/third_party/scap/cwe.owl">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="http://xmlns.com/foaf/0.1/"/>
+    <owl:imports rdf:resource="http://purl.org/dc/terms"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Ontology developed based on the MITRE Common Weakness Enumeration schema.</rdfs:comment>
+  </owl:Ontology>
+  <owl:Class rdf:ID="Weakness">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="test"/>
+</rdf:RDF>
+
+<!-- Created with TopBraid -->

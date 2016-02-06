@@ -1,0 +1,343 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE Ontology [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://ll.mit.edu/2014/ccer/domain/ccer/services/v2/FirewallRule.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     ontologyIRI="http://ll.mit.edu/2014/ccer/domain/ccer/services/v2/FirewallRule.owl">
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Import>http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl</Import>
+    <Import>http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/ip</Import>
+    <Import>http://ll.mit.edu/2014/ccer/domain/ccer/services/v2/FirewallService.owl</Import>
+    <Import>http://ll.mit.edu/2014/ccer/core/ccer/v1/base.owl</Import>
+    <Declaration>
+        <Class IRI="#DynamicFirewallRule"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FirewallRule"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FirewallRuleAction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FirewallRuleOptionalAction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FirewallRuleState"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#StaticFirewallRule"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasFirewallRuleAction"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasFirewallRuleState"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasFirewallRuleOptionalAction"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasFirewallService"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasNetworkProtocol"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPacketDestinationDevice"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPacketDestinationSubnet"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPacketSourceDevice"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPacketSourceSubnet"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#applicationLayerService"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#ethernetPort"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#firewallEthernetPort"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#firewallRuleNumber"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#layer4EndingPort"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#layer4Protocol"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#layer4StartingPort"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#packetDestinationDeviceName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#packetDestinationEndingIPv4Address"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#packetDestinationIPv4Mask"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#packetDestinationStartingIPv4Address"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#packetDirection"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#packetSourceDeviceName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#packetSourceEndingIPv4Address"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#packetSourceIPv4Mask"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#packetSourceStartingIPv4Address"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#ruleAction"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ACCEPT"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ACTIVE"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DENY"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#INACTIVE"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#LOG"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#QUEUE"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#REJECT"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#TAG"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#DynamicFirewallRule"/>
+        <Class IRI="#FirewallRule"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FirewallRule"/>
+        <Class IRI="http://purl.org/dc/terms/Policy"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FirewallRuleAction"/>
+        <Class IRI="http://ontology.ihmc.us/Action.owl#Action"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FirewallRuleOptionalAction"/>
+        <Class IRI="http://ontology.ihmc.us/Action.owl#Action"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FirewallRuleState"/>
+        <Class IRI="http://ontology.ihmc.us/Entity.owl#State"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#StaticFirewallRule"/>
+        <Class IRI="#FirewallRule"/>
+    </SubClassOf>
+    <ClassAssertion>
+        <Class IRI="#FirewallRuleAction"/>
+        <NamedIndividual IRI="#ACCEPT"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FirewallRuleState"/>
+        <NamedIndividual IRI="#ACTIVE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FirewallRuleAction"/>
+        <NamedIndividual IRI="#DENY"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FirewallRuleState"/>
+        <NamedIndividual IRI="#INACTIVE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FirewallRuleOptionalAction"/>
+        <NamedIndividual IRI="#LOG"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FirewallRuleOptionalAction"/>
+        <NamedIndividual IRI="#QUEUE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FirewallRuleAction"/>
+        <NamedIndividual IRI="#REJECT"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FirewallRuleOptionalAction"/>
+        <NamedIndividual IRI="#TAG"/>
+    </ClassAssertion>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasFirewallRuleAction"/>
+        <Class IRI="#FirewallRuleAction"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+      <ObjectProperty IRI="#hasFirewallRuleState"/>
+      <Class IRI="#FirewallRuleState"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasFirewallRuleOptionalAction"/>
+        <Class IRI="#FirewallRuleOptionalAction"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasFirewallService"/>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/services/v2/FirewallService.owl#FirewallService"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasNetworkProtocol"/>
+        <Class IRI="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/ip#NetworkProtocol"/>
+    </ObjectPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#FirewallRuleAction</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The action taken by a Firewall Rule:
+◦	ACCEPT: packets are allowed to pass through to the destination.
+◦	DENY: packets are not allowed to pass through to the destination.
+◦	REJECT: packets are not allowed to pass through to the destination and an ICMP “destination unreachable” is returned to the caller.
+</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#FirewallRuleState</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The operational state of the individual Firewall Rule, which can be overridden if the operational state of the FirewallService is INACTIVE:
+◦	ACTIVE: The FirewallRule operates normally.
+◦	INACTIVE: The FirewallRule is not in operation.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#applicationLayerService</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The application level service such as ssh, DNS, smtp. Either Port number or Service is required. Default value: “ANY”</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ethernetPort</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The physical interface such as “eth0” of the Device on which this rule will be applied. Default is “ANY”.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#firewallEthernetPort</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The physical interface such as “eth0” of the Device on which this rule will be applied. A special category of a port is “loopback” required to specify loop back rules. Default is “loopback”. </Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#firewallRuleNumber</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">a positive decimal number starting with 0. The rules will be evaluated in the increasing order of the RuleNumber. This number is needed when there is no defined order on the specified rules, as in the Visio diagram. </Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasPacketDestinationDevice</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A device or location to which a packet is sent. Used when there is no IP Address specification of the destination is possible.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasPacketSourceDevice</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A device or location from which a packet originates from. Used when there is no IP Address specification of the source is possible.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#layer4EndingPort</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">See layer4StartingPort</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#layer4Protocol</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The Layer 4 protocol(s) specified by this Firewall Rule. One of
+◦	TCP
+◦	UDP
+◦	TCP&amp;UDP
+◦	ICMP
+</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#layer4StartingPort</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The single port or a range of ports this Firewall Rule applies to.  A port is specified using a number in the range of 1-49151, or as a hyphen-separated range of ports (e.g., 6000-6030). It is possible to have multiple Firewall Rules for the same port. Default value: 1 
+
+Ontology data property: layer4StartingPort, layer4EndingPort
+Translation Instructions: If only one port number is provided, only layer4StartingPort is filled, and the layer4EndingPort is NULL.
+</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#packetDestinationDeviceName</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The string name of the device where the packet is destined. A special value is “SELF” means the destination of the packet is the device on which the firewall itself is located.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#packetDestinationStartingIPv4Address</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The IP address of the network segment where the packet(s) is destined to be sent. May be a single IP address with/without CIDR, or a contiguous range of IP addresses specified with a hyphen (e.g., 10.1.0.0-10.1.0.34). Default value: “ANY”
+
+Ontology data property: packetDestinationStartingIPv4Address, packetDestinationIPv4Mask, packetDestinationEndingIPv4Address. 
+
+Translation Instructions: If only a singe IPAddress is specified, packetDestinationStartingIPv4Address is filled, and the other two are NULL. If a CIDR is specified, packetDestinationStartingIPv4Address and packetDestinationIPv4Mask are filled (with whatever integer entered by the user after “/” in CIDR– translation to mask is done later). If a hyphenated address is provided, both packetDestinationStartingIPv4Address, and packetDestinationEndingIPv4Address are filled, and the other is NULL.
+</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#packetDirection</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Direction of packet viewed from the Device. One of Inbound/Outbound/Both</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#packetSourceDeviceName</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The string name of the device where the packet is originating. A special value is “SELF” means the source of the packet is the device on which the firewall itself is located.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#packetSourceStartingIPv4Address</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The IP address(es) of the network segment(s) where the packet(s) originated.  May be a single IP address with/without CIDR, or a contiguous range of IP addresses specified with a hyphen (e.g., 10.1.0.0-10.1.0.34). Default value: “ANY”
+
+Ontology data property: packetSourceStartingIPv4Address, packetSourceIPv4Mask, packetSourceStartingIPv4Address, packetSourceEndingIPv4Address
+
+Translation Instructions: If only  a single IPAddress is specified, packetSourceStartingIPv4Address is filled, and the other two are NULL. If a CIDR is specified, packetSourceStartingIPv4Address and packetSourceIPv4Mask are filled (with whatever integer entered by the user after “/” in CIDR– translation to mask is done later). If a hyphenated address is provided, both packetSourceStartingIPv4Address, and packetSourceEndingIPv4Address are filled, and the other is NULL.
+</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ruleAction</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The action taken by the Firewall Rule:
+◦	ACCEPT: packets are allowed to pass through to the destination.
+◦	DENY: packets are not allowed to pass through to the destination.
+◦	REJECT: packets are not allowed to pass through to the destination and an ICMP “destination unreachable” is returned to the caller.
+</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 3.2.2.1789) http://owlapi.sourceforge.net -->
+

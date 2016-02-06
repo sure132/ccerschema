@@ -1,0 +1,222 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE Ontology [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://ll.mit.edu/2013/ccer/domain/ccer/services/v2/base.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     ontologyIRI="http://ll.mit.edu/2013/ccer/domain/ccer/services/v2/base.owl">
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Import>http://ll.mit.edu/2013/ccer/domain/ccer/host/v1/computer.owl</Import>
+    <Import>http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl</Import>
+    <Declaration>
+        <Class IRI="#AccessMethod"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ApplicationProtocol"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BindingAddress"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EthernetPort"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#IPPort"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ServiceType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#USBPort"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasApplication"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasEthernetPort"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasIPPort"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasUSBPort"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#locatedAtDevice"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#locatedAtSubnet"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#description"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasApplicationProtocol"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasApplicationProtocolPort"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasBindingAddress"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#mode"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#name"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#type"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AMQP"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#FTP"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#HTTP"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#HTTPS"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SCP"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SFTP"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SSH"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#ApplicationProtocol"/>
+        <Class IRI="#AccessMethod"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EthernetPort"/>
+        <Class IRI="http://schemas.ogf.org/nml/2013/05/base#Port"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IPPort"/>
+        <Class IRI="http://schemas.ogf.org/nml/2013/05/base#Port"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#USBPort"/>
+        <Class IRI="http://schemas.ogf.org/nml/2013/05/base#Port"/>
+    </SubClassOf>
+    <ClassAssertion>
+        <Class IRI="#ApplicationProtocol"/>
+        <NamedIndividual IRI="#AMQP"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ApplicationProtocol"/>
+        <NamedIndividual IRI="#FTP"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ApplicationProtocol"/>
+        <NamedIndividual IRI="#HTTP"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ApplicationProtocol"/>
+        <NamedIndividual IRI="#HTTPS"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ApplicationProtocol"/>
+        <NamedIndividual IRI="#SCP"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ApplicationProtocol"/>
+        <NamedIndividual IRI="#SFTP"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ApplicationProtocol"/>
+        <NamedIndividual IRI="#SSH"/>
+    </ClassAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#type"/>
+        <NamedIndividual IRI="#FTP"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">FTP</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#mode"/>
+        <NamedIndividual IRI="#HTTP"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">GET</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#type"/>
+        <NamedIndividual IRI="#HTTP"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">HTTP</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#type"/>
+        <NamedIndividual IRI="#HTTPS"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">HTTPS</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#type"/>
+        <NamedIndividual IRI="#SCP"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">SCP</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#type"/>
+        <NamedIndividual IRI="#SFTP"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">SFTP</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#type"/>
+        <NamedIndividual IRI="#SSH"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">SSH</Literal>
+    </DataPropertyAssertion>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasApplication"/>
+        <Class IRI="http://schemas.ogf.org/nml/2013/05/base#Service"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasIPPort"/>
+        <Class IRI="#ApplicationProtocol"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasIPPort"/>
+        <Class IRI="#IPPort"/>
+    </ObjectPropertyRange>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#description"/>
+        <DataProperty abbreviatedIRI=":topDataProperty"/>
+    </SubDataPropertyOf>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#AccessMethod</IRI>
+        <Literal datatypeIRI="&rdfs;Literal">How the Service will be accessed</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#BindingAddress</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The binding address that includes the URL and port for the ApplicationProtocol identified as the access method.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ServiceType</IRI>
+        <Literal datatypeIRI="&rdfs;Literal">The type of the service. For example, web server, application server, etc.</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 3.2.2.1789) http://owlapi.sourceforge.net -->
+

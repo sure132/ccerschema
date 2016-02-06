@@ -1,0 +1,143 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:vpn="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/vpn#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:ns="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+    xmlns:atm="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/atm#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:terms="http://purl.org/dc/terms/"
+    xmlns:ip="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/ip#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:nml="http://schemas.ogf.org/nml/2013/05/base#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/atm">
+  <owl:Ontology rdf:about="">
+    <ns:moreinfo>WARNING: this schema is merely an example what can be done with the layer schema. It was never meant for serious usage. For that, look at the output of the NML workgroup in the OGF (www.ogf.org). We regard this schema in particular as a "quick hack". We're not experts in the technologies mentioned here, and will likely have overlooked a few things. Feel free to make a schema for these technologies based on our layer schema, or (slightly) better example schemas (e.g. Ethernet, TDM or WDM), but please start from scratch for this particular technology.</ns:moreinfo>
+    <dc:publisher xml:lang="en">System and Network Engineering group, Universiteit van Amsterdam</dc:publisher>
+    <dc:description xml:lang="en">A vocabulary for defining an ATM network. This schema defines four layers: AAL0 (the individual VCI channels), VPI-NNI (grouped VPI channels; interdomain), VPI-UNI (grouped VPI channels; intradomain), and ATM. There is no separate AAL5 layer. Instead, Something over AAL5 over AAL0 is described as Something over AAL0. Also, the other AAL layers are not described. It would also be possible to describe VPI as a single layer, with a encoding property to distinguish between the different cell formats, just like IPV4 and IPv6 are described in a single layer. Note that we can not remove the (seemingly) obsolete ATM layer: this allows us to define inverse multiplexing of ATM in something example. For example ATM over VC-4-16c.</dc:description>
+    <owl:imports rdf:resource="http://schemas.ogf.org/nml/2013/05/base"/>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1.0</owl:versionInfo>
+    <rdfs:label>atm</rdfs:label>
+    <owl:imports rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/vpn"/>
+    <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >2013-04-01</terms:modified>
+    <owl:imports rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/ip"/>
+    <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >2013-04-01</terms:issued>
+    <dc:title xml:lang="en">Network Markup Language: ATM technology</dc:title>
+    <ns:term_status>testing</ns:term_status>
+  </owl:Ontology>
+  <owl:Class rdf:ID="VPI-NNINetworkElement">
+    <rdfs:subClassOf rdf:resource="http://schemas.ogf.org/nml/2013/05/base#NetworkObject"/>
+    <rdfs:comment xml:lang="en">Network Elements on the VPI NNI Layer. The VPI NNI layer is circuit switched. A link on the VPI NNI layer represents a single VPI channel (consisting of multiple VCI channels). The VPI field has 8 bits on the VPI NNI layer.</rdfs:comment>
+    <rdfs:label xml:lang="en">VPI (NNI)</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="VPI-UNILabel">
+    <rdfs:subClassOf rdf:resource="http://schemas.ogf.org/nml/2013/05/base#Label"/>
+    <rdfs:label xml:lang="en">VPI (UNI) Label</rdfs:label>
+    <rdfs:comment xml:lang="en">Value of the 12-bit VPI field in an ATM cell with UNI header.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="ATMNetworkElement">
+    <rdfs:subClassOf rdf:resource="http://schemas.ogf.org/nml/2013/05/base#NetworkObject"/>
+    <rdfs:label xml:lang="en">ATM</rdfs:label>
+    <rdfs:comment xml:lang="en">Network Elements on the ATM Layer. The ATM layer represent a packet switched layer with cells of 53 bytes in length (5 byte header + 48 byte payload). It does not specify the fields in the header; for that see the VPI-NNI and VPI-UNI layers.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="VPI-UNINetworkElement">
+    <rdfs:subClassOf rdf:resource="http://schemas.ogf.org/nml/2013/05/base#NetworkObject"/>
+    <rdfs:seeAlso rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/atm#VPI-NNI"/>
+    <rdfs:label xml:lang="en">VPI (UNI)</rdfs:label>
+    <rdfs:comment xml:lang="en">Network Elements on the VPI NNI Layer. The VPI NNI layer is circuit switched. A link on the VPI NNI layer represents a single VPI channel (consisting of multiple VCI channels). The VPI field has 8 bits on the VPI NNI layer.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="AAL0NetworkElement">
+    <rdfs:comment xml:lang="en">Network Elements on the ATM AAL0 Layer. The AAL0 layer is circuit switched, and links on this layer represent the content of a flow with a specific VCI. Technically, it is the payload of the ATM cells.</rdfs:comment>
+    <rdfs:label xml:lang="en">AAL0</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://schemas.ogf.org/nml/2013/05/base#NetworkObject"/>
+  </owl:Class>
+  <owl:Class rdf:ID="VCILabel">
+    <rdfs:subClassOf rdf:resource="http://schemas.ogf.org/nml/2013/05/base#Label"/>
+    <rdfs:label xml:lang="en">VCI Label</rdfs:label>
+    <rdfs:comment xml:lang="en">Value of the VCI field in the ATM cell header.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="VPI-NNILabel">
+    <ns:moreinfo>The range is (0..255). This probably should be specified. Perhaps using OWL 1.1.</ns:moreinfo>
+    <rdfs:subClassOf rdf:resource="http://schemas.ogf.org/nml/2013/05/base#Label"/>
+    <rdfs:label xml:lang="en">VPI (NNI) Label</rdfs:label>
+    <rdfs:comment xml:lang="en">Value of the 8-bit VPI field in an ATM cell with NNI header.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="VPILabel">
+    <rdfs:subClassOf rdf:resource="http://schemas.ogf.org/nml/2013/05/base#Label"/>
+    <rdfs:label xml:lang="en">VPI Label</rdfs:label>
+    <rdfs:comment xml:lang="en">Value of the VPI field in the ATM cell header. This can be either a 8-bit or a 12-bit variable, depending on the header format (respectively the NNI and UNI variants).</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/2001/XMLSchema#integer"/>
+  <owl:ObjectProperty rdf:ID="vpi-uni">
+    <rdfs:range rdf:resource="#VPI-UNILabel"/>
+    <rdfs:comment xml:lang="en">The Virtual Path Identifier (VPI) label, UNI variant (12-bits), specifying the VPI path. The range of VPI labels is an integer in the range {0...4095}</rdfs:comment>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >1</owl:minCardinality>
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >1</owl:maxCardinality>
+    <rdfs:label xml:lang="en">VPI</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="vpi-nni">
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >1</owl:minCardinality>
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >1</owl:maxCardinality>
+    <rdfs:comment xml:lang="en">The Virtual Path Identifier (VPI) label, NNI variant (8-bits), specifying the VPI path. The range of VPI labels is an integer in the range {0...255}</rdfs:comment>
+    <rdfs:label xml:lang="en">VPI</rdfs:label>
+    <rdfs:range rdf:resource="#VPI-NNILabel"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="VPI-UNI-in-ATM">
+    <rdfs:comment xml:lang="en">Adaptation of UNI VPI path in a ATM link.</rdfs:comment>
+    <rdfs:range rdf:resource="http://schemas.ogf.org/nml/2013/05/base#Port"/>
+    <rdfs:label xml:lang="en">VPI (UNI) in ATM</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="vci">
+    <rdfs:range rdf:resource="#VCILabel"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >1</owl:minCardinality>
+    <rdfs:comment xml:lang="en">The Virtual Channel Identifier (VCI) label, specifying the VCI channel. The range of VCI labels is an integer in the range {0...65535}</rdfs:comment>
+    <rdfs:label xml:lang="en">VCI</rdfs:label>
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >1</owl:maxCardinality>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="AAL0-in-VPI-NNI">
+    <rdfs:comment xml:lang="en">Adaptation AAL0 in ATM cell payloads (VCI) in a NNI VPI.</rdfs:comment>
+    <rdfs:range rdf:resource="http://schemas.ogf.org/nml/2013/05/base#Port"/>
+    <rdfs:label xml:lang="en">AAL0 in VPI (NNI)</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="VPI-NNI-in-ATM">
+    <rdfs:range rdf:resource="http://schemas.ogf.org/nml/2013/05/base#Port"/>
+    <rdfs:comment xml:lang="en">Adaptation of NNI VPI path in a ATM link.</rdfs:comment>
+    <rdfs:label xml:lang="en">VPI (NNI) in ATM</rdfs:label>
+    <rdfs:range rdf:resource="#VPI-NNINetworkElement"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="AAL0-in-VPI-UNI">
+    <rdfs:comment xml:lang="en">Adaptation AAL0 in ATM cell payloads (VCI) in a UNI VPI.</rdfs:comment>
+    <rdfs:range rdf:resource="http://schemas.ogf.org/nml/2013/05/base#Port"/>
+    <rdfs:label xml:lang="en">AAL0 in VPI (UNI)</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="IP-in-AAL0">
+    <rdfs:range rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/ip#IPNetworkElement"/>
+    <rdfs:range rdf:resource="http://schemas.ogf.org/nml/2013/05/base#Port"/>
+    <rdfs:label xml:lang="en">IP in AAL0</rdfs:label>
+    <rdfs:comment xml:lang="en">The adaptation of IP packets in AAL5 (with padding) in multiple AAL0 payloads (each 48 bytes per cell).</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="PPPoA">
+    <rdfs:range rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/vpn#PPPNetworkElement"/>
+    <rdfs:range rdf:resource="http://schemas.ogf.org/nml/2013/05/base#Port"/>
+    <rdfs:label xml:lang="en">PPPoA</rdfs:label>
+    <rdfs:comment xml:lang="en">Adaptation of PPP over AAL5 (PPPoA) over AAL0.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Ethernet-in-AAL0">
+    <rdfs:range rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/ip#IPNetworkElement"/>
+    <rdfs:range rdf:resource="http://schemas.ogf.org/nml/2013/05/base#Port"/>
+    <rdfs:label xml:lang="en">Ethernet in AAL0</rdfs:label>
+    <rdfs:comment xml:lang="en">The adaptation of Ethernet frames in AAL5 (with padding) in multiple AAL0 payloads (each 48 bytes per cell).</rdfs:comment>
+  </owl:ObjectProperty>
+</rdf:RDF>
+
+<!-- Created with TopBraid -->

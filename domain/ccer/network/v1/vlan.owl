@@ -1,0 +1,311 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY nml "http://schemas.ogf.org/nml/2013/05/base#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY ethernet "http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/ethernet#" >
+    <!ENTITY physical "http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/physical.owl#" >
+    <!ENTITY vlan2 "http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/vlan.owl#802.1" >
+]>
+
+
+<rdf:RDF xmlns="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/vlan.owl#"
+     xml:base="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/vlan.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:physical="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/physical.owl#"
+     xmlns:ethernet="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/ethernet#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:nml="http://schemas.ogf.org/nml/2013/05/base#"
+     xmlns:vlan2="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/vlan.owl#802.1">
+    <owl:Ontology rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/vlan.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/ethernet#VLAN -->
+
+    <owl:ObjectProperty rdf:about="&ethernet;VLAN">
+        <rdfs:domain rdf:resource="&ethernet;EthernetNetworkElement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/vlan.owl#hasLinkToTrunkPort -->
+
+    <owl:ObjectProperty rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/vlan.owl#hasLinkToTrunkPort">
+        <rdfs:comment>Connects SwitchTrunkPort and RouterTrunckPort</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/vlan.owl#hasSwitch -->
+
+    <owl:ObjectProperty rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/vlan.owl#hasSwitch">
+        <rdfs:range rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/vlan.owl#Switch"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/vlan.owl#hasSwitchPort -->
+
+    <owl:ObjectProperty rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/vlan.owl#hasSwitchPort">
+        <rdfs:range rdf:resource="&ethernet;EthernetPort"/>
+        <rdfs:subPropertyOf rdf:resource="&nml;hasPort"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/vlan.owl#hasSwitchRouterTrunk -->
+
+    <owl:ObjectProperty rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/vlan.owl#hasSwitchRouterTrunk">
+        <rdfs:domain rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/vlan.owl#Switch"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/vlan.owl#hasTrunkProtocol -->
+
+    <owl:ObjectProperty rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/vlan.owl#hasTrunkProtocol">
+        <rdfs:range rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/vlan.owl#TrunkProtocol"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/vlan.owl#hasVLANTag -->
+
+    <owl:ObjectProperty rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/vlan.owl#hasVLANTag">
+        <rdfs:range rdf:resource="&ethernet;IEEE802-1QLabel"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schemas.ogf.org/nml/2013/05/base#hasPort -->
+
+    <owl:ObjectProperty rdf:about="&nml;hasPort"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/vlan.owl#VLANTag -->
+
+    <owl:DatatypeProperty rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/vlan.owl#VLANTag"/>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/vlan.owl#hasDynamicVLANTag -->
+
+    <owl:DatatypeProperty rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/vlan.owl#hasDynamicVLANTag">
+        <rdfs:comment>Whether the VLAN tag is Dynamic or Static</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/vlan.owl#switchPort -->
+
+    <owl:DatatypeProperty rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/vlan.owl#switchPort"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/ethernet#EthernetNetworkElement -->
+
+    <owl:Class rdf:about="&ethernet;EthernetNetworkElement"/>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/ethernet#EthernetPort -->
+
+    <owl:Class rdf:about="&ethernet;EthernetPort"/>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/ethernet#IEEE802-1QLabel -->
+
+    <owl:Class rdf:about="&ethernet;IEEE802-1QLabel"/>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/physical.owl#Device -->
+
+    <owl:Class rdf:about="&physical;Device"/>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/vlan.owl#EthernetPortGroup -->
+
+    <owl:Class rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/vlan.owl#EthernetPortGroup">
+        <rdfs:subClassOf rdf:resource="&nml;PortGroup"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/vlan.owl#NamedIndividual -->
+
+    <owl:Class rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/vlan.owl#NamedIndividual"/>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/vlan.owl#Switch -->
+
+    <owl:Class rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/vlan.owl#Switch">
+        <rdfs:subClassOf rdf:resource="&physical;Device"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/vlan.owl#SwitchRouterTrunk -->
+
+    <owl:Class rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/vlan.owl#SwitchRouterTrunk">
+        <rdfs:subClassOf rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/vlan.owl#SwitchTrunk"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/vlan.owl#SwitchSwitchTrunk -->
+
+    <owl:Class rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/vlan.owl#SwitchSwitchTrunk">
+        <rdfs:subClassOf rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/vlan.owl#SwitchTrunk"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/vlan.owl#SwitchTrunk -->
+
+    <owl:Class rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/vlan.owl#SwitchTrunk">
+        <rdfs:subClassOf rdf:resource="&nml;Link"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/vlan.owl#SwitchTrunkPort -->
+
+    <owl:Class rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/vlan.owl#SwitchTrunkPort">
+        <rdfs:subClassOf rdf:resource="&nml;Port"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/vlan.owl#TrunkProtocol -->
+
+    <owl:Class rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/vlan.owl#TrunkProtocol"/>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/vlan.owl#VLAN -->
+
+    <owl:Class rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/vlan.owl#VLAN">
+        <rdfs:subClassOf rdf:resource="&ethernet;EthernetNetworkElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schemas.ogf.org/nml/2013/05/base#Link -->
+
+    <owl:Class rdf:about="&nml;Link"/>
+    
+
+
+    <!-- http://schemas.ogf.org/nml/2013/05/base#Port -->
+
+    <owl:Class rdf:about="&nml;Port"/>
+    
+
+
+    <!-- http://schemas.ogf.org/nml/2013/05/base#PortGroup -->
+
+    <owl:Class rdf:about="&nml;PortGroup"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/vlan.owl#802.1Q -->
+
+    <owl:NamedIndividual rdf:about="&vlan2;Q">
+        <rdf:type rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/vlan.owl#NamedIndividual"/>
+        <rdf:type rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/vlan.owl#TrunkProtocol"/>
+        <rdfs:comment>IEEE 802.1Q (dot1q)</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/vlan.owl#ISL -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/vlan.owl#ISL">
+        <rdf:type rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/vlan.owl#NamedIndividual"/>
+        <rdf:type rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/vlan.owl#TrunkProtocol"/>
+        <rdfs:comment>Inter-Switch Protocol</rdfs:comment>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.2.1789) http://owlapi.sourceforge.net -->
+

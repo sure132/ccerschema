@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:kaosPlace="http://ontology.ihmc.us/Place.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://ontology.ihmc.us/Place.owl">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="http://ontology.ihmc.us/Action.owl"/>
+    <owl:imports rdf:resource="http://ontology.ihmc.us/Entity.owl"/>
+    <rdfs:comment>
+            An ontology created by Andrzej Uszok (auszok@ihmc.us).
+        </rdfs:comment>
+    <owl:imports rdf:resource="http://ontology.ihmc.us/Group.owl"/>
+  </owl:Ontology>
+  <owl:Class rdf:ID="Link">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality>2</owl:cardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="connects"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Place"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Address">
+    <rdfs:subClassOf rdf:resource="http://ontology.ihmc.us/Entity.owl#AbstractEntity"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Place">
+    <rdfs:subClassOf rdf:resource="http://ontology.ihmc.us/Entity.owl#Entity"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="hasPlace">
+    <rdfs:domain rdf:resource="http://ontology.ihmc.us/Entity.owl#Entity"/>
+    <rdfs:range rdf:resource="#Place"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasAddress">
+    <rdfs:domain rdf:resource="#Place"/>
+    <rdfs:range rdf:resource="#Address"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="isEncompassedBy">
+    <owl:inverseOf>
+      <owl:TransitiveProperty rdf:ID="encompasses"/>
+    </owl:inverseOf>
+    <rdfs:domain rdf:resource="http://ontology.ihmc.us/Entity.owl#Entity"/>
+    <rdfs:range rdf:resource="#Place"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#connects">
+    <rdfs:domain rdf:resource="#Place"/>
+    <rdfs:range rdf:resource="#Place"/>
+  </owl:ObjectProperty>
+  <owl:TransitiveProperty rdf:about="#encompasses">
+    <rdfs:domain rdf:resource="#Place"/>
+    <rdfs:range rdf:resource="http://ontology.ihmc.us/Entity.owl#Entity"/>
+  </owl:TransitiveProperty>
+</rdf:RDF>
+
+<!-- Created with TopBraid -->

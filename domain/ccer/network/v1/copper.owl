@@ -1,0 +1,159 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:physical="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/physical#"
+    xmlns:vpn="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/vpn#"
+    xmlns:ethernet="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/ethernet#"
+    xmlns:bundle="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/bundle#"
+    xmlns:atm="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/atm#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:nml="http://schemas.ogf.org/nml/2013/05/base#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:ns="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:terms="http://purl.org/dc/terms/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:copper="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/copper#"
+  xml:base="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/copper">
+  <owl:Ontology rdf:about="">
+    <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >2013-03-25</terms:issued>
+    <owl:imports rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos"/>
+    <dc:publisher xml:lang="en">MITT LL in colaboration with IHMC based on ontology developed by System and Network Engineering group, Universiteit van Amsterdam</dc:publisher>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1.0</owl:versionInfo>
+    <owl:imports rdf:resource="http://schemas.ogf.org/nml/2013/05/base"/>
+    <ns:term_status>testing</ns:term_status>
+    <dc:description xml:lang="en">A vocabulary for defining an physical copper network. This schema only defined the TwistedPair layer. It could easily be extended to support other copper layers like Coax as well.</dc:description>
+    <rdfs:label>copper</rdfs:label>
+    <owl:imports rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/physical.owl"/>
+    <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >2013-03-25</terms:modified>
+    <owl:imports rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/bundle"/>
+    <dc:title xml:lang="en">Network Markup Language: Copper technology</dc:title>
+    <owl:imports rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/atm"/>
+  </owl:Ontology>
+  <owl:Class rdf:ID="ConnectorType">
+    <rdfs:label xml:lang="en">Connector</rdfs:label>
+    <rdfs:comment xml:lang="en">A type of connector.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="CableCategory">
+    <rdfs:label xml:lang="en">Category</rdfs:label>
+    <rdfs:comment xml:lang="en">The cable category, defining the performance characteristics of twisted pair cables.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="ShieldingType">
+    <rdfs:label xml:lang="en">Shielding</rdfs:label>
+    <rdfs:comment xml:lang="en">The shielding of the copper pairs in a cable.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="TwistedPairNetworkElement">
+    <rdfs:comment xml:lang="en">Network Elements on the Twisted Pair Layer. A link on this layer represents an UTP or STP cable.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://schemas.ogf.org/nml/2013/05/base#NetworkObject"/>
+    <rdfs:label xml:lang="en">UTP</rdfs:label>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="category">
+    <rdfs:range rdf:resource="#CableCategory"/>
+    <rdfs:label xml:lang="en">category</rdfs:label>
+    <rdfs:comment xml:lang="en">The cable category, defining the performance characteristics of twisted pair links.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="atm-in-TP">
+    <rdfs:comment xml:lang="en">Adaptation of 155 Mb/s ATM over a single UTP cable.</rdfs:comment>
+    <rdfs:range rdf:resource="http://schemas.ogf.org/nml/2013/05/base#Port"/>
+    <rdfs:label xml:lang="en">ATM in UTP</rdfs:label>
+    <rdfs:range rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/atm#ATMNetworkElement"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="base-T">
+    <rdfs:range rdf:resource="http://schemas.ogf.org/nml/2013/05/base#Port"/>
+    <rdfs:range rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/ethernet#EthernetNetworkElement"/>
+    <rdfs:label xml:lang="en">base-T</rdfs:label>
+    <rdfs:comment xml:lang="en">Adaptation of Ethernet into a UTP cable. This includes the all base-T Ethernet PMDs: 10base-T for 10Mb/s Ethernet, 100base-TX, 100base-T2 and 100base-T4 for 100Mb/s Ethernet, 1000base-T for 1000Mb/s Ethernet and 10Gbase-T for 10Gb/s Ethernet. Interfaces with autosensing will select the fastest available speed.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="connector">
+    <rdfs:comment xml:lang="en">The type of connector.</rdfs:comment>
+    <rdfs:label xml:lang="en">connector type</rdfs:label>
+    <rdfs:range rdf:resource="#ConnectorType"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="eth1base5">
+    <rdfs:range rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/ethernet#EthernetNetworkElement"/>
+    <rdfs:label xml:lang="en">1base5</rdfs:label>
+    <rdfs:range rdf:resource="http://schemas.ogf.org/nml/2013/05/base#Port"/>
+    <rdfs:comment xml:lang="en">Adaptation of 1 Mb/s Ethernet over UTP using the 1base5 encoding.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="strand">
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >0</owl:minCardinality>
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >1</owl:maxCardinality>
+    <rdfs:comment xml:lang="en">The identification number of a certain cable within a bundle of links.</rdfs:comment>
+    <rdfs:label xml:lang="en">strand</rdfs:label>
+    <rdfs:range rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/bundle#StrandLabel"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="PPP-in-TP">
+    <rdfs:range rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/vpn#PPPNetworkElement"/>
+    <rdfs:label xml:lang="en">PPP in UTP</rdfs:label>
+    <rdfs:comment xml:lang="en">Adaptation of PPP over a physical link. The PPP frame is appended with HDLC-like synchronization and padding bits as described in RFC 1662.</rdfs:comment>
+    <rdfs:range rdf:resource="http://schemas.ogf.org/nml/2013/05/base#Port"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="shielding">
+    <rdfs:comment xml:lang="en">The shielding between the individual wires in the twisted pair cable.</rdfs:comment>
+    <rdfs:label xml:lang="en">shielding</rdfs:label>
+    <rdfs:range rdf:resource="#ShieldingType"/>
+  </owl:ObjectProperty>
+  <copper:CableCategory rdf:ID="Cat7">
+    <rdfs:label xml:lang="en">Cat7</rdfs:label>
+    <rdfs:comment xml:lang="en">Category 7 cable: An informal name applied to ISO/IEC 11801 Class F cabling. This standard specifies four individually-shielded pairs (STP) inside an overall shield. Designed for transmission at frequencies up to 600 MHz.</rdfs:comment>
+  </copper:CableCategory>
+  <copper:ShieldingType rdf:ID="UTP">
+    <rdfs:comment xml:lang="en">Unshielded Twisted Pair. The most common shielding for twisted pair cables. UTP cables are not shielded.</rdfs:comment>
+    <rdfs:label xml:lang="en">UTP</rdfs:label>
+  </copper:ShieldingType>
+  <copper:ShieldingType rdf:ID="S-STP">
+    <rdfs:label xml:lang="en">S/STP</rdfs:label>
+    <rdfs:comment xml:lang="en">Screened Shielded Twisted Pair. S/STP cabling is both individually shielded (like STP cabling) and also has an outer metal shielding covering the entire group of shielded copper pairs (like S/UTP).</rdfs:comment>
+  </copper:ShieldingType>
+  <copper:ConnectorType rdf:ID="RJ12">
+    <rdfs:label xml:lang="en">RJ12</rdfs:label>
+    <rdfs:comment xml:lang="en">Male RJ-12 connector.</rdfs:comment>
+  </copper:ConnectorType>
+  <copper:ConnectorType rdf:ID="RJ45">
+    <rdfs:label xml:lang="en">RJ45</rdfs:label>
+    <rdfs:comment xml:lang="en">Male RJ-45 connector.</rdfs:comment>
+  </copper:ConnectorType>
+  <copper:CableCategory rdf:ID="Cat3">
+    <rdfs:comment xml:lang="en">Category 3 cable is defined in TIA/EIA-568-B, used for data networks utilizing frequencies up to 16 MHz. Historically popular for 10 Mbit/s Ethernet networks.</rdfs:comment>
+    <rdfs:label xml:lang="en">Cat3</rdfs:label>
+  </copper:CableCategory>
+  <copper:CableCategory rdf:ID="Cat5">
+    <rdfs:comment xml:lang="en">Category 5 cable is currently unrecognized by TIA/EIA. Provided performance of up to 100 MHz, and was frequently used on 100 Mbit/s ethernet networks. May be unsuitable for 1000BASE-T gigabit ethernet.</rdfs:comment>
+    <rdfs:label xml:lang="en">Cat5</rdfs:label>
+  </copper:CableCategory>
+  <copper:ConnectorType rdf:ID="GG45">
+    <rdfs:comment xml:lang="en">Male GG45 connector.</rdfs:comment>
+    <rdfs:label xml:lang="en">GG45</rdfs:label>
+  </copper:ConnectorType>
+  <copper:ShieldingType rdf:ID="STP">
+    <rdfs:label xml:lang="en">STP</rdfs:label>
+    <rdfs:comment xml:lang="en">Shielded Twisted Pair. STP cabling includes metal shielding over each individual pair of copper wires.</rdfs:comment>
+  </copper:ShieldingType>
+  <copper:CableCategory rdf:ID="Cat5e">
+    <rdfs:label xml:lang="en">Cat5e</rdfs:label>
+    <rdfs:comment xml:lang="en">Category 5e cable is defined in TIA/EIA-568-B. Provides performance of up to 100 MHz, and is frequently used for both 100 Mbit/s and gigabit ethernet networks.</rdfs:comment>
+  </copper:CableCategory>
+  <copper:ConnectorType rdf:ID="RJ11">
+    <rdfs:comment xml:lang="en">Male RJ-11 connector.</rdfs:comment>
+    <rdfs:label xml:lang="en">RJ11</rdfs:label>
+  </copper:ConnectorType>
+  <copper:CableCategory rdf:ID="Cat6">
+    <rdfs:comment xml:lang="en">Category 6 cable: defined in TIA/EIA-568-B. It provides performance of up to 250 MHz, more than double category 5 and 5e.</rdfs:comment>
+    <rdfs:label xml:lang="en">Cat6</rdfs:label>
+  </copper:CableCategory>
+  <copper:ShieldingType rdf:ID="S-UTP">
+    <rdfs:comment xml:lang="en">Screened Unshielded Twisted Pair. S/UTP, also known as Fully shielded (or Foiled) Twisted Pair (FTP), is a screened UTP cable: the entire group of twisted pair is protected by a single copper shield.</rdfs:comment>
+    <rdfs:label xml:lang="en">S/UTP</rdfs:label>
+  </copper:ShieldingType>
+  <copper:CableCategory rdf:ID="Cat6a">
+    <rdfs:label xml:lang="en">Cat6a</rdfs:label>
+    <rdfs:comment xml:lang="en">Category 6a cable: Future specification for 10 Gbit/s applications.</rdfs:comment>
+  </copper:CableCategory>
+</rdf:RDF>
+
+<!-- Created with TopBraid -->

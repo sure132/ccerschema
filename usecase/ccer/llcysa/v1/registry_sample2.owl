@@ -1,0 +1,613 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY time-entry "http://www.w3.org/2006/time-entry#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY domain "http://ll.mit.edu/2012/09/registry_sample2.owl#domain:" >
+    <!ENTITY dst_ipv4 "http://ll.mit.edu/2012/09/registry_sample2.owl#dst_ipv4:" >
+    <!ENTITY src_ipv4 "http://ll.mit.edu/2012/09/registry_sample2.owl#src_ipv4:" >
+    <!ENTITY rec_time "http://ll.mit.edu/2012/09/registry_sample2.owl#rec_time:" >
+    <!ENTITY req_fqdn "http://ll.mit.edu/2012/09/registry_sample2.owl#req_fqdn:" >
+    <!ENTITY timeStart "http://ll.mit.edu/2012/09/registry_sample2.owl#timeStart:" >
+    <!ENTITY req_domain "http://ll.mit.edu/2012/09/registry_sample2.owl#req_domain:" >
+    <!ENTITY taggingscheme "http://ll.mit.edu/2012/ccer/domain/ccer/event/v1/taggingscheme.rdf#" >
+    <!ENTITY cysa_registry "http://ll.mit.edu/2012/ccer/domain/ccer/event/v1/cysa_registry.owl#" >
+    <!ENTITY registry_sample23 "http://ll.mit.edu/2012/09/registry_sample2.owl#2012-01-20-14-40-13.55" >
+    <!ENTITY registry_sample22 "http://ll.mit.edu/2012/09/registry_sample2.owl#2012-01-20-14-42-13.55" >
+    <!ENTITY registry_sample2 "http://ll.mit.edu/2012/09/registry_sample2.owl#2012-01-20-14-25-13.55" >
+    <!ENTITY registry_sample24 "http://ll.mit.edu/2012/09/registry_sample2.owl#2012-01-20-14-45-13.55" >
+]>
+
+
+<rdf:RDF xmlns="http://ll.mit.edu/2012/09/registry_sample2.owl#"
+     xml:base="http://ll.mit.edu/2012/09/registry_sample2.owl"
+     xmlns:dst_ipv4="http://ll.mit.edu/2012/09/registry_sample2.owl#dst_ipv4:"
+     xmlns:req_fqdn="http://ll.mit.edu/2012/09/registry_sample2.owl#req_fqdn:"
+     xmlns:rec_time="http://ll.mit.edu/2012/09/registry_sample2.owl#rec_time:"
+     xmlns:req_domain="http://ll.mit.edu/2012/09/registry_sample2.owl#req_domain:"
+     xmlns:registry_sample23="http://ll.mit.edu/2012/09/registry_sample2.owl#2012-01-20-14-40-13.55"
+     xmlns:registry_sample22="http://ll.mit.edu/2012/09/registry_sample2.owl#2012-01-20-14-42-13.55"
+     xmlns:registry_sample24="http://ll.mit.edu/2012/09/registry_sample2.owl#2012-01-20-14-45-13.55"
+     xmlns:src_ipv4="http://ll.mit.edu/2012/09/registry_sample2.owl#src_ipv4:"
+     xmlns:time-entry="http://www.w3.org/2006/time-entry#"
+     xmlns:cysa_registry="http://ll.mit.edu/2012/ccer/domain/ccer/event/v1/cysa_registry.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:timeStart="http://ll.mit.edu/2012/09/registry_sample2.owl#timeStart:"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:domain="http://ll.mit.edu/2012/09/registry_sample2.owl#domain:"
+     xmlns:registry_sample2="http://ll.mit.edu/2012/09/registry_sample2.owl#2012-01-20-14-25-13.55"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:taggingscheme="http://ll.mit.edu/2012/ccer/domain/ccer/event/v1/taggingscheme.rdf#">
+    <owl:Ontology rdf:about="http://ll.mit.edu/2012/09/registry_sample2.owl">
+        <owl:imports rdf:resource="http://ll.mit.edu/2012/ccer/domain/ccer/event/v1/cysa_registry.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/event/v1/taggingscheme.rdf#TagScheme -->
+
+    <owl:Class rdf:about="&taggingscheme;TagScheme"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/registry_sample2.owl#2012-01-20-14-25-13.55Z -->
+
+    <owl:NamedIndividual rdf:about="&registry_sample2;Z"/>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/registry_sample2.owl#2012-01-20-14-40-13.55Z -->
+
+    <owl:NamedIndividual rdf:about="&registry_sample23;Z"/>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/registry_sample2.owl#2012-01-20-14-42-13.55Z -->
+
+    <owl:NamedIndividual rdf:about="&registry_sample22;Z"/>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/registry_sample2.owl#2012-01-20-14-45-13.55Z -->
+
+    <owl:NamedIndividual rdf:about="&registry_sample24;Z"/>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/registry_sample2.owl#DNSGlean-May-2012 -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/09/registry_sample2.owl#DNSGlean-May-2012">
+        <rdf:type rdf:resource="&cysa_registry;DataSource"/>
+        <cysa_registry:createTime>2011-08-20Z</cysa_registry:createTime>
+        <cysa_registry:bufferPeriod rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#P15M"/>
+        <cysa_registry:expectedCollectionDelay rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#P5M"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/registry_sample2.owl#DateTimeSeconds2Instant -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/09/registry_sample2.owl#DateTimeSeconds2Instant">
+        <rdf:type rdf:resource="&cysa_registry;NativeDimension"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/registry_sample2.owl#DateTimeSeconds2Interval -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/09/registry_sample2.owl#DateTimeSeconds2Interval">
+        <rdf:type rdf:resource="&cysa_registry;NativeDimension"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/registry_sample2.owl#Destination -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/09/registry_sample2.owl#Destination">
+        <rdf:type rdf:resource="&cysa_registry;NativeTag"/>
+        <cysa_registry:hasTagScheme rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#Lincoln"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/registry_sample2.owl#Domain -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/09/registry_sample2.owl#Domain">
+        <rdf:type rdf:resource="&cysa_registry;NativeDimension"/>
+        <cysa_registry:hasPersistedField rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#req_domain"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/registry_sample2.owl#DomainLookup -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/09/registry_sample2.owl#DomainLookup">
+        <rdf:type rdf:resource="&cysa_registry;NativeDerivedEvent"/>
+        <cysa_registry:eventFieldDimensions>src_ipv4:DomainRequestEventTableSchema, IPAddress;
+timeStart: DomainRequestEventTableSchema,DateTimeSeconds2Instant;
+domain: DomainRequestEventTableSchema,Domain;
+req_fqdn:WebWasherEventTableSchema,FQDN;
+dst_ipv4:WebWasherEventTableSchema,IPAddress;</cysa_registry:eventFieldDimensions>
+        <cysa_registry:hasNativeDimension rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#DateTimeSeconds2Instant"/>
+        <cysa_registry:hasNativeDimension rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#Domain"/>
+        <cysa_registry:derivedFromEvent rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#DomainRequest"/>
+        <cysa_registry:hasNativeDimension rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#FQDN"/>
+        <cysa_registry:hasNativeOperator rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#IDENTITY"/>
+        <cysa_registry:hasNativeDimension rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#IPAddress"/>
+        <cysa_registry:derivedFromEvent rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#ProxyEvent"/>
+        <cysa_registry:hasNativeOperator rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#SELECT"/>
+        <cysa_registry:hasPersistedField rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#domain"/>
+        <cysa_registry:hasPersistedField rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#dst_ipv4"/>
+        <cysa_registry:hasPersistedField rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#req_fqdn"/>
+        <cysa_registry:hasPersistedField rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#src_ipv4"/>
+        <cysa_registry:hasPersistedField rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#timeStart"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/registry_sample2.owl#DomainRequest -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/09/registry_sample2.owl#DomainRequest">
+        <rdf:type rdf:resource="&cysa_registry;NativeCapturedEvent"/>
+        <cysa_registry:eventFieldDimensions>src_ipv4:DomainRequestEventTableSchema, IPAddress;
+timeStart: DomainRequestEventTableSchema, DateTimeSeconds2Instant;
+domain: DomainRequestEventTableSchema, Domain;</cysa_registry:eventFieldDimensions>
+        <cysa_registry:hasNativeDimension rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#DateTimeSeconds2Instant"/>
+        <cysa_registry:hasNativeDimension rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#Domain"/>
+        <cysa_registry:inEventTableSchema rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#DomainRequestEventTableSchema"/>
+        <cysa_registry:hasNativeDimension rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#IPAddress"/>
+        <cysa_registry:hasNativeOperator rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#SELECT"/>
+        <cysa_registry:hasPersistedField rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#domain"/>
+        <cysa_registry:hasPersistedField rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#src_ipv4"/>
+        <cysa_registry:hasPersistedField rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#timeStart"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/registry_sample2.owl#DomainRequestEventTableSchema -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/09/registry_sample2.owl#DomainRequestEventTableSchema">
+        <rdf:type rdf:resource="&cysa_registry;EventTableSchema"/>
+        <cysa_registry:createTime>2012-01-20-14-25-13.55Z</cysa_registry:createTime>
+        <cysa_registry:deleteTime>00Z</cysa_registry:deleteTime>
+        <cysa_registry:hasLivePersistedField rdf:resource="&domain;DNSGlean-May-2012"/>
+        <cysa_registry:hasPersistedFieldSecondaryIndex rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#domain_src_ipv4"/>
+        <cysa_registry:hasNativeFilter rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#identityFunction4DomainRequest"/>
+        <cysa_registry:hasNativeFilter rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#selectFunction"/>
+        <cysa_registry:hasLivePersistedField rdf:resource="&src_ipv4;DNSGlean-May-2012"/>
+        <cysa_registry:hasLivePersistedField rdf:resource="&timeStart;DNSGlean-May-2012"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/registry_sample2.owl#EventDNSGleanCollection1 -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/09/registry_sample2.owl#EventDNSGleanCollection1">
+        <rdf:type rdf:resource="&cysa_registry;EventCollection"/>
+        <cysa_registry:fromDataSource rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#DNSGlean-May-2012"/>
+        <cysa_registry:hasNativeEvent rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#DomainRequest"/>
+        <cysa_registry:inEventTableSchema rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#DomainRequestEventTableSchema"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/registry_sample2.owl#EventDNSGleanCollection2 -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/09/registry_sample2.owl#EventDNSGleanCollection2">
+        <rdf:type rdf:resource="&cysa_registry;EventCollection"/>
+        <cysa_registry:fromDataSource rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#DNSGlean-May-2012"/>
+        <cysa_registry:hasNativeEvent rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#DomainRequest"/>
+        <cysa_registry:inEventTableSchema rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#DomainRequestEventTableSchema"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/registry_sample2.owl#EventProxyCollection1 -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/09/registry_sample2.owl#EventProxyCollection1">
+        <rdf:type rdf:resource="&cysa_registry;EventCollection"/>
+        <cysa_registry:collectionInterval>P15M</cysa_registry:collectionInterval>
+        <cysa_registry:sizeOfRecord>512</cysa_registry:sizeOfRecord>
+        <cysa_registry:serialNumber>1</cysa_registry:serialNumber>
+        <cysa_registry:size>200</cysa_registry:size>
+        <time-entry:begins rdf:resource="&registry_sample2;Z"/>
+        <time-entry:ends rdf:resource="&registry_sample23;Z"/>
+        <cysa_registry:collectionTime rdf:resource="&registry_sample22;Z"/>
+        <cysa_registry:ingestionTime rdf:resource="&registry_sample24;Z"/>
+        <cysa_registry:collectionDelay rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#P3M"/>
+        <cysa_registry:hasNativeEvent rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#ProxyEvent"/>
+        <cysa_registry:inEventTableSchema rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#WebWasherEventTableSchema"/>
+        <cysa_registry:fromDataSource rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#Webwasher-main"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/registry_sample2.owl#EventProxyCollection2 -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/09/registry_sample2.owl#EventProxyCollection2">
+        <rdf:type rdf:resource="&cysa_registry;EventCollection"/>
+        <cysa_registry:hasNativeEvent rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#ProxyEvent"/>
+        <cysa_registry:inEventTableSchema rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#WebWasherEventTableSchema"/>
+        <cysa_registry:fromDataSource rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#Webwasher-main"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/registry_sample2.owl#External -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/09/registry_sample2.owl#External">
+        <rdf:type rdf:resource="&cysa_registry;NativeTag"/>
+        <cysa_registry:hasTagScheme rdf:resource="&taggingscheme;default"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/registry_sample2.owl#FQDN -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/09/registry_sample2.owl#FQDN">
+        <rdf:type rdf:resource="&cysa_registry;NativeDimension"/>
+        <cysa_registry:hasNativeEvent rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#DomainLookup"/>
+        <cysa_registry:hasNativeEvent rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#DomainRequest"/>
+        <cysa_registry:hasNativeTag rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#External"/>
+        <cysa_registry:hasNativeTag rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#Internal"/>
+        <cysa_registry:hasPersistedField rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#req_fqdn"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/registry_sample2.owl#IDENTITY -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/09/registry_sample2.owl#IDENTITY">
+        <rdf:type rdf:resource="&cysa_registry;NativeOperator"/>
+        <cysa_registry:inEventTableSchema rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#WebWasherEventTableSchema"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/registry_sample2.owl#IPAddress -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/09/registry_sample2.owl#IPAddress">
+        <rdf:type rdf:resource="&cysa_registry;NativeDimension"/>
+        <cysa_registry:hasNativeTag rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#Destination"/>
+        <cysa_registry:hasNativeEvent rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#DomainLookup"/>
+        <cysa_registry:hasNativeEvent rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#DomainRequest"/>
+        <cysa_registry:hasNativeEvent rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#ProxyEvent"/>
+        <cysa_registry:hasNativeTag rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#Source"/>
+        <cysa_registry:hasPersistedField rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#dst_ipv4"/>
+        <cysa_registry:hasPersistedField rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#src_ipv4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/registry_sample2.owl#Internal -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/09/registry_sample2.owl#Internal">
+        <rdf:type rdf:resource="&cysa_registry;NativeTag"/>
+        <cysa_registry:hasTagScheme rdf:resource="&taggingscheme;default"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/registry_sample2.owl#Lincoln -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/09/registry_sample2.owl#Lincoln">
+        <rdf:type rdf:resource="&taggingscheme;TagScheme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/registry_sample2.owl#P15M -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/09/registry_sample2.owl#P15M"/>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/registry_sample2.owl#P3M -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/09/registry_sample2.owl#P3M"/>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/registry_sample2.owl#P5M -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/09/registry_sample2.owl#P5M"/>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/registry_sample2.owl#ProxyEvent -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/09/registry_sample2.owl#ProxyEvent">
+        <rdf:type rdf:resource="&cysa_registry;NativeCapturedEvent"/>
+        <cysa_registry:eventFieldDimensions>src_ipv4:WebWasherEventTableSchema,  IPAddress;
+dst_ipv4:WebWasherEventTableSchema, IPAddress,
+rec_time:WebWasherEventTableSchema, DateTimeSecond2Instant,
+req_domain:WebWasherEventTableSchema , Domain,
+req_fqdn:WebWasherEventTableSchema , FQDN
+</cysa_registry:eventFieldDimensions>
+        <cysa_registry:hasNativeDimension rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#DateTimeSeconds2Instant"/>
+        <cysa_registry:hasNativeDimension rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#Domain"/>
+        <cysa_registry:hasNativeDimension rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#FQDN"/>
+        <cysa_registry:hasNativeOperator rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#IDENTITY"/>
+        <cysa_registry:hasNativeDimension rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#IPAddress"/>
+        <cysa_registry:hasNativeOperator rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#SELECT"/>
+        <cysa_registry:hasPersistedField rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#dst_ipv4"/>
+        <cysa_registry:hasPersistedField rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#rec_time"/>
+        <cysa_registry:hasPersistedField rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#req_domain"/>
+        <cysa_registry:hasPersistedField rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#req_fqdn"/>
+        <cysa_registry:hasPersistedField rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#src_ipv4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/registry_sample2.owl#SELECT -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/09/registry_sample2.owl#SELECT">
+        <rdf:type rdf:resource="&cysa_registry;NativeOperator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/registry_sample2.owl#Source -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/09/registry_sample2.owl#Source">
+        <rdf:type rdf:resource="&cysa_registry;NativeTag"/>
+        <cysa_registry:hasTagScheme rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#Lincoln"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/registry_sample2.owl#WebWasherEventTableSchema -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/09/registry_sample2.owl#WebWasherEventTableSchema">
+        <rdf:type rdf:resource="&cysa_registry;EventTableSchema"/>
+        <cysa_registry:deleteTime>00Z</cysa_registry:deleteTime>
+        <cysa_registry:createTime>2012-01-20-14-25-11.04Z</cysa_registry:createTime>
+        <cysa_registry:peristedFields>src_ipv4,dst_ipv4,req_domain
+</cysa_registry:peristedFields>
+        <cysa_registry:hasLivePersistedField rdf:resource="&dst_ipv4;Webwasher-main"/>
+        <cysa_registry:hasNativeFilter rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#identityFunction"/>
+        <cysa_registry:hasLivePersistedField rdf:resource="&rec_time;Webwasher-main"/>
+        <cysa_registry:hasLivePersistedField rdf:resource="&req_domain;Webwasher-main"/>
+        <cysa_registry:hasLivePersistedField rdf:resource="&req_fqdn;Webwasher-main"/>
+        <cysa_registry:hasNativeFilter rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#selectFunction"/>
+        <cysa_registry:hasLivePersistedField rdf:resource="&src_ipv4;Webwasher-main"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/registry_sample2.owl#Webwasher-main -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/09/registry_sample2.owl#Webwasher-main">
+        <rdf:type rdf:resource="&cysa_registry;DataSource"/>
+        <cysa_registry:bufferPeriod rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#P15M"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/registry_sample2.owl#domain -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/09/registry_sample2.owl#domain">
+        <rdf:type rdf:resource="&cysa_registry;PersistedField"/>
+        <cysa_registry:hasLivePersistedField rdf:resource="&domain;DNSGlean-May-2012"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/registry_sample2.owl#domain:DNSGlean-May-2012 -->
+
+    <owl:NamedIndividual rdf:about="&domain;DNSGlean-May-2012">
+        <rdf:type rdf:resource="&cysa_registry;LivePersistedField"/>
+        <cysa_registry:hasPersistedField rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#domain"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/registry_sample2.owl#domain_src_ipv4 -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/09/registry_sample2.owl#domain_src_ipv4">
+        <rdf:type rdf:resource="&cysa_registry;PersistedFieldSecondaryIndex"/>
+        <cysa_registry:secondaryIndexValueRanges>[198.168.1.1-198.168.1.255],[172.12.1.16-172.12.1.255]</cysa_registry:secondaryIndexValueRanges>
+        <cysa_registry:hasPrimaryIndex rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#domain"/>
+        <cysa_registry:hasSecondaryIndex rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#src_ipv4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/registry_sample2.owl#dst_ipv4 -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/09/registry_sample2.owl#dst_ipv4">
+        <rdf:type rdf:resource="&cysa_registry;PersistedField"/>
+        <cysa_registry:hasLivePersistedField rdf:resource="&dst_ipv4;Webwasher-main"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/registry_sample2.owl#dst_ipv4:Webwasher-main -->
+
+    <owl:NamedIndividual rdf:about="&dst_ipv4;Webwasher-main">
+        <rdf:type rdf:resource="&cysa_registry;LivePersistedField"/>
+        <cysa_registry:hasPersistedField rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#dst_ipv4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/registry_sample2.owl#fqdn -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/09/registry_sample2.owl#fqdn">
+        <rdf:type rdf:resource="&cysa_registry;PersistedField"/>
+        <cysa_registry:fromDataSource rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#DNSGlean-May-2012"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/registry_sample2.owl#identityFunction -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/09/registry_sample2.owl#identityFunction">
+        <rdf:type rdf:resource="&cysa_registry;NativeFilter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/registry_sample2.owl#identityFunction4DomainRequest -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/09/registry_sample2.owl#identityFunction4DomainRequest">
+        <rdf:type rdf:resource="&cysa_registry;NativeFilter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/registry_sample2.owl#rec_time -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/09/registry_sample2.owl#rec_time">
+        <rdf:type rdf:resource="&cysa_registry;PersistedField"/>
+        <cysa_registry:hasLivePersistedField rdf:resource="&rec_time;Webwasher-main"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/registry_sample2.owl#rec_time:Webwasher-main -->
+
+    <owl:NamedIndividual rdf:about="&rec_time;Webwasher-main">
+        <rdf:type rdf:resource="&cysa_registry;LivePersistedField"/>
+        <cysa_registry:hasPersistedField rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#rec_time"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/registry_sample2.owl#req_domain -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/09/registry_sample2.owl#req_domain">
+        <rdf:type rdf:resource="&cysa_registry;PersistedField"/>
+        <cysa_registry:hasLivePersistedField rdf:resource="&req_domain;Webwasher-main"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/registry_sample2.owl#req_domain:Webwasher-main -->
+
+    <owl:NamedIndividual rdf:about="&req_domain;Webwasher-main">
+        <rdf:type rdf:resource="&cysa_registry;LivePersistedField"/>
+        <cysa_registry:hasPersistedField rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#req_domain"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/registry_sample2.owl#req_fqdn -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/09/registry_sample2.owl#req_fqdn">
+        <rdf:type rdf:resource="&cysa_registry;PersistedField"/>
+        <cysa_registry:hasLivePersistedField rdf:resource="&req_fqdn;Webwasher-main"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/registry_sample2.owl#req_fqdn:Webwasher-main -->
+
+    <owl:NamedIndividual rdf:about="&req_fqdn;Webwasher-main">
+        <rdf:type rdf:resource="&cysa_registry;LivePersistedField"/>
+        <cysa_registry:hasPersistedField rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#req_fqdn"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/registry_sample2.owl#selectFunction -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/09/registry_sample2.owl#selectFunction">
+        <rdf:type rdf:resource="&cysa_registry;NativeFilter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/registry_sample2.owl#src_ipv4 -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/09/registry_sample2.owl#src_ipv4">
+        <rdf:type rdf:resource="&cysa_registry;PersistedField"/>
+        <cysa_registry:hasLivePersistedField rdf:resource="&src_ipv4;DNSGlean-May-2012"/>
+        <cysa_registry:hasLivePersistedField rdf:resource="&src_ipv4;Webwasher-main"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/registry_sample2.owl#src_ipv4:DNSGlean-May-2012 -->
+
+    <owl:NamedIndividual rdf:about="&src_ipv4;DNSGlean-May-2012">
+        <rdf:type rdf:resource="&cysa_registry;LivePersistedField"/>
+        <cysa_registry:hasPersistedField rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#src_ipv4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/registry_sample2.owl#src_ipv4:Webwasher-main -->
+
+    <owl:NamedIndividual rdf:about="&src_ipv4;Webwasher-main">
+        <rdf:type rdf:resource="&cysa_registry;LivePersistedField"/>
+        <cysa_registry:hasPersistedField rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#src_ipv4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/registry_sample2.owl#timeStart -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/09/registry_sample2.owl#timeStart">
+        <rdf:type rdf:resource="&cysa_registry;PersistedField"/>
+        <cysa_registry:fromDataSource rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#DNSGlean-May-2012"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/registry_sample2.owl#timeStart:DNSGlean-May-2012 -->
+
+    <owl:NamedIndividual rdf:about="&timeStart;DNSGlean-May-2012">
+        <rdf:type rdf:resource="&cysa_registry;LivePersistedField"/>
+        <cysa_registry:hasPersistedField rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl#timeStart"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/event/v1/taggingscheme.rdf#default -->
+
+    <owl:NamedIndividual rdf:about="&taggingscheme;default"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.2.1789) http://owlapi.sourceforge.net -->
+

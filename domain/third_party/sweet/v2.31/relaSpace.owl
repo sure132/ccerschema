@@ -1,0 +1,417 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY srela "http://sweet.jpl.nasa.gov/2.3/relaSpace.owl" >
+    <!ENTITY relaSpace "http://sweet.jpl.nasa.gov/2.3/relaSpace.owl#" >
+    <!ENTITY dir "http://sweet.jpl.nasa.gov/2.3/propSpaceDirection.owl" >
+    <!ENTITY propSpaceDirection "http://sweet.jpl.nasa.gov/2.3/propSpaceDirection.owl#" >
+]>
+
+
+<rdf:RDF xmlns="&srela;#"
+     xml:base="http://sweet.jpl.nasa.gov/2.3/relaSpace.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:dir="http://sweet.jpl.nasa.gov/2.3/propSpaceDirection.owl"
+     xmlns:propSpaceDirection="&dir;#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:relaSpace="&srela;#"
+     xmlns:srela="http://sweet.jpl.nasa.gov/2.3/relaSpace.owl">
+    <owl:Ontology rdf:about="http://sweet.jpl.nasa.gov/2.3/relaSpace.owl">
+        <rdfs:label>SWEET Ontology</rdfs:label>
+        <owl:versionInfo>2.3</owl:versionInfo>
+        <owl:imports rdf:resource="http://sweet.jpl.nasa.gov/2.3/propSpaceDirection.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/relaSpace.owl#above -->
+
+    <owl:ObjectProperty rdf:about="&srela;#above">
+        <rdfs:subPropertyOf rdf:resource="&srela;#spatialRelation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/relaSpace.owl#across -->
+
+    <owl:ObjectProperty rdf:about="&srela;#across">
+        <rdfs:subPropertyOf rdf:resource="&srela;#spatialRelation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/relaSpace.owl#below -->
+
+    <owl:ObjectProperty rdf:about="&srela;#below">
+        <owl:inverseOf rdf:resource="&srela;#above"/>
+        <rdfs:subPropertyOf rdf:resource="&srela;#spatialRelation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/relaSpace.owl#east -->
+
+    <owl:ObjectProperty rdf:about="&srela;#east">
+        <rdfs:subPropertyOf rdf:resource="&srela;#spatialRelation"/>
+        <owl:inverseOf rdf:resource="&srela;#west"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/relaSpace.owl#exterior -->
+
+    <owl:ObjectProperty rdf:about="&srela;#exterior">
+        <owl:equivalentProperty rdf:resource="&srela;#outside"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/relaSpace.owl#hasAverageDepth -->
+
+    <owl:ObjectProperty rdf:about="&srela;#hasAverageDepth">
+        <rdfs:subPropertyOf rdf:resource="&srela;#hasDepth"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/relaSpace.owl#hasAxis -->
+
+    <owl:ObjectProperty rdf:about="&srela;#hasAxis">
+        <rdfs:range rdf:resource="&dir;#Axis"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/relaSpace.owl#hasBoundary -->
+
+    <owl:ObjectProperty rdf:about="&srela;#hasBoundary"/>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/relaSpace.owl#hasCenter -->
+
+    <owl:ObjectProperty rdf:about="&srela;#hasCenter">
+        <rdfs:subPropertyOf rdf:resource="&srela;#hasLocation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/relaSpace.owl#hasCommon2DBorderWith -->
+
+    <owl:ObjectProperty rdf:about="&srela;#hasCommon2DBorderWith">
+        <rdfs:subPropertyOf rdf:resource="&srela;#hasBoundary"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/relaSpace.owl#hasDepth -->
+
+    <owl:ObjectProperty rdf:about="&srela;#hasDepth"/>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/relaSpace.owl#hasDirection -->
+
+    <owl:ObjectProperty rdf:about="&srela;#hasDirection">
+        <rdfs:range rdf:resource="&dir;#Direction"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/relaSpace.owl#hasHeight -->
+
+    <owl:ObjectProperty rdf:about="&srela;#hasHeight">
+        <rdfs:subPropertyOf rdf:resource="&srela;#hasLength"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/relaSpace.owl#hasLength -->
+
+    <owl:ObjectProperty rdf:about="&srela;#hasLength"/>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/relaSpace.owl#hasLocation -->
+
+    <owl:ObjectProperty rdf:about="&srela;#hasLocation"/>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/relaSpace.owl#hasLowerBoundary -->
+
+    <owl:ObjectProperty rdf:about="&srela;#hasLowerBoundary">
+        <rdfs:subPropertyOf rdf:resource="&srela;#hasBoundary"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/relaSpace.owl#hasMaximumDepth -->
+
+    <owl:ObjectProperty rdf:about="&srela;#hasMaximumDepth">
+        <rdfs:subPropertyOf rdf:resource="&srela;#hasDepth"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/relaSpace.owl#hasNormal -->
+
+    <owl:ObjectProperty rdf:about="&srela;#hasNormal">
+        <rdfs:range rdf:resource="&dir;#Direction"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/relaSpace.owl#hasOuterBoundary -->
+
+    <owl:ObjectProperty rdf:about="&srela;#hasOuterBoundary">
+        <rdfs:subPropertyOf rdf:resource="&srela;#hasBoundary"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/relaSpace.owl#hasReferenceDepth -->
+
+    <owl:ObjectProperty rdf:about="&srela;#hasReferenceDepth">
+        <rdfs:subPropertyOf rdf:resource="&srela;#hasDepth"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/relaSpace.owl#hasUpperBoundary -->
+
+    <owl:ObjectProperty rdf:about="&srela;#hasUpperBoundary">
+        <rdfs:subPropertyOf rdf:resource="&srela;#hasBoundary"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/relaSpace.owl#hasWidth -->
+
+    <owl:ObjectProperty rdf:about="&srela;#hasWidth">
+        <rdfs:subPropertyOf rdf:resource="&srela;#hasLength"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/relaSpace.owl#inside -->
+
+    <owl:ObjectProperty rdf:about="&srela;#inside">
+        <owl:equivalentProperty rdf:resource="&srela;#interior"/>
+        <rdfs:subPropertyOf rdf:resource="&srela;#spatialRelation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/relaSpace.owl#interior -->
+
+    <owl:ObjectProperty rdf:about="&srela;#interior"/>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/relaSpace.owl#near -->
+
+    <owl:ObjectProperty rdf:about="&srela;#near">
+        <rdfs:subPropertyOf rdf:resource="&srela;#spatialRelation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/relaSpace.owl#nonoverlapping -->
+
+    <owl:ObjectProperty rdf:about="&srela;#nonoverlapping">
+        <rdfs:subPropertyOf rdf:resource="&srela;#spatialRelation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/relaSpace.owl#north -->
+
+    <owl:ObjectProperty rdf:about="&srela;#north">
+        <owl:inverseOf rdf:resource="&srela;#south"/>
+        <rdfs:subPropertyOf rdf:resource="&srela;#spatialRelation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/relaSpace.owl#outside -->
+
+    <owl:ObjectProperty rdf:about="&srela;#outside">
+        <rdfs:subPropertyOf rdf:resource="&srela;#spatialRelation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/relaSpace.owl#overlapping -->
+
+    <owl:ObjectProperty rdf:about="&srela;#overlapping">
+        <owl:equivalentProperty rdf:resource="&srela;#overlaps"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/relaSpace.owl#overlaps -->
+
+    <owl:ObjectProperty rdf:about="&srela;#overlaps">
+        <rdfs:subPropertyOf rdf:resource="&srela;#spatialRelation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/relaSpace.owl#semiMajorAxis -->
+
+    <owl:ObjectProperty rdf:about="&srela;#semiMajorAxis">
+        <rdfs:subPropertyOf rdf:resource="&srela;#hasLength"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/relaSpace.owl#semiMinorAxis -->
+
+    <owl:ObjectProperty rdf:about="&srela;#semiMinorAxis">
+        <rdfs:subPropertyOf rdf:resource="&srela;#hasLength"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/relaSpace.owl#separatedFrom -->
+
+    <owl:ObjectProperty rdf:about="&srela;#separatedFrom">
+        <rdfs:subPropertyOf rdf:resource="&srela;#spatialRelation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/relaSpace.owl#south -->
+
+    <owl:ObjectProperty rdf:about="&srela;#south">
+        <rdfs:subPropertyOf rdf:resource="&srela;#spatialRelation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/relaSpace.owl#spatialRelation -->
+
+    <owl:ObjectProperty rdf:about="&srela;#spatialRelation"/>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/relaSpace.owl#spatialSubset -->
+
+    <owl:ObjectProperty rdf:about="&srela;#spatialSubset">
+        <rdfs:subPropertyOf rdf:resource="&srela;#spatialRelation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/relaSpace.owl#spatialSuperset -->
+
+    <owl:ObjectProperty rdf:about="&srela;#spatialSuperset">
+        <rdfs:subPropertyOf rdf:resource="&srela;#spatialRelation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/relaSpace.owl#surroundedBy -->
+
+    <owl:ObjectProperty rdf:about="&srela;#surroundedBy">
+        <rdfs:subPropertyOf rdf:resource="&srela;#spatialSuperset"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/relaSpace.owl#under -->
+
+    <owl:ObjectProperty rdf:about="&srela;#under">
+        <rdfs:subPropertyOf rdf:resource="&srela;#below"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/relaSpace.owl#west -->
+
+    <owl:ObjectProperty rdf:about="&srela;#west">
+        <rdfs:subPropertyOf rdf:resource="&srela;#spatialRelation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/relaSpace.owl#flattening -->
+
+    <owl:DatatypeProperty rdf:about="&srela;#flattening">
+        <rdfs:range rdf:resource="&xsd;double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/propSpaceDirection.owl#Axis -->
+
+    <owl:Class rdf:about="&dir;#Axis"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.2.1789) http://owlapi.sourceforge.net -->
+

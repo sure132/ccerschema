@@ -1,0 +1,803 @@
+<rdf:RDF
+    xmlns:j.1="http://ll.mit.edu/2013/ccer/domain/ccer/os/v1/os.owl#"
+    xmlns:j.0="http://ll.mit.edu/2014/ccer/core/ccer/v1/base.owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:j.2="http://ll.mit.edu/2013/ccer/domain/ccer/host/v1/host.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:j.4="http://ll.mit.edu/2013/ccer/domain/ccer/services/v2/ADDS.owl#"
+    xmlns:j.3="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#"
+    xmlns:j.5="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/vlan.owl#"
+    xmlns:j.7="http://ll.mit.edu/2014/ccer/domain/ccer/services/v2/ProxyService.owl#"
+    xmlns:j.6="http://ll.mit.edu/2013/ccer/domain/ccer/host/v1/computer.owl#">
+ <owl:Ontology rdf:about="ccer:/“>
+    <owl:imports rdf:resource="http://ll.mit.edu/2014/ccer/core/ccer/v1/base.owl#"/>
+    <owl:imports rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#"/>
+    <owl:imports rdf:resource="http://ll.mit.edu/2014/ccer/domain/third_party/sweet/v2.31/visualShape.owl#"/>
+    <owl:imports rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/services/v2/DHCPService.owl#"/>
+    <owl:imports rdf:resource="http://ll.mit.edu/2014/ccer/domain/ccer/services/v2/FileService.owl#"/>
+    <owl:imports rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/k0ala/v1/k0alaService.owl#"/>
+    <owl:imports rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/services/v2/ContentService.owl#"/>
+    <owl:imports rdf:resource="http://ll.mit.edu/2014/ccer/domain/ccer/services/v2/ProxyService.owl#"/>
+    <owl:imports rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/services/v2/MailService.owl#"/>
+    <owl:imports rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/services/v2/DNSService.owl#"/>
+    <owl:imports rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/cyber_range.owl#"/>
+    <owl:imports rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/host/v1/computerGroup.owl#"/>
+    <owl:imports rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/os/v1/os.owl#"/>
+    <owl:imports rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/control_network.owl#"/>
+    <owl:imports rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/host/v1/computer.owl#"/>
+    <owl:imports rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/provenance/v1/ccer_provenance.owl#"/>
+    <owl:imports rdf:resource="http://purl.org/dc/terms/"/>
+    <owl:imports rdf:resource="http://ll.mit.edu/2012/ccer/domain/ccer/user_model/v1/ccer_account.owl#"/>
+    <owl:imports rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/instrumentation/v1/layer2_MAC_probe.owl#"/>
+    <owl:imports rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/instrumentation/v1/layer3_IP_probe.owl#"/>
+    <owl:imports rdf:resource="http://xmlns.com/foaf/0.1/"/>
+    <owl:imports rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/services/v2/ADDS.owl#"/>
+    <owl:imports rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/vlan.owl#"/>
+    <owl:imports rdf:resource="http://ll.mit.edu/2012/ccer/domain/ccer/user_model/v2/user_model.owl#"/>
+    <owl:imports rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/host/v1/control_computer.owl#"/>
+  </owl:Ontology>
+  <j.6:Computer rdf:about="ccer:C10.0.0.96_CCERID_0">
+    <j.0:ccerName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C10.0.0.96</j.0:ccerName>
+    <j.7:hasProxyURL rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.7:hasProxyURL>
+    <j.3:controlIPAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:controlIPAddress>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <j.3:dataSubnetMask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:dataSubnetMask>
+    <j.3:dataIPAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >10.0.0.96</j.3:dataIPAddress>
+    <j.5:VLANTag rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1</j.5:VLANTag>
+    <j.4:hasADDomain rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.4:hasADDomain>
+    <j.1:hasOperatingSystemLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.1:hasOperatingSystemLanguage>
+    <j.3:controlSubnetMask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:controlSubnetMask>
+    <j.3:defaultGateway rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >10.0.0.1</j.3:defaultGateway>
+    <j.2:hasSubnet>
+      <j.3:Subnet rdf:about="ccer:S10.0.0.1_CCERID_0">
+        <j.0:ccerName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >S10.0.0.1</j.0:ccerName>
+        <j.3:defaultGateway rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >10.0.0.1</j.3:defaultGateway>
+        <j.3:dataSubnetMask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >CCERNOTSPECIFIED</j.3:dataSubnetMask>
+        <j.6:hasDefaultRecipe rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >false</j.6:hasDefaultRecipe>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+      </j.3:Subnet>
+    </j.2:hasSubnet>
+  </j.6:Computer>
+  <j.6:Computer rdf:about="ccer:C10.3.1.128_CCERID_0">
+    <j.3:dataIPAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >10.3.1.128</j.3:dataIPAddress>
+    <j.4:hasADDomain rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.4:hasADDomain>
+    <j.3:dataSubnetMask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:dataSubnetMask>
+    <j.5:VLANTag rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1</j.5:VLANTag>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <j.1:hasOperatingSystemLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.1:hasOperatingSystemLanguage>
+    <j.7:hasProxyURL rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.7:hasProxyURL>
+    <j.3:controlIPAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:controlIPAddress>
+    <j.0:ccerName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C10.3.1.128</j.0:ccerName>
+    <j.3:defaultGateway rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >10.3.1.1</j.3:defaultGateway>
+    <j.3:controlSubnetMask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:controlSubnetMask>
+    <j.2:hasSubnet>
+      <j.3:Subnet rdf:about="ccer:S10.3.1.1_CCERID_0">
+        <j.0:ccerName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >S10.3.1.1</j.0:ccerName>
+        <j.3:defaultGateway rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >10.3.1.1</j.3:defaultGateway>
+        <j.3:dataSubnetMask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >CCERNOTSPECIFIED</j.3:dataSubnetMask>
+        <j.6:hasDefaultRecipe rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >false</j.6:hasDefaultRecipe>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+      </j.3:Subnet>
+    </j.2:hasSubnet>
+  </j.6:Computer>
+  <j.6:Computer rdf:about="ccer:C10.2.0.32_CCERID_0">
+    <j.3:defaultGateway rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >10.2.0.1</j.3:defaultGateway>
+    <j.3:controlSubnetMask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:controlSubnetMask>
+    <j.7:hasProxyURL rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.7:hasProxyURL>
+    <j.3:controlIPAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:controlIPAddress>
+    <j.3:dataIPAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >10.2.0.32</j.3:dataIPAddress>
+    <j.4:hasADDomain rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.4:hasADDomain>
+    <j.1:hasOperatingSystemLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.1:hasOperatingSystemLanguage>
+    <j.5:VLANTag rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1</j.5:VLANTag>
+    <j.0:ccerName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C10.2.0.32</j.0:ccerName>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <j.3:dataSubnetMask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:dataSubnetMask>
+    <j.2:hasSubnet>
+      <j.3:Subnet rdf:about="ccer:S10.2.0.1_CCERID_0">
+        <j.0:ccerName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >S10.2.0.1</j.0:ccerName>
+        <j.3:defaultGateway rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >10.2.0.1</j.3:defaultGateway>
+        <j.3:dataSubnetMask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >CCERNOTSPECIFIED</j.3:dataSubnetMask>
+        <j.6:hasDefaultRecipe rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >false</j.6:hasDefaultRecipe>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+      </j.3:Subnet>
+    </j.2:hasSubnet>
+  </j.6:Computer>
+  <owl:NamedIndividual rdf:about="ccer:C10.2.0.160_CCERID_0">
+    <j.2:hasSubnet rdf:resource="ccer:S10.2.0.1_CCERID_0"/>
+    <j.3:defaultGateway rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >10.2.0.1</j.3:defaultGateway>
+    <j.3:controlSubnetMask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:controlSubnetMask>
+    <j.0:ccerName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C10.2.0.160</j.0:ccerName>
+    <rdf:type rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/host/v1/computer.owl#Computer"/>
+    <j.5:VLANTag rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1</j.5:VLANTag>
+    <j.4:hasADDomain rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.4:hasADDomain>
+    <j.3:dataSubnetMask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:dataSubnetMask>
+    <j.7:hasProxyURL rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.7:hasProxyURL>
+    <j.3:controlIPAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:controlIPAddress>
+    <j.3:dataIPAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >10.2.0.160</j.3:dataIPAddress>
+    <j.1:hasOperatingSystemLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.1:hasOperatingSystemLanguage>
+  </owl:NamedIndividual>
+  <j.6:Computer rdf:about="ccer:C10.3.0.192_CCERID_0">
+    <j.0:ccerName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C10.3.0.192</j.0:ccerName>
+    <j.2:hasSubnet>
+      <j.3:Subnet rdf:about="ccer:S10.3.0.1_CCERID_0">
+        <j.0:ccerName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >S10.3.0.1</j.0:ccerName>
+        <j.3:defaultGateway rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >10.3.0.1</j.3:defaultGateway>
+        <j.3:dataSubnetMask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >CCERNOTSPECIFIED</j.3:dataSubnetMask>
+        <j.6:hasDefaultRecipe rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >false</j.6:hasDefaultRecipe>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+      </j.3:Subnet>
+    </j.2:hasSubnet>
+    <j.4:hasADDomain rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.4:hasADDomain>
+    <j.5:VLANTag rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1</j.5:VLANTag>
+    <j.3:defaultGateway rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >10.3.0.1</j.3:defaultGateway>
+    <j.3:dataIPAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >10.3.0.192</j.3:dataIPAddress>
+    <j.3:controlSubnetMask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:controlSubnetMask>
+    <j.3:controlIPAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:controlIPAddress>
+    <j.7:hasProxyURL rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.7:hasProxyURL>
+    <j.1:hasOperatingSystemLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.1:hasOperatingSystemLanguage>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <j.3:dataSubnetMask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:dataSubnetMask>
+  </j.6:Computer>
+  <j.6:Computer rdf:about="ccer:C10.3.1.192_CCERID_0">
+    <j.3:controlSubnetMask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:controlSubnetMask>
+    <j.3:controlIPAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:controlIPAddress>
+    <j.7:hasProxyURL rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.7:hasProxyURL>
+    <j.5:VLANTag rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1</j.5:VLANTag>
+    <j.3:defaultGateway rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >10.3.1.1</j.3:defaultGateway>
+    <j.4:hasADDomain rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.4:hasADDomain>
+    <j.0:ccerName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C10.3.1.192</j.0:ccerName>
+    <j.3:dataSubnetMask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:dataSubnetMask>
+    <j.3:dataIPAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >10.3.1.192</j.3:dataIPAddress>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <j.1:hasOperatingSystemLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.1:hasOperatingSystemLanguage>
+    <j.2:hasSubnet rdf:resource="ccer:S10.3.1.1_CCERID_0"/>
+  </j.6:Computer>
+  <owl:NamedIndividual rdf:about="ccer:C10.3.1.32_CCERID_0">
+    <j.3:controlIPAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:controlIPAddress>
+    <j.3:defaultGateway rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >10.3.1.1</j.3:defaultGateway>
+    <j.4:hasADDomain rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.4:hasADDomain>
+    <j.3:dataSubnetMask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:dataSubnetMask>
+    <j.3:dataIPAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >10.3.1.32</j.3:dataIPAddress>
+    <j.2:hasSubnet rdf:resource="ccer:S10.3.1.1_CCERID_0"/>
+    <j.5:VLANTag rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1</j.5:VLANTag>
+    <j.7:hasProxyURL rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.7:hasProxyURL>
+    <j.3:controlSubnetMask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:controlSubnetMask>
+    <j.0:ccerName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C10.3.1.32</j.0:ccerName>
+    <j.1:hasOperatingSystemLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.1:hasOperatingSystemLanguage>
+    <rdf:type rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/host/v1/computer.owl#Computer"/>
+  </owl:NamedIndividual>
+  <j.3:RouterInterface rdf:about="ccer:RI10.0.0.1_CCERID_0">
+    <j.0:ccerName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >RI10.0.0.1</j.0:ccerName>
+    <j.3:latency rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >0</j.3:latency>
+    <j.3:dataSubnetMask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:dataSubnetMask>
+    <j.3:dataIPAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >10.0.0.1</j.3:dataIPAddress>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </j.3:RouterInterface>
+  <owl:NamedIndividual rdf:about="ccer:C10.3.0.96_CCERID_0">
+    <j.4:hasADDomain rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.4:hasADDomain>
+    <j.3:controlIPAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:controlIPAddress>
+    <j.7:hasProxyURL rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.7:hasProxyURL>
+    <j.3:defaultGateway rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >10.3.0.1</j.3:defaultGateway>
+    <j.0:ccerName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C10.3.0.96</j.0:ccerName>
+    <j.5:VLANTag rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1</j.5:VLANTag>
+    <j.3:dataSubnetMask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:dataSubnetMask>
+    <j.2:hasSubnet rdf:resource="ccer:S10.3.0.1_CCERID_0"/>
+    <j.1:hasOperatingSystemLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.1:hasOperatingSystemLanguage>
+    <rdf:type rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/host/v1/computer.owl#Computer"/>
+    <j.3:controlSubnetMask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:controlSubnetMask>
+    <j.3:dataIPAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >10.3.0.96</j.3:dataIPAddress>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="ccer:C10.2.0.96_CCERID_0">
+    <j.3:dataSubnetMask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:dataSubnetMask>
+    <j.3:controlSubnetMask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:controlSubnetMask>
+    <j.7:hasProxyURL rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.7:hasProxyURL>
+    <j.0:ccerName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C10.2.0.96</j.0:ccerName>
+    <j.3:defaultGateway rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >10.2.0.1</j.3:defaultGateway>
+    <rdf:type rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/host/v1/computer.owl#Computer"/>
+    <j.4:hasADDomain rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.4:hasADDomain>
+    <j.5:VLANTag rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1</j.5:VLANTag>
+    <j.1:hasOperatingSystemLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.1:hasOperatingSystemLanguage>
+    <j.3:dataIPAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >10.2.0.96</j.3:dataIPAddress>
+    <j.2:hasSubnet rdf:resource="ccer:S10.2.0.1_CCERID_0"/>
+    <j.3:controlIPAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:controlIPAddress>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="ccer:C10.3.0.64_CCERID_0">
+    <j.4:hasADDomain rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.4:hasADDomain>
+    <j.2:hasSubnet rdf:resource="ccer:S10.3.0.1_CCERID_0"/>
+    <j.3:dataSubnetMask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:dataSubnetMask>
+    <j.5:VLANTag rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1</j.5:VLANTag>
+    <j.3:controlIPAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:controlIPAddress>
+    <j.7:hasProxyURL rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.7:hasProxyURL>
+    <j.1:hasOperatingSystemLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.1:hasOperatingSystemLanguage>
+    <j.3:defaultGateway rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >10.3.0.1</j.3:defaultGateway>
+    <rdf:type rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/host/v1/computer.owl#Computer"/>
+    <j.3:controlSubnetMask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:controlSubnetMask>
+    <j.3:dataIPAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >10.3.0.64</j.3:dataIPAddress>
+    <j.0:ccerName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C10.3.0.64</j.0:ccerName>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="ccer:C10.0.0.32_CCERID_0">
+    <j.2:hasSubnet rdf:resource="ccer:S10.0.0.1_CCERID_0"/>
+    <j.4:hasADDomain rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.4:hasADDomain>
+    <j.0:ccerName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C10.0.0.32</j.0:ccerName>
+    <j.3:controlSubnetMask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:controlSubnetMask>
+    <j.3:dataIPAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >10.0.0.32</j.3:dataIPAddress>
+    <j.7:hasProxyURL rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.7:hasProxyURL>
+    <j.3:controlIPAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:controlIPAddress>
+    <j.5:VLANTag rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1</j.5:VLANTag>
+    <j.3:defaultGateway rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >10.0.0.1</j.3:defaultGateway>
+    <j.1:hasOperatingSystemLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.1:hasOperatingSystemLanguage>
+    <rdf:type rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/host/v1/computer.owl#Computer"/>
+    <j.3:dataSubnetMask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:dataSubnetMask>
+  </owl:NamedIndividual>
+  <j.6:Computer rdf:about="ccer:C10.3.1.160_CCERID_0">
+    <j.4:hasADDomain rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.4:hasADDomain>
+    <j.3:dataSubnetMask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:dataSubnetMask>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <j.1:hasOperatingSystemLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.1:hasOperatingSystemLanguage>
+    <j.5:VLANTag rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1</j.5:VLANTag>
+    <j.0:ccerName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C10.3.1.160</j.0:ccerName>
+    <j.7:hasProxyURL rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.7:hasProxyURL>
+    <j.3:controlSubnetMask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:controlSubnetMask>
+    <j.3:defaultGateway rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >10.3.1.1</j.3:defaultGateway>
+    <j.3:controlIPAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:controlIPAddress>
+    <j.3:dataIPAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >10.3.1.160</j.3:dataIPAddress>
+    <j.2:hasSubnet rdf:resource="ccer:S10.3.1.1_CCERID_0"/>
+  </j.6:Computer>
+  <owl:NamedIndividual rdf:about="ccer:C10.0.0.64_CCERID_0">
+    <j.2:hasSubnet rdf:resource="ccer:S10.0.0.1_CCERID_0"/>
+    <j.4:hasADDomain rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.4:hasADDomain>
+    <j.3:controlSubnetMask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:controlSubnetMask>
+    <j.7:hasProxyURL rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.7:hasProxyURL>
+    <j.3:dataIPAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >10.0.0.64</j.3:dataIPAddress>
+    <j.3:controlIPAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:controlIPAddress>
+    <j.3:dataSubnetMask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:dataSubnetMask>
+    <j.5:VLANTag rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1</j.5:VLANTag>
+    <j.3:defaultGateway rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >10.0.0.1</j.3:defaultGateway>
+    <j.1:hasOperatingSystemLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.1:hasOperatingSystemLanguage>
+    <j.0:ccerName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C10.0.0.64</j.0:ccerName>
+    <rdf:type rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/host/v1/computer.owl#Computer"/>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="ccer:C10.3.1.64_CCERID_0">
+    <j.3:controlIPAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:controlIPAddress>
+    <j.7:hasProxyURL rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.7:hasProxyURL>
+    <j.3:dataIPAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >10.3.1.64</j.3:dataIPAddress>
+    <j.3:dataSubnetMask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:dataSubnetMask>
+    <j.0:ccerName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C10.3.1.64</j.0:ccerName>
+    <j.1:hasOperatingSystemLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.1:hasOperatingSystemLanguage>
+    <j.2:hasSubnet rdf:resource="ccer:S10.3.1.1_CCERID_0"/>
+    <j.5:VLANTag rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1</j.5:VLANTag>
+    <j.3:controlSubnetMask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:controlSubnetMask>
+    <j.4:hasADDomain rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.4:hasADDomain>
+    <rdf:type rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/host/v1/computer.owl#Computer"/>
+    <j.3:defaultGateway rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >10.3.1.1</j.3:defaultGateway>
+  </owl:NamedIndividual>
+  <j.6:Computer rdf:about="ccer:C10.0.0.224_CCERID_0">
+    <j.3:controlIPAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:controlIPAddress>
+    <j.5:VLANTag rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1</j.5:VLANTag>
+    <j.1:hasOperatingSystemLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.1:hasOperatingSystemLanguage>
+    <j.3:controlSubnetMask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:controlSubnetMask>
+    <j.3:defaultGateway rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >10.0.0.1</j.3:defaultGateway>
+    <j.4:hasADDomain rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.4:hasADDomain>
+    <j.2:hasSubnet rdf:resource="ccer:S10.0.0.1_CCERID_0"/>
+    <j.3:dataIPAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >10.0.0.224</j.3:dataIPAddress>
+    <j.0:ccerName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C10.0.0.224</j.0:ccerName>
+    <j.7:hasProxyURL rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.7:hasProxyURL>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <j.3:dataSubnetMask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:dataSubnetMask>
+  </j.6:Computer>
+  <j.6:Computer rdf:about="ccer:C10.0.0.160_CCERID_0">
+    <j.7:hasProxyURL rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.7:hasProxyURL>
+    <j.3:defaultGateway rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >10.0.0.1</j.3:defaultGateway>
+    <j.3:controlSubnetMask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:controlSubnetMask>
+    <j.1:hasOperatingSystemLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.1:hasOperatingSystemLanguage>
+    <j.3:controlIPAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:controlIPAddress>
+    <j.5:VLANTag rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1</j.5:VLANTag>
+    <j.0:ccerName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C10.0.0.160</j.0:ccerName>
+    <j.2:hasSubnet rdf:resource="ccer:S10.0.0.1_CCERID_0"/>
+    <j.4:hasADDomain rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.4:hasADDomain>
+    <j.3:dataSubnetMask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:dataSubnetMask>
+    <j.3:dataIPAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >10.0.0.160</j.3:dataIPAddress>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </j.6:Computer>
+  <j.6:Computer rdf:about="ccer:C10.2.0.192_CCERID_0">
+    <j.3:dataSubnetMask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:dataSubnetMask>
+    <j.3:defaultGateway rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >10.2.0.1</j.3:defaultGateway>
+    <j.3:controlSubnetMask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:controlSubnetMask>
+    <j.7:hasProxyURL rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.7:hasProxyURL>
+    <j.2:hasSubnet rdf:resource="ccer:S10.2.0.1_CCERID_0"/>
+    <j.1:hasOperatingSystemLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.1:hasOperatingSystemLanguage>
+    <j.3:controlIPAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:controlIPAddress>
+    <j.5:VLANTag rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1</j.5:VLANTag>
+    <j.3:dataIPAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >10.2.0.192</j.3:dataIPAddress>
+    <j.0:ccerName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C10.2.0.192</j.0:ccerName>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <j.4:hasADDomain rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.4:hasADDomain>
+  </j.6:Computer>
+  <j.6:Computer rdf:about="ccer:C10.3.0.32_CCERID_0">
+    <j.1:hasOperatingSystemLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.1:hasOperatingSystemLanguage>
+    <j.3:defaultGateway rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >10.3.0.1</j.3:defaultGateway>
+    <j.3:dataIPAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >10.3.0.32</j.3:dataIPAddress>
+    <j.3:dataSubnetMask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:dataSubnetMask>
+    <j.0:ccerName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C10.3.0.32</j.0:ccerName>
+    <j.5:VLANTag rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1</j.5:VLANTag>
+    <j.7:hasProxyURL rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.7:hasProxyURL>
+    <j.3:controlIPAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:controlIPAddress>
+    <j.4:hasADDomain rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.4:hasADDomain>
+    <j.3:controlSubnetMask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:controlSubnetMask>
+    <j.2:hasSubnet rdf:resource="ccer:S10.3.0.1_CCERID_0"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </j.6:Computer>
+  <j.3:RouterInterface rdf:about="ccer:RI10.2.0.1_CCERID_0">
+    <j.0:ccerName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >RI10.2.0.1</j.0:ccerName>
+    <j.3:latency rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >0</j.3:latency>
+    <j.3:dataSubnetMask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:dataSubnetMask>
+    <j.3:dataIPAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >10.2.0.1</j.3:dataIPAddress>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </j.3:RouterInterface>
+  <j.6:Computer rdf:about="ccer:C10.3.1.96_CCERID_0">
+    <j.3:dataSubnetMask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:dataSubnetMask>
+    <j.3:defaultGateway rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >10.3.1.1</j.3:defaultGateway>
+    <j.5:VLANTag rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1</j.5:VLANTag>
+    <j.1:hasOperatingSystemLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.1:hasOperatingSystemLanguage>
+    <j.3:dataIPAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >10.3.1.96</j.3:dataIPAddress>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <j.4:hasADDomain rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.4:hasADDomain>
+    <j.3:controlIPAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:controlIPAddress>
+    <j.0:ccerName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C10.3.1.96</j.0:ccerName>
+    <j.2:hasSubnet rdf:resource="ccer:S10.3.1.1_CCERID_0"/>
+    <j.7:hasProxyURL rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.7:hasProxyURL>
+    <j.3:controlSubnetMask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:controlSubnetMask>
+  </j.6:Computer>
+  <owl:NamedIndividual rdf:about="ccer:C10.0.0.192_CCERID_0">
+    <j.1:hasOperatingSystemLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.1:hasOperatingSystemLanguage>
+    <j.2:hasSubnet rdf:resource="ccer:S10.0.0.1_CCERID_0"/>
+    <j.0:ccerName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C10.0.0.192</j.0:ccerName>
+    <j.3:dataSubnetMask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:dataSubnetMask>
+    <j.3:controlIPAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:controlIPAddress>
+    <j.3:defaultGateway rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >10.0.0.1</j.3:defaultGateway>
+    <j.3:controlSubnetMask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:controlSubnetMask>
+    <j.7:hasProxyURL rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.7:hasProxyURL>
+    <j.5:VLANTag rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1</j.5:VLANTag>
+    <j.4:hasADDomain rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.4:hasADDomain>
+    <rdf:type rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/host/v1/computer.owl#Computer"/>
+    <j.3:dataIPAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >10.0.0.192</j.3:dataIPAddress>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="ccer:C10.3.0.224_CCERID_0">
+    <j.2:hasSubnet rdf:resource="ccer:S10.3.0.1_CCERID_0"/>
+    <j.5:VLANTag rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1</j.5:VLANTag>
+    <rdf:type rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/host/v1/computer.owl#Computer"/>
+    <j.7:hasProxyURL rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.7:hasProxyURL>
+    <j.1:hasOperatingSystemLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.1:hasOperatingSystemLanguage>
+    <j.3:controlSubnetMask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:controlSubnetMask>
+    <j.3:dataSubnetMask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:dataSubnetMask>
+    <j.0:ccerName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C10.3.0.224</j.0:ccerName>
+    <j.3:controlIPAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:controlIPAddress>
+    <j.3:dataIPAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >10.3.0.224</j.3:dataIPAddress>
+    <j.3:defaultGateway rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >10.3.0.1</j.3:defaultGateway>
+    <j.4:hasADDomain rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.4:hasADDomain>
+  </owl:NamedIndividual>
+  <j.6:Computer rdf:about="ccer:C10.0.0.128_CCERID_0">
+    <j.2:hasSubnet rdf:resource="ccer:S10.0.0.1_CCERID_0"/>
+    <j.3:defaultGateway rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >10.0.0.1</j.3:defaultGateway>
+    <j.3:dataIPAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >10.0.0.128</j.3:dataIPAddress>
+    <j.3:controlIPAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:controlIPAddress>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <j.5:VLANTag rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1</j.5:VLANTag>
+    <j.0:ccerName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C10.0.0.128</j.0:ccerName>
+    <j.3:dataSubnetMask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:dataSubnetMask>
+    <j.3:controlSubnetMask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:controlSubnetMask>
+    <j.4:hasADDomain rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.4:hasADDomain>
+    <j.7:hasProxyURL rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.7:hasProxyURL>
+    <j.1:hasOperatingSystemLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.1:hasOperatingSystemLanguage>
+  </j.6:Computer>
+  <owl:NamedIndividual rdf:about="ccer:C10.3.0.160_CCERID_0">
+    <j.3:dataSubnetMask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:dataSubnetMask>
+    <j.7:hasProxyURL rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.7:hasProxyURL>
+    <j.2:hasSubnet rdf:resource="ccer:S10.3.0.1_CCERID_0"/>
+    <j.3:dataIPAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >10.3.0.160</j.3:dataIPAddress>
+    <j.3:defaultGateway rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >10.3.0.1</j.3:defaultGateway>
+    <j.3:controlSubnetMask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:controlSubnetMask>
+    <j.1:hasOperatingSystemLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.1:hasOperatingSystemLanguage>
+    <j.4:hasADDomain rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.4:hasADDomain>
+    <j.0:ccerName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C10.3.0.160</j.0:ccerName>
+    <j.3:controlIPAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:controlIPAddress>
+    <j.5:VLANTag rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1</j.5:VLANTag>
+    <rdf:type rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/host/v1/computer.owl#Computer"/>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="ccer:C10.2.0.224_CCERID_0">
+    <j.4:hasADDomain rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.4:hasADDomain>
+    <j.3:dataSubnetMask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:dataSubnetMask>
+    <j.3:controlSubnetMask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:controlSubnetMask>
+    <j.7:hasProxyURL rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.7:hasProxyURL>
+    <j.0:ccerName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C10.2.0.224</j.0:ccerName>
+    <j.3:controlIPAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:controlIPAddress>
+    <j.3:defaultGateway rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >10.2.0.1</j.3:defaultGateway>
+    <rdf:type rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/host/v1/computer.owl#Computer"/>
+    <j.1:hasOperatingSystemLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.1:hasOperatingSystemLanguage>
+    <j.5:VLANTag rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1</j.5:VLANTag>
+    <j.3:dataIPAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >10.2.0.224</j.3:dataIPAddress>
+    <j.2:hasSubnet rdf:resource="ccer:S10.2.0.1_CCERID_0"/>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="ccer:C10.3.1.224_CCERID_0">
+    <j.3:dataIPAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >10.3.1.224</j.3:dataIPAddress>
+    <j.4:hasADDomain rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.4:hasADDomain>
+    <j.1:hasOperatingSystemLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.1:hasOperatingSystemLanguage>
+    <j.5:VLANTag rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1</j.5:VLANTag>
+    <j.3:dataSubnetMask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:dataSubnetMask>
+    <j.7:hasProxyURL rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.7:hasProxyURL>
+    <rdf:type rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/host/v1/computer.owl#Computer"/>
+    <j.0:ccerName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C10.3.1.224</j.0:ccerName>
+    <j.3:controlSubnetMask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:controlSubnetMask>
+    <j.3:defaultGateway rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >10.3.1.1</j.3:defaultGateway>
+    <j.2:hasSubnet rdf:resource="ccer:S10.3.1.1_CCERID_0"/>
+    <j.3:controlIPAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:controlIPAddress>
+  </owl:NamedIndividual>
+  <j.6:Computer rdf:about="ccer:C10.2.0.64_CCERID_0">
+    <j.0:ccerName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C10.2.0.64</j.0:ccerName>
+    <j.4:hasADDomain rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.4:hasADDomain>
+    <j.5:VLANTag rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1</j.5:VLANTag>
+    <j.3:dataSubnetMask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:dataSubnetMask>
+    <j.7:hasProxyURL rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.7:hasProxyURL>
+    <j.1:hasOperatingSystemLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.1:hasOperatingSystemLanguage>
+    <j.3:dataIPAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >10.2.0.64</j.3:dataIPAddress>
+    <j.3:defaultGateway rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >10.2.0.1</j.3:defaultGateway>
+    <j.3:controlIPAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:controlIPAddress>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <j.3:controlSubnetMask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:controlSubnetMask>
+    <j.2:hasSubnet rdf:resource="ccer:S10.2.0.1_CCERID_0"/>
+  </j.6:Computer>
+  <owl:NamedIndividual rdf:about="ccer:C10.2.0.128_CCERID_0">
+    <j.1:hasOperatingSystemLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.1:hasOperatingSystemLanguage>
+    <j.3:controlSubnetMask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:controlSubnetMask>
+    <j.3:dataIPAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >10.2.0.128</j.3:dataIPAddress>
+    <j.5:VLANTag rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1</j.5:VLANTag>
+    <j.4:hasADDomain rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.4:hasADDomain>
+    <j.3:defaultGateway rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >10.2.0.1</j.3:defaultGateway>
+    <j.7:hasProxyURL rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.7:hasProxyURL>
+    <j.2:hasSubnet rdf:resource="ccer:S10.2.0.1_CCERID_0"/>
+    <j.3:controlIPAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:controlIPAddress>
+    <j.3:dataSubnetMask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:dataSubnetMask>
+    <rdf:type rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/host/v1/computer.owl#Computer"/>
+    <j.0:ccerName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C10.2.0.128</j.0:ccerName>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="ccer:C10.3.0.128_CCERID_0">
+    <j.3:controlIPAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:controlIPAddress>
+    <j.3:controlSubnetMask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:controlSubnetMask>
+    <j.3:defaultGateway rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >10.3.0.1</j.3:defaultGateway>
+    <j.1:hasOperatingSystemLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.1:hasOperatingSystemLanguage>
+    <j.3:dataSubnetMask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:dataSubnetMask>
+    <j.7:hasProxyURL rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.7:hasProxyURL>
+    <j.2:hasSubnet rdf:resource="ccer:S10.3.0.1_CCERID_0"/>
+    <j.3:dataIPAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >10.3.0.128</j.3:dataIPAddress>
+    <j.5:VLANTag rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1</j.5:VLANTag>
+    <j.4:hasADDomain rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.4:hasADDomain>
+    <rdf:type rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/host/v1/computer.owl#Computer"/>
+    <j.0:ccerName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C10.3.0.128</j.0:ccerName>
+  </owl:NamedIndividual>
+  <j.3:RouterInterface rdf:about="ccer:RI10.3.0.1_CCERID_0">
+    <j.0:ccerName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >RI10.3.0.1</j.0:ccerName>
+    <j.3:latency rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >0</j.3:latency>
+    <j.3:dataSubnetMask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:dataSubnetMask>
+    <j.3:dataIPAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >10.3.0.1</j.3:dataIPAddress>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </j.3:RouterInterface>
+  <j.3:RouterInterface rdf:about="ccer:RI10.3.1.1_CCERID_0">
+    <j.0:ccerName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >RI10.3.1.1</j.0:ccerName>
+    <j.3:latency rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >0</j.3:latency>
+    <j.3:dataSubnetMask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCERNOTSPECIFIED</j.3:dataSubnetMask>
+    <j.3:dataIPAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >10.3.1.1</j.3:dataIPAddress>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </j.3:RouterInterface>
+</rdf:RDF>

@@ -1,0 +1,181 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE Ontology [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://ll.mit.edu/2013/ccer/domain/ccer/provenance/v1/ccer_provenance.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     ontologyIRI="http://ll.mit.edu/2013/ccer/domain/ccer/provenance/v1/ccer_provenance.owl">
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Import>http://openprovenance.org/model/opmo</Import>
+    <Import>http://purl.org/net/opmv/types/attribution#</Import>
+    <Import>http://ll.mit.edu/2014/ccer/core/ccer/v1/base.owl</Import>
+    <Declaration>
+        <Class IRI="#CCERStencil"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#InstanceExternalXML"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#InstanceJSONLD"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#InstanceRDF"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MSVisio2010Diagram"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MSVisio2010DiagramVDX"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MSVisio2010DiagramVSD"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#fileName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasCCERStencil"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#pageCount"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#pageNumber"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#version"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CCERStencil_v1_0_R9"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#EnhancePOJO"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GenerareDiff"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GenerateJSONLD"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GeneratePatch"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GenerateValidationReport"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#JSONLD"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MergeRDFs"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#TransformVDX2RDF"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#VDX"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#CCERStencil"/>
+        <Class IRI="http://purl.org/net/opmv/ns#Artifact"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InstanceExternalXML"/>
+        <Class IRI="http://purl.org/net/opmv/ns#Artifact"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InstanceJSONLD"/>
+        <Class IRI="http://purl.org/net/opmv/ns#Artifact"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InstanceRDF"/>
+        <Class IRI="http://purl.org/net/opmv/ns#Artifact"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MSVisio2010Diagram"/>
+        <Class IRI="http://purl.org/net/opmv/ns#Artifact"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MSVisio2010DiagramVDX"/>
+        <Class IRI="#MSVisio2010Diagram"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MSVisio2010DiagramVSD"/>
+        <Class IRI="#MSVisio2010Diagram"/>
+    </SubClassOf>
+    <ClassAssertion>
+        <Class IRI="#CCERStencil"/>
+        <NamedIndividual IRI="#CCERStencil_v1_0_R9"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://purl.org/net/opmv/ns#Process"/>
+        <NamedIndividual IRI="#EnhancePOJO"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://purl.org/net/opmv/ns#Process"/>
+        <NamedIndividual IRI="#GenerareDiff"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://purl.org/net/opmv/ns#Process"/>
+        <NamedIndividual IRI="#GenerateJSONLD"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://purl.org/net/opmv/ns#Process"/>
+        <NamedIndividual IRI="#GeneratePatch"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://purl.org/net/opmv/ns#Process"/>
+        <NamedIndividual IRI="#GenerateValidationReport"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://purl.org/dc/terms/FileFormat"/>
+        <NamedIndividual IRI="#JSONLD"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://purl.org/net/opmv/ns#Process"/>
+        <NamedIndividual IRI="#MergeRDFs"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://purl.org/net/opmv/ns#Process"/>
+        <NamedIndividual IRI="#TransformVDX2RDF"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://purl.org/dc/terms/FileFormat"/>
+        <NamedIndividual IRI="#VDX"/>
+    </ClassAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#pageCount</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Number of pages in a diagram or other artifact</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#pageNumber</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Page number in which the provenance is referring to</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#version</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Major, minor, and micro versions - e.g., 1.3.8</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 3.2.2.1789) http://owlapi.sourceforge.net -->
+

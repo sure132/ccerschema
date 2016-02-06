@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:kaosNdlBridge="http://ll.mit.edu/2013/ccer/core/third_party/kaosBridge/v1/nmlKAoSBridge.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:nml="http://schemas.ogf.org/nml/2013/05/base#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://ll.mit.edu/2013/ccer/core/third_party/kaosBridge/v1/nmlKAoSBridge.owl">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="http://ontology.ihmc.us/Service.owl"/>
+    <owl:imports rdf:resource="http://schemas.ogf.org/nml/2013/05/base"/>
+    <owl:imports rdf:resource="http://ontology.ihmc.us/Actor.owl"/>
+    <owl:imports rdf:resource="http://ontology.ihmc.us/Place.owl"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A bridge ontology between KAoS Core ontology and NML (Network Markup Lagnuage) ontology.</rdfs:comment>
+  </owl:Ontology>
+  <rdf:Description rdf:about="http://schemas.ogf.org/nml/2013/05/base#Lifetime">
+    <rdfs:subClassOf rdf:resource="http://ontology.ihmc.us/Entity.owl#Quantity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://schemas.ogf.org/nml/2013/05/base#Label">
+    <rdfs:subClassOf rdf:resource="http://ontology.ihmc.us/Entity.owl#AbstractEntity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://schemas.ogf.org/nml/2013/05/base#LabelGroup">
+    <rdfs:subClassOf rdf:resource="http://ontology.ihmc.us/Group.owl#Group"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://schemas.ogf.org/nml/2013/05/base#ListItem">
+    <rdfs:subClassOf rdf:resource="http://ontology.ihmc.us/Entity.owl#Entity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://schemas.ogf.org/nml/2013/05/base#Link">
+    <rdfs:subClassOf rdf:resource="http://ontology.ihmc.us/Place.owl#Link"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://schemas.ogf.org/nml/2013/05/base#NetworkObject">
+    <rdfs:subClassOf rdf:resource="http://ontology.ihmc.us/Entity.owl#ComputingEntity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://schemas.ogf.org/nml/2013/05/base#Service">
+    <rdfs:subClassOf rdf:resource="http://ontology.ihmc.us/Service.owl#Service"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://schemas.ogf.org/nml/2013/05/base#Group">
+    <rdfs:subClassOf rdf:resource="http://ontology.ihmc.us/Group.owl#Group"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://schemas.ogf.org/nml/2013/05/base#Location">
+    <rdfs:subClassOf rdf:resource="http://ontology.ihmc.us/Place.owl#Place"/>
+  </rdf:Description>
+</rdf:RDF>
+
+<!-- Created with TopBraid -->

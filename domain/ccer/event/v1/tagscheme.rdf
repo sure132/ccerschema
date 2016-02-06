@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:tagscheme="http://ll.mit.edu/2012/ccer/domain/ccer/event/v1/tagscheme.rdf#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://ll.mit.edu/2012/ccer/domain/ccer/event/v1/tagscheme.rdf">
+  <owl:Ontology rdf:about=""/>
+  <owl:Class rdf:ID="TagScheme"/>
+  <owl:Class rdf:ID="Tag"/>
+  <owl:Class rdf:ID="SetTag">
+    <rdfs:comment>Tag of a set of values. The values may be scalar, or n-ary</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#Tag"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="hasTag">
+    <rdfs:range rdf:resource="#Tag"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasTagScheme">
+    <rdfs:domain rdf:resource="#Tag"/>
+    <rdfs:range rdf:resource="#TagScheme"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:ID="name">
+    <rdfs:domain rdf:resource="#Tag"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#TagScheme"/>
+  </owl:DatatypeProperty>
+  <tagscheme:TagScheme rdf:ID="default">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </tagscheme:TagScheme>
+</rdf:RDF>
+
+<!-- Created with TopBraid -->

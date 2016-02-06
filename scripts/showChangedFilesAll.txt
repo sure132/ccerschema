@@ -1,0 +1,4 @@
+../../ccerschema-2013-07-01/
+../../ccerschema/
+catalog-v001.xml|CVS|^\.
+#just to compare two versions of CCER schema

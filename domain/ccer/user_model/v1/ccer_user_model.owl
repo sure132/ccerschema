@@ -1,0 +1,658 @@
+<?xml version="1.0"?>
+
+<!--
+*******************************************************************************
+ * Copyright (c) 2013 Massachusetts Institute of Technology
+ * 
+ * Not with standing any copyright notice, U.S. Government rights in this work
+ * are defined by DFARS 252.227-7013 or DFARS 252.227-7014 as detailed below.
+ * Use of this work other than as specifically authorized by the U.S.
+ * Government may violate any copyrights that exist in this work.
+ * 
+ * UNLIMITED RIGHTS
+ * DFARS Clause reference: 252.227-7013 (a)(16) and 252.227-7014 (a)(16)
+ * Unlimited Rights. The Government has the right to use, modify, reproduce, perform,
+ * display, release or disclose this (technical data or computer software) in whole or in part, in
+ * any manner, and for any purpose whatsoever, and to have or authorize others to do so.
+ * 
+ * THE SOFTWARE IS PROVIDED TO YOU ON AN "AS IS" BASIS.
+ ******************************************************************************
+ -->
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY os "http://ll.mit.edu/2013/ccer/domain/ccer/os/v1/os.owl#" >
+    <!ENTITY hwb_core "http://www.dcl.mathcs.emory.edu/hwb/ontologies/hwb_core.rdf#" >
+    <!ENTITY ccer_account "http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_account.owl#" >
+    <!ENTITY applications "http://ll.mit.edu/2013/ccer/domain/ccer/applications/v1/applications.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#"
+     xml:base="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl"
+     xmlns:os="http://ll.mit.edu/2013/ccer/domain/ccer/os/v1/os.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:hwb_core="http://www.dcl.mathcs.emory.edu/hwb/ontologies/hwb_core.rdf#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:applications="http://ll.mit.edu/2013/ccer/domain/ccer/applications/v1/applications.owl#"
+     xmlns:ccer_account="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_account.owl#">
+    <owl:Ontology rdf:about="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl">
+        <owl:imports rdf:resource="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_account.owl"/>
+        <owl:imports rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/applications/v1/applications.owl"/>
+        <owl:imports rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/host/v1/computer.owl"/>
+        <owl:imports rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/os/v1/os.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="&rdfs;comment"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#boolean -->
+
+    <rdfs:Datatype rdf:about="&xsd;boolean"/>
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#decimal -->
+
+    <rdfs:Datatype rdf:about="&xsd;decimal"/>
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#positiveInteger -->
+
+    <rdfs:Datatype rdf:about="&xsd;positiveInteger"/>
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#unsignedLong -->
+
+    <rdfs:Datatype rdf:about="&xsd;unsignedLong"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#hasAccountHolder -->
+
+    <owl:ObjectProperty rdf:about="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#hasAccountHolder">
+        <rdfs:comment xml:lang="en">The AccountHolders in the UserCommunity</rdfs:comment>
+        <rdfs:range rdf:resource="&ccer_account;AccountHolder"/>
+        <rdfs:domain rdf:resource="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#UserCommunity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#hasAccountType -->
+
+    <owl:ObjectProperty rdf:about="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#hasAccountType">
+        <rdfs:range rdf:resource="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#AccountType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#hasActivityRecipeProfile -->
+
+    <owl:ObjectProperty rdf:about="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#hasActivityRecipeProfile">
+        <rdfs:subPropertyOf rdf:resource="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#hasRecipeProfile"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#hasApplication -->
+
+    <owl:ObjectProperty rdf:about="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#hasApplication">
+        <rdfs:comment xml:lang="en">The application that is used or available</rdfs:comment>
+        <rdfs:range rdf:resource="&applications;Application"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#hasAuthenticatedRecipeProfile -->
+
+    <owl:ObjectProperty rdf:about="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#hasAuthenticatedRecipeProfile">
+        <rdfs:subPropertyOf rdf:resource="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#hasRecipeProfile"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#hasDefaultRecipeProfile -->
+
+    <owl:ObjectProperty rdf:about="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#hasDefaultRecipeProfile">
+        <rdfs:subPropertyOf rdf:resource="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#hasRecipeProfile"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#hasOperatingSystem -->
+
+    <owl:ObjectProperty rdf:about="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#hasOperatingSystem">
+        <rdfs:domain rdf:resource="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#UserRole"/>
+        <rdfs:range rdf:resource="&os;OperatingSystem"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#hasOperatingSystemLanguage -->
+
+    <owl:ObjectProperty rdf:about="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#hasOperatingSystemLanguage">
+        <rdfs:domain rdf:resource="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#UserRole"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#hasPreferredLanguage -->
+
+    <owl:ObjectProperty rdf:about="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#hasPreferredLanguage">
+        <rdfs:comment>Preferred Language of a User Community or an Account Holder. This information is used to validate OS language with the Account Holder language for match </rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#hasRecipeProfile -->
+
+    <owl:ObjectProperty rdf:about="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#hasRecipeProfile">
+        <rdfs:range rdf:resource="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#RecipeProfile"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#hasReportsTo -->
+
+    <owl:ObjectProperty rdf:about="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#hasReportsTo">
+        <rdfs:comment>Reports to another UserRole</rdfs:comment>
+        <rdfs:domain rdf:resource="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#UserRole"/>
+        <rdfs:range rdf:resource="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#UserRole"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#hasResource -->
+
+    <owl:ObjectProperty rdf:about="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#hasResource">
+        <rdfs:domain rdf:resource="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#RecipeProfile"/>
+        <rdfs:range rdf:resource="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#Resource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#hasResourceType -->
+
+    <owl:ObjectProperty rdf:about="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#hasResourceType">
+        <rdfs:range rdf:resource="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#ResourceType"/>
+        <rdfs:domain rdf:resource="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#ResourceUsageWeight"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#hasTeamUserRole -->
+
+    <owl:ObjectProperty rdf:about="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#hasTeamUserRole"/>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#hasTeamUserRoleAssignment -->
+
+    <owl:ObjectProperty rdf:about="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#hasTeamUserRoleAssignment"/>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#hasUser -->
+
+    <owl:ObjectProperty rdf:about="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#hasUser">
+        <rdfs:domain rdf:resource="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#UserCommunity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#hasUserCommunity -->
+
+    <owl:ObjectProperty rdf:about="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#hasUserCommunity">
+        <rdfs:domain rdf:resource="&ccer_account;AccountDomain"/>
+        <rdfs:range rdf:resource="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#UserCommunity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#hasUserRole -->
+
+    <owl:ObjectProperty rdf:about="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#hasUserRole">
+        <rdfs:comment xml:lang="en">Points to the UserRole corresponding to an AccountRole</rdfs:comment>
+        <rdfs:domain rdf:resource="&ccer_account;AccountRole"/>
+        <rdfs:range rdf:resource="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#UserRole"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#inUserCommunity -->
+
+    <owl:ObjectProperty rdf:about="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#inUserCommunity">
+        <rdfs:comment xml:lang="en">To suggest this UserCommunity is a subset of another UserCommunity</rdfs:comment>
+        <rdfs:range rdf:resource="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#UserCommunity"/>
+        <rdfs:domain rdf:resource="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#UserCommunity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#hasResourceUsageWeight -->
+
+    <owl:DatatypeProperty rdf:about="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#hasResourceUsageWeight"/>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#needAccount -->
+
+    <owl:DatatypeProperty rdf:about="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#needAccount">
+        <rdfs:domain rdf:resource="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#RecipeProfile"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#population -->
+
+    <owl:DatatypeProperty rdf:about="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#population">
+        <rdfs:domain rdf:resource="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#UserCommunity"/>
+        <rdfs:range rdf:resource="&xsd;unsignedLong"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#teamRoleWeight -->
+
+    <owl:DatatypeProperty rdf:about="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#teamRoleWeight">
+        <rdfs:comment>The weight of a Role within a CollaborationTeam</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#userTypePercentage -->
+
+    <owl:DatatypeProperty rdf:about="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#userTypePercentage">
+        <rdfs:comment xml:lang="en">The percentage of the population of the users that this User Model will apply. The User Model may be applied to different scopes, including Organizations and Administrative Domains.</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#userTypePopulationMax -->
+
+    <owl:DatatypeProperty rdf:about="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#userTypePopulationMax">
+        <rdfs:comment xml:lang="en">Maximum allowed population for this User Model. If specified, this value may be used for enforcement. This value will override the population number derived from userTypePercentage.</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;unsignedLong"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#userTypePopulationMin -->
+
+    <owl:DatatypeProperty rdf:about="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#userTypePopulationMin">
+        <rdfs:comment xml:lang="en">Minimum required population for this User Model. If specified, this value may be used for enforcement. This value will override the population number derived from userTypePercentage.</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;unsignedLong"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#weight -->
+
+    <owl:DatatypeProperty rdf:about="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#weight">
+        <rdfs:domain rdf:resource="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#ResourceUsageWeight"/>
+        <rdfs:range rdf:resource="&xsd;positiveInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_account.owl#AccountDomain -->
+
+    <owl:Class rdf:about="&ccer_account;AccountDomain"/>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_account.owl#AccountHolder -->
+
+    <owl:Class rdf:about="&ccer_account;AccountHolder"/>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_account.owl#AccountRole -->
+
+    <owl:Class rdf:about="&ccer_account;AccountRole"/>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#AccountType -->
+
+    <owl:Class rdf:about="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#AccountType"/>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#ActivityRecipeProfile -->
+
+    <owl:Class rdf:about="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#ActivityRecipeProfile">
+        <rdfs:subClassOf rdf:resource="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#RecipeProfile"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#AuthenticatedRecipeProfile -->
+
+    <owl:Class rdf:about="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#AuthenticatedRecipeProfile">
+        <rdfs:subClassOf rdf:resource="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#RecipeProfile"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#CollaborationTeam -->
+
+    <owl:Class rdf:about="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#CollaborationTeam"/>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#DefaultRecipeProfile -->
+
+    <owl:Class rdf:about="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#DefaultRecipeProfile">
+        <rdfs:subClassOf rdf:resource="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#RecipeProfile"/>
+        <rdfs:comment>The Applications that a user gets access to if logged into the AccountDomain</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#DeviceAccountType -->
+
+    <owl:Class rdf:about="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#DeviceAccountType">
+        <rdfs:subClassOf rdf:resource="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#AccountType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#OnlineAccountType -->
+
+    <owl:Class rdf:about="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#OnlineAccountType">
+        <rdfs:subClassOf rdf:resource="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#AccountType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#RecipeProfile -->
+
+    <owl:Class rdf:about="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#RecipeProfile">
+        <rdfs:comment xml:lang="en">The list of attributes that a User can assume w.r.t. OS, OS Language, Applications, etc.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#Resource -->
+
+    <owl:Class rdf:about="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#Resource"/>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#ResourceType -->
+
+    <owl:Class rdf:about="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#ResourceType"/>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#ResourceUsageWeight -->
+
+    <owl:Class rdf:about="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#ResourceUsageWeight">
+        <rdfs:comment xml:lang="en">How much a given resource type gets used in a given period for a specific UserRole.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#TeamUserRole -->
+
+    <owl:Class rdf:about="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#TeamUserRole"/>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#TeamUserRoleAssignment -->
+
+    <owl:Class rdf:about="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#TeamUserRoleAssignment"/>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#UserCommunity -->
+
+    <owl:Class rdf:about="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#UserCommunity"/>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#UserRole -->
+
+    <owl:Class rdf:about="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#UserRole">
+        <rdfs:comment xml:lang="en">UserRole defines the  RecipeProfiles that the model has, and the #of Users of this type in the Test Environment</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dcl.mathcs.emory.edu/hwb/ontologies/hwb_core.rdf#Software -->
+
+    <owl:Class rdf:about="&hwb_core;Software">
+        <rdfs:subClassOf rdf:resource="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#Resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#NamedIndividual -->
+
+    <owl:Class rdf:about="&owl;NamedIndividual"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#ApplicationAccountType -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#ApplicationAccountType">
+        <rdf:type rdf:resource="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#AccountType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#Browser -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#Browser">
+        <rdf:type rdf:resource="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#ResourceType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#ContentManagementServer -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#ContentManagementServer">
+        <rdf:type rdf:resource="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#ResourceType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#EmailClient -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#EmailClient">
+        <rdf:type rdf:resource="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#ResourceType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#EmailWebClient -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#EmailWebClient">
+        <rdf:type rdf:resource="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#ResourceType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#EmployeeAccountType -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#EmployeeAccountType">
+        <rdf:type rdf:resource="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#AccountType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#HostComputerAccountType -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#HostComputerAccountType">
+        <rdf:type rdf:resource="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#DeviceAccountType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#MemberAccountType -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#MemberAccountType">
+        <rdf:type rdf:resource="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#AccountType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#OnlineBlogging -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#OnlineBlogging">
+        <rdf:type rdf:resource="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#ResourceType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#OnlineChatAccountType -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#OnlineChatAccountType">
+        <rdf:type rdf:resource="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#OnlineAccountType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#OnlineEcommerceAccountType -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#OnlineEcommerceAccountType">
+        <rdf:type rdf:resource="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#OnlineAccountType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#OnlineEmailAccountType -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#OnlineEmailAccountType">
+        <rdf:type rdf:resource="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#OnlineAccountType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#OnlineGamingAccountType -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#OnlineGamingAccountType">
+        <rdf:type rdf:resource="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#OnlineAccountType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#OnlineSocialNetwork -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#OnlineSocialNetwork">
+        <rdf:type rdf:resource="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#ResourceType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#OnlineSocialNetworkAccountType -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#OnlineSocialNetworkAccountType">
+        <rdf:type rdf:resource="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#OnlineAccountType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#Presentation -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#Presentation">
+        <rdf:type rdf:resource="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#ResourceType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#Spreadsheet -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#Spreadsheet">
+        <rdf:type rdf:resource="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#ResourceType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#WordProcessor -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#WordProcessor">
+        <rdf:type rdf:resource="http://ll.mit.edu/2012/ccer/domain/ccer/ccer_user_model/v1/ccer_user_model.owl#ResourceType"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.3.1824) http://owlapi.sourceforge.net -->
+

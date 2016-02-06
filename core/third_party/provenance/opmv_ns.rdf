@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rdf:RDF
+   xmlns:adms="http://www.w3.org/ns/adms#"
+   xmlns:admssw="http://purl.org/adms/sw/"
+   xmlns:dcat="http://www.w3.org/ns/dcat#"
+   xmlns:dct="http://purl.org/dc/terms/"
+   xmlns:doap="http://usefulinc.com/ns/doap#"
+   xmlns:foaf="http://xmlns.com/foaf/0.1/"
+   xmlns:qb="http://purl.org/linked-data/cube#"
+   xmlns:rad="http://www.w3.org/ns/radion#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:schema="http://schema.org/"
+   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+   xmlns:spdx="http://spdx.org/rdf/terms#"
+   xmlns:swid="http://standards.iso.org/iso/19770/-2/2009/"
+   xmlns:trove="http://sourceforge.net/api/trove/index/rdf#"
+   xmlns:ns1="http://www.w3.org/2006/vcard/ns#"
+   xmlns:wdrs="http://www.w3.org/2007/05/powder-s#"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:vcard="http://www.w3.org/2001/vcard-rdf/3.0#">
+
+<rdf:Description rdf:about="http://purl.org/net/opmv/ns">
+   <rdf:type rdf:resource="http://www.w3.org/ns/adms#Asset"/>
+   <dct:alternative xml:lang="en">OPMV</dct:alternative>
+   <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2010-04-14T02:00:00+02:00</dct:created>
+   <dct:description xml:lang="en">OPMV, the Open Provenance Model Vocabulary, provides terms to enable practitioners of data publishing to publish their data responsibly.</dct:description>
+   <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-04-10T18:41:03+02:00</dct:modified>
+   <dct:publisher rdf:resource="http://users.ox.ac.uk/~zool0770"/>
+   <dct:title xml:lang="en">Open Provenance Model Vocabulary</dct:title>
+   <dct:type xml:lang="en">http://purl.org/adms/assettype/Ontology</dct:type>
+   <adms:status rdf:resource="http://purl.org/adms/status/Completed"/>
+   <dcat:distribution rdf:resource="http://purl.org/net/opmv/ns?type=distribution"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.org/net/opmv/ns?type=distribution">
+   <rdf:type rdf:resource="http://www.w3.org/ns/adms#AssetDistribution"/>
+   <dcat:accessURL rdf:resource="http://purl.org/net/opmv/ns"/>
+   <adms:status rdf:resource="http://purl.org/adms/status/Completed"/>
+   <dcat:mediaType rdf:resource="http://purl.org/NET/mediatypes/text/html"/>
+   <dct:licence rdf:resource="http://joinup.ec.europa.eu/category/licence/unknown-licence"/>
+   <adms:representationTechnique rdf:resource="http://purl.org/adms/representationtechnique/HumanLanguage"/>
+   <dct:publisher rdf:resource="http://data.semanticweb.org/person/jun-zhao"/>
+   <dct:title xml:lang="en">Open Provenance Model Vocabulary</dct:title>
+   <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2010-04-14T02:00:00+02:00</dct:created>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://joinup.ec.europa.eu/category/licence/unknown-licence">
+   <rdf:type rdf:resource="http://purl.org/dc/terms/LicenseDocument"/>
+   <rdfs:label xml:lang="en">Unknown Licence</rdfs:label>
+   <dct:type rdf:resource="http://purl.org/adms/licencetype/UnknownIPR"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://data.semanticweb.org/person/jun-zhao">
+   <rdf:type rdf:resource="http://purl.org/dc/terms/publisher"/>
+   <foaf:name xml:lang="en">Jun Zhao</foaf:name>
+   <dct:type rdf:resource="http://purl.org/adms/publishertype/PrivateIndividual(s)"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://users.ox.ac.uk/~zool0770">
+   <rdf:type rdf:resource="http://purl.org/dc/terms/publisher"/>
+   <foaf:name xml:lang="en">Jun Zhao</foaf:name>
+   <dct:type rdf:resource="http://purl.org/adms/publishertype/PrivateIndividual(s)"/>
+</rdf:Description>
+
+</rdf:RDF>

@@ -1,0 +1,202 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY event "http://ll.mit.edu/2012/ccer/domain/ccer/event/v1/event.owl#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY cysa_query "http://ll.mit.edu/2012/ccer/domain/ccer/event/v1/cysa_query.owl#" >
+    <!ENTITY tagscheme "http://ll.mit.edu/2012/ccer/domain/ccer/event/v1/tagscheme.rdf#" >
+]>
+
+
+<rdf:RDF xmlns="http://ll.mit.edu/2012/ccer/domain/ccer/event/v1/cysa_query.owl#"
+     xml:base="http://ll.mit.edu/2012/ccer/domain/ccer/event/v1/cysa_query.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:cysa_query="http://ll.mit.edu/2012/ccer/domain/ccer/event/v1/cysa_query.owl#"
+     xmlns:event="http://ll.mit.edu/2012/ccer/domain/ccer/event/v1/event.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:tagscheme="http://ll.mit.edu/2012/ccer/domain/ccer/event/v1/tagscheme.rdf#">
+    <owl:Ontology rdf:about="http://ll.mit.edu/2012/ccer/domain/ccer/event/v1/cysa_query.owl">
+        <owl:imports rdf:resource="http://ll.mit.edu/2012/ccer/domain/ccer/event/v1/event.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/event/v1/cysa_query.owl#hasAnonymousEventOutput -->
+
+    <owl:ObjectProperty rdf:about="&cysa_query;hasAnonymousEventOutput">
+        <rdfs:range rdf:resource="&cysa_query;AnonymousEvent"/>
+        <rdfs:domain rdf:resource="&event;Operator"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/event/v1/cysa_query.owl#hasInputEvent -->
+
+    <owl:ObjectProperty rdf:about="&cysa_query;hasInputEvent">
+        <rdfs:domain rdf:resource="&cysa_query;LeafQuery"/>
+        <rdfs:range rdf:resource="&event;CySAEvent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/event/v1/cysa_query.owl#hasNamedEventOutput -->
+
+    <owl:ObjectProperty rdf:about="&cysa_query;hasNamedEventOutput">
+        <rdfs:range rdf:resource="&event;CySAEvent"/>
+        <rdfs:domain rdf:resource="&event;Operator"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/event/v1/cysa_query.owl#hasScalarOutput -->
+
+    <owl:ObjectProperty rdf:about="&cysa_query;hasScalarOutput">
+        <rdfs:range rdf:resource="&cysa_query;ScalarOutput"/>
+        <rdfs:domain rdf:resource="&event;Operator"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/event/v1/cysa_query.owl#hasSubQueryOf -->
+
+    <owl:ObjectProperty rdf:about="&cysa_query;hasSubQueryOf">
+        <rdfs:domain rdf:resource="&cysa_query;CompositeQuery"/>
+        <rdfs:range rdf:resource="&cysa_query;Query"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/event/v1/event.owl#hasOperator -->
+
+    <rdf:Description rdf:about="&event;hasOperator">
+        <rdfs:domain rdf:resource="&cysa_query;Query"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/event/v1/cysa_query.owl#query_set_tag_values -->
+
+    <owl:DatatypeProperty rdf:about="&cysa_query;query_set_tag_values">
+        <rdfs:comment>The values will be comma separated, and each value will consisted of colon separated strings. Example: IPAddress:5.5.5.1,IPAddress:6.6.6.1</rdfs:comment>
+        <rdfs:domain rdf:resource="&cysa_query;QuerySetTag"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/event/v1/cysa_query.owl#AnonymousEvent -->
+
+    <owl:Class rdf:about="&cysa_query;AnonymousEvent">
+        <rdfs:subClassOf rdf:resource="&event;CySAEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/event/v1/cysa_query.owl#CompositeQuery -->
+
+    <owl:Class rdf:about="&cysa_query;CompositeQuery">
+        <rdfs:subClassOf rdf:resource="&cysa_query;Query"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/event/v1/cysa_query.owl#LeafQuery -->
+
+    <owl:Class rdf:about="&cysa_query;LeafQuery">
+        <rdfs:subClassOf rdf:resource="&cysa_query;Query"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/event/v1/cysa_query.owl#Query -->
+
+    <owl:Class rdf:about="&cysa_query;Query"/>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/event/v1/cysa_query.owl#QuerySetTag -->
+
+    <owl:Class rdf:about="&cysa_query;QuerySetTag">
+        <rdfs:subClassOf rdf:resource="&tagscheme;SetTag"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/event/v1/cysa_query.owl#ScalarOutput -->
+
+    <owl:Class rdf:about="&cysa_query;ScalarOutput"/>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/event/v1/cysa_query.owl#UserDefinedDimension -->
+
+    <owl:Class rdf:about="&cysa_query;UserDefinedDimension">
+        <rdfs:subClassOf rdf:resource="&event;Dimension"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.2.1789) http://owlapi.sourceforge.net -->
+

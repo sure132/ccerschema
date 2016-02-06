@@ -1,0 +1,244 @@
+<?xml version="1.0"?>
+<!--
+*******************************************************************************
+ * Copyright (c) 2013 Massachusetts Institute of Technology
+ * 
+ * Not with standing any copyright notice, U.S. Government rights in this work
+ * are defined by DFARS 252.227-7013 or DFARS 252.227-7014 as detailed below.
+ * Use of this work other than as specifically authorized by the U.S.
+ * Government may violate any copyrights that exist in this work.
+ * 
+ * UNLIMITED RIGHTS
+ * DFARS Clause reference: 252.227-7013 (a)(16) and 252.227-7014 (a)(16)
+ * Unlimited Rights. The Government has the right to use, modify, reproduce, perform,
+ * display, release or disclose this (technical data or computer software) in whole or in part, in
+ * any manner, and for any purpose whatsoever, and to have or authorize others to do so.
+ * 
+ * THE SOFTWARE IS PROVIDED TO YOU ON AN "AS IS" BASIS.
+ ******************************************************************************
+ -->
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY base "http://schemas.ogf.org/nml/2013/05/base#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY domain "http://www.science.uva.nl/research/sne/ndl/domain#" >
+    <!ENTITY computer "http://ll.mit.edu/2013/ccer/domain/ccer/host/v1/computer.owl#" >
+    <!ENTITY capability "http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/capability#" >
+    <!ENTITY DNSService "http://ll.mit.edu/2013/ccer/domain/ccer/services/v2/DNSService.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://ll.mit.edu/2013/ccer/domain/ccer/services/v2/DNSService.owl#"
+     xml:base="http://ll.mit.edu/2013/ccer/domain/ccer/services/v2/DNSService.owl"
+     xmlns:computer="http://ll.mit.edu/2013/ccer/domain/ccer/host/v1/computer.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:base="http://schemas.ogf.org/nml/2013/05/base#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:domain="http://www.science.uva.nl/research/sne/ndl/domain#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:capability="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/capability#"
+     xmlns:DNSService="http://ll.mit.edu/2013/ccer/domain/ccer/services/v2/DNSService.owl#">
+    <owl:Ontology rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/services/v2/DNSService.owl">
+        <owl:imports rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/services/v2/base.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="&rdfs;comment"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://org.semanticweb.owlapi/error#Error1 -->
+
+    <rdfs:Datatype rdf:about="http://org.semanticweb.owlapi/error#Error1"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/services/v2/DNSService.owl#hasDNS_A_Record -->
+
+    <owl:ObjectProperty rdf:about="&DNSService;hasDNS_A_Record">
+        <rdfs:subPropertyOf rdf:resource="&DNSService;hasDNSRecord"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/services/v2/DNSService.owl#hasDNS_MX_Record -->
+
+    <owl:ObjectProperty rdf:about="&DNSService;hasDNS_MX_Record">
+        <rdfs:subPropertyOf rdf:resource="&DNSService;hasDNSRecord"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/services/v2/DNSService.owl#hasDNSRecord -->
+
+    <owl:ObjectProperty rdf:about="&DNSService;hasDNSRecord">
+        <rdfs:range rdf:resource="&DNSService;DNSRecord"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/services/v2/DNSService.owl#hasDNSService -->
+
+    <owl:ObjectProperty rdf:about="&DNSService;hasDNSService">
+        <rdfs:range rdf:resource="&DNSService;DNSService"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/services/v2/DNSService.owl#hasContentDescription -->
+
+    <owl:DatatypeProperty rdf:about="&DNSService;hasContentDescription"/>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/services/v2/DNSService.owl#hasContentType -->
+
+    <owl:DatatypeProperty rdf:about="&DNSService;hasContentType"/>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/services/v2/DNSService.owl#hasForwarderIPAddress -->
+
+    <owl:DatatypeProperty rdf:about="&DNSService;hasForwarderIPAddress">
+        <rdfs:comment>The DNS Server to which any outgoing resolutions requsts must be forwarded to</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/services/v2/DNSService.owl#hasRootServerIPAddress -->
+
+    <owl:DatatypeProperty rdf:about="&DNSService;hasRootServerIPAddress"/>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/services/v2/DNSService.owl#mailPriority -->
+
+    <owl:DatatypeProperty rdf:about="&DNSService;mailPriority">
+        <rdfs:comment>Mail server priority for MX records in DNS</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/services/v2/DNSService.owl#mailServerName -->
+
+    <owl:DatatypeProperty rdf:about="&DNSService;mailServerName">
+        <rdfs:comment>Mail server name for MX-Record
+
+</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/services/v2/DNSService.owl#DNS_A_Record -->
+
+    <owl:Class rdf:about="&DNSService;DNS_A_Record">
+        <rdfs:subClassOf rdf:resource="&DNSService;DNSRecord"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/services/v2/DNSService.owl#DNS_MX_Record -->
+
+    <owl:Class rdf:about="&DNSService;DNS_MX_Record">
+        <rdfs:subClassOf rdf:resource="&DNSService;DNSRecord"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/services/v2/DNSService.owl#DNSRecord -->
+
+    <owl:Class rdf:about="&DNSService;DNSRecord"/>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/services/v2/DNSService.owl#DNSService -->
+
+    <owl:Class rdf:about="&DNSService;DNSService">
+        <rdfs:subClassOf rdf:resource="&base;Service"/>
+        <rdfs:comment xml:lang="en">A service that provides Domain Name Resolution</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#nil -->
+
+    <owl:Thing rdf:about="&rdf;nil">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </owl:Thing>
+    <owl:Thing/>
+    <owl:Thing/>
+    <owl:Thing/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.2.1789) http://owlapi.sourceforge.net -->
+

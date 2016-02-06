@@ -1,0 +1,309 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY event "http://ll.mit.edu/2012/ccer/domain/ccer/event/v1/event.owl#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY ccer_account "http://ll.mit.edu/2012/ccer/domain/ccer/user_model/v1/ccer_account.owl#" >
+    <!ENTITY ip "http://www.science.uva.nl/research/sne/ndl/ip#" >
+    <!ENTITY domain "http://www.science.uva.nl/research/sne/ndl/domain#" >
+    <!ENTITY network_event "http://ll.mit.edu/2012/ccer/domain/ccer/event/v1/network_event.owl#" >
+    <!ENTITY tagscheme "http://ll.mit.edu/2012/ccer/domain/ccer/event/v1/tagscheme.rdf#" >
+    <!ENTITY ccer_time "http://ll.mit.edu/2012/ccer/domain/ccer/event/v1/ccer_time.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://ll.mit.edu/2012/09/network_event_sample1.owl#"
+     xml:base="http://ll.mit.edu/2012/09/network_event_sample1.owl"
+     xmlns:network_event="http://ll.mit.edu/2012/ccer/domain/ccer/event/v1/network_event.owl#"
+     xmlns:ccer_time="http://ll.mit.edu/2012/ccer/domain/ccer/event/v1/ccer_time.owl#"
+     xmlns:ip="http://www.science.uva.nl/research/sne/ndl/ip#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:event="http://ll.mit.edu/2012/ccer/domain/ccer/event/v1/event.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:domain="http://www.science.uva.nl/research/sne/ndl/domain#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:tagscheme="http://ll.mit.edu/2012/ccer/domain/ccer/event/v1/tagscheme.rdf#"
+     xmlns:ccer_account="http://ll.mit.edu/2012/ccer/domain/ccer/user_model/v1/ccer_account.owl#">
+    <owl:Ontology rdf:about="http://ll.mit.edu/2012/09/network_event_sample1.owl">
+        <owl:imports rdf:resource="http://ll.mit.edu/2012/ccer/domain/ccer/event/v1/network_event.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/event/v1/event.owl#CapturedEvent -->
+
+    <rdf:Description rdf:about="&event;CapturedEvent">
+        <owl:disjointWith rdf:resource="&event;DerivedEvent"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://ll.mit.edu/2012/ccer/domain/ccer/event/v1/event.owl#DerivedEvent -->
+
+    <rdf:Description rdf:about="&event;DerivedEvent"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/network_event_sample1.owl#Description -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/09/network_event_sample1.owl#Description">
+        <rdf:type rdf:resource="&tagscheme;Tag"/>
+        <tagscheme:hasTagScheme rdf:resource="&tagscheme;default"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/network_event_sample1.owl#Destination -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/09/network_event_sample1.owl#Destination">
+        <rdf:type rdf:resource="&tagscheme;Tag"/>
+        <tagscheme:hasTagScheme rdf:resource="&tagscheme;default"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/network_event_sample1.owl#DimDateTimeSeconds2Instant -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/09/network_event_sample1.owl#DimDateTimeSeconds2Instant">
+        <rdf:type rdf:resource="&ccer_time;DateTimeSeconds2Instant"/>
+        <tagscheme:hasTag rdf:resource="http://ll.mit.edu/2012/09/network_event_sample1.owl#Receive"/>
+        <tagscheme:hasTag rdf:resource="http://ll.mit.edu/2012/09/network_event_sample1.owl#Start"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/network_event_sample1.owl#DimDateTimeSeconds2Interval -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/09/network_event_sample1.owl#DimDateTimeSeconds2Interval">
+        <rdf:type rdf:resource="&ccer_time;DateTimeSeconds2Interval"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/network_event_sample1.owl#DimFQDN -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/09/network_event_sample1.owl#DimFQDN">
+        <rdf:type rdf:resource="&network_event;FQDN"/>
+        <tagscheme:hasTag rdf:resource="http://ll.mit.edu/2012/09/network_event_sample1.owl#Requested"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/network_event_sample1.owl#DimIPv4Address -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/09/network_event_sample1.owl#DimIPv4Address">
+        <rdf:type rdf:resource="&ip;IPv4Address"/>
+        <tagscheme:hasTag rdf:resource="http://ll.mit.edu/2012/09/network_event_sample1.owl#Destination"/>
+        <tagscheme:hasTag rdf:resource="http://ll.mit.edu/2012/09/network_event_sample1.owl#Source"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/network_event_sample1.owl#DimNetworkDomain -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/09/network_event_sample1.owl#DimNetworkDomain">
+        <rdf:type rdf:resource="&network_event;NetworkDomain"/>
+        <tagscheme:hasTag rdf:resource="http://ll.mit.edu/2012/09/network_event_sample1.owl#Description"/>
+        <tagscheme:hasTag rdf:resource="http://ll.mit.edu/2012/09/network_event_sample1.owl#Requested"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/network_event_sample1.owl#DimUserAccount -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/09/network_event_sample1.owl#DimUserAccount">
+        <rdf:type rdf:resource="&ccer_account;EmployeeAccount"/>
+        <tagscheme:hasTag rdf:resource="http://ll.mit.edu/2012/09/network_event_sample1.owl#Description"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/network_event_sample1.owl#DomainLookup -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/09/network_event_sample1.owl#DomainLookup">
+        <rdf:type rdf:resource="&event;DerivedEvent"/>
+        <event:eventSignature>{default:Source}:DimIPv4Address,
+{default:Start}:DimDateTimeSeconds2Instant,
+{default:Description}:NetworkDomain,
+{default:Requested}:FQDN,
+{default:Destination}:DimIPv4Address</event:eventSignature>
+        <event:hasDimension rdf:resource="http://ll.mit.edu/2012/09/network_event_sample1.owl#DimDateTimeSeconds2Instant"/>
+        <event:hasDimension rdf:resource="http://ll.mit.edu/2012/09/network_event_sample1.owl#DimFQDN"/>
+        <event:hasDimension rdf:resource="http://ll.mit.edu/2012/09/network_event_sample1.owl#DimIPv4Address"/>
+        <event:hasDimension rdf:resource="http://ll.mit.edu/2012/09/network_event_sample1.owl#DimNetworkDomain"/>
+        <event:derivedFromEvent rdf:resource="http://ll.mit.edu/2012/09/network_event_sample1.owl#DomainRequest"/>
+        <event:derivedFromEvent rdf:resource="http://ll.mit.edu/2012/09/network_event_sample1.owl#WebProxyEvent"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/network_event_sample1.owl#DomainRequest -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/09/network_event_sample1.owl#DomainRequest">
+        <rdf:type rdf:resource="&event;CapturedEvent"/>
+        <event:eventSignature>{default:Source}:DimIPv4Address,{default:Start}:DimDateTimeSeconds2Instant,{default:Description}:NetworkDomain</event:eventSignature>
+        <event:hasDimension rdf:resource="http://ll.mit.edu/2012/09/network_event_sample1.owl#DimDateTimeSeconds2Instant"/>
+        <event:hasDimension rdf:resource="http://ll.mit.edu/2012/09/network_event_sample1.owl#DimIPv4Address"/>
+        <event:hasDimension rdf:resource="http://ll.mit.edu/2012/09/network_event_sample1.owl#DimNetworkDomain"/>
+        <event:hasOperator rdf:resource="http://ll.mit.edu/2012/09/network_event_sample1.owl#DomainSelect"/>
+        <event:hasOperator rdf:resource="http://ll.mit.edu/2012/09/network_event_sample1.owl#SELECT"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/network_event_sample1.owl#DomainSelect -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/09/network_event_sample1.owl#DomainSelect">
+        <rdf:type rdf:resource="&event;Operator"/>
+        <event:inputSignature>{default:Source}:DimIPv4Address:WebProxyEvent,
+{default:Destination}:DimIPv4Address:WebProxyEvent,
+{default:Receive}:DateSeconds2Instant:WebProxyEvent,
+{default:Requested}:NetworkDomain:WebProxyEvent,
+{default:Requested}:FQDN:WebProxyEvent,
+{default:Source}:DimIPv4Address:DomainRequest,
+{default:Start}:DimDateTimeSeconds2Instant:DomainRequest,
+{default:Description}:NetworkDomain:DomainRequest</event:inputSignature>
+        <rdfs:comment>This is an example of an operator that has specific input and out signatures. There is no requirement that the output signature need to be associated with any named event - it can be associated with an anonymous event. It is more likely the output will be associated with an anonymous event but bound to a  new event because of a query</rdfs:comment>
+        <event:outputSignature>{default:Source}:DimIPv4Address:DomainLookup,
+{default:Start}:DimDateTimeSeconds2Instant:DomainLookup,
+{default:Description}:NetworkDomain:DomainLookup,
+{default:Requested}:FQDN:DomainLookup,
+{default:Destination}:DimIPv4Address:DomainLookup</event:outputSignature>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/network_event_sample1.owl#IDENTITY -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/09/network_event_sample1.owl#IDENTITY">
+        <rdf:type rdf:resource="&event;Operator"/>
+        <event:outputSignature>VARARGS</event:outputSignature>
+        <event:inputSignature>VARARGS</event:inputSignature>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/network_event_sample1.owl#Receive -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/09/network_event_sample1.owl#Receive">
+        <rdf:type rdf:resource="&tagscheme;Tag"/>
+        <tagscheme:hasTagScheme rdf:resource="&tagscheme;default"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/network_event_sample1.owl#Requested -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/09/network_event_sample1.owl#Requested">
+        <rdf:type rdf:resource="&tagscheme;Tag"/>
+        <tagscheme:hasTagScheme rdf:resource="&tagscheme;default"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/network_event_sample1.owl#SELECT -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/09/network_event_sample1.owl#SELECT">
+        <rdf:type rdf:resource="&event;Operator"/>
+        <event:outputSignature>VARARGS</event:outputSignature>
+        <event:inputSignature>VARARGS</event:inputSignature>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/network_event_sample1.owl#Send -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/09/network_event_sample1.owl#Send">
+        <rdf:type rdf:resource="&tagscheme;Tag"/>
+        <tagscheme:hasTagScheme rdf:resource="&tagscheme;default"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/network_event_sample1.owl#Source -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/09/network_event_sample1.owl#Source">
+        <rdf:type rdf:resource="&tagscheme;Tag"/>
+        <tagscheme:hasTagScheme rdf:resource="&tagscheme;default"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/network_event_sample1.owl#Start -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/09/network_event_sample1.owl#Start">
+        <rdf:type rdf:resource="&tagscheme;Tag"/>
+        <tagscheme:hasTag rdf:resource="http://ll.mit.edu/2012/09/network_event_sample1.owl#Start"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/network_event_sample1.owl#WebProxyEvent -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2012/09/network_event_sample1.owl#WebProxyEvent">
+        <rdf:type rdf:resource="&event;CapturedEvent"/>
+        <event:eventSignature>{default:Source}:DimIPv4Address,{default:Destination}:DimIPv4Address,{default:Receive}:DateSeconds2Instant,{default:Requested}:NetworkDomain,{default:Requested}:FQDN</event:eventSignature>
+        <rdfs:comment>WebProxyEvent corresponds to teh proxyEvent in the Registry Ontology</rdfs:comment>
+        <event:hasDimension rdf:resource="http://ll.mit.edu/2012/09/network_event_sample1.owl#DimDateTimeSeconds2Instant"/>
+        <event:hasDimension rdf:resource="http://ll.mit.edu/2012/09/network_event_sample1.owl#DimFQDN"/>
+        <event:hasDimension rdf:resource="http://ll.mit.edu/2012/09/network_event_sample1.owl#DimIPv4Address"/>
+        <event:hasDimension rdf:resource="http://ll.mit.edu/2012/09/network_event_sample1.owl#DimNetworkDomain"/>
+        <event:hasOperator rdf:resource="http://ll.mit.edu/2012/09/network_event_sample1.owl#DomainSelect"/>
+        <event:hasOperator rdf:resource="http://ll.mit.edu/2012/09/network_event_sample1.owl#IDENTITY"/>
+        <event:hasOperator rdf:resource="http://ll.mit.edu/2012/09/network_event_sample1.owl#SELECT"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.2.1789) http://owlapi.sourceforge.net -->
+

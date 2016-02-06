@@ -1,0 +1,246 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY epid 'http://eprints.ecs.soton.ac.uk/id/'>
+	<!ENTITY void 'http://rdfs.org/ns/void#'>
+	<!ENTITY xsd 'http://www.w3.org/2001/XMLSchema#'>
+	<!ENTITY cc 'http://creativecommons.org/ns#'>
+	<!ENTITY ep 'http://eprints.org/ontology/'>
+	<!ENTITY ecsid 'http://id.ecs.soton.ac.uk/'>
+	<!ENTITY eprel 'http://eprints.org/relation/'>
+	<!ENTITY dc 'http://purl.org/dc/elements/1.1/'>
+	<!ENTITY bibo 'http://purl.org/ontology/bibo/'>
+	<!ENTITY geo 'http://www.w3.org/2003/01/geo/wgs84_pos#'>
+	<!ENTITY owl 'http://www.w3.org/2002/07/owl#'>
+	<!ENTITY event 'http://purl.org/NET/c4dm/event.owl#'>
+	<!ENTITY skos 'http://www.w3.org/2004/02/skos/core#'>
+	<!ENTITY foaf 'http://xmlns.com/foaf/0.1/'>
+	<!ENTITY rdfs 'http://www.w3.org/2000/01/rdf-schema#'>
+	<!ENTITY rdf 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+	<!ENTITY dct 'http://purl.org/dc/terms/'>
+	<!ENTITY ecs 'http://rdf.ecs.soton.ac.uk/ontology/ecs#'>
+]>
+<rdf:RDF xmlns:epid='&epid;' xmlns:void='&void;' xmlns:xsd='&xsd;' xmlns:cc='&cc;' xmlns:ep='&ep;' xmlns:ecsid='&ecsid;' xmlns:eprel='&eprel;' xmlns:dc='&dc;' xmlns:bibo='&bibo;' xmlns:geo='&geo;' xmlns:owl='&owl;' xmlns:event='&event;' xmlns:skos='&skos;' xmlns:foaf='&foaf;' xmlns:rdfs='&rdfs;' xmlns:rdf='&rdf;' xmlns:dct='&dct;' xmlns:ecs='&ecs;'>
+
+
+  <rdf:Description rdf:about="">
+    <cc:attributionName rdf:datatype="&xsd;string">University of Southampton, School of Electronics and Computer Science</cc:attributionName>
+    <cc:attributionURL rdf:resource="http://www.ecs.soton.ac.uk/" />
+    <cc:license rdf:resource="http://creativecommons.org/publicdomain/zero/1.0/" />
+    <dct:license rdf:resource="http://creativecommons.org/publicdomain/zero/1.0/" />
+    <dct:publisher rdf:resource="http://id.ecs.soton.ac.uk/UoS/ECS" />
+    <dct:rightsHolder rdf:resource="http://id.ecs.soton.ac.uk/UoS" />
+    <foaf:primaryTopic rdf:resource="http://eprints.ecs.soton.ac.uk/id/eprint/21449" />
+    <rdfs:comment rdf:datatype="&xsd;string">While this data is made freely available, you may attribute it if you wish. Also, we would love to hear how it is being used. Contact us at webmaster@ecs.soton.ac.uk to tell us about cool things you have done with it.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://eprints.ecs.soton.ac.uk/21449/1/opm.pdf">
+    <rdfs:label rdf:datatype="&xsd;string">opm.pdf</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://eprints.ecs.soton.ac.uk/21449/2/preview.jpg">
+    <rdfs:label rdf:datatype="&xsd;string">preview.jpg</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://eprints.ecs.soton.ac.uk/21449/3/fullsize.png">
+    <rdfs:label rdf:datatype="&xsd;string">fullsize.png</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://eprints.ecs.soton.ac.uk/21449/4/indexcodes.txt">
+    <rdfs:label rdf:datatype="&xsd;string">indexcodes.txt</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://eprints.ecs.soton.ac.uk/21449/">
+    <dc:format>text/html</dc:format>
+    <dc:title>HTML Summary of #21449 
+
+The Open Provenance Model core specification (v1.1)
+
+</dc:title>
+    <foaf:primaryTopic rdf:resource="http://eprints.ecs.soton.ac.uk/id/eprint/21449" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://eprints.ecs.soton.ac.uk/id/document/35337">
+    <dct:hasPart rdf:resource="http://eprints.ecs.soton.ac.uk/21449/1/opm.pdf" />
+    <ep:hasFile rdf:resource="http://eprints.ecs.soton.ac.uk/21449/1/opm.pdf" />
+    <eprel:hasIndexCodesVersion rdf:resource="http://eprints.ecs.soton.ac.uk/id/document/35340" />
+    <eprel:hasVersion rdf:resource="http://eprints.ecs.soton.ac.uk/id/document/35338" />
+    <eprel:hasVersion rdf:resource="http://eprints.ecs.soton.ac.uk/id/document/35339" />
+    <eprel:hasVersion rdf:resource="http://eprints.ecs.soton.ac.uk/id/document/35340" />
+    <eprel:hasVolatileVersion rdf:resource="http://eprints.ecs.soton.ac.uk/id/document/35338" />
+    <eprel:hasVolatileVersion rdf:resource="http://eprints.ecs.soton.ac.uk/id/document/35339" />
+    <eprel:hasVolatileVersion rdf:resource="http://eprints.ecs.soton.ac.uk/id/document/35340" />
+    <eprel:hasfullsizeThumbnailVersion rdf:resource="http://eprints.ecs.soton.ac.uk/id/document/35339" />
+    <eprel:haspreviewThumbnailVersion rdf:resource="http://eprints.ecs.soton.ac.uk/id/document/35338" />
+    <rdf:type rdf:resource="&bibo;Document" />
+    <rdf:type rdf:resource="&ep;Document" />
+    <rdfs:label rdf:datatype="&xsd;string">The Open Provenance Model core specification (v1.1) (PDF)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://eprints.ecs.soton.ac.uk/id/document/35338">
+    <dct:hasPart rdf:resource="http://eprints.ecs.soton.ac.uk/21449/2/preview.jpg" />
+    <ep:hasFile rdf:resource="http://eprints.ecs.soton.ac.uk/21449/2/preview.jpg" />
+    <eprel:isVersionOf rdf:resource="http://eprints.ecs.soton.ac.uk/id/document/35337" />
+    <eprel:isVolatileVersionOf rdf:resource="http://eprints.ecs.soton.ac.uk/id/document/35337" />
+    <eprel:ispreviewThumbnailVersionOf rdf:resource="http://eprints.ecs.soton.ac.uk/id/document/35337" />
+    <rdf:type rdf:resource="&ep;Document" />
+    <rdfs:label rdf:datatype="&xsd;string">The Open Provenance Model core specification (v1.1) (Image (JPEG))</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://eprints.ecs.soton.ac.uk/id/document/35339">
+    <dct:hasPart rdf:resource="http://eprints.ecs.soton.ac.uk/21449/3/fullsize.png" />
+    <ep:hasFile rdf:resource="http://eprints.ecs.soton.ac.uk/21449/3/fullsize.png" />
+    <eprel:isVersionOf rdf:resource="http://eprints.ecs.soton.ac.uk/id/document/35337" />
+    <eprel:isVolatileVersionOf rdf:resource="http://eprints.ecs.soton.ac.uk/id/document/35337" />
+    <eprel:isfullsizeThumbnailVersionOf rdf:resource="http://eprints.ecs.soton.ac.uk/id/document/35337" />
+    <rdf:type rdf:resource="&ep;Document" />
+    <rdfs:label rdf:datatype="&xsd;string">The Open Provenance Model core specification (v1.1) ([&quot;document_typename_thumbnail_fullsize&quot; not defined])</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://eprints.ecs.soton.ac.uk/id/document/35340">
+    <dct:hasPart rdf:resource="http://eprints.ecs.soton.ac.uk/21449/4/indexcodes.txt" />
+    <ep:hasFile rdf:resource="http://eprints.ecs.soton.ac.uk/21449/4/indexcodes.txt" />
+    <eprel:isIndexCodesVersionOf rdf:resource="http://eprints.ecs.soton.ac.uk/id/document/35337" />
+    <eprel:isVersionOf rdf:resource="http://eprints.ecs.soton.ac.uk/id/document/35337" />
+    <eprel:isVolatileVersionOf rdf:resource="http://eprints.ecs.soton.ac.uk/id/document/35337" />
+    <rdf:type rdf:resource="&ep;Document" />
+    <rdfs:label rdf:datatype="&xsd;string">The Open Provenance Model core specification (v1.1) (Indexer Terms)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://eprints.ecs.soton.ac.uk/id/eprint/21449#authors">
+    <rdf:_1 rdf:resource="&epid;person/ext-391" />
+    <rdf:_2 rdf:resource="&epid;person/ext-7425998ce49baa4152c50793cd6d540f" />
+    <rdf:_3 rdf:resource="&epid;person/ext-1d9aa6c790aa31c3cecf0571bfc0b96b" />
+    <rdf:_4 rdf:resource="&epid;person/ext-74d3bc06bafe7454255f59e37a749139" />
+    <rdf:_5 rdf:resource="&epid;person/ext-3e31db19a3117480fac1103c555a2ca0" />
+    <rdf:_6 rdf:resource="&epid;person/ext-7d1456c0508aeffb7c7f271af327ca0a" />
+    <rdf:_7 rdf:resource="&epid;person/ext-6dda547ad394697ef14d5b8d50253e4b" />
+    <rdf:_8 rdf:resource="&epid;person/ext-8ddb18e6c1424837db92a9c4568f42d3" />
+    <rdf:_9 rdf:resource="&epid;person/ext-1be506d23829ae8536ba0ad457bd58cd" />
+    <rdf:_10 rdf:resource="&epid;person/ext-764c21b182e9e13d4cd4865167bd7653" />
+    <rdf:_11 rdf:resource="&epid;person/ext-4906317b6d8150532fe53629c6e94bfc" />
+    <rdf:_12 rdf:resource="&epid;person/ext-0ede6e398deaa67aa53bb9e963e0999d" />
+    <rdf:_13 rdf:resource="&epid;person/ext-59f6e4c4df5dad380d8bfae7a13e9d65" />
+    <rdf:_14 rdf:resource="&epid;person/ext-9868433041e8b7d851af1ce433b95d28" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://eprints.ecs.soton.ac.uk/id/eprint/21449">
+    <nsx:inPublicationsListOf xmlns:nsx='http://id.southampton.ac.uk/ns/' rdf:resource="http://id.ecs.soton.ac.uk/group/iam" />
+    <nsx:inPublicationsListOf xmlns:nsx='http://id.southampton.ac.uk/ns/' rdf:resource="http://id.ecs.soton.ac.uk/group/wais" />
+    <bibo:abstract rdf:datatype="&xsd;string">The Open Provenance Model is a model of provenance that is designed to meet the following requirements: (1) To allow provenance information to be exchanged between systems, by means of a compatibility layer based on a shared provenance model. (2) To allow developers to build and share tools that operate on such a provenance model. (3) To define provenance in a precise, technology-agnostic manner. (4) To support a digital representation of provenance for any 'thing', whether produced by computer systems or not. (5) To allow multiple levels of description to coexist. (6) To define a core set of rules that identify the valid inferences that can be made on provenance representation. This document contains the specification of the Open Provenance Model (v1.1) resulting from a community-effort to achieve inter-operability in the Provenance Challenge series. </bibo:abstract>
+    <bibo:authorList rdf:resource="http://eprints.ecs.soton.ac.uk/id/eprint/21449#authors" />
+    <bibo:status rdf:resource="http://purl.org/ontology/bibo/status/forthcoming" />
+    <bibo:status rdf:resource="http://purl.org/ontology/bibo/status/peerReviewed" />
+    <dct:creator rdf:resource="&epid;person/ext-0ede6e398deaa67aa53bb9e963e0999d" />
+    <dct:creator rdf:resource="&epid;person/ext-1be506d23829ae8536ba0ad457bd58cd" />
+    <dct:creator rdf:resource="&epid;person/ext-1d9aa6c790aa31c3cecf0571bfc0b96b" />
+    <dct:creator rdf:resource="&epid;person/ext-3e31db19a3117480fac1103c555a2ca0" />
+    <dct:creator rdf:resource="&epid;person/ext-6dda547ad394697ef14d5b8d50253e4b" />
+    <dct:creator rdf:resource="&epid;person/ext-7d1456c0508aeffb7c7f271af327ca0a" />
+    <dct:creator rdf:resource="&epid;person/ext-8ddb18e6c1424837db92a9c4568f42d3" />
+    <dct:creator rdf:resource="&epid;person/ext-59f6e4c4df5dad380d8bfae7a13e9d65" />
+    <dct:creator rdf:resource="&epid;person/ext-74d3bc06bafe7454255f59e37a749139" />
+    <dct:creator rdf:resource="&epid;person/ext-391" />
+    <dct:creator rdf:resource="&epid;person/ext-764c21b182e9e13d4cd4865167bd7653" />
+    <dct:creator rdf:resource="&epid;person/ext-4906317b6d8150532fe53629c6e94bfc" />
+    <dct:creator rdf:resource="&epid;person/ext-7425998ce49baa4152c50793cd6d540f" />
+    <dct:creator rdf:resource="&epid;person/ext-9868433041e8b7d851af1ce433b95d28" />
+    <dct:date>2010-07-22</dct:date>
+    <dct:isPartOf rdf:resource="http://eprints.ecs.soton.ac.uk/id/repository" />
+    <dct:isPartOf rdf:resource="&epid;publication/ext-a1e3ab241772721c96a3591226ff2022" />
+    <dct:publisher rdf:resource="&epid;org/ext-f308aad1ef8f70546c3a197f104f2ad5" />
+    <dct:title rdf:datatype="&xsd;string">The Open Provenance Model core specification (v1.1)</dct:title>
+    <ep:hasDocument rdf:resource="http://eprints.ecs.soton.ac.uk/id/document/35337" />
+    <ep:hasDocument rdf:resource="http://eprints.ecs.soton.ac.uk/id/document/35338" />
+    <ep:hasDocument rdf:resource="http://eprints.ecs.soton.ac.uk/id/document/35339" />
+    <ep:hasDocument rdf:resource="http://eprints.ecs.soton.ac.uk/id/document/35340" />
+    <rdf:type rdf:resource="&bibo;AcademicArticle" />
+    <rdf:type rdf:resource="&bibo;Article" />
+    <rdf:type rdf:resource="&ep;ArticleEPrint" />
+    <rdf:type rdf:resource="&ep;EPrint" />
+    <rdfs:seeAlso rdf:resource="http://eprints.ecs.soton.ac.uk/21449/" />
+  </rdf:Description>
+  <rdf:Description rdf:about="&epid;org/ext-f308aad1ef8f70546c3a197f104f2ad5">
+    <foaf:name rdf:datatype="&xsd;string">Elsevier</foaf:name>
+    <rdf:type rdf:resource="&foaf;Organization" />
+  </rdf:Description>
+  <rdf:Description rdf:about="&epid;person/ext-0ede6e398deaa67aa53bb9e963e0999d">
+    <foaf:familyName rdf:datatype="&xsd;string">Simmhan</foaf:familyName>
+    <foaf:givenName rdf:datatype="&xsd;string">Yogesh</foaf:givenName>
+    <foaf:name rdf:datatype="&xsd;string">Yogesh Simmhan</foaf:name>
+    <rdf:type rdf:resource="&foaf;Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="&epid;person/ext-1be506d23829ae8536ba0ad457bd58cd">
+    <foaf:familyName rdf:datatype="&xsd;string">Missier</foaf:familyName>
+    <foaf:givenName rdf:datatype="&xsd;string">Paolo</foaf:givenName>
+    <foaf:name rdf:datatype="&xsd;string">Paolo Missier</foaf:name>
+    <rdf:type rdf:resource="&foaf;Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="&epid;person/ext-1d9aa6c790aa31c3cecf0571bfc0b96b">
+    <foaf:familyName rdf:datatype="&xsd;string">Freire</foaf:familyName>
+    <foaf:givenName rdf:datatype="&xsd;string">Juliana</foaf:givenName>
+    <foaf:name rdf:datatype="&xsd;string">Juliana Freire</foaf:name>
+    <rdf:type rdf:resource="&foaf;Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="&epid;person/ext-3e31db19a3117480fac1103c555a2ca0">
+    <foaf:familyName rdf:datatype="&xsd;string">Gil</foaf:familyName>
+    <foaf:givenName rdf:datatype="&xsd;string">Yolanda</foaf:givenName>
+    <foaf:name rdf:datatype="&xsd;string">Yolanda Gil</foaf:name>
+    <rdf:type rdf:resource="&foaf;Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="&epid;person/ext-6dda547ad394697ef14d5b8d50253e4b">
+    <foaf:familyName rdf:datatype="&xsd;string">Kwasnikowska</foaf:familyName>
+    <foaf:givenName rdf:datatype="&xsd;string">Natalia</foaf:givenName>
+    <foaf:name rdf:datatype="&xsd;string">Natalia Kwasnikowska</foaf:name>
+    <rdf:type rdf:resource="&foaf;Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="&epid;person/ext-7d1456c0508aeffb7c7f271af327ca0a">
+    <foaf:familyName rdf:datatype="&xsd;string">Groth</foaf:familyName>
+    <foaf:givenName rdf:datatype="&xsd;string">Paul</foaf:givenName>
+    <foaf:name rdf:datatype="&xsd;string">Paul Groth</foaf:name>
+    <rdf:type rdf:resource="&foaf;Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="&epid;person/ext-8ddb18e6c1424837db92a9c4568f42d3">
+    <foaf:familyName rdf:datatype="&xsd;string">Miles</foaf:familyName>
+    <foaf:givenName rdf:datatype="&xsd;string">Simon</foaf:givenName>
+    <foaf:name rdf:datatype="&xsd;string">Simon Miles</foaf:name>
+    <rdf:type rdf:resource="&foaf;Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="&epid;person/ext-59f6e4c4df5dad380d8bfae7a13e9d65">
+    <foaf:familyName rdf:datatype="&xsd;string">Stephan</foaf:familyName>
+    <foaf:givenName rdf:datatype="&xsd;string">Eric</foaf:givenName>
+    <foaf:name rdf:datatype="&xsd;string">Eric Stephan</foaf:name>
+    <rdf:type rdf:resource="&foaf;Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="&epid;person/ext-74d3bc06bafe7454255f59e37a749139">
+    <foaf:familyName rdf:datatype="&xsd;string">Futrelle</foaf:familyName>
+    <foaf:givenName rdf:datatype="&xsd;string">Joe</foaf:givenName>
+    <foaf:name rdf:datatype="&xsd;string">Joe Futrelle</foaf:name>
+    <rdf:type rdf:resource="&foaf;Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="&epid;person/ext-391">
+    <foaf:familyName rdf:datatype="&xsd;string">Moreau</foaf:familyName>
+    <foaf:givenName rdf:datatype="&xsd;string">Luc</foaf:givenName>
+    <foaf:name rdf:datatype="&xsd;string">Luc Moreau</foaf:name>
+    <owl:sameAs rdf:resource="&ecsid;person/391" />
+    <rdf:type rdf:resource="&foaf;Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="&epid;person/ext-764c21b182e9e13d4cd4865167bd7653">
+    <foaf:familyName rdf:datatype="&xsd;string">Myers</foaf:familyName>
+    <foaf:givenName rdf:datatype="&xsd;string">Jim</foaf:givenName>
+    <foaf:name rdf:datatype="&xsd;string">Jim Myers</foaf:name>
+    <rdf:type rdf:resource="&foaf;Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="&epid;person/ext-4906317b6d8150532fe53629c6e94bfc">
+    <foaf:familyName rdf:datatype="&xsd;string">Plale</foaf:familyName>
+    <foaf:givenName rdf:datatype="&xsd;string">Beth</foaf:givenName>
+    <foaf:name rdf:datatype="&xsd;string">Beth Plale</foaf:name>
+    <rdf:type rdf:resource="&foaf;Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="&epid;person/ext-7425998ce49baa4152c50793cd6d540f">
+    <foaf:familyName rdf:datatype="&xsd;string">Clifford</foaf:familyName>
+    <foaf:givenName rdf:datatype="&xsd;string">Ben</foaf:givenName>
+    <foaf:name rdf:datatype="&xsd;string">Ben Clifford</foaf:name>
+    <rdf:type rdf:resource="&foaf;Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="&epid;person/ext-9868433041e8b7d851af1ce433b95d28">
+    <foaf:familyName rdf:datatype="&xsd;string">Van den Bussche</foaf:familyName>
+    <foaf:givenName rdf:datatype="&xsd;string">Jan</foaf:givenName>
+    <foaf:name rdf:datatype="&xsd;string">Jan Van den Bussche</foaf:name>
+    <rdf:type rdf:resource="&foaf;Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="&epid;publication/ext-a1e3ab241772721c96a3591226ff2022">
+    <foaf:name rdf:datatype="&xsd;string">Future Generation Computer Systems</foaf:name>
+    <rdf:type rdf:resource="&bibo;Collection" />
+  </rdf:Description>
+
+
+</rdf:RDF>

@@ -1,0 +1,171 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE Ontology [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://ll.mit.edu/2014/ccer/domain/third_party/sweet/v2.31/visualShape.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     ontologyIRI="http://ll.mit.edu/2014/ccer/domain/third_party/sweet/v2.31/visualShape.owl">
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Import>http://sweet.jpl.nasa.gov/2.3/reprMath.owl</Import>
+    <Import>http://purl.org/dc/terms</Import>
+    <Import>http://sweet.jpl.nasa.gov/2.3/propSpace.owl</Import>
+    <Import>http://sweet.jpl.nasa.gov/2.3/reprSpaceCoordinate.owl</Import>
+    <Declaration>
+        <Class IRI="#Canvas"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Shape2D"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasAttachedShape"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasCanvas"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasContainerShape"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasHorizontalCoordinate"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasModelInstance"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasShape2D"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasVerticalCoordinate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#bottomMargin"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#leftMargin"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#midX"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#midY"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#rightMargin"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#shapeHeight"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#shapeWidth"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#topMargin"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#Canvas"/>
+        <Class IRI="#Shape2D"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Shape2D"/>
+        <Class IRI="http://sweet.jpl.nasa.gov/2.3/propSpace.owl#Shape"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Shape2D"/>
+        <Class IRI="http://sweet.jpl.nasa.gov/2.3/repr.owl#2D"/>
+    </SubClassOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasHorizontalCoordinate"/>
+        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasAttachedShape"/>
+        <Class IRI="#Shape2D"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasContainerShape"/>
+        <Class IRI="#Shape2D"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasAttachedShape"/>
+        <Class IRI="#Shape2D"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasContainerShape"/>
+        <Class IRI="#Shape2D"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasShape2D"/>
+        <Class IRI="#Shape2D"/>
+    </ObjectPropertyRange>
+    <DataPropertyDomain>
+        <DataProperty IRI="#bottomMargin"/>
+        <Class IRI="#Canvas"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#leftMargin"/>
+        <Class IRI="#Canvas"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#rightMargin"/>
+        <Class IRI="#Canvas"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#topMargin"/>
+        <Class IRI="#Canvas"/>
+    </DataPropertyDomain>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasAttachedShape</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Points to a shape that is attached to this shape. Usage example:  Services  that are associated to a particular Host can use &quot;hasAttachedShape&quot; to point form the Service shape to Host.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasContainerShape</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Points to the immediate visual shape that contains a shape.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#leftMargin</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Left margin for Canvas</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#midX</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">X coordinate of the mid point of a shape</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#midY</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Y coordinate of the midpoint of a shape</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#rightMargin</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Right margin for Canvas</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#topMargin</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Top margin of a page</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 3.2.2.1789) http://owlapi.sourceforge.net -->
+

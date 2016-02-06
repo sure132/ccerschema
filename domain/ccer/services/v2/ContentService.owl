@@ -1,0 +1,183 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY base "http://schemas.ogf.org/nml/2013/05/base#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY domain "http://www.science.uva.nl/research/sne/ndl/domain#" >
+    <!ENTITY computer "http://ll.mit.edu/2013/ccer/domain/ccer/host/v1/computer.owl#" >
+    <!ENTITY capability "http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/capability#" >
+    <!ENTITY ContentService "http://ll.mit.edu/2013/ccer/domain/ccer/services/v2/ContentService.owl#" >
+    <!ENTITY applications "http://ll.mit.edu/2013/ccer/domain/ccer/applications/v1/applications.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://ll.mit.edu/2013/ccer/domain/ccer/services/v2/ContentService.owl#"
+     xml:base="http://ll.mit.edu/2013/ccer/domain/ccer/services/v2/ContentService.owl"
+     xmlns:computer="http://ll.mit.edu/2013/ccer/domain/ccer/host/v1/computer.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:ContentService="http://ll.mit.edu/2013/ccer/domain/ccer/services/v2/ContentService.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:base="http://schemas.ogf.org/nml/2013/05/base#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:domain="http://www.science.uva.nl/research/sne/ndl/domain#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:applications="http://ll.mit.edu/2013/ccer/domain/ccer/applications/v1/applications.owl#"
+     xmlns:capability="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/capability#">
+    <owl:Ontology rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/services/v2/ContentService.owl">
+        <owl:imports rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/services/v2/base.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="&rdfs;comment"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://org.semanticweb.owlapi/error#Error1 -->
+
+    <rdfs:Datatype rdf:about="http://org.semanticweb.owlapi/error#Error1"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/services/v2/ContentService.owl#hasContentService -->
+
+    <owl:ObjectProperty rdf:about="&ContentService;hasContentService">
+        <rdfs:range rdf:resource="&ContentService;ContentService"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/services/v2/ContentService.owl#contentCorpusISO -->
+
+    <owl:DatatypeProperty rdf:about="&ContentService;contentCorpusISO"/>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/services/v2/ContentService.owl#contentName -->
+
+    <owl:DatatypeProperty rdf:about="&ContentService;contentName"/>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/services/v2/ContentService.owl#corpusPathinISO -->
+
+    <owl:DatatypeProperty rdf:about="&ContentService;corpusPathinISO"/>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/services/v2/ContentService.owl#hasContentDescription -->
+
+    <owl:DatatypeProperty rdf:about="&ContentService;hasContentDescription"/>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/services/v2/ContentService.owl#hasContentType -->
+
+    <owl:DatatypeProperty rdf:about="&ContentService;hasContentType"/>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/services/v2/ContentService.owl#hasWebServerApplication -->
+
+    <owl:DatatypeProperty rdf:about="&ContentService;hasWebServerApplication"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/services/v2/ContentService.owl#ContentService -->
+
+    <owl:Class rdf:about="&ContentService;ContentService">
+        <rdfs:subClassOf rdf:resource="&base;Service"/>
+        <rdfs:comment xml:lang="en">A service that provides content or data across the Internet through a protocol</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/services/v2/ContentService.owl#WebServerApplication -->
+
+    <owl:Class rdf:about="&ContentService;WebServerApplication">
+        <rdfs:subClassOf rdf:resource="&applications;Application"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#nil -->
+
+    <owl:Thing rdf:about="&rdf;nil">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </owl:Thing>
+    <owl:Thing/>
+    <owl:Thing/>
+    <owl:Thing/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.2.1789) http://owlapi.sourceforge.net -->
+

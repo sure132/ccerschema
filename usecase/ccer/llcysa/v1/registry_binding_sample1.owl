@@ -1,0 +1,196 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY event "http://ll.mit.edu/2012/ccer/domain/ccer/event/v1/event.owl#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY registry_sample2 "http://ll.mit.edu/2012/09/registry_sample2.owl#" >
+    <!ENTITY registry_binding_sample1 "http://ll.mit.edu/2012/09/registry_binding_sample1.owl#" >
+    <!ENTITY cysa_registry_binding "http://ll.mit.edu/2012/ccer/domain/ccer/event/v1/cysa_registry_binding.owl#" >
+    <!ENTITY tagscheme "http://ll.mit.edu/2012/ccer/domain/ccer/event/v1/tagscheme.rdf#" >
+]>
+
+
+<rdf:RDF xmlns="http://ll.mit.edu/2012/09/registry_binding_sample1.owl#"
+     xml:base="http://ll.mit.edu/2012/09/registry_binding_sample1.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:registry_binding_sample1="http://ll.mit.edu/2012/09/registry_binding_sample1.owl#"
+     xmlns:event="http://ll.mit.edu/2012/ccer/domain/ccer/event/v1/event.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:registry_sample2="http://ll.mit.edu/2012/09/registry_sample2.owl#"
+     xmlns:tagscheme="http://ll.mit.edu/2012/ccer/domain/ccer/event/v1/tagscheme.rdf#"
+     xmlns:cysa_registry_binding="http://ll.mit.edu/2012/ccer/domain/ccer/event/v1/cysa_registry_binding.owl#">
+    <owl:Ontology rdf:about="http://ll.mit.edu/2012/09/registry_binding_sample1.owl">
+        <owl:imports rdf:resource="http://ll.mit.edu/2012/09/registry_sample2.owl"/>
+        <owl:imports rdf:resource="http://ll.mit.edu/2012/ccer/domain/ccer/event/v1/cysa_registry_binding.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/registry_binding_sample1.owl#Description -->
+
+    <owl:NamedIndividual rdf:about="&registry_binding_sample1;Description">
+        <rdf:type rdf:resource="&tagscheme;Tag"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/registry_binding_sample1.owl#Destination -->
+
+    <owl:NamedIndividual rdf:about="&registry_binding_sample1;Destination">
+        <rdf:type rdf:resource="&tagscheme;Tag"/>
+        <cysa_registry_binding:hasRegistryBinding rdf:resource="&registry_sample2;Destination"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/registry_binding_sample1.owl#DimDateTimeSeconds2Instant -->
+
+    <owl:NamedIndividual rdf:about="&registry_binding_sample1;DimDateTimeSeconds2Instant">
+        <rdf:type rdf:resource="&event;Dimension"/>
+        <cysa_registry_binding:hasRegistryBinding rdf:resource="&registry_sample2;DateTimeSeconds2Instant"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/registry_binding_sample1.owl#DimDateTimeSeconds2Interval -->
+
+    <owl:NamedIndividual rdf:about="&registry_binding_sample1;DimDateTimeSeconds2Interval">
+        <rdf:type rdf:resource="&event;Dimension"/>
+        <cysa_registry_binding:hasRegistryBinding rdf:resource="&registry_sample2;DateTimeSeconds2Interval"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/registry_binding_sample1.owl#DimFQDN -->
+
+    <owl:NamedIndividual rdf:about="&registry_binding_sample1;DimFQDN">
+        <rdf:type rdf:resource="&event;Dimension"/>
+        <cysa_registry_binding:hasRegistryBinding rdf:resource="&registry_sample2;FQDN"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/registry_binding_sample1.owl#DimIPv4Address -->
+
+    <owl:NamedIndividual rdf:about="&registry_binding_sample1;DimIPv4Address">
+        <rdf:type rdf:resource="&event;Dimension"/>
+        <cysa_registry_binding:hasRegistryBinding rdf:resource="&registry_sample2;IPAddress"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/registry_binding_sample1.owl#DimNetworkDomain -->
+
+    <owl:NamedIndividual rdf:about="&registry_binding_sample1;DimNetworkDomain">
+        <rdf:type rdf:resource="&event;Dimension"/>
+        <cysa_registry_binding:hasRegistryBinding rdf:resource="&registry_sample2;Domain"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/registry_binding_sample1.owl#DomainLookup -->
+
+    <owl:NamedIndividual rdf:about="&registry_binding_sample1;DomainLookup">
+        <rdf:type rdf:resource="&event;DerivedEvent"/>
+        <cysa_registry_binding:hasRegistryBinding rdf:resource="&registry_sample2;DomainLookup"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/registry_binding_sample1.owl#DomainRequest -->
+
+    <owl:NamedIndividual rdf:about="&registry_binding_sample1;DomainRequest">
+        <rdf:type rdf:resource="&event;CapturedEvent"/>
+        <cysa_registry_binding:hasRegistryBinding rdf:resource="&registry_sample2;DomainRequest"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/registry_binding_sample1.owl#IDENTITY -->
+
+    <owl:NamedIndividual rdf:about="&registry_binding_sample1;IDENTITY">
+        <rdf:type rdf:resource="&event;Operator"/>
+        <cysa_registry_binding:hasRegistryBinding rdf:resource="&registry_sample2;IDENTITY"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/registry_binding_sample1.owl#Receive -->
+
+    <owl:NamedIndividual rdf:about="&registry_binding_sample1;Receive">
+        <rdf:type rdf:resource="&tagscheme;Tag"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/registry_binding_sample1.owl#Requested -->
+
+    <owl:NamedIndividual rdf:about="&registry_binding_sample1;Requested">
+        <rdf:type rdf:resource="&tagscheme;Tag"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/registry_binding_sample1.owl#SELECT -->
+
+    <owl:NamedIndividual rdf:about="&registry_binding_sample1;SELECT">
+        <rdf:type rdf:resource="&event;Operator"/>
+        <cysa_registry_binding:hasRegistryBinding rdf:resource="&registry_sample2;SELECT"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/registry_binding_sample1.owl#Send -->
+
+    <owl:NamedIndividual rdf:about="&registry_binding_sample1;Send">
+        <rdf:type rdf:resource="&tagscheme;Tag"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/registry_binding_sample1.owl#Source -->
+
+    <owl:NamedIndividual rdf:about="&registry_binding_sample1;Source">
+        <rdf:type rdf:resource="&tagscheme;Tag"/>
+        <cysa_registry_binding:hasRegistryBinding rdf:resource="&registry_sample2;Source"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/registry_binding_sample1.owl#Start -->
+
+    <owl:NamedIndividual rdf:about="&registry_binding_sample1;Start">
+        <rdf:type rdf:resource="&tagscheme;Tag"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2012/09/registry_binding_sample1.owl#WebProxyEvent -->
+
+    <owl:NamedIndividual rdf:about="&registry_binding_sample1;WebProxyEvent">
+        <rdf:type rdf:resource="&event;CapturedEvent"/>
+        <cysa_registry_binding:hasRegistryBinding rdf:resource="&registry_sample2;ProxyEvent"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.2.1789) http://owlapi.sourceforge.net -->
+

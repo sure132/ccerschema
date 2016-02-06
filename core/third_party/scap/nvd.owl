@@ -1,0 +1,145 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:j.0="http://ll.mit.edu/2013/ccer/core/third_party/scap/nvd.owl#"
+    xmlns:nvd="http://ll.mit.edu/2013/ccer/core/third_party/scap/nvd.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://ll.mit.edu/2013/ccer/core/third_party/scap/nvd.owl">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="http://xmlns.com/foaf/0.1/"/>
+    <owl:imports rdf:resource="http://purl.org/dc/terms"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Ontology developed based on the NIST National Vulnerability Database schema.</rdfs:comment>
+  </owl:Ontology>
+  <owl:Class rdf:ID="SolutionSource">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Severity">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Description">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Impact">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:Class>
+  <owl:Class rdf:ID="LossType">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:Class>
+  <owl:Class rdf:ID="ImpactSource">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:Class>
+  <owl:Class rdf:ID="DescriptionSource">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Solution">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:Class>
+  <owl:Class rdf:ID="NVD_Entry">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="hasRefererences">
+    <rdfs:domain rdf:resource="#NVD_Entry"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasSolution">
+    <rdfs:domain rdf:resource="#NVD_Entry"/>
+    <rdfs:range rdf:resource="#Solution"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasImpact">
+    <rdfs:range rdf:resource="#Impact"/>
+    <rdfs:domain rdf:resource="#NVD_Entry"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasLossType">
+    <rdfs:domain rdf:resource="#NVD_Entry"/>
+    <rdfs:range rdf:resource="#LossType"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasDescriptionSource">
+    <rdfs:domain rdf:resource="#Description"/>
+    <rdfs:range rdf:resource="#DescriptionSource"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasSeverity">
+    <rdfs:domain rdf:resource="#NVD_Entry"/>
+    <rdfs:range rdf:resource="#Severity"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasRange">
+    <rdfs:domain rdf:resource="#NVD_Entry"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasDescription">
+    <rdfs:range rdf:resource="#Description"/>
+    <rdfs:domain rdf:resource="#NVD_Entry"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasVulnerableSoftwareType">
+    <rdfs:domain rdf:resource="#NVD_Entry"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasVulnerabilityType">
+    <rdfs:domain rdf:resource="#NVD_Entry"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:ID="hasCVSS_score">
+    <rdfs:domain rdf:resource="#NVD_Entry"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasModifiedDate">
+    <rdfs:domain rdf:resource="#NVD_Entry"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasCVSS_version">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:domain rdf:resource="#NVD_Entry"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="isRejected">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:domain rdf:resource="#NVD_Entry"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasImpactText">
+    <rdfs:domain rdf:resource="#Impact"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasName">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#NVD_Entry"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasCVSS_exploit_score">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:domain rdf:resource="#NVD_Entry"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasCVSS_impact_subscore">
+    <rdfs:domain rdf:resource="#NVD_Entry"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasCVSS_vector">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:domain rdf:resource="#NVD_Entry"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasCVSS_impact_score">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:domain rdf:resource="#NVD_Entry"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasDescriptionText">
+    <rdfs:domain rdf:resource="#Description"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasPublishedDate">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:domain rdf:resource="#NVD_Entry"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasCVSS_base_score">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:domain rdf:resource="#NVD_Entry"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasDiscoveryDate">
+    <rdfs:domain rdf:resource="#NVD_Entry"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+  </owl:DatatypeProperty>
+  <j.0:SolutionSource rdf:ID="SolutionSource_NVD"/>
+  <j.0:Severity rdf:ID="Low"/>
+  <j.0:Solution rdf:ID="Sol_NVD"/>
+  <j.0:DescriptionSource rdf:ID="DescriptionSource_NVD"/>
+  <j.0:DescriptionSource rdf:ID="DescriptionSource_CVE"/>
+  <j.0:ImpactSource rdf:ID="ImpactSource_NVD"/>
+  <j.0:Severity rdf:ID="High"/>
+  <j.0:Severity rdf:ID="Medium"/>
+</rdf:RDF>
+
+<!-- Created with TopBraid -->

@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE rdf:RDF [
+  <!ENTITY math "http://sweet.jpl.nasa.gov/2.3/reprMath.owl">
+  <!ENTITY repr "http://sweet.jpl.nasa.gov/2.3/repr.owl">
+
+
+
+  <!ENTITY diff "http://sweet.jpl.nasa.gov/2.3/propDifference.owl">
+  <!ENTITY rela "http://sweet.jpl.nasa.gov/2.3/relaMath.owl">
+  <!ENTITY owl "http://www.w3.org/2002/07/owl#">
+  <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+  <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+
+]>
+
+<rdf:RDF 
+   xml:base = "&rela;"
+   xmlns:math = "&math;"
+   xmlns:rela = "&rela;"
+   xmlns:repr = "&repr;"
+   xmlns:owl = "&owl;"
+   xmlns:rdf = "&rdf;"
+   xmlns:rdfs = "&rdfs;"
+   xmlns:xsd = "&xsd;">
+
+<!-- Ontology Information -->
+  <owl:Ontology rdf:about=""
+                owl:versionInfo="2.3">
+     <rdfs:label>SWEET Ontology</rdfs:label>
+     <owl:imports rdf:resource="&math;"/>
+     <owl:imports rdf:resource="&repr;"/>
+  </owl:Ontology>
+
+<!-- Object Properties -->
+  <owl:ObjectProperty rdf:about="#hasInterval">
+    <rdfs:range rdf:resource="&math;#Interval"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#hasOperand">
+    <rdfs:domain rdf:resource="&math;#NumericalEntity"/>
+    <rdfs:range rdf:resource="&math;#NumericalEntity"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#hasOrderedPair">
+    <rdfs:range rdf:resource="&math;#OrderedPair"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#hasUnorderedPair">
+    <rdfs:range rdf:resource="&math;#UnorderedPair"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#hasFirstOperand">
+    <rdfs:subPropertyOf rdf:resource="#hasOperand"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#hasSecondOperand">
+    <rdfs:subPropertyOf rdf:resource="#hasOperand"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#hasThirdOperand">
+    <rdfs:subPropertyOf rdf:resource="#hasOperand"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#hasExponent">
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#hasConstant">
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#eachElementHasType">
+    <rdfs:range rdf:resource="&math;#NumericalEntity"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#isomorphic">
+    <rdfs:subPropertyOf rdf:resource="#relation"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#projection">
+    <rdfs:subPropertyOf rdf:resource="#subsetOf"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#equals">
+    <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+    <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+    <rdfs:subPropertyOf rdf:resource="#relation"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#inequality">
+    <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+    <rdfs:subPropertyOf rdf:resource="#relation"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#relation">
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#ordinalRelation">
+    <rdfs:subPropertyOf rdf:resource="#relation"/>
+    <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#greaterThan">
+    <rdfs:subPropertyOf rdf:resource="#ordinalRelation"/>
+    <rdfs:subPropertyOf rdf:resource="#inequality"/>
+    <owl:inverseOf rdf:resource="#lessThanOrEqual"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#greaterThanOrEqual">
+    <rdfs:subPropertyOf rdf:resource="#ordinalRelation"/>
+    <owl:inverseOf rdf:resource="#lessThan"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#lessThan">
+    <rdfs:subPropertyOf rdf:resource="#ordinalRelation"/>
+    <rdfs:subPropertyOf rdf:resource="#inequality"/>
+    <owl:inverseOf rdf:resource="#greaterThanOrEqual"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#lessThanOrEqual">
+    <rdfs:subPropertyOf rdf:resource="#ordinalRelation"/>
+    <owl:inverseOf rdf:resource="#greaterThan"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#fuzzyGreaterThan">
+    <rdfs:subPropertyOf rdf:resource="#relation"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#fuzzyLessThan">
+    <rdfs:subPropertyOf rdf:resource="#relation"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#setRelation">
+    <rdfs:domain rdf:resource="&math;#Set"/>
+    <rdfs:range rdf:resource="&math;#Set"/>
+    <rdfs:subPropertyOf rdf:resource="#relation"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#setExclusion">
+    <rdfs:subPropertyOf rdf:resource="#setRelation"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#subsetOf">
+    <rdfs:subPropertyOf rdf:resource="#setRelation"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#supersetOf">
+    <rdfs:subPropertyOf rdf:resource="#setRelation"/>
+    <owl:inverseOf rdf:resource="#subsetOf"/>
+  </owl:ObjectProperty>
+
+  
+
+  <owl:ObjectProperty rdf:about="#hasGradient">
+  </owl:ObjectProperty>
+
+
+
+  <owl:ObjectProperty rdf:about="#isDerivativeOf">
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#approximates">
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#basedOn">
+  </owl:ObjectProperty>
+
+
+<!-- Datatype properties -->
+  <owl:DatatypeProperty rdf:about="#hasLowerBound">
+    <owl:equivalentProperty rdf:resource="#lowerBound"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#lowerBound"/>
+
+  <owl:DatatypeProperty rdf:about="#hasUpperBound">
+    <owl:equivalentProperty rdf:resource="#upperBound"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#upperBound"/>
+
+  <owl:DatatypeProperty rdf:about="#hasError">
+    <rdfs:range rdf:resource="&xsd;double"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="#hasTolerance">
+    <rdfs:range rdf:resource="&xsd;double"/>
+    <owl:equivalentProperty rdf:resource="#tolerance"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#tolerance"/>
+
+ 
+
+
+
+  <owl:DatatypeProperty rdf:ID="toThePower">
+    <rdfs:range rdf:resource="&xsd;double"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:ID="hasIntegerValue">
+    <rdfs:range rdf:resource="&xsd;integer"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="#hasDegree">
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="#hasOrder">
+    <rdfs:range rdf:resource="&xsd;integer"/>
+  </owl:DatatypeProperty>
+
+<!-- representation -->
+  <owl:ObjectProperty rdf:about="#hasRepresentation">
+    <rdfs:range rdf:resource="&repr;#Representation"/>
+    <owl:equivalentProperty rdf:resource="#representationOf"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#representationOf"/>
+
+  <owl:ObjectProperty rdf:about="#coordinate_1">
+    <rdfs:domain rdf:resource="&repr;#CoordinateSystem"/>
+    <rdfs:range rdf:resource="&repr;#Coordinate"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#coordinate_2">
+    <rdfs:domain rdf:resource="&repr;#CoordinateSystem"/>
+    <rdfs:range rdf:resource="&repr;#Coordinate"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#coordinate_3">
+    <rdfs:domain rdf:resource="&repr;#CoordinateSystem"/>
+    <rdfs:range rdf:resource="&repr;#Coordinate"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#coordinate_4">
+    <rdfs:domain rdf:resource="&repr;#CoordinateSystem"/>
+    <rdfs:range rdf:resource="&repr;#Coordinate"/>
+  </owl:ObjectProperty>
+
+  <owl:DatatypeProperty rdf:about="#hasDimension">
+    <rdfs:range rdf:resource="&xsd;integer"/>
+  </owl:DatatypeProperty>
+
+  <owl:ObjectProperty rdf:about="#hasCoordinates">
+    <rdfs:range rdf:resource="&repr;#Coordinates" />
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#hasScale">
+    <rdfs:range rdf:resource="&repr;#Scale" />
+  </owl:ObjectProperty>
+
+
+
+  <owl:DatatypeProperty rdf:ID="hasScalingNumber">
+    <rdfs:range rdf:resource="&xsd;double"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:ID="hasShiftingNumber">
+    <rdfs:range rdf:resource="&xsd;double"/>
+  </owl:DatatypeProperty>
+
+</rdf:RDF>

@@ -1,0 +1,8 @@
+This directory contains CCER Schema and  sample instances
+
+Directories:
+
+core - contains core ontologies, including uuper level ontologies
+domain - contains ontologies developed specifically for CCER
+usecasea - contains sample instances of CCER Schema
+scripts - contains scripts for manipulation of ontologies

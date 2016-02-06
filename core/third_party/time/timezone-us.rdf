@@ -1,0 +1,3543 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE owl [
+     <!ENTITY tzont  "http://www.w3.org/2006/timezone#" >
+     <!ENTITY owl  "http://www.w3.org/2002/07/owl#" >
+     <!ENTITY xsd  "http://www.w3.org/2001/XMLSchema#" >
+     <!ENTITY iso "http://www.daml.org/2001/09/countries/iso#" >
+     <!ENTITY us-states "http://www.daml.ri.cmu.edu/ont/USRegionState.daml#" >
+     <!ENTITY iso-3166-ont "http://www.daml.org/2001/09/countries/iso-3166-ont#" >
+   ]>
+
+<rdf:RDF
+  xmlns    = "http://www.w3.org/2006/timezone-us#"
+  xml:base    = "http://www.w3.org/2006/timezone-us"
+  xmlns:tz-us = "http://www.w3.org/2006/timezone-us#"
+  xmlns:tzont = "http://www.w3.org/2006/timezone#"
+  xmlns:owl = "http://www.w3.org/2002/07/owl#"
+  xmlns:rdf = "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:rdfs = "http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:iso = "http://www.daml.org/2001/09/countries/iso#"
+  xmlns:us-states = "http://www.daml.ri.cmu.edu/ont/USRegionState.daml#"
+  xmlns:iso-3166-ont = "http://www.daml.org/2001/09/countries/iso-3166-ont#"
+  xmlns:xsd = "http://www.w3.org/2001/XMLSchema#">
+
+
+  <tzont:TimeZone rdf:ID="AST">
+    <tzont:name rdf:datatype="&xsd;string">Atlantic Standard Time</tzont:name>
+    <tzont:GMToffset rdf:datatype="&xsd;duration">-PT4H</tzont:GMToffset>
+  </tzont:TimeZone>
+
+  <tzont:TimeZone rdf:ID="EST">
+    <tzont:name rdf:datatype="&xsd;string">Eastern Standard Time</tzont:name>
+    <tzont:GMToffset rdf:datatype="&xsd;duration">-PT5H</tzont:GMToffset>
+
+  </tzont:TimeZone>
+
+  <tzont:TimeZone rdf:ID="CST">
+    <tzont:name rdf:datatype="&xsd;string">Central Standard Time</tzont:name>
+    <tzont:GMToffset rdf:datatype="&xsd;duration">-PT6H</tzont:GMToffset>
+  </tzont:TimeZone>
+
+  <tzont:TimeZone rdf:ID="MST">
+    <tzont:name rdf:datatype="&xsd;string">Mountain Standard Time</tzont:name>
+
+    <tzont:GMToffset rdf:datatype="&xsd;duration">-PT7H</tzont:GMToffset>
+  </tzont:TimeZone>
+
+  <tzont:TimeZone rdf:ID="PST">
+    <tzont:name rdf:datatype="&xsd;string">Pacific Standard Time</tzont:name>
+    <tzont:GMToffset rdf:datatype="&xsd;duration">-PT8H</tzont:GMToffset>
+  </tzont:TimeZone>
+
+  <tzont:TimeZone rdf:ID="AKST">
+    <tzont:name rdf:datatype="&xsd;string">Alaska Standard Time</tzont:name>
+    <tzont:GMToffset rdf:datatype="&xsd;duration">-PT9H</tzont:GMToffset>
+  </tzont:TimeZone>
+
+  <tzont:TimeZone rdf:ID="HST">
+    <tzont:name rdf:datatype="&xsd;string">Hawaii-Aleutian Standard Time</tzont:name>
+    <tzont:GMToffset rdf:datatype="&xsd;duration">-PT10H</tzont:GMToffset>
+
+  </tzont:TimeZone>
+
+  <tzont:TimeZone rdf:ID="SST">
+    <tzont:name rdf:datatype="&xsd;string">Samoa Standard Time</tzont:name>
+    <tzont:GMToffset rdf:datatype="&xsd;duration">-PT11H</tzont:GMToffset>
+  </tzont:TimeZone>
+
+  <tzont:EnumeratedDaylightSavingsPolicy rdf:ID="USA2006DLS">
+    <tzont:DLSstartDate rdf:datatype="&xsd;date">2006-04-02</tzont:DLSstartDate>
+
+    <tzont:DLSendDate rdf:datatype="&xsd;date">2006-10-29</tzont:DLSendDate>
+  </tzont:EnumeratedDaylightSavingsPolicy>
+
+  <tzont:Country rdf:about="&iso;US">
+    <!-- United States of America -->
+    <tzont:hasDaylightSavingsPolicy rdf:resource="#USA2006DLS"/>
+  </tzont:Country>
+
+  <tzont:State rdf:about="&us-states;AL">
+
+    <!-- Alabama -->
+    <tzont:hasParentRegion rdf:resource="&iso;US" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <tzont:observesDaylightSavingsTime rdf:datatype="&xsd;boolean">true</tzont:observesDaylightSavingsTime>
+  </tzont:State>
+
+  <tzont:State rdf:about="&us-states;AK">
+    <!-- Alaska -->
+    <tzont:hasParentRegion rdf:resource="&iso;US" />
+
+    <tzont:hasTimeZone rdf:resource="#AKST" />
+    <tzont:observesDaylightSavingsTime rdf:datatype="&xsd;boolean">true</tzont:observesDaylightSavingsTime>
+    <tzont:exceptionalRegion rdf:resource="#AKAleutiansWest" />
+  </tzont:State>
+
+  <tzont:County rdf:ID="AKAleutiansWest">
+    <!-- Aleutians West County in Alaska -->
+    <tzont:name rdf:datatype="&xsd;string">Aleutians West County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;AK" />
+    <tzont:timeZonePart rdf:resource="#AKAleutiansWestAKST" />
+    <tzont:timeZonePart rdf:resource="#AKAleutiansWestHST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/AK.owl#c016" />
+  </tzont:County>
+
+  <tzont:Region rdf:ID="AKAleutiansWestAKST">
+    <!-- AKST part of Aleutians West County in Alaska -->
+    <tzont:name rdf:datatype="&xsd;string">Aleutians West County AKST part</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="#AKAleutiansWest" />
+    <tzont:observesDaylightSavingsTime rdf:datatype="&xsd;boolean">true</tzont:observesDaylightSavingsTime>
+    <tzont:hasTimeZone rdf:resource="#AKST" />
+  </tzont:Region>
+
+  <tzont:Region rdf:ID="AKAleutiansWestHST">
+    <!-- HST part of Aleutians West County in Alaska -->
+    <tzont:name rdf:datatype="&xsd;string">Aleutians West County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="#AKAleutiansWest" />
+    <tzont:observesDaylightSavingsTime rdf:datatype="&xsd;boolean">false</tzont:observesDaylightSavingsTime>
+    <tzont:hasTimeZone rdf:resource="#HST" />
+  </tzont:Region>
+
+  <tzont:State rdf:about="&us-states;AZ">
+    <!-- Arizona -->
+    <tzont:hasParentRegion rdf:resource="&iso;US" />
+    <tzont:hasTimeZone rdf:resource="#MST" />
+
+    <tzont:observesDaylightSavingsTime rdf:datatype="&xsd;boolean">false</tzont:observesDaylightSavingsTime>
+    <tzont:exceptionalRegion rdf:resource="#NavajoReserv" />
+  </tzont:State>
+
+  <tzont:Reservation rdf:ID="NavajoReserv">
+    <!-- Navajo Reservation, also called Navajo Nation -->
+    <tzont:name rdf:datatype="&xsd;string">Navajo Reservation</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&iso;US" />
+
+    <tzont:hasTimeZone rdf:resource="#MST" />
+    <tzont:observesDaylightSavingsTime rdf:datatype="&xsd;boolean">true</tzont:observesDaylightSavingsTime>
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/AZ.owl#p48845" />
+  </tzont:Reservation>
+
+  <tzont:State rdf:about="&us-states;AR">
+    <!-- Arkansas -->
+    <tzont:hasParentRegion rdf:resource="&iso;US" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+
+    <tzont:observesDaylightSavingsTime rdf:datatype="&xsd;boolean">true</tzont:observesDaylightSavingsTime>
+  </tzont:State>
+
+  <tzont:State rdf:about="&us-states;CA">
+    <!-- California -->
+    <tzont:hasParentRegion rdf:resource="&iso;US" />
+    <tzont:hasTimeZone rdf:resource="#PST" />
+    <tzont:observesDaylightSavingsTime rdf:datatype="&xsd;boolean">true</tzont:observesDaylightSavingsTime>
+
+  </tzont:State>
+
+  <tzont:State rdf:about="&us-states;CO">
+    <!-- Colorado -->
+    <tzont:hasParentRegion rdf:resource="&iso;US" />
+    <tzont:hasTimeZone rdf:resource="#MST" />
+    <tzont:observesDaylightSavingsTime rdf:datatype="&xsd;boolean">true</tzont:observesDaylightSavingsTime>
+  </tzont:State>
+
+  <tzont:State rdf:about="&us-states;CT">
+    <!-- Connecticut -->
+    <tzont:hasParentRegion rdf:resource="&iso;US" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <tzont:observesDaylightSavingsTime rdf:datatype="&xsd;boolean">true</tzont:observesDaylightSavingsTime>
+  </tzont:State>
+
+  <tzont:State rdf:about="&us-states;DE">
+    <!-- Delaware -->
+
+    <tzont:hasParentRegion rdf:resource="&iso;US" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <tzont:observesDaylightSavingsTime rdf:datatype="&xsd;boolean">true</tzont:observesDaylightSavingsTime>
+  </tzont:State>
+
+  <tzont:State rdf:about="&us-states;FL">
+    <!-- Florida -->
+    <tzont:hasParentRegion rdf:resource="&iso;US" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+
+    <tzont:observesDaylightSavingsTime rdf:datatype="&xsd;boolean">true</tzont:observesDaylightSavingsTime>
+    <tzont:exceptionalRegion rdf:resource="#FLBay" />
+    <tzont:exceptionalRegion rdf:resource="#FLCalhoun" />
+    <tzont:exceptionalRegion rdf:resource="#FLEscambia" />
+    <tzont:exceptionalRegion rdf:resource="#FLGulf" />
+    <tzont:exceptionalRegion rdf:resource="#FLHolmes" />
+    <tzont:exceptionalRegion rdf:resource="#FLJackson" />
+    <tzont:exceptionalRegion rdf:resource="#FLOkaloosa" />
+
+    <tzont:exceptionalRegion rdf:resource="#FLSantaRosa" />
+    <tzont:exceptionalRegion rdf:resource="#FLWalton" />
+    <tzont:exceptionalRegion rdf:resource="#FLWashington" />
+  </tzont:State>
+
+  <tzont:County rdf:ID="FLBay">
+    <!-- Bay County in Florida -->
+    <tzont:name rdf:datatype="&xsd;string">Bay County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;FL" />
+
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/FL.owl#c005" />
+  </tzont:County>
+
+  <tzont:County rdf:ID="FLCalhoun">
+    <!-- Calhoun County in Florida -->
+    <tzont:name rdf:datatype="&xsd;string">Calhoun County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;FL" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/FL.owl#c013" />
+  </tzont:County>
+
+  <tzont:County rdf:ID="FLEscambia">
+    <!-- Escambia County in Florida -->
+    <tzont:name rdf:datatype="&xsd;string">Escambia County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;FL" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/FL.owl#c033" />
+
+  </tzont:County>
+
+  <tzont:County rdf:ID="FLGulf">
+    <!-- Gulf County in Florida -->
+    <tzont:name rdf:datatype="&xsd;string">Gulf County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;FL" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/FL.owl#c045" />
+  </tzont:County>
+
+  <tzont:County rdf:ID="FLHolmes">
+    <!-- Holmes County in Florida -->
+    <tzont:name rdf:datatype="&xsd;string">Holmes County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;FL" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/FL.owl#c059" />
+  </tzont:County>
+
+  <tzont:County rdf:ID="FLJackson">
+    <!-- Jackson County in Florida -->
+    <tzont:name rdf:datatype="&xsd;string">Jackson County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;FL" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/FL.owl#c063" />
+  </tzont:County>
+
+  <tzont:County rdf:ID="FLOkaloosa">
+
+    <!-- Okaloosa County in Florida -->
+    <tzont:name rdf:datatype="&xsd;string">Okaloosa County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;FL" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/FL.owl#c091" />
+  </tzont:County>
+
+  <tzont:County rdf:ID="FLSantaRosa">
+    <!-- Santa Rosa County in Florida -->
+
+    <tzont:name rdf:datatype="&xsd;string">Santa Rosa County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;FL" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/FL.owl#c113" />
+  </tzont:County>
+
+  <tzont:County rdf:ID="FLWalton">
+    <!-- Walton County in Florida -->
+    <tzont:name rdf:datatype="&xsd;string">Walton County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;FL" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/FL.owl#c131" />
+  </tzont:County>
+
+  <tzont:County rdf:ID="FLWashington">
+    <!-- Washington County in Florida -->
+    <tzont:name rdf:datatype="&xsd;string">Washington County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;FL" />
+
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/FL.owl#c133" />
+  </tzont:County>
+
+  <tzont:State rdf:about="&us-states;GA">
+    <!-- Georgia -->
+    <tzont:hasParentRegion rdf:resource="&iso;US" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <tzont:observesDaylightSavingsTime rdf:datatype="&xsd;boolean">true</tzont:observesDaylightSavingsTime>
+
+  </tzont:State>
+
+  <tzont:State rdf:about="&us-states;HI">
+    <!-- Hawaii -->
+    <tzont:hasParentRegion rdf:resource="&iso;US" />
+    <tzont:hasTimeZone rdf:resource="#HST" />
+    <tzont:observesDaylightSavingsTime rdf:datatype="&xsd;boolean">false</tzont:observesDaylightSavingsTime>
+  </tzont:State>
+
+  <tzont:State rdf:about="&us-states;ID">
+    <!-- Idaho -->
+    <tzont:hasParentRegion rdf:resource="&iso;US" />
+    <tzont:hasTimeZone rdf:resource="#MST" />
+    <tzont:observesDaylightSavingsTime rdf:datatype="&xsd;boolean">true</tzont:observesDaylightSavingsTime>
+    <tzont:exceptionalRegion rdf:resource="#IDBenewah" />
+    <tzont:exceptionalRegion rdf:resource="#IDBonner" />
+    <tzont:exceptionalRegion rdf:resource="#IDBoundary" />
+
+    <tzont:exceptionalRegion rdf:resource="#IDClearwater" />
+    <tzont:exceptionalRegion rdf:resource="#IDIdaho" />
+    <tzont:exceptionalRegion rdf:resource="#IDKootenai" />
+    <tzont:exceptionalRegion rdf:resource="#IDLatah" />
+    <tzont:exceptionalRegion rdf:resource="#IDLewis" />
+    <tzont:exceptionalRegion rdf:resource="#IDNezPerce" />
+    <tzont:exceptionalRegion rdf:resource="#IDShoshone" />
+  </tzont:State>
+
+  <tzont:County rdf:ID="IDBenewah">
+    <!-- Benewah County in Idaho -->
+    <tzont:name rdf:datatype="&xsd;string">Benewah County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;ID" />
+    <tzont:hasTimeZone rdf:resource="#PST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/ID.owl#c009" />
+  </tzont:County>
+
+  <tzont:County rdf:ID="IDBonner">
+
+    <!-- Bonner County in Idaho -->
+    <tzont:name rdf:datatype="&xsd;string">Bonner County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;ID" />
+    <tzont:hasTimeZone rdf:resource="#PST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/ID.owl#c017" />
+  </tzont:County>
+
+  <tzont:County rdf:ID="IDBoundary">
+    <!-- Boundary County in Idaho -->
+
+    <tzont:name rdf:datatype="&xsd;string">Boundary County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;ID" />
+    <tzont:hasTimeZone rdf:resource="#PST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/ID.owl#c021" />
+  </tzont:County>
+
+  <tzont:County rdf:ID="IDClearwater">
+    <!-- Clearwater County in Idaho -->
+    <tzont:name rdf:datatype="&xsd;string">Clearwater County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;ID" />
+    <tzont:hasTimeZone rdf:resource="#PST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/ID.owl#c035" />
+  </tzont:County>
+
+  <tzont:County rdf:ID="IDIdaho">
+    <!-- Idaho County in Idaho -->
+    <tzont:name rdf:datatype="&xsd;string">Idaho County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;ID" />
+
+    <tzont:timeZonePart rdf:resource="#IDIdahoPST" />
+    <tzont:timeZonePart rdf:resource="#IDIdahoMST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/ID.owl#c049" />
+  </tzont:County>
+
+  <tzont:Region rdf:ID="IDIdahoPST">
+    <!-- PST part of Idaho County in Idaho -->
+    <tzont:name rdf:datatype="&xsd;string">Idaho County PST Part</tzont:name>
+    <tzont:hasParentRegion rdf:resource="#IDIdaho" />
+
+    <tzont:hasTimeZone rdf:resource="#PST" />
+  </tzont:Region>
+
+  <tzont:Region rdf:ID="IDIdahoMST">
+    <!-- MST part of Idaho County in Idaho -->
+    <tzont:name rdf:datatype="&xsd;string">Idaho County MST Part</tzont:name>
+    <tzont:hasParentRegion rdf:resource="#IDIdaho" />
+    <tzont:hasTimeZone rdf:resource="#MST" />
+  </tzont:Region>
+
+  <tzont:County rdf:ID="IDKootenai">
+    <!-- Kootenai County in Idaho -->
+    <tzont:name rdf:datatype="&xsd;string">Kootenai County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;ID" />
+    <tzont:hasTimeZone rdf:resource="#PST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/ID.owl#c055" />
+  </tzont:County>
+
+  <tzont:County rdf:ID="IDLatah">
+    <!-- Latah County in Idaho -->
+    <tzont:name rdf:datatype="&xsd;string">Latah County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;ID" />
+    <tzont:hasTimeZone rdf:resource="#PST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/ID.owl#c057" />
+  </tzont:County>
+
+  <tzont:County rdf:ID="IDLewis">
+
+    <!-- Lewis County in Idaho -->
+    <tzont:name rdf:datatype="&xsd;string">Lewis County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;ID" />
+    <tzont:hasTimeZone rdf:resource="#PST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/ID.owl#c061" />
+  </tzont:County>
+
+  <tzont:County rdf:ID="IDNezPerce">
+    <!-- Nez Perce County in Idaho -->
+
+    <tzont:name rdf:datatype="&xsd;string">Nez Perce County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;ID" />
+    <tzont:hasTimeZone rdf:resource="#PST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/ID.owl#c069" />
+  </tzont:County>
+
+  <tzont:County rdf:ID="IDShoshone">
+    <!-- Shoshone County in Idaho -->
+    <tzont:name rdf:datatype="&xsd;string">Shoshone County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;ID" />
+    <tzont:hasTimeZone rdf:resource="#PST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/ID.owl#c079" />
+  </tzont:County>
+
+  <tzont:State rdf:about="&us-states;IL">
+    <!-- Illinois -->
+    <tzont:hasParentRegion rdf:resource="&iso;US" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+
+    <tzont:observesDaylightSavingsTime rdf:datatype="&xsd;boolean">true</tzont:observesDaylightSavingsTime>
+  </tzont:State>
+
+  <tzont:State rdf:about="&us-states;IN">
+    <!-- Indiana -->
+    <tzont:hasParentRegion rdf:resource="&iso;US" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <tzont:observesDaylightSavingsTime rdf:datatype="&xsd;boolean">true</tzont:observesDaylightSavingsTime>
+
+    <tzont:exceptionalRegion rdf:resource="#INGibson" />
+    <tzont:exceptionalRegion rdf:resource="#INJasper" />
+    <tzont:exceptionalRegion rdf:resource="#INLake" />
+    <tzont:exceptionalRegion rdf:resource="#INLaPorte" />
+    <tzont:exceptionalRegion rdf:resource="#INNewton" />
+    <tzont:exceptionalRegion rdf:resource="#INPorter" />
+    <tzont:exceptionalRegion rdf:resource="#INPosey" />
+    <tzont:exceptionalRegion rdf:resource="#INSpencer" />
+    <tzont:exceptionalRegion rdf:resource="#INVanderburgh" />
+
+    <tzont:exceptionalRegion rdf:resource="#INWarrick" />
+    <tzont:exceptionalRegion rdf:resource="#INClark" />
+    <tzont:exceptionalRegion rdf:resource="#INDearborn" />
+    <tzont:exceptionalRegion rdf:resource="#INFloyd" />
+    <tzont:exceptionalRegion rdf:resource="#INHarrison" />
+    <tzont:exceptionalRegion rdf:resource="#INOhio" />
+  </tzont:State>
+
+  <tzont:County rdf:ID="INGibson">
+
+    <!-- Gibson County in Indiana -->
+    <tzont:name rdf:datatype="&xsd;string">Gibson County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;IN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <tzont:observesDaylightSavingsTime rdf:datatype="&xsd;boolean">true</tzont:observesDaylightSavingsTime>
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/IN.owl#c051" />
+  </tzont:County>
+
+  <tzont:County rdf:ID="INJasper">
+    <!-- Jasper County in Indiana -->
+    <tzont:name rdf:datatype="&xsd;string">Jasper County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;IN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <tzont:observesDaylightSavingsTime rdf:datatype="&xsd;boolean">true</tzont:observesDaylightSavingsTime>
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/IN.owl#c073" />
+  </tzont:County>
+
+  <tzont:County rdf:ID="INLake">
+    <!-- Lake County in Indiana -->
+    <tzont:name rdf:datatype="&xsd;string">Lake County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;IN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <tzont:observesDaylightSavingsTime rdf:datatype="&xsd;boolean">true</tzont:observesDaylightSavingsTime>
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/IN.owl#c089" />
+
+  </tzont:County>
+
+  <tzont:County rdf:ID="INLaPorte">
+    <!-- LaPorte County in Indiana -->
+    <tzont:name rdf:datatype="&xsd;string">LaPorte County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;IN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <tzont:observesDaylightSavingsTime rdf:datatype="&xsd;boolean">true</tzont:observesDaylightSavingsTime>
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/IN.owl#c091" />
+  </tzont:County>
+
+  <tzont:County rdf:ID="INNewton">
+    <!-- Newton County in Indiana -->
+    <tzont:name rdf:datatype="&xsd;string">Newton County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;IN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <tzont:observesDaylightSavingsTime rdf:datatype="&xsd;boolean">true</tzont:observesDaylightSavingsTime>
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/IN.owl#c111" />
+  </tzont:County>
+
+  <tzont:County rdf:ID="INPorter">
+    <!-- Porter County in Indiana -->
+    <tzont:name rdf:datatype="&xsd;string">Porter County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;IN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <tzont:observesDaylightSavingsTime rdf:datatype="&xsd;boolean">true</tzont:observesDaylightSavingsTime>
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/IN.owl#c127" />
+  </tzont:County>
+
+  <tzont:County rdf:ID="INPosey">
+    <!-- Posey County in Indiana -->
+    <tzont:name rdf:datatype="&xsd;string">Posey County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;IN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <tzont:observesDaylightSavingsTime rdf:datatype="&xsd;boolean">true</tzont:observesDaylightSavingsTime>
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/IN.owl#c129" />
+  </tzont:County>
+
+  <tzont:County rdf:ID="INSpencer">
+    <!-- Spencer County in Indiana -->
+    <tzont:name rdf:datatype="&xsd;string">Spencer County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;IN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <tzont:observesDaylightSavingsTime rdf:datatype="&xsd;boolean">true</tzont:observesDaylightSavingsTime>
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/IN.owl#c147" />
+  </tzont:County>
+
+  <tzont:County rdf:ID="INVanderburgh">
+    <!-- Vanderburgh County in Indiana -->
+    <tzont:name rdf:datatype="&xsd;string">Vanderburgh County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;IN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <tzont:observesDaylightSavingsTime rdf:datatype="&xsd;boolean">true</tzont:observesDaylightSavingsTime>
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/IN.owl#c163" />
+  </tzont:County>
+
+  <tzont:County rdf:ID="INWarrick">
+    <!-- Warrick County in Indiana -->
+    <tzont:name rdf:datatype="&xsd;string">Warrick County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;IN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <tzont:observesDaylightSavingsTime rdf:datatype="&xsd;boolean">true</tzont:observesDaylightSavingsTime>
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/IN.owl#c173" />
+  </tzont:County>
+
+  <tzont:County rdf:ID="INClark">
+    <!-- Clark County in Indiana -->
+    <tzont:name rdf:datatype="&xsd;string">Clark County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;IN" />
+    <tzont:observesDaylightSavingsTime rdf:datatype="&xsd;boolean">true</tzont:observesDaylightSavingsTime>
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/IN.owl#c019" />
+  </tzont:County>
+
+  <tzont:County rdf:ID="INDearborn">
+    <!-- Dearborn County in Indiana -->
+    <tzont:name rdf:datatype="&xsd;string">Dearborn County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;IN" />
+    <tzont:observesDaylightSavingsTime rdf:datatype="&xsd;boolean">true</tzont:observesDaylightSavingsTime>
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/IN.owl#c029" />
+  </tzont:County>
+
+  <tzont:County rdf:ID="INFloyd">
+    <!-- Floyd County in Indiana -->
+    <tzont:name rdf:datatype="&xsd;string">Floyd County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;IN" />
+    <tzont:observesDaylightSavingsTime rdf:datatype="&xsd;boolean">true</tzont:observesDaylightSavingsTime>
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/IN.owl#c043" />
+  </tzont:County>
+
+  <tzont:County rdf:ID="INHarrison">
+    <!-- Harrison County in Indiana -->
+    <tzont:name rdf:datatype="&xsd;string">Harrison County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;IN" />
+    <tzont:observesDaylightSavingsTime rdf:datatype="&xsd;boolean">true</tzont:observesDaylightSavingsTime>
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/IN.owl#c061" />
+  </tzont:County>
+
+  <tzont:County rdf:ID="INOhio">
+    <!-- Ohio County in Indiana -->
+    <tzont:name rdf:datatype="&xsd;string">Ohio County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;IN" />
+    <tzont:observesDaylightSavingsTime rdf:datatype="&xsd;boolean">true</tzont:observesDaylightSavingsTime>
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/IN.owl#c115" />
+  </tzont:County>
+
+  <tzont:State rdf:about="&us-states;IA">
+    <!-- Iowa -->
+    <tzont:hasParentRegion rdf:resource="&iso;US" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <tzont:observesDaylightSavingsTime rdf:datatype="&xsd;boolean">true</tzont:observesDaylightSavingsTime>
+  </tzont:State>
+
+  <tzont:State rdf:about="&us-states;KS">
+    <!-- Kansas -->
+    <tzont:hasParentRegion rdf:resource="&iso;US" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <tzont:observesDaylightSavingsTime rdf:datatype="&xsd;boolean">true</tzont:observesDaylightSavingsTime>
+    <tzont:exceptionalRegion rdf:resource="#KSGreeley" />
+    <tzont:exceptionalRegion rdf:resource="#KSHamilton" />
+    <tzont:exceptionalRegion rdf:resource="#KSSherman" />
+
+    <tzont:exceptionalRegion rdf:resource="#KSWallace" />
+  </tzont:State>
+
+  <tzont:County rdf:ID="KSGreeley">
+    <!-- Greeley County in Kansas  -->
+    <tzont:name rdf:datatype="&xsd;string">Greeley County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KS" />
+    <tzont:hasTimeZone rdf:resource="#MST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KS.owl#c071" />
+
+  </tzont:County>
+
+  <tzont:County rdf:ID="KSHamilton">
+    <!-- Hamilton County in Kansas  -->
+    <tzont:name rdf:datatype="&xsd;string">Hamilton County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KS" />
+    <tzont:hasTimeZone rdf:resource="#MST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KS.owl#c075" />
+  </tzont:County>
+
+  <tzont:County rdf:ID="KSSherman">
+    <!-- Sherman County in Kansas  -->
+    <tzont:name rdf:datatype="&xsd;string">Sherman County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KS" />
+    <tzont:hasTimeZone rdf:resource="#MST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KS.owl#c181" />
+  </tzont:County>
+
+  <tzont:County rdf:ID="KSWallace">
+    <!-- Wallace County in Kansas  -->
+    <tzont:name rdf:datatype="&xsd;string">Wallace County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KS" />
+    <tzont:hasTimeZone rdf:resource="#MST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KS.owl#c199" />
+  </tzont:County>
+
+  <tzont:State rdf:about="&us-states;KY">
+
+    <!-- Kentucky -->
+    <!-- its County instances are at the end after Wyoming State -->
+    <tzont:hasParentRegion rdf:resource="&iso;US" />
+    <tzont:observesDaylightSavingsTime rdf:datatype="&xsd;boolean">true</tzont:observesDaylightSavingsTime>
+  </tzont:State>
+
+  <tzont:State rdf:about="&us-states;LA">
+    <!-- Louisiana -->
+    <tzont:hasParentRegion rdf:resource="&iso;US" />
+
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <tzont:observesDaylightSavingsTime rdf:datatype="&xsd;boolean">true</tzont:observesDaylightSavingsTime>
+  </tzont:State>
+
+  <tzont:State rdf:about="&us-states;ME">
+    <!-- Maine -->
+    <tzont:hasParentRegion rdf:resource="&iso;US" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <tzont:observesDaylightSavingsTime rdf:datatype="&xsd;boolean">true</tzont:observesDaylightSavingsTime>
+
+  </tzont:State>
+
+  <tzont:State rdf:about="&us-states;MD">
+    <!-- Maryland -->
+    <tzont:hasParentRegion rdf:resource="&iso;US" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <tzont:observesDaylightSavingsTime rdf:datatype="&xsd;boolean">true</tzont:observesDaylightSavingsTime>
+  </tzont:State>
+
+  <tzont:State rdf:about="&us-states;MA">
+    <!-- Massachusetts -->
+    <tzont:hasParentRegion rdf:resource="&iso;US" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <tzont:observesDaylightSavingsTime rdf:datatype="&xsd;boolean">true</tzont:observesDaylightSavingsTime>
+  </tzont:State>
+
+  <tzont:State rdf:about="&us-states;MI">
+    <!-- Michigan -->
+
+    <tzont:hasParentRegion rdf:resource="&iso;US" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <tzont:observesDaylightSavingsTime rdf:datatype="&xsd;boolean">true</tzont:observesDaylightSavingsTime>
+    <tzont:exceptionalRegion rdf:resource="#MIDickinson" />
+    <tzont:exceptionalRegion rdf:resource="#MIGogebic" />
+    <tzont:exceptionalRegion rdf:resource="#MIIron" />
+    <tzont:exceptionalRegion rdf:resource="#MIMenominee" />
+  </tzont:State>
+
+  <tzont:County rdf:ID="MIDickinson">
+    <!-- Dickinson County in Michigan -->
+    <tzont:name rdf:datatype="&xsd;string">Dickinson County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;MI" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/MI.owl#c043" />
+  </tzont:County>
+
+  <tzont:County rdf:ID="MIGogebic">
+    <!-- Gogebic County in Michigan -->
+    <tzont:name rdf:datatype="&xsd;string">Gogebic County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;MI" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/MI.owl#c053" />
+  </tzont:County>
+
+  <tzont:County rdf:ID="MIIron">
+
+    <!-- Iron County in Michigan -->
+    <tzont:name rdf:datatype="&xsd;string">Iron County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;MI" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/MI.owl#c071" />
+  </tzont:County>
+
+  <tzont:County rdf:ID="MIMenominee">
+    <!-- Menominee County in Michigan -->
+
+    <tzont:name rdf:datatype="&xsd;string">Menominee County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;MI" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/MI.owl#c109" />
+  </tzont:County>
+
+  <tzont:State rdf:about="&us-states;MN">
+    <!-- Minnesota -->
+    <tzont:hasParentRegion rdf:resource="&iso;US" />
+
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <tzont:observesDaylightSavingsTime rdf:datatype="&xsd;boolean">true</tzont:observesDaylightSavingsTime>
+  </tzont:State>
+
+  <tzont:State rdf:about="&us-states;MS">
+    <!-- Mississippi -->
+    <tzont:hasParentRegion rdf:resource="&iso;US" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <tzont:observesDaylightSavingsTime rdf:datatype="&xsd;boolean">true</tzont:observesDaylightSavingsTime>
+
+  </tzont:State>
+
+  <tzont:State rdf:about="&us-states;MO">
+    <!-- Missouri -->
+    <tzont:hasParentRegion rdf:resource="&iso;US" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <tzont:observesDaylightSavingsTime rdf:datatype="&xsd;boolean">true</tzont:observesDaylightSavingsTime>
+  </tzont:State>
+
+  <tzont:State rdf:about="&us-states;MT">
+    <!-- Montana -->
+    <tzont:hasParentRegion rdf:resource="&iso;US" />
+    <tzont:hasTimeZone rdf:resource="#MST" />
+    <tzont:observesDaylightSavingsTime rdf:datatype="&xsd;boolean">true</tzont:observesDaylightSavingsTime>
+  </tzont:State>
+
+  <tzont:State rdf:about="&us-states;NE">
+    <!-- Nebraska -->
+
+    <tzont:hasParentRegion rdf:resource="&iso;US" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <tzont:observesDaylightSavingsTime rdf:datatype="&xsd;boolean">true</tzont:observesDaylightSavingsTime>
+    <tzont:exceptionalRegion rdf:resource="#NEArthur" />
+    <tzont:exceptionalRegion rdf:resource="#NEBanner" />
+    <tzont:exceptionalRegion rdf:resource="#NEBoxButte" />
+    <tzont:exceptionalRegion rdf:resource="#NEChase" />
+    <tzont:exceptionalRegion rdf:resource="#NECherry" />
+
+    <tzont:exceptionalRegion rdf:resource="#NECheyenne" />
+    <tzont:exceptionalRegion rdf:resource="#NEDawes" />
+    <tzont:exceptionalRegion rdf:resource="#NEDeuel" />
+    <tzont:exceptionalRegion rdf:resource="#NEDundy" />
+    <tzont:exceptionalRegion rdf:resource="#NEGarden" />
+    <tzont:exceptionalRegion rdf:resource="#NEGrant" />
+    <tzont:exceptionalRegion rdf:resource="#NEHooker" />
+    <tzont:exceptionalRegion rdf:resource="#NEKeith" />
+    <tzont:exceptionalRegion rdf:resource="#NEKimball" />
+
+    <tzont:exceptionalRegion rdf:resource="#NEMorrill" />
+    <tzont:exceptionalRegion rdf:resource="#NEPerkins" />
+    <tzont:exceptionalRegion rdf:resource="#NEScottsBluff" />
+    <tzont:exceptionalRegion rdf:resource="#NESheridan" />
+    <tzont:exceptionalRegion rdf:resource="#NESioux" />
+  </tzont:State>
+
+  <tzont:County rdf:ID="NEArthur">
+    <!-- Arthur County in Nebraska -->
+
+    <tzont:name rdf:datatype="&xsd;string">Arthur County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;NE" />
+    <tzont:hasTimeZone rdf:resource="#MST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/NE.owl#c005" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="NEBanner">
+    <!-- Banner County in Nebraska -->
+    <tzont:name rdf:datatype="&xsd;string">Banner County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;NE" />
+    <tzont:hasTimeZone rdf:resource="#MST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/NE.owl#c007" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="NEBoxButte">
+    <!-- Box Butte County in Nebraska -->
+    <tzont:name rdf:datatype="&xsd;string">Box Butte County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;NE" />
+    <tzont:hasTimeZone rdf:resource="#MST" />
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/NE.owl#c013" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="NEChase">
+    <!-- Chase County in Nebraska -->
+    <tzont:name rdf:datatype="&xsd;string">Chase County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;NE" />
+    <tzont:hasTimeZone rdf:resource="#MST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/NE.owl#c029" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="NECheyenne">
+
+    <!-- Cheyenne County in Nebraska -->
+    <tzont:name rdf:datatype="&xsd;string">Cheyenne County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;NE" />
+    <tzont:hasTimeZone rdf:resource="#MST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/NE.owl#c033" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="NEDawes">
+    <!-- Dawes County in Nebraska -->
+    <tzont:name rdf:datatype="&xsd;string">Dawes County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;NE" />
+    <tzont:hasTimeZone rdf:resource="#MST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/NE.owl#c045" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="NEDeuel">
+    <!-- Deuel County in Nebraska -->
+    <tzont:name rdf:datatype="&xsd;string">Deuel County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;NE" />
+    <tzont:hasTimeZone rdf:resource="#MST" />
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/NE.owl#c049" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="NEDundy">
+    <!-- Dundy County in Nebraska -->
+    <tzont:name rdf:datatype="&xsd;string">Dundy County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;NE" />
+    <tzont:hasTimeZone rdf:resource="#MST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/NE.owl#c057" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="NEGarden">
+
+    <!-- Garden County in Nebraska -->
+    <tzont:name rdf:datatype="&xsd;string">Garden County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;NE" />
+    <tzont:hasTimeZone rdf:resource="#MST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/NE.owl#c069" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="NEGrant">
+    <!-- Grant County in Nebraska -->
+    <tzont:name rdf:datatype="&xsd;string">Grant County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;NE" />
+    <tzont:hasTimeZone rdf:resource="#MST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/NE.owl#c075" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="NEHooker">
+    <!-- Hooker County in Nebraska -->
+    <tzont:name rdf:datatype="&xsd;string">Hooker County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;NE" />
+    <tzont:hasTimeZone rdf:resource="#MST" />
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/NE.owl#c091" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="NEKeith">
+    <!-- Keith County in Nebraska -->
+    <tzont:name rdf:datatype="&xsd;string">Keith County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;NE" />
+    <tzont:hasTimeZone rdf:resource="#MST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/NE.owl#c101" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="NEKimball">
+
+    <!-- Kimball County in Nebraska -->
+    <tzont:name rdf:datatype="&xsd;string">Kimball County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;NE" />
+    <tzont:hasTimeZone rdf:resource="#MST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/NE.owl#c105" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="NEMorrill">
+    <!-- Morrill County in Nebraska -->
+    <tzont:name rdf:datatype="&xsd;string">Morrill County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;NE" />
+    <tzont:hasTimeZone rdf:resource="#MST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/NE.owl#c123" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="NEPerkins">
+    <!-- Perkins County in Nebraska -->
+    <tzont:name rdf:datatype="&xsd;string">Perkins County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;NE" />
+    <tzont:hasTimeZone rdf:resource="#MST" />
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/NE.owl#c135" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="NEScottsBluff">
+    <!-- Scotts Bluff County in Nebraska -->
+    <tzont:name rdf:datatype="&xsd;string">Scotts Bluff County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;NE" />
+    <tzont:hasTimeZone rdf:resource="#MST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/NE.owl#c157" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="NESheridan">
+
+    <!-- Sheridan County in Nebraska -->
+    <tzont:name rdf:datatype="&xsd;string">Sheridan County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;NE" />
+    <tzont:hasTimeZone rdf:resource="#MST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/NE.owl#c161" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="NESioux">
+    <!-- Sioux County in Nebraska -->
+    <tzont:name rdf:datatype="&xsd;string">Sioux County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;NE" />
+    <tzont:hasTimeZone rdf:resource="#MST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/NE.owl#c165" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="NECherry">
+    <!-- Cherry County in Nebraska -->
+    <tzont:name rdf:datatype="&xsd;string">Cherry County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;NE" />
+    <tzont:timeZonePart rdf:resource="#NECherryCST" />
+
+    <tzont:timeZonePart rdf:resource="#NECherryMST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/NE.owl#c031" />
+  </tzont:County>   
+
+  <tzont:Region rdf:ID="NECherryCST">
+    <!-- CST part of Cherry County in Nebraska -->
+    <tzont:name rdf:datatype="&xsd;string">Cherry County CST Part</tzont:name>
+    <tzont:hasParentRegion rdf:resource="#NECherry" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+  </tzont:Region>
+
+  <tzont:Region rdf:ID="NECherryMST">
+    <!-- MST part of Cherry County in Nebraska -->
+    <tzont:name rdf:datatype="&xsd;string">Cherry County MST Part</tzont:name>
+    <tzont:hasParentRegion rdf:resource="#NECherry" />
+    <tzont:hasTimeZone rdf:resource="#MST" />
+  </tzont:Region>
+
+  <tzont:State rdf:about="&us-states;NV">
+
+    <!-- Nevada -->
+    <tzont:hasParentRegion rdf:resource="&iso;US" />
+    <tzont:hasTimeZone rdf:resource="#PST" />
+    <tzont:observesDaylightSavingsTime rdf:datatype="&xsd;boolean">true</tzont:observesDaylightSavingsTime>
+    <tzont:exceptionalRegion rdf:resource="#NVWestWendoverCity" />
+  </tzont:State>
+
+  <tzont:City rdf:ID="NVWestWendoverCity">
+    <!-- West Wendover City in Nevada -->
+
+    <tzont:name rdf:datatype="&xsd;string">West Wendover City</tzont:name>
+    <tzont:stateOf rdf:resource="&us-states;NV" />
+    <tzont:hasTimeZone rdf:resource="#MST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/NV.owl#p83730" />
+  </tzont:City>
+
+  <tzont:State rdf:about="&us-states;NH">
+    <!-- New Hampshire -->
+    <tzont:hasParentRegion rdf:resource="&iso;US" />
+
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <tzont:observesDaylightSavingsTime rdf:datatype="&xsd;boolean">true</tzont:observesDaylightSavingsTime>
+  </tzont:State>
+
+  <tzont:State rdf:about="&us-states;NJ">
+    <!-- New Jersey -->
+    <tzont:hasParentRegion rdf:resource="&iso;US" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <tzont:observesDaylightSavingsTime rdf:datatype="&xsd;boolean">true</tzont:observesDaylightSavingsTime>
+
+  </tzont:State>
+
+  <tzont:State rdf:about="&us-states;NM">
+    <!-- New Mexico -->
+    <tzont:hasParentRegion rdf:resource="&iso;US" />
+    <tzont:hasTimeZone rdf:resource="#MST" />
+    <tzont:observesDaylightSavingsTime rdf:datatype="&xsd;boolean">true</tzont:observesDaylightSavingsTime>
+  </tzont:State>
+
+  <tzont:State rdf:about="&us-states;NY">
+    <!-- New York -->
+    <tzont:hasParentRegion rdf:resource="&iso;US" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <tzont:observesDaylightSavingsTime rdf:datatype="&xsd;boolean">true</tzont:observesDaylightSavingsTime>
+  </tzont:State>
+
+  <tzont:State rdf:about="&us-states;NC">
+    <!-- North Carolina -->
+
+    <tzont:hasParentRegion rdf:resource="&iso;US" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <tzont:observesDaylightSavingsTime rdf:datatype="&xsd;boolean">true</tzont:observesDaylightSavingsTime>
+  </tzont:State>
+
+  <tzont:State rdf:about="&us-states;ND">
+    <!-- North Dakota -->
+    <tzont:hasParentRegion rdf:resource="&iso;US" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+
+    <tzont:observesDaylightSavingsTime rdf:datatype="&xsd;boolean">true</tzont:observesDaylightSavingsTime>
+    <tzont:exceptionalRegion rdf:resource="#NDAdams" />
+    <tzont:exceptionalRegion rdf:resource="#NDBillings" />
+    <tzont:exceptionalRegion rdf:resource="#NDBowman" />
+    <tzont:exceptionalRegion rdf:resource="#NDGoldenValley" />
+    <tzont:exceptionalRegion rdf:resource="#NDGrant" />
+    <tzont:exceptionalRegion rdf:resource="#NDHettinger" />
+    <tzont:exceptionalRegion rdf:resource="#NDMercer" />
+
+    <tzont:exceptionalRegion rdf:resource="#NDSlope" />
+    <tzont:exceptionalRegion rdf:resource="#NDStark" />
+    <tzont:exceptionalRegion rdf:resource="#NDDunn" />
+    <tzont:exceptionalRegion rdf:resource="#NDMcKenzie" />
+    <tzont:exceptionalRegion rdf:resource="#NDMorton" />
+    <tzont:exceptionalRegion rdf:resource="#NDSioux" />
+  </tzont:State>
+
+  <tzont:County rdf:ID="NDAdams">
+
+    <!-- Adams County in North Dakota -->
+    <tzont:name rdf:datatype="&xsd;string">Adams County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;ND" />
+    <tzont:hasTimeZone rdf:resource="#MST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/ND.owl#c001" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="NDBillings">
+    <!-- Billings County in North Dakota -->
+    <tzont:name rdf:datatype="&xsd;string">Billings County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;ND" />
+    <tzont:hasTimeZone rdf:resource="#MST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/ND.owl#c007" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="NDBowman">
+    <!-- Bowman County in North Dakota -->
+    <tzont:name rdf:datatype="&xsd;string">Bowman County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;ND" />
+    <tzont:hasTimeZone rdf:resource="#MST" />
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/ND.owl#c011" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="NDGoldenValley">
+    <!-- Golden Valley County in North Dakota -->
+    <tzont:name rdf:datatype="&xsd;string">Golden Valley County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;ND" />
+    <tzont:hasTimeZone rdf:resource="#MST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/ND.owl#c033" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="NDGrant">
+
+    <!-- Grant County in North Dakota -->
+    <tzont:name rdf:datatype="&xsd;string">Grant County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;ND" />
+    <tzont:hasTimeZone rdf:resource="#MST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/ND.owl#c037" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="NDHettinger">
+    <!-- Hettinger County in North Dakota -->
+    <tzont:name rdf:datatype="&xsd;string">Hettinger County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;ND" />
+    <tzont:hasTimeZone rdf:resource="#MST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/ND.owl#c041" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="NDMercer">
+    <!-- Mercer County in North Dakota -->
+    <tzont:name rdf:datatype="&xsd;string">Mercer County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;ND" />
+    <tzont:hasTimeZone rdf:resource="#MST" />
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/ND.owl#c057" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="NDSlope">
+    <!-- Slope County in North Dakota -->
+    <tzont:name rdf:datatype="&xsd;string">Slope County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;ND" />
+    <tzont:hasTimeZone rdf:resource="#MST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/ND.owl#c087" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="NDStark">
+
+    <!-- Stark County in North Dakota -->
+    <tzont:name rdf:datatype="&xsd;string">Stark County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;ND" />
+    <tzont:hasTimeZone rdf:resource="#MST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/ND.owl#c089" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="NDDunn">
+    <!-- Dunn County in North Dakota -->
+    <tzont:name rdf:datatype="&xsd;string">Dunn County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;ND" />
+    <tzont:timeZonePart rdf:resource="#NDDunnCST" />
+    <tzont:timeZonePart rdf:resource="#NDDunnMST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/ND.owl#c025" />
+  </tzont:County>   
+
+  <tzont:Region rdf:ID="NDDunnCST">
+    <!-- CST part of Dunn County in North Dakota -->
+    <tzont:name rdf:datatype="&xsd;string">Dunn County CST Part</tzont:name>
+    <tzont:hasParentRegion rdf:resource="#NDDunn" />
+
+    <tzont:hasTimeZone rdf:resource="#CST" />
+  </tzont:Region>
+
+  <tzont:Region rdf:ID="NDDunnMST">
+    <!-- MST part of Dunn County in North Dakota -->
+    <tzont:name rdf:datatype="&xsd;string">Dunn County MST Part</tzont:name>
+    <tzont:hasParentRegion rdf:resource="#NDDunn" />
+    <tzont:hasTimeZone rdf:resource="#MST" />
+  </tzont:Region>
+
+  <tzont:County rdf:ID="NDMcKenzie">
+    <!-- McKenzie County in North Dakota -->
+    <tzont:name rdf:datatype="&xsd;string">McKenzie County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;ND" />
+    <tzont:timeZonePart rdf:resource="#NDMcKenzieCST" />
+    <tzont:timeZonePart rdf:resource="#NDMcKenzieMST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/ND.owl#c053" />
+  </tzont:County>   
+
+  <tzont:Region rdf:ID="NDMcKenzieCST">
+
+    <!-- CST part of McKenzie County in North Dakota -->
+    <tzont:name rdf:datatype="&xsd;string">McKenzie County CST Part</tzont:name>
+    <tzont:hasParentRegion rdf:resource="#NDMcKenzie" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+  </tzont:Region>
+
+  <tzont:Region rdf:ID="NDMcKenzieMST">
+    <!-- MST part of McKenzie County in North Dakota -->
+    <tzont:name rdf:datatype="&xsd;string">McKenzie County MST Part</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="#NDMcKenzie" />
+    <tzont:hasTimeZone rdf:resource="#MST" />
+  </tzont:Region>
+
+  <tzont:County rdf:ID="NDMorton">
+    <!-- Morton County in North Dakota -->
+    <tzont:name rdf:datatype="&xsd;string">Morton County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;ND" />
+    <tzont:timeZonePart rdf:resource="#NDMortonMST" />
+
+    <tzont:timeZonePart rdf:resource="#NDMortonCST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/ND.owl#c059" />
+  </tzont:County>   
+
+  <tzont:Region rdf:ID="NDMortonMST">
+    <!-- MST part of Morton County in North Dakota -->
+    <tzont:name rdf:datatype="&xsd;string">Morton County MST Part</tzont:name>
+    <tzont:hasParentRegion rdf:resource="#NDMorton" />
+    <tzont:hasTimeZone rdf:resource="#MST" />
+  </tzont:Region>
+
+  <tzont:Region rdf:ID="NDMortonCST">
+    <!-- CST part of Morton County in North Dakota -->
+    <tzont:name rdf:datatype="&xsd;string">Morton County CST Part</tzont:name>
+    <tzont:hasParentRegion rdf:resource="#NDMorton" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+  </tzont:Region>
+
+  <tzont:County rdf:ID="NDSioux">
+
+    <!-- Sioux County in North Dakota -->
+    <tzont:name rdf:datatype="&xsd;string">Sioux County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;ND" />
+    <tzont:timeZonePart rdf:resource="#NDSiouxMST" />
+    <tzont:timeZonePart rdf:resource="#NDSiouxCST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/ND.owl#c085" />
+  </tzont:County>   
+
+  <tzont:Region rdf:ID="NDSiouxMST">
+    <!-- MST part of Sioux County in North Dakota -->
+
+    <tzont:name rdf:datatype="&xsd;string">Sioux County MST Part</tzont:name>
+    <tzont:hasParentRegion rdf:resource="#NDSioux" />
+    <tzont:hasTimeZone rdf:resource="#MST" />
+  </tzont:Region>
+
+  <tzont:Region rdf:ID="NDSiouxCST">
+    <!-- CST part of Sioux County in North Dakota -->
+    <tzont:name rdf:datatype="&xsd;string">Sioux County CST Part</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="#NDSioux" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+  </tzont:Region>
+
+  <tzont:State rdf:about="&us-states;OH">
+    <!-- Ohio -->
+    <tzont:hasParentRegion rdf:resource="&iso;US" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <tzont:observesDaylightSavingsTime rdf:datatype="&xsd;boolean">true</tzont:observesDaylightSavingsTime>
+
+  </tzont:State>
+
+  <tzont:State rdf:about="&us-states;OK">
+    <!-- Oklahoma -->
+    <tzont:hasParentRegion rdf:resource="&iso;US" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <tzont:observesDaylightSavingsTime rdf:datatype="&xsd;boolean">true</tzont:observesDaylightSavingsTime>
+  </tzont:State>
+
+  <tzont:State rdf:about="&us-states;OR">
+    <!-- Oregon -->
+    <tzont:hasParentRegion rdf:resource="&iso;US" />
+    <tzont:hasTimeZone rdf:resource="#PST" />
+    <tzont:observesDaylightSavingsTime rdf:datatype="&xsd;boolean">true</tzont:observesDaylightSavingsTime>
+    <tzont:exceptionalRegion rdf:resource="#ORMalheur" />
+  </tzont:State>
+
+  <tzont:County rdf:ID="ORMalheur">
+
+    <!-- Malheur County in Oregon -->
+    <tzont:name rdf:datatype="&xsd;string">Malheur County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;OR" />
+    <tzont:timeZonePart rdf:resource="#ORMalheurMST" />
+    <tzont:timeZonePart rdf:resource="#ORMalheurPST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/OR.owl#c045" />
+  </tzont:County>   
+
+  <tzont:Region rdf:ID="ORMalheurMST">
+    <!-- MST part of Malheur County in Oregon -->
+
+    <tzont:name rdf:datatype="&xsd;string">Malheur County MST Part</tzont:name>
+    <tzont:hasParentRegion rdf:resource="#ORMalheur" />
+    <tzont:hasTimeZone rdf:resource="#MST" />
+  </tzont:Region>
+
+  <tzont:Region rdf:ID="ORMalheurPST">
+    <!-- PST part of Malheur County in Oregon -->
+    <tzont:name rdf:datatype="&xsd;string">Malheur County PST Part</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="#ORMalheur" />
+    <tzont:hasTimeZone rdf:resource="#PST" />
+  </tzont:Region>
+
+  <tzont:State rdf:about="&us-states;PA">
+    <!-- Pennsylvania -->
+    <tzont:hasParentRegion rdf:resource="&iso;US" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <tzont:observesDaylightSavingsTime rdf:datatype="&xsd;boolean">true</tzont:observesDaylightSavingsTime>
+
+  </tzont:State>
+
+  <tzont:State rdf:about="&us-states;PR">
+    <!-- Puerto Rico -->
+    <tzont:hasParentRegion rdf:resource="&iso;US" />
+    <tzont:hasTimeZone rdf:resource="#AST" />
+    <tzont:observesDaylightSavingsTime rdf:datatype="&xsd;boolean">false</tzont:observesDaylightSavingsTime>
+  </tzont:State>
+
+  <tzont:State rdf:about="&us-states;RI">
+    <!-- Rhode Island -->
+    <tzont:hasParentRegion rdf:resource="&iso;US" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <tzont:observesDaylightSavingsTime rdf:datatype="&xsd;boolean">true</tzont:observesDaylightSavingsTime>
+  </tzont:State>
+
+  <tzont:State rdf:about="&us-states;SC">
+    <!-- South Carolina -->
+
+    <tzont:hasParentRegion rdf:resource="&iso;US" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <tzont:observesDaylightSavingsTime rdf:datatype="&xsd;boolean">true</tzont:observesDaylightSavingsTime>
+  </tzont:State>
+
+  <tzont:State rdf:about="&us-states;SD">
+    <!-- South Dakota -->
+    <tzont:hasParentRegion rdf:resource="&iso;US" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+
+    <tzont:observesDaylightSavingsTime rdf:datatype="&xsd;boolean">true</tzont:observesDaylightSavingsTime>
+    <tzont:exceptionalRegion rdf:resource="#SDBennett" />
+    <tzont:exceptionalRegion rdf:resource="#SDButte" />
+    <tzont:exceptionalRegion rdf:resource="#SDCorson" />
+    <tzont:exceptionalRegion rdf:resource="#SDCuster" />
+    <tzont:exceptionalRegion rdf:resource="#SDDewey" />
+    <tzont:exceptionalRegion rdf:resource="#SDFallRiver" />
+    <tzont:exceptionalRegion rdf:resource="#SDHaakon" />
+
+    <tzont:exceptionalRegion rdf:resource="#SDHarding" />
+    <tzont:exceptionalRegion rdf:resource="#SDJackson" />
+    <tzont:exceptionalRegion rdf:resource="#SDJones" />
+    <tzont:exceptionalRegion rdf:resource="#SDLawrence" />
+    <tzont:exceptionalRegion rdf:resource="#SDMeade" />
+    <tzont:exceptionalRegion rdf:resource="#SDMellette" />
+    <tzont:exceptionalRegion rdf:resource="#SDPennington" />
+    <tzont:exceptionalRegion rdf:resource="#SDPerkins" />
+    <tzont:exceptionalRegion rdf:resource="#SDShannon" />
+
+    <tzont:exceptionalRegion rdf:resource="#SDStanley" />
+    <tzont:exceptionalRegion rdf:resource="#SDTodd" />
+    <tzont:exceptionalRegion rdf:resource="#SDZiebach" />
+  </tzont:State>
+
+  <tzont:County rdf:ID="SDBennett">
+    <!-- Bennett County in South Dakota -->
+    <tzont:name rdf:datatype="&xsd;string">Bennett County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;SD" />
+
+    <tzont:hasTimeZone rdf:resource="#MST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/SD.owl#c007" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="SDButte">
+    <!-- Butte County in South Dakota -->
+    <tzont:name rdf:datatype="&xsd;string">Butte County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;SD" />
+    <tzont:hasTimeZone rdf:resource="#MST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/SD.owl#c019" />
+
+  </tzont:County>   
+
+  <tzont:County rdf:ID="SDCorson">
+    <!-- Corson County in South Dakota -->
+    <tzont:name rdf:datatype="&xsd;string">Corson County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;SD" />
+    <tzont:hasTimeZone rdf:resource="#MST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/SD.owl#c031" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="SDCuster">
+
+    <!-- Custer County in South Dakota -->
+    <tzont:name rdf:datatype="&xsd;string">Custer County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;SD" />
+    <tzont:hasTimeZone rdf:resource="#MST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/SD.owl#c033" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="SDDewey">
+    <!-- Dewey County in South Dakota -->
+    <tzont:name rdf:datatype="&xsd;string">Dewey County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;SD" />
+    <tzont:hasTimeZone rdf:resource="#MST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/SD.owl#c041" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="SDFallRiver">
+    <!-- Fall River County in South Dakota -->
+    <tzont:name rdf:datatype="&xsd;string">Fall River County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;SD" />
+    <tzont:hasTimeZone rdf:resource="#MST" />
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/SD.owl#c047" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="SDHaakon">
+    <!-- Haakon County in South Dakota -->
+    <tzont:name rdf:datatype="&xsd;string">Haakon County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;SD" />
+    <tzont:hasTimeZone rdf:resource="#MST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/SD.owl#c055" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="SDHarding">
+
+    <!-- Harding County in South Dakota -->
+    <tzont:name rdf:datatype="&xsd;string">Harding County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;SD" />
+    <tzont:hasTimeZone rdf:resource="#MST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/SD.owl#c063" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="SDJackson">
+    <!-- Jackson County in South Dakota -->
+    <tzont:name rdf:datatype="&xsd;string">Jackson County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;SD" />
+    <tzont:hasTimeZone rdf:resource="#MST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/SD.owl#c071" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="SDJones">
+    <!-- Jones County in South Dakota -->
+    <tzont:name rdf:datatype="&xsd;string">Jones County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;SD" />
+    <tzont:timeZonePart rdf:resource="#SDJonesMST" />
+
+    <tzont:timeZonePart rdf:resource="#SDJonesCST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/SD.owl#c075" />
+  </tzont:County>   
+
+  <tzont:Region rdf:ID="SDJonesMST">
+    <!-- MST part of Jones County in South Dakota -->
+    <tzont:name rdf:datatype="&xsd;string">Jones County MST Part</tzont:name>
+    <tzont:hasParentRegion rdf:resource="#SDJones" />
+    <tzont:hasTimeZone rdf:resource="#MST" />
+  </tzont:Region>
+
+  <tzont:Region rdf:ID="SDJonesCST">
+    <!-- CST part of Jones County in South Dakota -->
+    <tzont:name rdf:datatype="&xsd;string">Jones County CST Part</tzont:name>
+    <tzont:hasParentRegion rdf:resource="#SDJones" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+  </tzont:Region>
+
+  <tzont:County rdf:ID="SDLawrence">
+
+    <!-- Lawrence County in South Dakota -->
+    <tzont:name rdf:datatype="&xsd;string">Lawrence County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;SD" />
+    <tzont:hasTimeZone rdf:resource="#MST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/SD.owl#c081" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="SDMeade">
+    <!-- Meade County in South Dakota -->
+    <tzont:name rdf:datatype="&xsd;string">Meade County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;SD" />
+    <tzont:hasTimeZone rdf:resource="#MST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/SD.owl#c093" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="SDMellette">
+    <!-- Mellette County in South Dakota -->
+    <tzont:name rdf:datatype="&xsd;string">Mellette County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;SD" />
+    <tzont:hasTimeZone rdf:resource="#MST" />
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/SD.owl#c095" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="SDPennington">
+    <!-- Pennington County in South Dakota -->
+    <tzont:name rdf:datatype="&xsd;string">Pennington County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;SD" />
+    <tzont:hasTimeZone rdf:resource="#MST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/SD.owl#c103" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="SDPerkins">
+
+    <!-- Perkins County in South Dakota -->
+    <tzont:name rdf:datatype="&xsd;string">Perkins County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;SD" />
+    <tzont:hasTimeZone rdf:resource="#MST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/SD.owl#c105" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="SDShannon">
+    <!-- Shannon County in South Dakota -->
+    <tzont:name rdf:datatype="&xsd;string">Shannon County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;SD" />
+    <tzont:hasTimeZone rdf:resource="#MST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/SD.owl#c113" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="SDStanley">
+    <!-- Stanley County in South Dakota -->
+    <tzont:name rdf:datatype="&xsd;string">Stanley County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;SD" />
+    <tzont:timeZonePart rdf:resource="#SDStanleyMST" />
+
+    <tzont:timeZonePart rdf:resource="#SDStanleyCST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/SD.owl#c117" />
+  </tzont:County>   
+
+  <tzont:Region rdf:ID="SDStanleyMST">
+    <!-- MST part of Stanley County in South Dakota -->
+    <tzont:name rdf:datatype="&xsd;string">Stanley County MST Part</tzont:name>
+    <tzont:hasParentRegion rdf:resource="#SDStanley" />
+    <tzont:hasTimeZone rdf:resource="#MST" />
+  </tzont:Region>
+
+  <tzont:Region rdf:ID="SDStanleyCST">
+    <!-- CST part of Stanley County in South Dakota -->
+    <tzont:name rdf:datatype="&xsd;string">Stanley County CST Part</tzont:name>
+    <tzont:hasParentRegion rdf:resource="#SDStanley" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+  </tzont:Region>
+
+  <tzont:County rdf:ID="SDTodd">
+
+    <!-- Todd County in South Dakota -->
+    <tzont:name rdf:datatype="&xsd;string">Todd County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;SD" />
+    <tzont:hasTimeZone rdf:resource="#MST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/SD.owl#c121" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="SDZiebach">
+    <!-- Ziebach County in South Dakota -->
+    <tzont:name rdf:datatype="&xsd;string">Ziebach County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;SD" />
+    <tzont:hasTimeZone rdf:resource="#MST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/SD.owl#c137" />
+  </tzont:County>   
+
+  <tzont:State rdf:about="&us-states;TN">
+    <!-- Tennessee -->
+    <!-- its County instances are at the end after Wyoming State and the County instances of Kentucky State -->
+    <tzont:hasParentRegion rdf:resource="&iso;US" />
+    <tzont:observesDaylightSavingsTime rdf:datatype="&xsd;boolean">true</tzont:observesDaylightSavingsTime>
+
+  </tzont:State>
+
+  <tzont:State rdf:about="&us-states;TX">
+    <!-- Texas -->
+    <tzont:hasParentRegion rdf:resource="&iso;US" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <tzont:observesDaylightSavingsTime rdf:datatype="&xsd;boolean">true</tzont:observesDaylightSavingsTime>
+    <tzont:exceptionalRegion rdf:resource="#TXCulberson" />
+    <tzont:exceptionalRegion rdf:resource="#TXElPaso" />
+
+    <tzont:exceptionalRegion rdf:resource="#TXHudspeth" />
+  </tzont:State>
+
+  <tzont:County rdf:ID="TXCulberson">
+    <!-- Culberson County in Texas -->
+    <tzont:name rdf:datatype="&xsd;string">Culberson County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TX" />
+    <tzont:timeZonePart rdf:resource="#TXCulbersonMST" />
+    <tzont:timeZonePart rdf:resource="#TXCulbersonCST" />
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TX.owl#c109" />
+  </tzont:County>  
+
+  <tzont:Region rdf:ID="TXCulbersonMST">
+    <!-- MST part of Culberson County in Texas -->
+    <tzont:name rdf:datatype="&xsd;string">Culberson County MST Part</tzont:name>
+    <tzont:hasParentRegion rdf:resource="#TXCulberson" />
+    <tzont:hasTimeZone rdf:resource="#MST" />
+  </tzont:Region>
+
+  <tzont:Region rdf:ID="TXCulbersonCST">
+    <!-- CST part of Culberson County in Texas -->
+    <tzont:name rdf:datatype="&xsd;string">Culberson County CST Part</tzont:name>
+    <tzont:hasParentRegion rdf:resource="#TXCulberson" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+  </tzont:Region>
+
+  <tzont:County rdf:ID="TXElPaso">
+    <!-- El Paso County in Texas -->
+
+    <tzont:name rdf:datatype="&xsd;string">El Paso County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TX" />
+    <tzont:hasTimeZone rdf:resource="#MST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TX.owl#c141" />
+  </tzont:County>
+
+  <tzont:County rdf:ID="TXHudspeth">
+    <!-- Hudspeth County in Texas -->
+    <tzont:name rdf:datatype="&xsd;string">Hudspeth County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;TX" />
+    <tzont:hasTimeZone rdf:resource="#MST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TX.owl#c229" />
+  </tzont:County>
+
+  <tzont:State rdf:about="&us-states;UT">
+    <!-- Utah -->
+    <tzont:hasParentRegion rdf:resource="&iso;US" />
+    <tzont:hasTimeZone rdf:resource="#MST" />
+
+    <tzont:observesDaylightSavingsTime rdf:datatype="&xsd;boolean">true</tzont:observesDaylightSavingsTime>
+  </tzont:State>
+
+  <tzont:State rdf:about="&us-states;VT">
+    <!-- Vermont -->
+    <tzont:hasParentRegion rdf:resource="&iso;US" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <tzont:observesDaylightSavingsTime rdf:datatype="&xsd;boolean">true</tzont:observesDaylightSavingsTime>
+
+  </tzont:State>
+
+  <tzont:State rdf:about="&us-states;VA">
+    <!-- Virginia -->
+    <tzont:hasParentRegion rdf:resource="&iso;US" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <tzont:observesDaylightSavingsTime rdf:datatype="&xsd;boolean">true</tzont:observesDaylightSavingsTime>
+  </tzont:State>
+
+  <tzont:State rdf:about="&us-states;WA">
+    <!-- Washington -->
+    <tzont:hasParentRegion rdf:resource="&iso;US" />
+    <tzont:hasTimeZone rdf:resource="#PST" />
+    <tzont:observesDaylightSavingsTime rdf:datatype="&xsd;boolean">true</tzont:observesDaylightSavingsTime>
+  </tzont:State>
+
+  <tzont:State rdf:about="&us-states;WV">
+    <!-- West Virginia -->
+
+    <tzont:hasParentRegion rdf:resource="&iso;US" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <tzont:observesDaylightSavingsTime rdf:datatype="&xsd;boolean">true</tzont:observesDaylightSavingsTime>
+  </tzont:State>
+
+  <tzont:State rdf:about="&us-states;WI">
+    <!-- Wisconsin -->
+    <tzont:hasParentRegion rdf:resource="&iso;US" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+
+    <tzont:observesDaylightSavingsTime rdf:datatype="&xsd;boolean">true</tzont:observesDaylightSavingsTime>
+  </tzont:State>
+
+  <tzont:State rdf:about="&us-states;WY">
+    <!-- Wyoming -->
+    <tzont:hasParentRegion rdf:resource="&iso;US" />
+    <tzont:hasTimeZone rdf:resource="#MST" />
+    <tzont:observesDaylightSavingsTime rdf:datatype="&xsd;boolean">true</tzont:observesDaylightSavingsTime>
+
+  </tzont:State>
+
+<!-- County instances of Kentucky State -->
+
+  <tzont:County rdf:ID="KYAdair">
+    <!-- Adair County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Adair County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c001" />
+
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYAllen">
+    <!-- Allen County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Allen County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c003" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYAnderson">
+
+    <!-- Anderson County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Anderson County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c005" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYBallard">
+    <!-- Ballard County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Ballard County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c007" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYBarren">
+    <!-- Barren County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Barren County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c009" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYBath">
+    <!-- Bath County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Bath County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c011" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYBell">
+
+    <!-- Bell County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Bell County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c013" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYBoone">
+    <!-- Boone County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Boone County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c015" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYBourbon">
+    <!-- Bourbon County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Bourbon County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c017" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYBoyd">
+    <!-- Boyd County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Boyd County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c019" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYBoyle">
+
+    <!-- Boyle County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Boyle County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c021" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYBracken">
+    <!-- Bracken County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Bracken County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c023" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYBreathitt">
+    <!-- Breathitt County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Breathitt County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c025" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYBreckinridge">
+    <!-- Breckinridge County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Breckinridge County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c027" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYBullitt">
+
+    <!-- Bullitt County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Bullitt County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c029" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYButler">
+    <!-- Butler County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Butler County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c031" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYCaldwell">
+    <!-- Caldwell County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Caldwell County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c033" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYCalloway">
+    <!-- Calloway County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Calloway County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c035" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYCampbell">
+
+    <!-- Campbell County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Campbell County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c037" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYCarlisle">
+    <!-- Carlisle County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Carlisle County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c039" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYCarroll">
+    <!-- Carroll County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Carroll County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c041" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYCarter">
+    <!-- Carter County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Carter County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c043" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYCasey">
+
+    <!-- Casey County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Casey County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c045" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYChristian">
+    <!-- Christian County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Christian County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c047" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYClark">
+    <!-- Clark County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Clark County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c049" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYClay">
+    <!-- Clay County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Clay County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c051" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYClinton">
+
+    <!-- Clinton County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Clinton County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c053" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYCrittenden">
+    <!-- Crittenden County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Crittenden County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c055" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYCumberland">
+    <!-- Cumberland County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Cumberland County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c057" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYDaviess">
+    <!-- Daviess County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Daviess County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c059" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYEdmonson">
+
+    <!-- Edmonson County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Edmonson County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c061" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYElliott">
+    <!-- Elliott County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Elliott County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c063" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYEstill">
+    <!-- Estill County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Estill County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c065" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYFayette">
+    <!-- Fayette County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Fayette County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c067" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYFleming">
+
+    <!-- Fleming County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Fleming County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c069" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYFloyd">
+    <!-- Floyd County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Floyd County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c071" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYFranklin">
+    <!-- Franklin County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Franklin County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c073" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYFulton">
+    <!-- Fulton County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Fulton County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c075" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYGallatin">
+
+    <!-- Gallatin County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Gallatin County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c077" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYGarrard">
+    <!-- Garrard County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Garrard County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c079" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYGrant">
+    <!-- Grant County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Grant County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c081" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYGraves">
+    <!-- Graves County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Graves County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c083" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYGrayson">
+
+    <!-- Grayson County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Grayson County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c085" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYGreen">
+    <!-- Green County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Green County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c087" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYGreenup">
+    <!-- Greenup County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Greenup County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c089" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYHancock">
+    <!-- Hancock County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Hancock County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c091" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYHardin">
+
+    <!-- Hardin County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Hardin County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c093" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYHarlan">
+    <!-- Harlan County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Harlan County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c095" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYHarrison">
+    <!-- Harrison County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Harrison County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c097" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYHart">
+    <!-- Hart County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Hart County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c099" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYHenderson">
+
+    <!-- Henderson County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Henderson County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c101" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYHenry">
+    <!-- Henry County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Henry County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c103" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYHickman">
+    <!-- Hickman County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Hickman County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c105" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYHopkins">
+    <!-- Hopkins County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Hopkins County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c107" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYJackson">
+
+    <!-- Jackson County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Jackson County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c109" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYJefferson">
+    <!-- Jefferson County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Jefferson County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c111" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYJessamine">
+    <!-- Jessamine County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Jessamine County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c113" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYJohnson">
+    <!-- Johnson County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Johnson County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c115" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYKenton">
+
+    <!-- Kenton County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Kenton County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c117" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYKnott">
+    <!-- Knott County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Knott County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c119" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYKnox">
+    <!-- Knox County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Knox County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c121" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYLarue">
+    <!-- Larue County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Larue County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c123" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYLaurel">
+
+    <!-- Laurel County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Laurel County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c125" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYLawrence">
+    <!-- Lawrence County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Lawrence County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c127" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYLee">
+    <!-- Lee County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Lee County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c129" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYLeslie">
+    <!-- Leslie County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Leslie County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c131" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYLetcher">
+
+    <!-- Letcher County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Letcher County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c133" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYLewis">
+    <!-- Lewis County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Lewis County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c135" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYLincoln">
+    <!-- Lincoln County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Lincoln County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c137" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYLivingston">
+    <!-- Livingston County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Livingston County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c139" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYLogan">
+
+    <!-- Logan County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Logan County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c141" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYLyon">
+    <!-- Lyon County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Lyon County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c143" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYMcCracken">
+    <!-- McCracken County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">McCracken County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c145" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYMcCreary">
+    <!-- McCreary County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">McCreary County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c147" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYMcLean">
+
+    <!-- McLean County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">McLean County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c149" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYMadison">
+    <!-- Madison County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Madison County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c151" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYMagoffin">
+    <!-- Magoffin County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Magoffin County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c153" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYMarion">
+    <!-- Marion County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Marion County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c155" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYMarshall">
+
+    <!-- Marshall County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Marshall County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c157" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYMartin">
+    <!-- Martin County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Martin County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c159" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYMason">
+    <!-- Mason County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Mason County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c161" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYMeade">
+    <!-- Meade County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Meade County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c163" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYMenifee">
+
+    <!-- Menifee County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Menifee County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c165" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYMercer">
+    <!-- Mercer County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Mercer County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c167" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYMetcalfe">
+    <!-- Metcalfe County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Metcalfe County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c169" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYMonroe">
+    <!-- Monroe County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Monroe County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c171" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYMontgomery">
+
+    <!-- Montgomery County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Montgomery County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c173" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYMorgan">
+    <!-- Morgan County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Morgan County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c175" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYMuhlenberg">
+    <!-- Muhlenberg County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Muhlenberg County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c177" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYNelson">
+    <!-- Nelson County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Nelson County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c179" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYNicholas">
+
+    <!-- Nicholas County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Nicholas County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c181" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYOhio">
+    <!-- Ohio County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Ohio County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c183" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYOldham">
+    <!-- Oldham County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Oldham County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c185" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYOwen">
+    <!-- Owen County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Owen County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c187" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYOwsley">
+
+    <!-- Owsley County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Owsley County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c189" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYPendleton">
+    <!-- Pendleton County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Pendleton County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c191" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYPerry">
+    <!-- Perry County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Perry County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c193" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYPike">
+    <!-- Pike County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Pike County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c195" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYPowell">
+
+    <!-- Powell County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Powell County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c197" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYPulaski">
+    <!-- Pulaski County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Pulaski County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c199" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYRobertson">
+    <!-- Robertson County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Robertson County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c201" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYRockcastle">
+    <!-- Rockcastle County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Rockcastle County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c203" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYRowan">
+
+    <!-- Rowan County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Rowan County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c205" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYRussell">
+    <!-- Russell County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Russell County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c207" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYScott">
+    <!-- Scott County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Scott County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c209" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYShelby">
+    <!-- Shelby County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Shelby County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c211" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYSimpson">
+
+    <!-- Simpson County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Simpson County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c213" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYSpencer">
+    <!-- Spencer County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Spencer County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c215" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYTaylor">
+    <!-- Taylor County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Taylor County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c217" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYTodd">
+    <!-- Todd County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Todd County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c219" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYTrigg">
+
+    <!-- Trigg County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Trigg County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c221" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYTrimble">
+    <!-- Trimble County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Trimble County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c223" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYUnion">
+    <!-- Union County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Union County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c225" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYWarren">
+    <!-- Warren County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Warren County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c227" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYWashington">
+
+    <!-- Washington County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Washington County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c229" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYWayne">
+    <!-- Wayne County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Wayne County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c231" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYWebster">
+    <!-- Webster County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Webster County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c233" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYWhitley">
+    <!-- Whitley County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Whitley County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c235" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYWolfe">
+
+    <!-- Wolfe County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Wolfe County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c237" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="KYWoodford">
+    <!-- Woodford County in Kentucky -->
+    <tzont:name rdf:datatype="&xsd;string">Woodford County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;KY" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/KY.owl#c239" />
+  </tzont:County>   
+
+
+<!-- County instances of Tennessee State -->
+
+  <tzont:County rdf:ID="TNAnderson">
+    <!-- Anderson County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Anderson County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c001" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNBedford">
+    <!-- Bedford County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Bedford County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c003" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNBenton">
+    <!-- Benton County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Benton County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c005" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNBledsoe">
+
+    <!-- Bledsoe County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Bledsoe County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c007" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNBlount">
+    <!-- Blount County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Blount County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c009" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNBradley">
+    <!-- Bradley County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Bradley County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c011" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNCampbell">
+    <!-- Campbell County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Campbell County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c013" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNCannon">
+
+    <!-- Cannon County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Cannon County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c015" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNCarroll">
+    <!-- Carroll County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Carroll County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c017" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNCarter">
+    <!-- Carter County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Carter County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c019" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNCheatham">
+    <!-- Cheatham County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Cheatham County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c021" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNChester">
+
+    <!-- Chester County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Chester County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c023" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNClaiborne">
+    <!-- Claiborne County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Claiborne County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c025" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNClay">
+    <!-- Clay County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Clay County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c027" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNCocke">
+    <!-- Cocke County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Cocke County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c029" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNCoffee">
+
+    <!-- Coffee County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Coffee County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c031" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNCrockett">
+    <!-- Crockett County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Crockett County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c033" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNCumberland">
+    <!-- Cumberland County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Cumberland County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c035" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNDavidson">
+    <!-- Davidson County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Davidson County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c037" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNDecatur">
+
+    <!-- Decatur County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Decatur County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c039" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNDeKalb">
+    <!-- DeKalb County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">DeKalb County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c041" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNDickson">
+    <!-- Dickson County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Dickson County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c043" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNDyer">
+    <!-- Dyer County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Dyer County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c045" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNFayette">
+
+    <!-- Fayette County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Fayette County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c047" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNFentress">
+    <!-- Fentress County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Fentress County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c049" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNFranklin">
+    <!-- Franklin County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Franklin County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c051" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNGibson">
+    <!-- Gibson County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Gibson County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c053" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNGiles">
+
+    <!-- Giles County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Giles County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c055" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNGrainger">
+    <!-- Grainger County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Grainger County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c057" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNGreene">
+    <!-- Greene County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Greene County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c059" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNGrundy">
+    <!-- Grundy County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Grundy County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c061" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNHamblen">
+
+    <!-- Hamblen County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Hamblen County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c063" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNHamilton">
+    <!-- Hamilton County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Hamilton County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c065" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNHancock">
+    <!-- Hancock County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Hancock County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c067" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNHardeman">
+    <!-- Hardeman County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Hardeman County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c069" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNHardin">
+
+    <!-- Hardin County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Hardin County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c071" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNHawkins">
+    <!-- Hawkins County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Hawkins County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c073" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNHaywood">
+    <!-- Haywood County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Haywood County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c075" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNHenderson">
+    <!-- Henderson County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Henderson County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c077" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNHenry">
+
+    <!-- Henry County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Henry County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c079" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNHickman">
+    <!-- Hickman County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Hickman County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c081" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNHouston">
+    <!-- Houston County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Houston County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c083" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNHumphreys">
+    <!-- Humphreys County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Humphreys County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c085" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNJackson">
+
+    <!-- Jackson County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Jackson County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c087" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNJefferson">
+    <!-- Jefferson County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Jefferson County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c089" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNJohnson">
+    <!-- Johnson County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Johnson County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c091" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNKnox">
+    <!-- Knox County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Knox County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c093" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNLake">
+
+    <!-- Lake County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Lake County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c095" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNLauderdale">
+    <!-- Lauderdale County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Lauderdale County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c097" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNLawrence">
+    <!-- Lawrence County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Lawrence County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c099" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNLewis">
+    <!-- Lewis County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Lewis County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c101" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNLincoln">
+
+    <!-- Lincoln County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Lincoln County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c103" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNLoudon">
+    <!-- Loudon County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Loudon County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c105" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNMcMinn">
+    <!-- McMinn County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">McMinn County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c107" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNMcNairy">
+    <!-- McNairy County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">McNairy County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c109" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNMacon">
+
+    <!-- Macon County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Macon County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c111" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNMadison">
+    <!-- Madison County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Madison County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c113" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNMarion">
+    <!-- Marion County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Marion County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c115" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNMarshall">
+    <!-- Marshall County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Marshall County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c117" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNMaury">
+
+    <!-- Maury County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Maury County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c119" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNMeigs">
+    <!-- Meigs County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Meigs County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c121" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNMonroe">
+    <!-- Monroe County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Monroe County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c123" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNMontgomery">
+    <!-- Montgomery County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Montgomery County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c125" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNMoore">
+
+    <!-- Moore County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Moore County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c127" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNMorgan">
+    <!-- Morgan County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Morgan County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c129" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNObion">
+    <!-- Obion County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Obion County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c131" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNOverton">
+    <!-- Overton County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Overton County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c133" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNPerry">
+
+    <!-- Perry County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Perry County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c135" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNPickett">
+    <!-- Pickett County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Pickett County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c137" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNPolk">
+    <!-- Polk County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Polk County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c139" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNPutnam">
+    <!-- Putnam County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Putnam County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c141" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNRhea">
+
+    <!-- Rhea County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Rhea County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c143" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNRoane">
+    <!-- Roane County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Roane County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c145" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNRobertson">
+    <!-- Robertson County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Robertson County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c147" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNRutherford">
+    <!-- Rutherford County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Rutherford County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c149" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNScott">
+
+    <!-- Scott County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Scott County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c151" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNSequatchie">
+    <!-- Sequatchie County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Sequatchie County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c153" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNSevier">
+    <!-- Sevier County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Sevier County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c155" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNShelby">
+    <!-- Shelby County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Shelby County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c157" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNSmith">
+
+    <!-- Smith County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Smith County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c159" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNStewart">
+    <!-- Stewart County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Stewart County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c161" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNSullivan">
+    <!-- Sullivan County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Sullivan County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c163" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNSumner">
+    <!-- Sumner County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Sumner County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c165" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNTipton">
+
+    <!-- Tipton County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Tipton County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c167" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNTrousdale">
+    <!-- Trousdale County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Trousdale County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c169" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNUnicoi">
+    <!-- Unicoi County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Unicoi County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c171" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNUnion">
+    <!-- Union County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Union County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c173" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNVanBuren">
+
+    <!-- Van Buren County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Van Buren County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c175" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNWarren">
+    <!-- Warren County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Warren County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c177" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNWashington">
+    <!-- Washington County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Washington County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#EST" />
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c179" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNWayne">
+    <!-- Wayne County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Wayne County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c181" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNWeakley">
+
+    <!-- Weakley County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Weakley County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c183" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNWhite">
+    <!-- White County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">White County</tzont:name>
+
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c185" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNWilliamson">
+    <!-- Williamson County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Williamson County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c187" />
+  </tzont:County>   
+
+  <tzont:County rdf:ID="TNWilson">
+    <!-- Wilson County in Tennessee -->
+    <tzont:name rdf:datatype="&xsd;string">Wilson County</tzont:name>
+    <tzont:hasParentRegion rdf:resource="&us-states;TN" />
+    <tzont:hasTimeZone rdf:resource="#CST" />
+    <owl:sameIndividualAs rdf:resource="http://www.daml.org/2003/02/fips55/TN.owl#c189" />
+  </tzont:County>   
+
+
+
+</rdf:RDF>
+

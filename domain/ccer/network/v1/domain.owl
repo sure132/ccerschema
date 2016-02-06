@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:ns="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:terms="http://purl.org/dc/terms/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:nml="http://schemas.ogf.org/nml/2013/05/base#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:domain="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/domain#"
+  xml:base="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/domain">
+  <owl:Ontology rdf:about="">
+    <terms:issued>2013-03-25</terms:issued>
+    <rdfs:label>domain</rdfs:label>
+    <terms:modified>2013-03-25</terms:modified>
+    <dc:description xml:lang="en">A vocabulary for defining administrative network domains, and abstracted views of devices in a domain.</dc:description>
+    <owl:imports rdf:resource="http://schemas.ogf.org/nml/2013/05/base"/>
+    <ns:term_status>testing</ns:term_status>
+    <dc:publisher xml:lang="en">MITT LL in colaboration with IHMC based on ontology developed bySystem and Network Engineering group, Universiteit van Amsterdam</dc:publisher>
+    <owl:versionInfo>1.0</owl:versionInfo>
+    <dc:title xml:lang="en">Network Markup Language: Domain module</dc:title>
+  </owl:Ontology>
+  <owl:Class rdf:ID="AdministrativeDomain">
+    <rdfs:subClassOf rdf:resource="http://schemas.ogf.org/nml/2013/05/base#NetworkObject"/>
+    <rdfs:label xml:lang="en">Administrative Domain</rdfs:label>
+    <rdfs:comment xml:lang="en">An entity that acts as a the administrator of a collection of resources. The administrator is the entity who actually controls and provisions the resources. An administrative domain can include computing, visualisation, storage and network resources. An Administrative Domain does not say anything about the data plane or the Location. For that, see Network Domain and Location. The administrator enforces policies, and should not be confused with the (economic) owner, who decides on the policy. The administrator and owner of a network element are often, but not always, the same entity! For example, a link between domain 1 and domain 2 is owned by domain 1. So domain 1 effectively decides on the policy of the terminating interfaces of the link. Thus also the interface of this link in domain 2. That interface is than owned by domain 1, but administrated by domain 2. A clear example of this is in so-called "open" optical exchanges. The advantage of administrative domains is that a device including all its interfaces belongs to a single administrative domain. In this RDF description, an Administrative domain only hasNetworkElements of type Device. The Interfaces of the device are implied to reside in the domain due to the hasInterface property. Beside the properties given here, you may want to use the vCard:ORG property to describe the name of the Administrator.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="OSPFService">
+    <rdfs:subClassOf rdf:resource="http://schemas.ogf.org/nml/2013/05/base#Service"/>
+    <rdfs:label xml:lang="en">OSPF Service</rdfs:label>
+    <rdfs:comment xml:lang="en">A service implemented as an OSPF daemon.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="HTTPGetService">
+    <rdfs:subClassOf rdf:resource="http://schemas.ogf.org/nml/2013/05/base#Service"/>
+    <rdfs:label xml:lang="en">HTTP Get Service</rdfs:label>
+    <rdfs:comment xml:lang="en">A service implemented as HTTP Get request to a URL. The actual method can be HTTP, HTTPS or FTP. While some additional authentication may be required for this type of services (e.g. using the HTTP Digest Auth method or even a TLS certificate), this should be merely to secure the transport. The resulting data should be the same, regardless of the user.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="TL1Service">
+    <rdfs:subClassOf rdf:resource="http://schemas.ogf.org/nml/2013/05/base#Service"/>
+    <rdfs:label xml:lang="en">HTTP Get Service</rdfs:label>
+    <rdfs:comment xml:lang="en">A service implemented as a TL1 daemon.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="SNMPService">
+    <rdfs:subClassOf rdf:resource="http://schemas.ogf.org/nml/2013/05/base#Service"/>
+    <rdfs:label xml:lang="en">SNMP Service</rdfs:label>
+    <rdfs:comment xml:lang="en">A service implemented as a SNMP daemon.</rdfs:comment>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="hasDevice">
+    <rdfs:range rdf:resource="http://schemas.ogf.org/nml/2013/05/base#Node"/>
+    <rdfs:label xml:lang="en">has device</rdfs:label>
+    <rdfs:comment xml:lang="en">The hasDevice specifies the mapping of a logical Network Domain to the physical Devices that comprise the Network Domain. It is uncommon for domains to publish this information, as it is often considered confidential.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.w3.org/2003/06/sw-vocab-status/ns#userdocs"/>
+  <owl:ObjectProperty rdf:ID="hasService">
+    <rdfs:range rdf:resource="http://schemas.ogf.org/nml/2013/05/base#Service"/>
+    <rdfs:comment xml:lang="en">The hasService specificies the services offered by an administrative domain, and at the same time establish the responsible party who offers a certain service.</rdfs:comment>
+    <rdfs:label xml:lang="en">has service</rdfs:label>
+    <ns:term_status>testing</ns:term_status>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="inAdminDomain">
+    <rdfs:label xml:lang="en">in administrative domain</rdfs:label>
+    <rdfs:comment xml:lang="en">A domain is a group of network elements. The inAdminDomain provides the binding from network elements to an administrative domain. Typically, only Devices or NetworkDomains are related to a AdministrativeDomain. If a Device or NetoworkDomain has interfaces, those are considered to be part of the Administrative Domain as well. If a network element specifies multiple administrative domains, application may expect that each and every of them can fully configure the network element, without conflicts.</rdfs:comment>
+    <rdfs:range rdf:resource="#AdministrativeDomain"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:ID="timeout">
+    <rdfs:comment xml:lang="en">The timeout Property of a Service defines how quickly the information provided by a service times out. The subject is an integer or float, defining the time-out value of the information in seconds. Typical values are: 604800 (one week) for "static" information, which is only expected to change about once every few months or so; 1200 (20 minutes) for a services that runs as a cron job retrieving information from devices, with mostly static connections. The timeout will highly depend on your type of application, how much load it can handle, etcetera. Do not draw to much conclusions from it. A high number may indicate that the connections itself don't change often, or they do, but that information is either not published, or the service was not designed to handle so many requests  per second. Note that this property is an integer by default: if the information is expected to be outdated in less then a second, it may not be a good use to RDF to find services, but there should probably a tighter coupling between your application and the control plane. One way to decouple a slow control plane from a quick service is to rely a lot on prescheduled (slow) path finding and policy checking, but have a blatantly fast signaling plane for when the actual connection is needed.</rdfs:comment>
+    <rdfs:label xml:lang="en">timeout</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <ns:term_status>testing</ns:term_status>
+  </owl:DatatypeProperty>
+  <owl:Thing rdf:ID="realm">
+    <ns:term_status>testing</ns:term_status>
+    <rdfs:comment xml:lang="en">The realm Property of a Service defines on what information the service operates. Allowed values are: "topology" (the service deals with the topology and interconnects within a domain or between domains), "capability" (the service deals with the technology layers and capabilities of a domain or device), "policy" (the service deals with the access rights of a user or organization), or "reservation" (the service deals with schedules in time). A service can operate in different realms.</rdfs:comment>
+    <rdfs:label xml:lang="en">realm</rdfs:label>
+    <ns:moreinfo>WARNING: The range is specifically not defined, since it may change from string to a specific resource.</ns:moreinfo>
+  </owl:Thing>
+  <owl:Thing rdf:ID="NetworkDomain">
+    <rdfs:comment xml:lang="en">A collection of network elements behaving as a block box with external interfaces, and a switching and transport capability inside. A typical usage of a Network Domain is an Administrative Domain who does not publish details of all its devices, but only an abstracted view of them all: the Network Domain. A network domain logically behaves as a device with interfaces and switching matrices. Optionally, it can contain devices as well, though it is uncommon for domains to publish this mapping of physical devices to logical domains. Unlike Devices, a Network Domain is not physical and has no specific Location. A Network Domain is typically capable of switching data at multiple layers (e.g. a hybrid network that allows switching at both Lambda layer as well as the IP layer).</rdfs:comment>
+    <rdfs:label xml:lang="en">Network Domain</rdfs:label>
+  </owl:Thing>
+  <owl:Thing rdf:ID="scope">
+    <ns:term_status>testing</ns:term_status>
+    <rdfs:comment xml:lang="en">The scope Property of a Service defines on how many devices and domains the services operates. Allowed values are: "device" (the service is only applicable to a single device), "domain" (the service is applicable to a single administrative domain), or "multidomain" (the service invokes other domain in providing the service).</rdfs:comment>
+    <rdfs:label xml:lang="en">scope</rdfs:label>
+    <ns:moreinfo>WARNING: The range is specifically not defined, since it may change from string to a specific resource.</ns:moreinfo>
+  </owl:Thing>
+  <owl:Thing rdf:ID="serviceStage">
+    <ns:term_status>testing</ns:term_status>
+    <rdfs:comment xml:lang="en">The serviceStage Property of a Service defines what kind of service is offered to the user. The "stage" comes from the fact that these services represent different stages in the path set up process. Allowed values are: "publication" (retrieval of information), "pathcomputation" (a service providing path computation or path finding), "provisioning" (for set up or reservation of a new connection), "maintain" (for alteration or tear down of an existing connection), "query" (for monitoring of an existing connection). A service may provide services for multiple stages.</rdfs:comment>
+    <rdfs:label xml:lang="en">service stage</rdfs:label>
+    <ns:moreinfo>WARNING: The range is specifically not defined, since it may change from string to a specific resource.</ns:moreinfo>
+  </owl:Thing>
+  <owl:Thing rdf:ID="informationView">
+    <ns:term_status>testing</ns:term_status>
+    <rdfs:comment xml:lang="en">The informationView Property of a Service defines what kind view of the information you get using a service. Possible values are "information" (the information as is. For example, a NDL file or all OSPF LSA), "filtered" (you only get the information you asked for or that you are allowed to see; it is tuned to your request), "decision" (a query/response interaction with yes/no response. you ask if a certain scenario is possible and allowed, and you only get the final decision), or "negotiation" (similar to the query/response interaction, but now you get details in return, which allows you to broaden or fine-tune your question, and resubmit the new question).</rdfs:comment>
+    <rdfs:label xml:lang="en">information view</rdfs:label>
+    <ns:moreinfo>WARNING: The range is specifically not defined, since it may change from string to a specific resource.</ns:moreinfo>
+  </owl:Thing>
+  <nml:Service rdf:ID="Webservice">
+    <rdfs:label xml:lang="en">Webervice</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/2005/10/wsdl-rdf"/>
+    <ns:moreinfo>WARNING: However, it probably is better to re-use the WSDL RDF Mapping, if applicable, as defined at http://www.w3.org/TR/wsdl20-rdf/, rather than this subClass.</ns:moreinfo>
+    <rdfs:comment xml:lang="en">A webservice. The URL points to the location of a WSDL file, not to the location of the actual service interface.</rdfs:comment>
+  </nml:Service>
+  <owl:Thing rdf:ID="accessMethod">
+    <ns:term_status>testing</ns:term_status>
+    <rdfs:comment xml:lang="en">The access method defines the technical method to access a service. For the domain:HTTPGetService subClass, this MUST be "http", for the domain:Webservice subClass, this MUST be "wsdl", for the domain:SNMPService subClass, this MUST be "snmp", for the domain:OSPFService subClass, this MUST be "ospf", for the domain:TL1Service subClass, this MUST be "tl1". This is case-sensitive.</rdfs:comment>
+    <rdfs:label xml:lang="en">access method</rdfs:label>
+    <ns:moreinfo>WARNING: It is yet unclear if the subClass or predicate method is preferred to specify an access method.</ns:moreinfo>
+  </owl:Thing>
+</rdf:RDF>
+
+<!-- Created with TopBraid -->

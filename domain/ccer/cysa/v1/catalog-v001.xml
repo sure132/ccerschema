@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="http://ll.mit.edu/2012/ccer/domain/ccer/event/v1/ccer_time.owl" uri="file:/Users/su22797/ccer/ccerschema/core/ccer/time/v1/ccer_time.owl"/>
+    <uri id="User Entered Import Resolution" name="http://purl.org/dc/terms" uri="file:/Users/su22797/ccer/ccerschema/core/third_party/dc/dcterms.rdf"/>
+    <uri id="Imports Wizard Entry" name="http://ll.mit.edu/2014/ccer/core/ccer/v1/base.owl" uri="file:/Users/su22797/ccer/ccerschema/core/ccer/ccer/v1/base.owl"/>
+    <uri id="Imports Wizard Entry" name="http://ll.mit.edu/2012/ccer/domain/ccer/event/v1/ccer_time.owl" uri="file:/Users/su22797/ccer/ccerschema/domain/ccer/event/v1/ccer_time.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ll.mit.edu/2012/ccer/domain/ccer/cysa/v1/tagscheme.rdf" uri="tagscheme.rdf"/>
+    <uri id="User Entered Import Resolution" name="http://www.w3.org/2006/time" uri="file:/Users/su22797/ccer/ccerschema/core/third_party/time/time.owl"/>
+    <uri id="User Entered Import Resolution" name="http://www.w3.org/2006/time-entry" uri="file:/Users/su22797/ccer/ccerschema/core/third_party/time/time-entry.owl"/>
+    <uri id="User Entered Import Resolution" name="http://www.daml.org/2001/09/countries/country-ont" uri="file:/Users/su22797/ccer/ccerschema/core/third_party/geo/country-ont.rdf"/>
+    <uri id="User Entered Import Resolution" name="http://www.daml.org/2001/09/countries/iso-3166-ont" uri="file:/Users/su22797/ccer/ccerschema/core/third_party/geo/iso-3166-ont.rdf"/>
+    <uri id="User Entered Import Resolution" name="http://www.w3.org/2006/timezone" uri="file:/Users/su22797/ccer/ccerschema/core/third_party/time/timezone.owl"/>
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=1" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1408657929724" name="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl" uri="registry.owl"/>
+    </group>
+</catalog>

@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<!--
+*******************************************************************************
+ * Copyright (c) 2013 Massachusetts Institute of Technology
+ * 
+ * Not with standing any copyright notice, U.S. Government rights in this work
+ * are defined by DFARS 252.227-7013 or DFARS 252.227-7014 as detailed below.
+ * Use of this work other than as specifically authorized by the U.S.
+ * Government may violate any copyrights that exist in this work.
+ * 
+ * UNLIMITED RIGHTS
+ * DFARS Clause reference: 252.227-7013 (a)(16) and 252.227-7014 (a)(16)
+ * Unlimited Rights. The Government has the right to use, modify, reproduce, perform,
+ * display, release or disclose this (technical data or computer software) in whole or in part, in
+ * any manner, and for any purpose whatsoever, and to have or authorize others to do so.
+ * 
+ * THE SOFTWARE IS PROVIDED TO YOU ON AN "AS IS" BASIS.
+ ******************************************************************************
+ -->
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:host="http://ll.mit.edu/2013/ccer/domain/ccer/host/v1/host.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:capability="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/capability#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:hostNetworkBridge="http://ll.mit.edu/2013/ccer/domain/ccer/networkBridge/v1/hostNetworkBridge.owl#"
+  xml:base="http://ll.mit.edu/2013/ccer/domain/ccer/networkBridge/v1/hostNetworkBridge.owl">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="http://xmlns.com/foaf/0.1/"/>
+    <owl:imports rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/vlan.owl"/>
+    <owl:imports rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl"/>
+    <owl:imports rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/host/v1/host.owl"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Computer ontology</rdfs:comment>
+  </owl:Ontology>
+  <owl:DatatypeProperty rdf:ID="hasMACAddress">
+    <rdfs:range rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/ethernet#MACAddress"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/host/v1/host.owl#Host"/>
+          <rdf:Description rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/host/v1/host.owl#NetworkCard"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:DatatypeProperty>
+  <owl:AnnotationProperty rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/host/v1/host.owl#hasIPAddress">
+    <rdfs:domain rdf:resource="#genid1"/>
+  </owl:AnnotationProperty>
+  <rdf:Description rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/host/v1/host.owl#Subnet">
+    <owl:equivalentClass rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/capability#SwitchMatrix"/>
+  </rdf:Description>
+  <owl:AnnotationProperty rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/host/v1/host.owl#hasSubnet">
+    <rdfs:domain rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/host/v1/host.owl#Host"/>
+  </owl:AnnotationProperty>
+  <owl:AnnotationProperty rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/host/v1/host.owl#hasMACAddress">
+    <rdfs:domain rdf:resource="#genid4"/>
+  </owl:AnnotationProperty>
+</rdf:RDF>
+
+<!-- Created with TopBraid -->

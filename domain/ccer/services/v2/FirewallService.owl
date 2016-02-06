@@ -1,0 +1,142 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE Ontology [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://ll.mit.edu/2014/ccer/domain/ccer/services/v2/FirewallService.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     ontologyIRI="http://ll.mit.edu/2014/ccer/domain/ccer/services/v2/FirewallService.owl">
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Import>http://ll.mit.edu/2013/ccer/domain/ccer/services/v2/base.owl</Import>
+    <Declaration>
+        <Class IRI="#FirewallDefaultAction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FirewallServerApplication"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FirewallService"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#InitialFirewallState"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasFirewallDefaultAction"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasInitialFirewallState"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#firewallRuleFileName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasFirewallURL"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ACCEPT"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ACTIVE"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DENY"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#INACTIVE"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#REJECT"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#FirewallDefaultAction"/>
+        <Class IRI="http://ontology.ihmc.us/Action.owl#Action"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FirewallServerApplication"/>
+        <Class IRI="http://ll.mit.edu/2013/ccer/domain/ccer/applications/v1/applications.owl#Application"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FirewallService"/>
+        <Class IRI="http://schemas.ogf.org/nml/2013/05/base#SwitchingService"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InitialFirewallState"/>
+        <Class IRI="http://ontology.ihmc.us/Entity.owl#State"/>
+    </SubClassOf>
+    <ClassAssertion>
+        <Class IRI="#FirewallDefaultAction"/>
+        <NamedIndividual IRI="#ACCEPT"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#InitialFirewallState"/>
+        <NamedIndividual IRI="#ACTIVE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FirewallDefaultAction"/>
+        <NamedIndividual IRI="#DENY"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#InitialFirewallState"/>
+        <NamedIndividual IRI="#INACTIVE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FirewallDefaultAction"/>
+        <NamedIndividual IRI="#REJECT"/>
+    </ClassAssertion>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasFirewallDefaultAction"/>
+        <Class IRI="#FirewallDefaultAction"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasInitialFirewallState"/>
+        <Class IRI="#InitialFirewallState"/>
+    </ObjectPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ACCEPT</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Packets are passed into the network segment.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#DENY</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Packets are denied entry into the network segment.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#FirewallDefaultAction</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The Firewall Service default action when it is ACTIVE (taken when a packet is received and there is no associated Firewall Rule that specifies how that packet should be handled).
+◦	ACCEPT: Packets are passed into the network segment.
+◦	DENY: Packets are denied entry into the network segment.
+◦	REJECT: Packets are rejected from entry to the network segment with the ICMP “destination unreachable” reply.
+</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#REJECT</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Packets are rejected from entry to the network segment with the ICMP “destination unreachable” reply.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#firewallRuleFileName</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">firewallRuleFileName has the name of the firewall file without the path information. The firewall rule file is expected to be in the same directory as the vdx file</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 3.2.2.1789) http://owlapi.sourceforge.net -->
+

@@ -1,0 +1,182 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY host "http://ll.mit.edu/2013/ccer/domain/ccer/host/v1/host.owl#" >
+    <!ENTITY computer "http://ll.mit.edu/2013/ccer/domain/ccer/host/v1/computer.owl#" >
+    <!ENTITY applications "http://ll.mit.edu/2013/ccer/domain/ccer/applications/v1/applications.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://ll.mit.edu/2013/ccer/domain/ccer/host/v1/computer.owl#"
+     xml:base="http://ll.mit.edu/2013/ccer/domain/ccer/host/v1/computer.owl"
+     xmlns:computer="http://ll.mit.edu/2013/ccer/domain/ccer/host/v1/computer.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:host="http://ll.mit.edu/2013/ccer/domain/ccer/host/v1/host.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:applications="http://ll.mit.edu/2013/ccer/domain/ccer/applications/v1/applications.owl#">
+    <owl:Ontology rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/host/v1/computer.owl">
+        <rdfs:comment rdf:datatype="&xsd;string">Computer ontology</rdfs:comment>
+        <owl:imports rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/applications/v1/applications.owl"/>
+        <owl:imports rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/host/v1/host.owl"/>
+        <owl:imports rdf:resource="http://xmlns.com/foaf/0.1/"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/host/v1/computer.owl#runsApplications -->
+
+    <owl:ObjectProperty rdf:about="&computer;runsApplications">
+        <rdfs:range rdf:resource="&applications;Application"/>
+        <rdfs:domain rdf:resource="&computer;Computer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/host/v1/computer.owl#hasDefaultRecipe -->
+
+    <owl:DatatypeProperty rdf:about="&computer;hasDefaultRecipe">
+        <rdfs:comment>A Boolean property that specifies whether there is a Default Recipe associated with this computer.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/host/v1/computer.owl#hasInstalledApplication -->
+
+    <owl:DatatypeProperty rdf:about="&computer;hasInstalledApplication">
+        <rdfs:comment>Application installed on this computer</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/host/v1/computer.owl#Computer -->
+
+    <owl:Class rdf:about="&computer;Computer">
+        <rdfs:subClassOf rdf:resource="&host;Host"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/host/v1/computer.owl#Client -->
+
+    <owl:NamedIndividual rdf:about="&computer;Client">
+        <rdf:type rdf:resource="&host;Usage"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/host/v1/computer.owl#ExchangeServer -->
+
+    <owl:NamedIndividual rdf:about="&computer;ExchangeServer">
+        <rdf:type rdf:resource="&host;Usage"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/host/v1/computer.owl#ProxyServer -->
+
+    <owl:NamedIndividual rdf:about="&computer;ProxyServer">
+        <rdf:type rdf:resource="&host;Usage"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/host/v1/computer.owl#Router -->
+
+    <owl:NamedIndividual rdf:about="&computer;Router">
+        <rdf:type rdf:resource="&host;Usage"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/host/v1/computer.owl#Server -->
+
+    <owl:NamedIndividual rdf:about="&computer;Server">
+        <rdf:type rdf:resource="&host;Usage"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/host/v1/computer.owl#WebServer -->
+
+    <owl:NamedIndividual rdf:about="&computer;WebServer">
+        <rdf:type rdf:resource="&host;Usage"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.2.1789) http://owlapi.sourceforge.net -->
+

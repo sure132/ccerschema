@@ -1,0 +1,173 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:physical="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/physical.owl#"
+    xmlns:ns="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:terms="http://purl.org/dc/terms/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:nml="http://schemas.ogf.org/nml/2013/05/base#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/physical.owl">
+  <owl:Ontology rdf:about="">
+    <dc:description xml:lang="en">A vocabulary for defining physical aspects of networks, including properties of physical devices and locations. It can be regarded as an inventory schema. It does not define data plane properties, like regeneration. This schema reuses some concept on the Common Information Model (CIM) Physical module. Also it extends the Location class with the properties facility, room, rack, and panel. Finally, it allows more detailed description of devices using chassis, cards and blades.</dc:description>
+    <ns:term_status>testing</ns:term_status>
+    <rdfs:label>physical</rdfs:label>
+    <owl:imports rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos"/>
+    <owl:imports rdf:resource="http://schemas.ogf.org/nml/2013/05/base"/>
+    <dc:title xml:lang="en">Network Markup Language: Physical module</dc:title>
+    <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >2013-03-21</terms:issued>
+    <dc:publisher xml:lang="en">MITT LL in colaboration with IHMC based on ontology developed by System and Network Engineering group, Universiteit van Amsterdam</dc:publisher>
+    <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >2013-03-21</terms:modified>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1.0</owl:versionInfo>
+  </owl:Ontology>
+  <rdfs:Class rdf:ID="Device">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="PhysicalElement"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://schemas.ogf.org/nml/2013/05/base#Node"/>
+  </rdfs:Class>
+  <owl:Class rdf:about="#PhysicalElement">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+    <rdfs:subClassOf rdf:resource="http://schemas.ogf.org/nml/2013/05/base#NetworkObject"/>
+    <rdfs:label xml:lang="en">Physical Element</rdfs:label>
+    <rdfs:comment xml:lang="en">A Physical Network Element. This class is loosely based on the PhysicalElement and PhysicalPackage classes in CIM Physical.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="Blade">
+    <rdfs:comment xml:lang="en">The Blade within a device, as a collection of Interfaces. The blade is identified by it's blade number (the rdfs:label), as well as (optionally) the chassis parameter.</rdfs:comment>
+    <rdfs:label xml:lang="en">Blade</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#PhysicalElement"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="http://www.w3.org/2003/06/sw-vocab-status/ns#userdocs"/>
+  <owl:ObjectProperty rdf:ID="atBlade">
+    <rdfs:range rdf:resource="#Blade"/>
+    <rdfs:label xml:lang="en">at Blade</rdfs:label>
+    <rdfs:comment>The relation between a (Physical) Interface and a Blade.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:ID="rack">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:label xml:lang="en">rack</rdfs:label>
+    <rdfs:comment>The identifier of a rack of a location. For example "24", "AG-11", "Cust18". Note that XML strings are case-sensitive, so make sure you use it consistently within your organization.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="otherIdentifyingInfo">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en">other identifying info</rdfs:label>
+    <rdfs:comment xml:lang="en">The other identifying info of a physical element. This is the same as the OtherIdentifyingInfo of a PhysicalElement in CIM Physical.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="manufacturer">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en">manufacturer</rdfs:label>
+    <rdfs:comment xml:lang="en">The manufacturer of a physical element. This is the same as the Manufacturer of a PhysicalElement in CIM Physical.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="height">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:label xml:lang="en">height</rdfs:label>
+    <rdfs:comment xml:lang="en">The height of a physical element in meters. This is inconsistent with CIM, which defines the Height of a PhysicalPackage in inches.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="width">
+    <rdfs:label xml:lang="en">width</rdfs:label>
+    <rdfs:comment xml:lang="en">The width of a physical element in meters. This is inconsistent with CIM, which defines the Width of a PhysicalPackage in inches.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="egressSlotnumber">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:label xml:lang="en">egress slot</rdfs:label>
+    <rdfs:comment>The identifier, which in combination with the blade, defines an egress Interface. If the egress slotnumber is set, the interface is either a unidirectional interface, or the ingress and egress part of the same interface have different identifiers.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="SKU">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en">SKU</rdfs:label>
+    <rdfs:comment xml:lang="en">The stock-keeping unit number of a physical element. This is the same as the SKU of a PhysicalElement in CIM Physical.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="room">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:label xml:lang="en">room</rdfs:label>
+    <rdfs:comment>The room number of a location. For example "113", "2.25", "entrance hall" (while the last may be defined as a facility as well, use in the way you prefer). Note that XML strings are case-sensitive, so make sure you use it consistently within your organization.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="slotnumber">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:label xml:lang="en">slot</rdfs:label>
+    <rdfs:comment>The identifier, which in combination with the blade, defines an Interface. If the slotnumber is set, the interface is a duplex interface, and the ingress and egress part have the same identifier.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="model">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en">model</rdfs:label>
+    <rdfs:comment xml:lang="en">The model of a physical element. This is the same as the Model of a PhysicalElement in CIM Physical.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="weight">
+    <rdfs:label xml:lang="en">weight</rdfs:label>
+    <rdfs:comment xml:lang="en">The weight of a physical element in kilogram. This is inconsistent with CIM, which defines the Width of a PhysicalPackage in (presumably avoirdupois) pounds.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="userTracking">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en">user tracking</rdfs:label>
+    <rdfs:comment xml:lang="en">The user tracking of a physical element. This is the same as the UserTracking of a PhysicalElement in CIM Physical.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="manufactureDate">
+    <rdfs:label xml:lang="en">manufacture date</rdfs:label>
+    <rdfs:comment xml:lang="en">The manufacture date and time of a physical element. This is the same as the ManufactureDate of a PhysicalElement in CIM Physical.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="partNumber">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en">part number</rdfs:label>
+    <rdfs:comment xml:lang="en">The part number of a physical element. This is the same as the PartNumber of a PhysicalElement in CIM Physical.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="vendorEquipmentType">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en">vendor equipment type</rdfs:label>
+    <rdfs:comment xml:lang="en">The vendor equipment type of a physical element. This is the same as the VendorEquipmentType of a PhysicalElement in CIM Physical.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="length">
+    <rdfs:label xml:lang="en">length</rdfs:label>
+    <rdfs:comment xml:lang="en">The length of a fiber, cable or bundle in meters. This is inconsistent with CIM, which defines the Length of a PhysicalLink in feet.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="depth">
+    <rdfs:label xml:lang="en">depth</rdfs:label>
+    <rdfs:comment xml:lang="en">The depth of a physical element in meters. This is inconsistent with CIM, which defines the Depth of a PhysicalPackage in inches.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="facility">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:label xml:lang="en">facility</rdfs:label>
+    <rdfs:comment>The name of the facility at a location. For example "Server room", "AMS-IX", "student lab".</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="serialNumber">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en">serial number</rdfs:label>
+    <rdfs:comment xml:lang="en">The serial number of a physical element. This is the same as the SerialNumber of a PhysicalElement in CIM Physical.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="chassis">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:label xml:lang="en">chassis</rdfs:label>
+    <rdfs:comment>The identifying chassis as part of a blade.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="poweredOn">
+    <rdfs:label xml:lang="en">poweredOn</rdfs:label>
+    <rdfs:comment xml:lang="en">The powered on status of a physical element. This is the same as the PoweredOn of a PhysicalElement in CIM Physical.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="panel">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:label xml:lang="en">panel</rdfs:label>
+    <rdfs:comment>The name of a panel (typically within a rack) of a location. For example "13", "22-23U", "height unit 13 front". Note that XML strings are case-sensitive, so make sure you use it consistently within your organization.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="ingressSlotnumber">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:label xml:lang="en">ingress slot</rdfs:label>
+    <rdfs:comment>The identifier, which in combination with the blade, defines an ingress Interface. If the ingress slotnumber is set, the interface is either a unidirectional interface, or the ingress and egress part of the same interface have different identifiers.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="version">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en">version</rdfs:label>
+    <rdfs:comment xml:lang="en">The version of a physical element. This is the same as the Version of a PhysicalElement in CIM Physical.</rdfs:comment>
+  </owl:DatatypeProperty>
+</rdf:RDF>
+
+<!-- Created with TopBraid -->

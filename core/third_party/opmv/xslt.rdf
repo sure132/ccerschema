@@ -1,0 +1,549 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY void "http://rdfs.org/ns/void#" >
+    <!ENTITY dct "http://purl.org/dc/terms/" >
+    <!ENTITY foaf "http://xmlns.com/foaf/0.1/" >
+    <!ENTITY opmv "http://purl.org/net/opmv/ns#" >
+    <!ENTITY doap "http://usefulinc.com/ns/doap#" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY types "http://purl.org/net/opmv/types/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY skos "http://www.w3.org/2004/02/skos/core#" >
+    <!ENTITY xslt "http://purl.org/net/opmv/types/xslt#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY common "http://purl.org/net/opmv/types/common#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="&types;xslt#"
+     xml:base="&types;xslt"
+     xmlns:opmv="http://purl.org/net/opmv/ns#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:common="&types;common#"
+     xmlns:void="http://rdfs.org/ns/void#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xslt="&types;xslt#"
+     xmlns:dct="http://purl.org/dc/terms/"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:doap="http://usefulinc.com/ns/doap#"
+     xmlns:types="http://purl.org/net/opmv/types/"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+    <owl:Ontology rdf:about="&types;xslt">
+        <rdfs:label xml:lang="en">XSLT Specialisation of OPMV</rdfs:label>
+        <dct:created rdf:datatype="&xsd;date">2010-06-06</dct:created>
+        <dct:title xml:lang="en">XSLT Specialisation of OPMV</dct:title>
+        <void:vocabulary rdf:resource="http://purl.org/net/opmv/ns#"/>
+        <owl:imports rdf:resource="http://purl.org/net/opmv/ns#"/>
+        <void:exampleResource rdf:resource="&types;xslt#Processor"/>
+        <void:exampleResource rdf:resource="&types;xslt#Stylesheet"/>
+        <void:exampleResource rdf:resource="&types;xslt#Transformation"/>
+        <void:exampleResource rdf:resource="&types;xslt#processor"/>
+        <void:exampleResource rdf:resource="&types;xslt#source"/>
+        <void:exampleResource rdf:resource="&types;xslt#stylesheet"/>
+        <void:exampleResource rdf:resource="&types;xslt#wasResultOf"/>
+        <dct:creator rdf:resource="http://www.jenitennison.com/#me"/>
+        <void:vocabulary rdf:resource="http://www.w3.org/2000/01/rdf-schema#"/>
+        <void:vocabulary rdf:resource="http://www.w3.org/2002/07/owl#"/>
+        <owl:imports rdf:resource="http://xmlns.com/foaf/0.1/"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="&types;xslt#value">
+        <rdfs:label xml:lang="en">Value</rdfs:label>
+        <rdfs:comment xml:lang="en">The value of a variable binding in XSLT.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="&types;xslt"/>
+        <rdfs:domain rdf:resource="&types;xslt#Binding"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/net/opmv/types/common#usedData -->
+
+    <owl:ObjectProperty rdf:about="&types;common#usedData"/>
+    
+
+
+    <!-- http://purl.org/net/opmv/types/common#usedScript -->
+
+    <owl:ObjectProperty rdf:about="&types;common#usedScript"/>
+    
+
+
+    <!-- http://purl.org/net/opmv/types/xslt#binding -->
+
+    <owl:ObjectProperty rdf:about="&types;xslt#binding">
+        <rdfs:label xml:lang="en">Parameter Binding</rdfs:label>
+        <rdfs:comment xml:lang="en">A parameter binding supplied on invocation of the transformation.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="&types;xslt"/>
+        <rdfs:range rdf:resource="&types;xslt#Binding"/>
+        <rdfs:domain rdf:resource="&types;xslt#Transformation"/>
+        <rdfs:subPropertyOf rdf:resource="&types;xslt#used"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/opmv/types/xslt#imports -->
+
+    <owl:ObjectProperty rdf:about="&types;xslt#imports">
+        <rdfs:label xml:lang="en">Imports</rdfs:label>
+        <rdfs:comment xml:lang="en">A stylesheet that&#39;s imported by this one.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="&types;xslt"/>
+        <rdfs:range rdf:resource="&types;xslt#Stylesheet"/>
+        <rdfs:domain rdf:resource="&types;xslt#Stylesheet"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/opmv/types/xslt#includes -->
+
+    <owl:ObjectProperty rdf:about="&types;xslt#includes">
+        <rdfs:label xml:lang="en">Includes</rdfs:label>
+        <rdfs:comment xml:lang="en">A stylesheet that&#39;s included by this one.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="&types;xslt"/>
+        <rdfs:range rdf:resource="&types;xslt#Stylesheet"/>
+        <rdfs:domain rdf:resource="&types;xslt#Stylesheet"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/opmv/types/xslt#initialMode -->
+
+    <owl:ObjectProperty rdf:about="&types;xslt#initialMode">
+        <rdfs:label xml:lang="en">Initial Mode</rdfs:label>
+        <rdfs:comment xml:lang="en">The initial mode used for the transformation.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="&types;xslt"/>
+        <rdfs:range rdf:resource="&types;xslt#QName"/>
+        <rdfs:domain rdf:resource="&types;xslt#Transformation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/opmv/types/xslt#initialTemplate -->
+
+    <owl:ObjectProperty rdf:about="&types;xslt#initialTemplate">
+        <rdfs:label xml:lang="en">Initial Template</rdfs:label>
+        <rdfs:comment xml:lang="en">The initial template used to initiate the transformation.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="&types;xslt"/>
+        <rdfs:subPropertyOf rdf:resource="&types;common#usedScript"/>
+        <rdfs:range rdf:resource="&types;xslt#NamedTemplate"/>
+        <rdfs:domain rdf:resource="&types;xslt#Transformation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/opmv/types/xslt#mode -->
+
+    <owl:ObjectProperty rdf:about="&types;xslt#mode">
+        <rdfs:label xml:lang="en">Mode</rdfs:label>
+        <rdfs:comment xml:lang="en">A mode associated with a template.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="&types;xslt"/>
+        <rdfs:domain rdf:resource="&types;xslt#MatchingTemplate"/>
+        <rdfs:range rdf:resource="&types;xslt#QName"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/opmv/types/xslt#module -->
+
+    <owl:ObjectProperty rdf:about="&types;xslt#module">
+        <rdfs:label xml:lang="en">Stylesheet Module</rdfs:label>
+        <rdfs:comment xml:lang="en">A stylesheet module used in the transformation.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="&types;xslt"/>
+        <rdfs:subPropertyOf rdf:resource="&types;common#usedScript"/>
+        <rdfs:range rdf:resource="&types;xslt#Stylesheet"/>
+        <rdfs:domain rdf:resource="&types;xslt#Transformation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/opmv/types/xslt#name -->
+
+    <owl:ObjectProperty rdf:about="&types;xslt#name">
+        <rdfs:label xml:lang="en">Name</rdfs:label>
+        <rdfs:comment xml:lang="en">The qualified name of something in XSLT.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="&types;xslt"/>
+        <rdfs:range rdf:resource="&types;xslt#QName"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/opmv/types/xslt#processor -->
+
+    <owl:ObjectProperty rdf:about="&types;xslt#processor">
+        <rdfs:label xml:lang="en">XSLT Processor</rdfs:label>
+        <rdfs:comment xml:lang="en">The XSLT processor that was used to perform the transformation.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&opmv;wasControlledBy"/>
+        <rdfs:isDefinedBy rdf:resource="&types;xslt"/>
+        <rdfs:range rdf:resource="&types;xslt#Processor"/>
+        <rdfs:domain rdf:resource="&types;xslt#Transformation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/opmv/types/xslt#source -->
+
+    <owl:ObjectProperty rdf:about="&types;xslt#source">
+        <rdfs:label xml:lang="en">Source XML</rdfs:label>
+        <rdfs:comment xml:lang="en">The source document used to initialise the transformation. There will only be one source document.</rdfs:comment>
+        <rdfs:range rdf:resource="&opmv;Artifact"/>
+        <rdfs:isDefinedBy rdf:resource="&types;xslt"/>
+        <rdfs:domain rdf:resource="&types;xslt#Transformation"/>
+        <rdfs:subPropertyOf rdf:resource="&types;xslt#used"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/opmv/types/xslt#stylesheet -->
+
+    <owl:ObjectProperty rdf:about="&types;xslt#stylesheet">
+        <rdfs:label xml:lang="en">Stylesheet</rdfs:label>
+        <rdfs:comment xml:lang="en">The stylesheet used to perform the transformation.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="&types;xslt"/>
+        <rdfs:subPropertyOf rdf:resource="&types;common#usedScript"/>
+        <rdfs:range rdf:resource="&types;xslt#Stylesheet"/>
+        <rdfs:domain rdf:resource="&types;xslt#Transformation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/opmv/types/xslt#used -->
+
+    <owl:ObjectProperty rdf:about="&types;xslt#used">
+        <rdfs:label xml:lang="en">Used</rdfs:label>
+        <rdfs:comment xml:lang="en">A document used to provide data to the transformation. One of these will be the source document, indicated through xslt:source. Others will be documents read by functions such as doc().</rdfs:comment>
+        <rdfs:range rdf:resource="&opmv;Artifact"/>
+        <rdfs:isDefinedBy rdf:resource="&types;xslt"/>
+        <rdfs:subPropertyOf rdf:resource="&types;common#usedData"/>
+        <rdfs:domain rdf:resource="&types;xslt#Transformation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/opmv/types/xslt#vendor -->
+
+    <owl:ObjectProperty rdf:about="&types;xslt#vendor">
+        <rdfs:label xml:lang="en">Vendor</rdfs:label>
+        <rdfs:comment xml:lang="en">The implementer of the processor. The XSLT processor&#39;s &#39;vendor&#39; system property will be the name of the agent, and the XSLT processor&#39;s &#39;vendor-url&#39; system property will be its foaf:homepage.&#39;</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="&types;xslt"/>
+        <rdfs:domain rdf:resource="&types;xslt#Processor"/>
+        <rdfs:range rdf:resource="&foaf;Agent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/opmv/types/xslt#wasResultOf -->
+
+    <owl:ObjectProperty rdf:about="&types;xslt#wasResultOf">
+        <rdfs:label xml:lang="en">Result Of</rdfs:label>
+        <rdfs:comment xml:lang="en">The XSLT transformation that was used to generate this document.</rdfs:comment>
+        <rdfs:domain rdf:resource="&opmv;Artifact"/>
+        <rdfs:subPropertyOf rdf:resource="&opmv;wasGeneratedBy"/>
+        <rdfs:isDefinedBy rdf:resource="&types;xslt"/>
+        <rdfs:range rdf:resource="&types;xslt#Transformation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/net/opmv/types/xslt#isSchemaAware -->
+
+    <owl:DatatypeProperty rdf:about="&types;xslt#isSchemaAware">
+        <rdfs:label xml:lang="en">Schema Aware</rdfs:label>
+        <rdfs:comment xml:lang="en">True in the case of a processor that claims conformance as a schema-aware XSLT processor, false in the case of a basic XSLT processor.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="&types;xslt"/>
+        <rdfs:domain rdf:resource="&types;xslt#Processor"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/net/opmv/types/xslt#localName -->
+
+    <owl:DatatypeProperty rdf:about="&types;xslt#localName">
+        <rdfs:label xml:lang="en">Local Name</rdfs:label>
+        <rdfs:comment xml:lang="en">The local name.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="&types;xslt"/>
+        <rdfs:domain rdf:resource="&types;xslt#QName"/>
+        <rdfs:range rdf:resource="&xsd;NCName"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/net/opmv/types/xslt#namespaceUri -->
+
+    <owl:DatatypeProperty rdf:about="&types;xslt#namespaceUri">
+        <rdfs:label xml:lang="en">Namespace URI</rdfs:label>
+        <rdfs:comment xml:lang="en">The namespace URI.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="&types;xslt"/>
+        <rdfs:domain rdf:resource="&types;xslt#QName"/>
+        <rdfs:range rdf:resource="&xsd;anyURI"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/net/opmv/types/xslt#productName -->
+
+    <owl:DatatypeProperty rdf:about="&types;xslt#productName">
+        <rdfs:label xml:lang="en">Product Name</rdfs:label>
+        <rdfs:comment xml:lang="en">A literal containing the name of the implementation, as defined by the implementer. This should normally remain constant from one release of the product to the next. It should also be constant across platforms in cases where the same source code is used to produce compatible products for multiple execution platforms.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="&types;xslt"/>
+        <rdfs:domain rdf:resource="&types;xslt#Processor"/>
+        <rdfs:subPropertyOf rdf:resource="&doap;revision"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/net/opmv/types/xslt#productVersion -->
+
+    <owl:DatatypeProperty rdf:about="&types;xslt#productVersion">
+        <rdfs:label xml:lang="en">Product Version</rdfs:label>
+        <rdfs:comment xml:lang="en">A string identifying the version of the implementation, as defined by the implementer. This should normally vary from one release of the product to the next, and at the discretion of the implementer it may also vary across different execution platforms.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="&types;xslt"/>
+        <rdfs:domain rdf:resource="&types;xslt#Processor"/>
+        <rdfs:subPropertyOf rdf:resource="&doap;revision"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/net/opmv/types/xslt#supportsBackwardsCompatability -->
+
+    <owl:DatatypeProperty rdf:about="&types;xslt#supportsBackwardsCompatability">
+        <rdfs:label xml:lang="en">Schema Aware</rdfs:label>
+        <rdfs:comment xml:lang="en">True in the case of a processor that offers the backwards compatibility feature, false otherwise.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="&types;xslt"/>
+        <rdfs:domain rdf:resource="&types;xslt#Processor"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/net/opmv/types/xslt#supportsSerialization -->
+
+    <owl:DatatypeProperty rdf:about="&types;xslt#supportsSerialization">
+        <rdfs:label xml:lang="en">Schema Aware</rdfs:label>
+        <rdfs:comment xml:lang="en">True in the case of a processor that offers the serialization feature, false otherwise.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="&types;xslt"/>
+        <rdfs:domain rdf:resource="&types;xslt#Processor"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/net/opmv/types/xslt#version -->
+
+    <owl:DatatypeProperty rdf:about="&types;xslt#version">
+        <rdfs:label xml:lang="en">Version</rdfs:label>
+        <rdfs:comment xml:lang="en">A number giving the version of XSLT implemented by the processor.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="&types;xslt"/>
+        <rdfs:domain rdf:resource="&types;xslt#Processor"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://usefulinc.com/ns/doap#revision -->
+
+    <owl:DatatypeProperty rdf:about="&doap;revision"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/net/opmv/types/xslt#Binding -->
+
+    <owl:Class rdf:about="&types;xslt#Binding">
+        <rdfs:label xml:lang="en">XSLT Parameter Binding</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&opmv;Artifact"/>
+        <rdfs:isDefinedBy rdf:resource="&types;xslt"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/opmv/types/xslt#MatchingTemplate -->
+
+    <owl:Class rdf:about="&types;xslt#MatchingTemplate">
+        <rdfs:label xml:lang="en">XSLT Matching Template</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&types;xslt#Template"/>
+        <rdfs:isDefinedBy rdf:resource="&types;xslt"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/opmv/types/xslt#NamedTemplate -->
+
+    <owl:Class rdf:about="&types;xslt#NamedTemplate">
+        <rdfs:label xml:lang="en">XSLT Named Template</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&types;xslt#Template"/>
+        <rdfs:isDefinedBy rdf:resource="&types;xslt"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/opmv/types/xslt#Processor -->
+
+    <owl:Class rdf:about="&types;xslt#Processor">
+        <rdfs:label xml:lang="en">XSLT Processor</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&opmv;Agent"/>
+        <rdfs:subClassOf rdf:resource="&doap;Version"/>
+        <rdfs:isDefinedBy rdf:resource="&types;xslt"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/opmv/types/xslt#Processor1.0 -->
+
+    <owl:Class rdf:about="&types;xslt#Processor1.0">
+        <rdfs:label xml:lang="en">XSLT 1.0 Processor</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&types;xslt#Processor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&types;xslt#version"/>
+                <owl:hasValue rdf:datatype="&xsd;decimal">1.0</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="&types;xslt"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/opmv/types/xslt#Processor2.0 -->
+
+    <owl:Class rdf:about="&types;xslt#Processor2.0">
+        <rdfs:label xml:lang="en">XSLT 2.0 Processor</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&types;xslt#Processor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&types;xslt#version"/>
+                <owl:hasValue rdf:datatype="&xsd;decimal">2.0</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="&types;xslt"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/opmv/types/xslt#QName -->
+
+    <rdf:Description rdf:about="&types;xslt#QName">
+        <rdfs:label xml:lang="en">Qualified Name</rdfs:label>
+        <rdfs:isDefinedBy rdf:resource="&types;xslt"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://purl.org/net/opmv/types/xslt#Stylesheet -->
+
+    <owl:Class rdf:about="&types;xslt#Stylesheet">
+        <rdfs:label xml:lang="en">XSLT Stylesheet</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&opmv;Artifact"/>
+        <rdfs:isDefinedBy rdf:resource="&types;xslt"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/opmv/types/xslt#Template -->
+
+    <owl:Class rdf:about="&types;xslt#Template">
+        <rdfs:label xml:lang="en">XSLT Template</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&opmv;Artifact"/>
+        <rdfs:isDefinedBy rdf:resource="&types;xslt"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/opmv/types/xslt#Transformation -->
+
+    <owl:Class rdf:about="&types;xslt#Transformation">
+        <rdfs:label xml:lang="en">XSLT Transformation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&opmv;Process"/>
+        <rdfs:isDefinedBy rdf:resource="&types;xslt"/>
+    </owl:Class>
+    
+
+
+    <!-- http://usefulinc.com/ns/doap#Version -->
+
+    <owl:Class rdf:about="&doap;Version"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/net/opmv/types/xslt -->
+
+    <foaf:Document rdf:about="&types;xslt">
+        <rdf:type rdf:resource="&void;Dataset"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </foaf:Document>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.2.1789) http://owlapi.sourceforge.net -->
+

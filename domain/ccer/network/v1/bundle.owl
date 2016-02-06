@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:bundle="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/bundle#"
+    xmlns:ns="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:terms="http://purl.org/dc/terms/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:nml="http://schemas.ogf.org/nml/2013/05/base#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/bundle">
+  <owl:Ontology rdf:about="">
+    <terms:modified>2013-03-22</terms:modified>
+    <owl:versionInfo>1.0</owl:versionInfo>
+    <dc:description xml:lang="en">A vocabulary for defining bundles of physical links as a network topology. Each bundle (or duct) is described as a link at a single layer. This layer may optionally act as the server layer for Interfaces at a higher layer, such as the Fiber layer or the Twisted Pair (UTP) layer. The main purpose of this layer is to describe shared risk links, and to describe an arbitrary number of physical connection between two interface (to describe a massively over-provisioned network).</dc:description>
+    <dc:title xml:lang="en">Network Markup Language: Bundle module</dc:title>
+    <owl:imports rdf:resource="http://schemas.ogf.org/nml/2013/05/base"/>
+    <dc:publisher xml:lang="en">MITT LL in colaboration with IHMC based on ontology developed by System and Network Engineering group, Universiteit van Amsterdam</dc:publisher>
+    <rdfs:label>bundle</rdfs:label>
+    <ns:term_status>testing</ns:term_status>
+    <terms:issued>2013-03-22</terms:issued>
+  </owl:Ontology>
+  <owl:Class rdf:ID="BundleNetworkElement">
+    <rdfs:label xml:lang="en">Bundle</rdfs:label>
+    <rdfs:comment xml:lang="en">Network Elements on the Bundle Layer. A link on this layer represents a duct containing multiple physical links.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://schemas.ogf.org/nml/2013/05/base#LinkGroup"/>
+  </owl:Class>
+  <owl:Class rdf:ID="StrandLabel">
+    <rdfs:label xml:lang="en">M Label</rdfs:label>
+    <rdfs:comment xml:lang="en">The identification number or string of a certain bundle within a bigger bundle of links.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://schemas.ogf.org/nml/2013/05/base#Label"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="http://www.w3.org/2003/06/sw-vocab-status/ns#userdocs"/>
+  <owl:ObjectProperty rdf:ID="FiberBundle">
+    <rdfs:label xml:lang="en">Fiber bundle</rdfs:label>
+    <rdfs:comment xml:lang="en">A fiber bundle, describing which fibers are part of the bundle.</rdfs:comment>
+    <rdfs:range rdf:resource="http://schemas.ogf.org/nml/2013/05/base#Port"/>
+    <rdfs:domain rdf:resource="#BundleNetworkElement"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="TwistedPairBundle">
+    <rdfs:range rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/copper#TwistedPairNetworkElement"/>
+    <rdfs:label xml:lang="en">Twisted Pair bundle</rdfs:label>
+    <rdfs:comment xml:lang="en">A UTP bundle, describing which UTP links are part of the bundle.</rdfs:comment>
+    <rdfs:range rdf:resource="http://schemas.ogf.org/nml/2013/05/base#Port"/>
+    <rdfs:domain rdf:resource="#BundleNetworkElement"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="strand">
+    <rdfs:range rdf:resource="#StrandLabel"/>
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >1</owl:maxCardinality>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >0</owl:minCardinality>
+    <rdfs:label xml:lang="en">strand</rdfs:label>
+    <rdfs:comment xml:lang="en">The identification number or string of a certain bundle within a bigger bundle of links. This is used for multiple bundles in a duct.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Bundle-in-Bundles">
+    <rdfs:range rdf:resource="#BundleNetworkElement"/>
+    <rdfs:comment xml:lang="en">A bundle of bundles, describing which bundles are part of a bigger bundle.</rdfs:comment>
+    <rdfs:label xml:lang="en">Bundle of bundles</rdfs:label>
+  </owl:ObjectProperty>
+</rdf:RDF>
+
+<!-- Created with TopBraid -->

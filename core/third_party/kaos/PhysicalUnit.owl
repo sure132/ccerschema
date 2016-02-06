@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:kaosPhysicalUnit="http://ontology.ihmc.us/PhysicalUnit.owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://ontology.ihmc.us/PhysicalUnit.owl">
+  <owl:Ontology rdf:about="">
+    <rdfs:comment>
+            An ontology created by Andrzej Uszok (auszok@ihmc.us).
+    </rdfs:comment>
+    <owl:imports rdf:resource="http://ontology.ihmc.us/Entity.owl"/>
+  </owl:Ontology>
+  <owl:Class rdf:ID="Angle">
+    <rdfs:subClassOf rdf:resource="http://ontology.ihmc.us/Entity.owl#Quantity"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://ontology.ihmc.us/Entity.owl#hasUnit"/>
+        <owl:allValuesFrom>
+          <owl:Class rdf:ID="AngleUnit"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="FrequencyUnit">
+    <rdfs:subClassOf rdf:resource="http://ontology.ihmc.us/Entity.owl#Unit"/>
+    <owl:oneOf rdf:parseType="Collection">
+      <kaosPhysicalUnit:FrequencyUnit rdf:ID="Hz"/>
+      <kaosPhysicalUnit:FrequencyUnit rdf:ID="kHz"/>
+      <kaosPhysicalUnit:FrequencyUnit rdf:ID="MHz"/>
+      <kaosPhysicalUnit:FrequencyUnit rdf:ID="GHz"/>
+      <kaosPhysicalUnit:FrequencyUnit rdf:ID="THz"/>
+    </owl:oneOf>
+  </owl:Class>
+  <owl:Class rdf:about="#AngleUnit">
+    <rdfs:subClassOf rdf:resource="http://ontology.ihmc.us/Entity.owl#Unit"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Power">
+    <rdfs:subClassOf rdf:resource="http://ontology.ihmc.us/Entity.owl#Quantity"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://ontology.ihmc.us/Entity.owl#hasUnit"/>
+        <owl:allValuesFrom>
+          <owl:Class rdf:ID="PowerUnit"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Frequency">
+    <rdfs:subClassOf rdf:resource="http://ontology.ihmc.us/Entity.owl#Quantity"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://ontology.ihmc.us/Entity.owl#hasUnit"/>
+        <owl:allValuesFrom rdf:resource="#FrequencyUnit"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#PowerUnit">
+    <rdfs:subClassOf rdf:resource="http://ontology.ihmc.us/Entity.owl#Unit"/>
+    <owl:oneOf rdf:parseType="Collection">
+      <kaosPhysicalUnit:PowerUnit rdf:ID="uW"/>
+      <kaosPhysicalUnit:PowerUnit rdf:ID="mW"/>
+      <kaosPhysicalUnit:PowerUnit rdf:ID="W"/>
+      <kaosPhysicalUnit:PowerUnit rdf:ID="kW"/>
+      <kaosPhysicalUnit:PowerUnit rdf:ID="MW"/>
+      <kaosPhysicalUnit:PowerUnit rdf:ID="dBW"/>
+      <kaosPhysicalUnit:PowerUnit rdf:ID="dBm"/>
+    </owl:oneOf>
+  </owl:Class>
+  <kaosPhysicalUnit:AngleUnit rdf:ID="Radian"/>
+  <kaosPhysicalUnit:AngleUnit rdf:ID="Degree"/>
+</rdf:RDF>
+
+<!-- Created with TopBraid -->

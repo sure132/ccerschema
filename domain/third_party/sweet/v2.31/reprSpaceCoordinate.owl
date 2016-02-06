@@ -1,0 +1,442 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY repr "http://sweet.jpl.nasa.gov/2.3/repr.owl" >
+    <!ENTITY repr2 "http://sweet.jpl.nasa.gov/2.3/repr.owl#" >
+    <!ENTITY srela "http://sweet.jpl.nasa.gov/2.3/relaSpace.owl" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY srela2 "http://sweet.jpl.nasa.gov/2.3/relaSpace.owl#" >
+    <!ENTITY dir "http://sweet.jpl.nasa.gov/2.3/propSpaceDirection.owl" >
+    <!ENTITY sdir "http://sweet.jpl.nasa.gov/2.3/reprSpaceDirection.owl" >
+    <!ENTITY propSpaceDirection "http://sweet.jpl.nasa.gov/2.3/propSpaceDirection.owl#" >
+    <!ENTITY reprSpaceDirection "http://sweet.jpl.nasa.gov/2.3/reprSpaceDirection.owl#" >
+    <!ENTITY coord "http://sweet.jpl.nasa.gov/2.3/reprSpaceCoordinate.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://sweet.jpl.nasa.gov/2.3/reprSpaceCoordinate.owl#"
+     xml:base="http://sweet.jpl.nasa.gov/2.3/reprSpaceCoordinate.owl"
+     xmlns:propSpaceDirection="&dir;#"
+     xmlns:srela2="&srela;#"
+     xmlns:coord="http://sweet.jpl.nasa.gov/2.3/reprSpaceCoordinate.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:repr="http://sweet.jpl.nasa.gov/2.3/repr.owl"
+     xmlns:sdir="http://sweet.jpl.nasa.gov/2.3/reprSpaceDirection.owl"
+     xmlns:dir="http://sweet.jpl.nasa.gov/2.3/propSpaceDirection.owl"
+     xmlns:repr2="&repr;#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:reprSpaceDirection="&sdir;#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:srela="http://sweet.jpl.nasa.gov/2.3/relaSpace.owl">
+    <owl:Ontology rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSpaceCoordinate.owl">
+        <rdfs:label>SWEET Ontology</rdfs:label>
+        <owl:versionInfo>2.3</owl:versionInfo>
+        <owl:imports rdf:resource="http://sweet.jpl.nasa.gov/2.3/propSpace.owl"/>
+        <owl:imports rdf:resource="http://sweet.jpl.nasa.gov/2.3/propSpaceDirection.owl"/>
+        <owl:imports rdf:resource="http://sweet.jpl.nasa.gov/2.3/relaSpace.owl"/>
+        <owl:imports rdf:resource="http://sweet.jpl.nasa.gov/2.3/repr.owl"/>
+        <owl:imports rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSpaceDirection.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSpaceCoordinate.owl#AngularCoordinate -->
+
+    <owl:Class rdf:about="&coord;AngularCoordinate">
+        <rdfs:subClassOf rdf:resource="&repr;#Coordinate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSpaceCoordinate.owl#Equator -->
+
+    <owl:Class rdf:about="&coord;Equator">
+        <rdfs:subClassOf rdf:resource="&dir;#Direction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSpaceCoordinate.owl#HorizontalCoordinate -->
+
+    <owl:Class rdf:about="&coord;HorizontalCoordinate">
+        <rdfs:subClassOf rdf:resource="&repr;#Coordinate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSpaceCoordinate.owl#MagneticPole -->
+
+    <owl:Class rdf:about="&coord;MagneticPole">
+        <rdfs:subClassOf rdf:resource="&coord;Pole"/>
+    </owl:Class>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSpaceCoordinate.owl#Meridian -->
+
+    <owl:Class rdf:about="&coord;Meridian">
+        <rdfs:subClassOf rdf:resource="&coord;HorizontalCoordinate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSpaceCoordinate.owl#Pole -->
+
+    <owl:Class rdf:about="&coord;Pole">
+        <rdfs:subClassOf rdf:resource="&dir;#Direction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSpaceCoordinate.owl#PrimeMeridian -->
+
+    <owl:Class rdf:about="&coord;PrimeMeridian">
+        <rdfs:subClassOf rdf:resource="&coord;Meridian"/>
+    </owl:Class>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSpaceCoordinate.owl#Vertical -->
+
+    <owl:Class rdf:about="&coord;Vertical">
+        <owl:equivalentClass rdf:resource="&coord;VerticalCoordinate"/>
+        <rdfs:subClassOf rdf:resource="&repr;#Coordinate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSpaceCoordinate.owl#VerticalCoordinate -->
+
+    <owl:Class rdf:about="&coord;VerticalCoordinate">
+        <rdfs:subClassOf rdf:resource="&repr;#Coordinate"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSpaceCoordinate.owl#Colatitude -->
+
+    <owl:NamedIndividual rdf:about="&coord;Colatitude">
+        <rdf:type rdf:resource="&coord;HorizontalCoordinate"/>
+        <srela2:hasDirection rdf:resource="&sdir;#South"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSpaceCoordinate.owl#Declination -->
+
+    <owl:NamedIndividual rdf:about="&coord;Declination">
+        <rdf:type rdf:resource="&coord;AngularCoordinate"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSpaceCoordinate.owl#Depth -->
+
+    <owl:NamedIndividual rdf:about="&coord;Depth">
+        <rdf:type rdf:resource="&coord;VerticalCoordinate"/>
+        <srela2:hasDirection rdf:resource="&sdir;#Down"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSpaceCoordinate.owl#Elevation -->
+
+    <owl:NamedIndividual rdf:about="&coord;Elevation">
+        <rdf:type rdf:resource="&coord;VerticalCoordinate"/>
+        <owl:sameAs rdf:resource="&coord;Height"/>
+        <srela2:hasDirection rdf:resource="&sdir;#Up"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSpaceCoordinate.owl#Height -->
+
+    <owl:NamedIndividual rdf:about="&coord;Height">
+        <rdf:type rdf:resource="&coord;VerticalCoordinate"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSpaceCoordinate.owl#HybridHeight -->
+
+    <owl:NamedIndividual rdf:about="&coord;HybridHeight">
+        <rdf:type rdf:resource="&coord;VerticalCoordinate"/>
+        <srela2:hasDirection rdf:resource="&sdir;#Up"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSpaceCoordinate.owl#HybridSigma -->
+
+    <owl:NamedIndividual rdf:about="&coord;HybridSigma">
+        <rdf:type rdf:resource="&coord;VerticalCoordinate"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSpaceCoordinate.owl#Latitude -->
+
+    <owl:NamedIndividual rdf:about="&coord;Latitude">
+        <rdf:type rdf:resource="&coord;HorizontalCoordinate"/>
+        <srela2:hasDirection rdf:resource="&sdir;#North"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSpaceCoordinate.owl#Level -->
+
+    <owl:NamedIndividual rdf:about="&coord;Level">
+        <rdf:type rdf:resource="&coord;VerticalCoordinate"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSpaceCoordinate.owl#Longitude -->
+
+    <owl:NamedIndividual rdf:about="&coord;Longitude">
+        <rdf:type rdf:resource="&coord;HorizontalCoordinate"/>
+        <srela2:hasDirection rdf:resource="&sdir;#East"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSpaceCoordinate.owl#NorthMagneticPole -->
+
+    <owl:NamedIndividual rdf:about="&coord;NorthMagneticPole">
+        <rdf:type rdf:resource="&coord;MagneticPole"/>
+        <srela2:hasDirection rdf:resource="&sdir;#North"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSpaceCoordinate.owl#NorthPole -->
+
+    <owl:NamedIndividual rdf:about="&coord;NorthPole">
+        <rdf:type rdf:resource="&coord;Pole"/>
+        <srela2:hasDirection rdf:resource="&sdir;#North"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSpaceCoordinate.owl#Pitch -->
+
+    <owl:NamedIndividual rdf:about="&coord;Pitch">
+        <rdf:type rdf:resource="&coord;AngularCoordinate"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSpaceCoordinate.owl#PotentialDensity -->
+
+    <owl:NamedIndividual rdf:about="&coord;PotentialDensity">
+        <rdf:type rdf:resource="&coord;VerticalCoordinate"/>
+        <srela2:hasDirection rdf:resource="&sdir;#Down"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSpaceCoordinate.owl#Pressure -->
+
+    <owl:NamedIndividual rdf:about="&coord;Pressure">
+        <rdf:type rdf:resource="&coord;VerticalCoordinate"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSpaceCoordinate.owl#R -->
+
+    <owl:NamedIndividual rdf:about="&coord;R">
+        <rdf:type rdf:resource="&coord;HorizontalCoordinate"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSpaceCoordinate.owl#RA -->
+
+    <owl:NamedIndividual rdf:about="&coord;RA">
+        <rdf:type rdf:resource="&coord;AngularCoordinate"/>
+        <owl:sameAs rdf:resource="&coord;RightAscension"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSpaceCoordinate.owl#RightAscension -->
+
+    <owl:NamedIndividual rdf:about="&coord;RightAscension">
+        <rdf:type rdf:resource="&coord;AngularCoordinate"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSpaceCoordinate.owl#Roll -->
+
+    <owl:NamedIndividual rdf:about="&coord;Roll">
+        <rdf:type rdf:resource="&coord;AngularCoordinate"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSpaceCoordinate.owl#S -->
+
+    <owl:NamedIndividual rdf:about="&coord;S">
+        <rdf:type rdf:resource="&coord;VerticalCoordinate"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSpaceCoordinate.owl#Sigma -->
+
+    <owl:NamedIndividual rdf:about="&coord;Sigma">
+        <rdf:type rdf:resource="&coord;VerticalCoordinate"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSpaceCoordinate.owl#SigmaNaught -->
+
+    <owl:NamedIndividual rdf:about="&coord;SigmaNaught">
+        <rdf:type rdf:resource="&coord;VerticalCoordinate"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSpaceCoordinate.owl#SouthMagneticPole -->
+
+    <owl:NamedIndividual rdf:about="&coord;SouthMagneticPole">
+        <rdf:type rdf:resource="&coord;MagneticPole"/>
+        <srela2:hasDirection rdf:resource="&sdir;#South"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSpaceCoordinate.owl#SouthPole -->
+
+    <owl:NamedIndividual rdf:about="&coord;SouthPole">
+        <rdf:type rdf:resource="&coord;Pole"/>
+        <srela2:hasDirection rdf:resource="&sdir;#South"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSpaceCoordinate.owl#Theta -->
+
+    <owl:NamedIndividual rdf:about="&coord;Theta">
+        <rdf:type rdf:resource="&coord;AngularCoordinate"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSpaceCoordinate.owl#X -->
+
+    <owl:NamedIndividual rdf:about="&coord;X">
+        <rdf:type rdf:resource="&coord;HorizontalCoordinate"/>
+        <srela2:hasDirection rdf:resource="&sdir;#East"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSpaceCoordinate.owl#Y -->
+
+    <owl:NamedIndividual rdf:about="&coord;Y">
+        <rdf:type rdf:resource="&coord;HorizontalCoordinate"/>
+        <srela2:hasDirection rdf:resource="&sdir;#North"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSpaceCoordinate.owl#Yaw -->
+
+    <owl:NamedIndividual rdf:about="&coord;Yaw">
+        <rdf:type rdf:resource="&coord;AngularCoordinate"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSpaceCoordinate.owl#Z -->
+
+    <owl:NamedIndividual rdf:about="&coord;Z">
+        <rdf:type rdf:resource="&coord;VerticalCoordinate"/>
+        <srela2:hasDirection rdf:resource="&sdir;#Up"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSpaceCoordinate.owl#ZoneCode -->
+
+    <owl:NamedIndividual rdf:about="&coord;ZoneCode">
+        <rdf:type rdf:resource="&coord;HorizontalCoordinate"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSpaceDirection.owl#Down -->
+
+    <owl:NamedIndividual rdf:about="&sdir;#Down"/>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSpaceDirection.owl#East -->
+
+    <owl:NamedIndividual rdf:about="&sdir;#East"/>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSpaceDirection.owl#North -->
+
+    <owl:NamedIndividual rdf:about="&sdir;#North"/>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSpaceDirection.owl#South -->
+
+    <owl:NamedIndividual rdf:about="&sdir;#South"/>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSpaceDirection.owl#Up -->
+
+    <owl:NamedIndividual rdf:about="&sdir;#Up"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.2.1789) http://owlapi.sourceforge.net -->
+

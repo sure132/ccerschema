@@ -1,0 +1,173 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE Ontology [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     ontologyIRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl">
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Import>http://xmlns.com/foaf/0.1/</Import>
+    <Declaration>
+        <Class IRI="#ContentType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Dimension"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DimensionEnumeration"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DimensionSet"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EnumeratedDimension"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Enumeration"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Event"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EventType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Field"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Table"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Tag"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TagEnumeration"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TagScheme"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#VirtualDimension"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDimension"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDimensionEnumeration"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasField"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasTag"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasTagScheme"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#DimensionSet"/>
+        <Class IRI="#Event"/>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#ContentType"/>
+        <Class IRI="#EnumeratedDimension"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DimensionEnumeration"/>
+        <Class IRI="#Enumeration"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EnumeratedDimension"/>
+        <Class IRI="#Dimension"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EventType"/>
+        <Class IRI="#EnumeratedDimension"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Field"/>
+        <Class abbreviatedIRI=":Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Tag"/>
+        <Class abbreviatedIRI=":Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TagEnumeration"/>
+        <Class IRI="#Enumeration"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#VirtualDimension"/>
+        <Class abbreviatedIRI=":Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://xmlns.com/foaf/0.1/Person"/>
+        <Class IRI="#DimensionSet"/>
+    </SubClassOf>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasDimension"/>
+        <Class IRI="#DimensionSet"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasDimension"/>
+        <Class IRI="#Field"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasDimension"/>
+        <Class IRI="#VirtualDimension"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasDimensionEnumeration"/>
+        <Class IRI="#EnumeratedDimension"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasField"/>
+        <Class IRI="#Table"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasTagScheme"/>
+        <Class IRI="#Tag"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasDimensionEnumeration"/>
+        <Class IRI="#DimensionEnumeration"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasField"/>
+        <Class IRI="#Field"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasTagScheme"/>
+        <Class IRI="#TagScheme"/>
+    </ObjectPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ContentType</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral"> The text Content-Type is intended for sending material which is principally textual in form. It is the default Content- Type. A &quot;charset&quot; parameter may be used to indicate the character set of the body text. The primary subtype of text is &quot;plain&quot;. This indicates plain (unformatted) text. The default Content-Type for Internet mail is &quot;text/plain; charset=us-ascii&quot;.
+
+Beyond plain text, there are many formats for representing what might be known as &quot;extended text&quot; -- text with embedded formatting and presentation information. An interesting characteristic of many such representations is that they are to some extent readable even without the software that interprets them. It is useful, then, to distinguish them, at the highest level, from such unreadable data as images, audio, or text represented in an unreadable form. In the absence of appropriate interpretation software, it is reasonable to show subtypes of text to the user, while it is not reasonable to do so with most nontextual data.
+
+Such formatted textual data should be represented using subtypes of text. Plausible subtypes of text are typically given by the common name of the representation format, e.g., &quot;text/richtext&quot;. 
+(From RFC 1341)</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 3.2.2.1789) http://owlapi.sourceforge.net -->
+

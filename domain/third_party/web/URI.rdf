@@ -1,0 +1,52 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<rdf:Description rdf:about="http://purl.org/dc/terms/URI">
+		<rdfs:label xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">URI</rdfs:label>
+		<rdfs:comment xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">A URI Uniform Resource Identifier</rdfs:comment>
+		<DCTERMS:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date" xmlns:DCTERMS="http://purl.org/dc/terms/">2000-07-11</DCTERMS:issued>
+		<DCTERMS:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date" xmlns:DCTERMS="http://purl.org/dc/terms/">2002-06-15</DCTERMS:modified>
+		<NksRdfs:name xmlns:NksRdfs="http://schemas.library.nhs.uk/rdfs/">URI</NksRdfs:name>
+		<NksRdfs:constrains xmlns:NksRdfs="http://schemas.library.nhs.uk/rdfs/">
+			<rdf:Property rdf:about="http://purl.org/dc/elements/1.1/identifier">
+				<rdfs:label xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">Identifier</rdfs:label>
+				<NksRdfs:name>identifier</NksRdfs:name>
+				<rdfs:isDefinedBy xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+					<rdf:Description rdf:about="http://purl.org/dc/elements/1.1/">
+						<NksRdfs:name>DC</NksRdfs:name>
+					</rdf:Description>
+				</rdfs:isDefinedBy>
+			</rdf:Property>
+		</NksRdfs:constrains>
+		<NksRdfs:constrains xmlns:NksRdfs="http://schemas.library.nhs.uk/rdfs/">
+			<rdf:Property rdf:about="http://purl.org/dc/elements/1.1/source">
+				<rdfs:label xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">Source</rdfs:label>
+				<NksRdfs:name>source</NksRdfs:name>
+				<rdfs:isDefinedBy xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+					<rdf:Description rdf:about="http://purl.org/dc/elements/1.1/">
+						<NksRdfs:name>DC</NksRdfs:name>
+					</rdf:Description>
+				</rdfs:isDefinedBy>
+			</rdf:Property>
+		</NksRdfs:constrains>
+		<NksRdfs:constrains xmlns:NksRdfs="http://schemas.library.nhs.uk/rdfs/">
+			<rdf:Property rdf:about="http://purl.org/dc/elements/1.1/relation">
+				<rdfs:label xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">Relation</rdfs:label>
+				<NksRdfs:name>relation</NksRdfs:name>
+				<rdfs:isDefinedBy xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+					<rdf:Description rdf:about="http://purl.org/dc/elements/1.1/">
+						<NksRdfs:name>DC</NksRdfs:name>
+					</rdf:Description>
+				</rdfs:isDefinedBy>
+			</rdf:Property>
+		</NksRdfs:constrains>
+		<rdfs:isDefinedBy xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+			<rdf:Description rdf:about="http://purl.org/dc/terms/">
+				<NksRdfs:name xmlns:NksRdfs="http://schemas.library.nhs.uk/rdfs/">DCTerms</NksRdfs:name>
+			</rdf:Description>
+		</rdfs:isDefinedBy>
+		<DC:type rdf:resource="http://schemas.library.nhs.uk/rdfs/TermTypes/FormattingEncodingScheme/" xmlns:DC="http://purl.org/dc/elements/1.1/" />
+		<DC:type rdf:resource="http://dublincore.org/usage/documents/principles/#encoding-scheme" xmlns:DC="http://purl.org/dc/elements/1.1/" />
+		<rdf:type rdf:resource="http://purl.org/dc/terms/IdentifierScheme" />
+		<rdf:type rdf:resource="http://purl.org/dc/terms/RelationScheme" />
+		<rdf:type rdf:resource="http://purl.org/dc/terms/SourceScheme" />
+	</rdf:Description>
+</rdf:RDF>

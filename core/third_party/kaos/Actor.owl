@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:kaosActor="http://ontology.ihmc.us/Actor.owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://ontology.ihmc.us/Actor.owl">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="http://ontology.ihmc.us/Action.owl"/>
+    <rdfs:comment>
+            An ontology created by Andrzej Uszok (auszok@ihmc.us).
+        </rdfs:comment>
+    <owl:imports rdf:resource="http://ontology.ihmc.us/Entity.owl"/>
+  </owl:Ontology>
+  <owl:Class rdf:ID="SoftwareAgent">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="SoftwareComponent"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="ArtificialActor">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Actor"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#SoftwareComponent">
+    <rdfs:subClassOf rdf:resource="#ArtificialActor"/>
+    <rdfs:subClassOf rdf:resource="http://ontology.ihmc.us/Entity.owl#ComputingEntity"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Human">
+    <rdfs:subClassOf rdf:resource="http://ontology.ihmc.us/Entity.owl#PhysicalEntity"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="NaturalActor"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#NaturalActor">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Actor"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Actor">
+    <rdfs:subClassOf rdf:resource="http://ontology.ihmc.us/Entity.owl#Entity"/>
+    <rdfs:comment>
+            It is an entiry capable of performing (initiating) an action; because of that it is a subject of policies.
+        </rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="Robot">
+    <rdfs:subClassOf rdf:resource="#ArtificialActor"/>
+    <rdfs:subClassOf rdf:resource="http://ontology.ihmc.us/Entity.owl#PhysicalEntity"/>
+  </owl:Class>
+  <owl:Class rdf:ID="ComputingHardware">
+    <rdfs:subClassOf rdf:resource="http://ontology.ihmc.us/Entity.owl#PhysicalEntity"/>
+    <rdfs:subClassOf rdf:resource="#ArtificialActor"/>
+  </owl:Class>
+  <owl:DatatypeProperty rdf:about="http://ontology.ihmc.us/Entity.owl#hasName">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://ontology.ihmc.us/Entity.owl#Entity"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:DatatypeProperty>
+  <owl:FunctionalProperty rdf:ID="controlledBy">
+    <rdfs:domain rdf:resource="#Actor"/>
+    <rdfs:range rdf:resource="#Actor"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:FunctionalProperty>
+</rdf:RDF>
+
+<!-- Created with TopBraid -->

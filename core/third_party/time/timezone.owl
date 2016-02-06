@@ -1,0 +1,358 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY tzont "http://www.w3.org/2006/timezone#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY iso "http://www.daml.org/2001/09/countries/iso#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY us-states "http://www.daml.ri.cmu.edu/ont/USRegionState.daml#" >
+    <!ENTITY iso-3166-ont "http://www.daml.org/2001/09/countries/iso-3166-ont#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.w3.org/2006/timezone#"
+     xml:base="http://www.w3.org/2006/timezone"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:tzont="http://www.w3.org/2006/timezone#"
+     xmlns:iso="http://www.daml.org/2001/09/countries/iso#"
+     xmlns:us-states="http://www.daml.ri.cmu.edu/ont/USRegionState.daml#"
+     xmlns:iso-3166-ont="http://www.daml.org/2001/09/countries/iso-3166-ont#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://www.w3.org/2006/timezone">
+        <rdfs:comment>
+      A time zone ontology.
+    </rdfs:comment>
+        <owl:imports rdf:resource="http://www.daml.org/2001/09/countries/iso-3166-ont"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/owl-time"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+    <rdfs:Datatype rdf:about="&xsd;date"/>
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#duration -->
+
+    <rdfs:Datatype rdf:about="&xsd;duration"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2006/timezone#countryOf -->
+
+    <owl:ObjectProperty rdf:about="&tzont;countryOf">
+        <rdfs:range rdf:resource="&tzont;Country"/>
+        <rdfs:subPropertyOf rdf:resource="&tzont;hasParentRegion"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2006/timezone#exceptionalRegion -->
+
+    <owl:ObjectProperty rdf:about="&tzont;exceptionalRegion">
+        <rdfs:range rdf:resource="&tzont;Region"/>
+        <rdfs:domain rdf:resource="&tzont;Region"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2006/timezone#hasAncestorRegion -->
+
+    <owl:ObjectProperty rdf:about="&tzont;hasAncestorRegion">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <rdfs:domain rdf:resource="&tzont;Region"/>
+        <rdfs:range rdf:resource="&tzont;Region"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2006/timezone#hasDaylightSavingsPolicy -->
+
+    <owl:ObjectProperty rdf:about="&tzont;hasDaylightSavingsPolicy">
+        <rdfs:range rdf:resource="&tzont;DaylightSavingsPolicy"/>
+        <rdfs:domain rdf:resource="&tzont;Region"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2006/timezone#hasParentRegion -->
+
+    <owl:ObjectProperty rdf:about="&tzont;hasParentRegion">
+        <rdfs:subPropertyOf rdf:resource="&tzont;hasAncestorRegion"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2006/timezone#hasTimeZone -->
+
+    <owl:ObjectProperty rdf:about="&tzont;hasTimeZone">
+        <rdfs:domain rdf:resource="&tzont;Region"/>
+        <rdfs:range rdf:resource="&tzont;TimeZone"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2006/timezone#stateOf -->
+
+    <owl:ObjectProperty rdf:about="&tzont;stateOf">
+        <rdfs:range rdf:resource="&tzont;State"/>
+        <rdfs:subPropertyOf rdf:resource="&tzont;hasParentRegion"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2006/timezone#timeZonePart -->
+
+    <owl:ObjectProperty rdf:about="&tzont;timeZonePart">
+        <rdfs:domain rdf:resource="&tzont;Region"/>
+        <rdfs:range rdf:resource="&tzont;Region"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2006/timezone#DLSendDate -->
+
+    <owl:DatatypeProperty rdf:about="&tzont;DLSendDate">
+        <rdfs:range rdf:resource="&xsd;date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2006/timezone#DLSstartDate -->
+
+    <owl:DatatypeProperty rdf:about="&tzont;DLSstartDate">
+        <rdfs:range rdf:resource="&xsd;date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2006/timezone#GMToffset -->
+
+    <owl:DatatypeProperty rdf:about="&tzont;GMToffset">
+        <rdfs:range rdf:resource="&xsd;duration"/>
+        <rdfs:domain rdf:resource="&tzont;TimeZone"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2006/timezone#name -->
+
+    <owl:DatatypeProperty rdf:about="&tzont;name"/>
+    
+
+
+    <!-- http://www.w3.org/2006/timezone#observesDaylightSavingsTime -->
+
+    <owl:DatatypeProperty rdf:about="&tzont;observesDaylightSavingsTime">
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+        <rdfs:domain rdf:resource="&tzont;Region"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2006/timezone#City -->
+
+    <owl:Class rdf:about="&tzont;City">
+        <rdfs:subClassOf rdf:resource="&tzont;PoliticalRegion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2006/timezone#Country -->
+
+    <owl:Class rdf:about="&tzont;Country">
+        <rdfs:subClassOf rdf:resource="&tzont;PoliticalRegion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2006/timezone#County -->
+
+    <owl:Class rdf:about="&tzont;County">
+        <rdfs:subClassOf rdf:resource="&tzont;PoliticalRegion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2006/timezone#DaylightSavingsPolicy -->
+
+    <owl:Class rdf:about="&tzont;DaylightSavingsPolicy"/>
+    
+
+
+    <!-- http://www.w3.org/2006/timezone#EnumeratedDaylightSavingsPolicy -->
+
+    <owl:Class rdf:about="&tzont;EnumeratedDaylightSavingsPolicy">
+        <rdfs:subClassOf rdf:resource="&tzont;DaylightSavingsPolicy"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&tzont;DLSendDate"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&tzont;DLSstartDate"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2006/timezone#PoliticalRegion -->
+
+    <owl:Class rdf:about="&tzont;PoliticalRegion">
+        <rdfs:subClassOf rdf:resource="&tzont;Region"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&tzont;timeZonePart"/>
+                <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&tzont;exceptionalRegion"/>
+                <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&tzont;hasDaylightSavingsPolicy"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&tzont;name"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&tzont;hasParentRegion"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&tzont;observesDaylightSavingsTime"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&tzont;hasTimeZone"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">3</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2006/timezone#Region -->
+
+    <owl:Class rdf:about="&tzont;Region"/>
+    
+
+
+    <!-- http://www.w3.org/2006/timezone#Reservation -->
+
+    <owl:Class rdf:about="&tzont;Reservation">
+        <rdfs:subClassOf rdf:resource="&tzont;PoliticalRegion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2006/timezone#State -->
+
+    <owl:Class rdf:about="&tzont;State">
+        <rdfs:subClassOf rdf:resource="&tzont;PoliticalRegion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2006/timezone#TimeZone -->
+
+    <owl:Class rdf:about="&tzont;TimeZone">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&tzont;name"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&tzont;GMToffset"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.2.1789) http://owlapi.sourceforge.net -->
+

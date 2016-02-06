@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="User Entered Import Resolution" name="http://ontology.ihmc.us/Service.owl" uri="file:/Users/su22797/ccer/ccerschema/core/third_party/kaos/Service.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ll.mit.edu/2013/ccer/core/third_party/kaosBridge/v1/nmlKAoSBridge.owl" uri="file:/Users/su22797/ccer/ccerschema/core/third_party/kaosBridge/v1/nmlKAoSBridge.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ontology.ihmc.us/Information.owl" uri="file:/Users/su22797/ccer/ccerschema/core/third_party/kaos/Information.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ontology.ihmc.us/Policy.owl" uri="file:/Users/su22797/ccer/ccerschema/core/third_party/kaos/Policy.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ontology.ihmc.us/Group.owl" uri="file:/Users/su22797/ccer/ccerschema/core/third_party/kaos/Group.owl"/>
+    <uri id="User Entered Import Resolution" name="http://www.w3.org/2006/time" uri="file:/Users/su22797/ccer/ccerschema/core/third_party/time/time.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ontology.ihmc.us/Entity.owl" uri="file:/Users/su22797/ccer/ccerschema/core/third_party/kaos/Entity.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ontology.ihmc.us/Place.owl" uri="file:/Users/su22797/ccer/ccerschema/core/third_party/kaos/Place.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ontology.ihmc.us/temporalAggregates.owl" uri="file:/Users/su22797/ccer/ccerschema/core/third_party/time/temporalAggregates.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ontology.ihmc.us/Action.owl" uri="file:/Users/su22797/ccer/ccerschema/core/third_party/kaos/Action.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ontology.ihmc.us/Actor.owl" uri="file:/Users/su22797/ccer/ccerschema/core/third_party/kaos/Actor.owl"/>
+    <uri id="User Entered Import Resolution" name="http://schemas.ogf.org/nml/2013/05/base" uri="file:/Users/su22797/ccer/ccerschema/core/third_party/nml/base.owl"/>
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=1" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1432861668068" name="http://ll.mit.edu/2013/ccer/core/ccer/firewall/v1/base.owl" uri="base.owl"/>
+    </group>
+</catalog>

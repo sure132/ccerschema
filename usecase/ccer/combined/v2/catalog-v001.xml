@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="User Entered Import Resolution" name="http://ll.mit.edu/2014/ccer/domain/ccer/services/v2/FirewallRule.owl" uri="file:/Users/su22797/ccer/ccerschema/domain/ccer/services/v2/FirewallRule.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ll.mit.edu/2014/ccer/domain/ccer/services/v2/FirewallService.owl#" uri="file:/Users/su22797/ccer/ccerschema/domain/ccer/services/v2/FirewallService.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ll.mit.edu/2014/ccer/domain/ccer/services/v2/FirewallService.owl" uri="file:/Users/su22797/ccer/ccerschema/domain/ccer/services/v2/FirewallService.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ll.mit.edu/2013/ccer/domain/ccer/instrumentation/v1/layer3_IP_probe.owl#" uri="file:/Users/su22797/ccer/ccerschema/domain/ccer/instrumentation/v1/layer3_IP_probe.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ll.mit.edu/2013/ccer/domain/ccer/instrumentation/v1/layer2_MAC_probe.owl#" uri="file:/Users/su22797/ccer/ccerschema/domain/ccer/instrumentation/v1/layer2_MAC_probe.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ll.mit.edu/2014/ccer/domain/instrumentation/v1/host_probe.owl" uri="file:/Users/su22797/ccer/ccerschema/domain/ccer/instrumentation/v1/host_probe.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ll.mit.edu/2014/ccer/domain/ccer/instrumentation/v1/logging_service.owl" uri="file:/Users/su22797/ccer/ccerschema/domain/ccer/instrumentation/v1/logging_service.owl"/>
+    <uri id="Imports Wizard Entry" name="http://ll.mit.edu/2014/ccer/usecase/ccer/instrumentation/v1/instrumentation_instance.owl" uri="file:/Users/su22797/ccer/ccerschema/usecase/ccer/instrumentation/v1/instrumentation_instance.rdf"/>
+    <uri id="Imports Wizard Entry" name="ccer:/" uri="combined_ccer_instance.rdf"/>
+    <uri id="User Entered Import Resolution" name="http://purl.org/dc/terms/" uri="file:/Users/su22797/ccer/ccerschema/core/third_party/dc/dcterms.rdf"/>
+    <uri id="User Entered Import Resolution" name="http://ll.mit.edu/2013/ccer/domain/ccer/provenance/v1/ccer_provenance.owl#" uri="file:/Users/su22797/ccer/ccerschema/domain/ccer/provenance/v1/ccer_provenance.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ll.mit.edu/2014/ccer/domain/third_party/sweet/v2.31/visualShape.owl#" uri="file:/Users/su22797/ccer/ccerschema/domain/third_party/sweet/v2.31/visualShape.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ll.mit.edu/2014/ccer/domain/ccer/services/v2/ProxyService.owl#" uri="file:/Users/su22797/ccer/ccerschema/domain/ccer/services/v2/ProxyService.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ll.mit.edu/2014/ccer/domain/ccer/services/v2/FileService.owl#" uri="file:/Users/su22797/ccer/ccerschema/domain/ccer/services/v2/FileService.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ll.mit.edu/2014/ccer/core/ccer/v1/base.owl#" uri="file:/Users/su22797/ccer/ccerschema/core/ccer/ccer/v1/base.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ll.mit.edu/2013/ccer/domain/ccer/services/v2/MailService.owl#" uri="file:/Users/su22797/ccer/ccerschema/domain/ccer/services/v2/MailService.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ll.mit.edu/2013/ccer/domain/ccer/services/v2/DNSService.owl#" uri="file:/Users/su22797/ccer/ccerschema/domain/ccer/services/v2/DNSService.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ll.mit.edu/2013/ccer/domain/ccer/services/v2/DHCPService.owl#" uri="file:/Users/su22797/ccer/ccerschema/domain/ccer/services/v2/DHCPService.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ll.mit.edu/2013/ccer/domain/ccer/services/v2/ContentService.owl#" uri="file:/Users/su22797/ccer/ccerschema/domain/ccer/services/v2/ContentService.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ll.mit.edu/2013/ccer/domain/ccer/services/v2/ADDS.owl#" uri="file:/Users/su22797/ccer/ccerschema/domain/ccer/services/v2/ADDS.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ll.mit.edu/2013/ccer/domain/ccer/os/v1/os.owl#" uri="file:/Users/su22797/ccer/ccerschema/domain/ccer/os/v1/os.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/vlan.owl#" uri="file:/Users/su22797/ccer/ccerschema/domain/ccer/network/v1/vlan.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#" uri="file:/Users/su22797/ccer/ccerschema/domain/ccer/network/v1/network_layer3.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/cyber_range.owl#" uri="file:/Users/su22797/ccer/ccerschema/domain/ccer/network/v1/cyber_range.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/control_network.owl#" uri="file:/Users/su22797/ccer/ccerschema/domain/ccer/network/v1/control_network.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ll.mit.edu/2013/ccer/domain/ccer/k0ala/v1/k0alaService.owl#" uri="file:/Users/su22797/ccer/ccerschema/domain/ccer/k0ala/v1/k0alaService.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ll.mit.edu/2013/ccer/domain/ccer/host/v1/control_computer.owl#" uri="file:/Users/su22797/ccer/ccerschema/domain/ccer/host/v1/control_computer.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ll.mit.edu/2013/ccer/domain/ccer/host/v1/computerGroup.owl#" uri="file:/Users/su22797/ccer/ccerschema/domain/ccer/host/v1/computerGroup.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ll.mit.edu/2013/ccer/domain/ccer/host/v1/computer.owl#" uri="file:/Users/su22797/ccer/ccerschema/domain/ccer/host/v1/computer.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ll.mit.edu/2012/ccer/domain/ccer/user_model/v2/user_model.owl#" uri="file:/Users/su22797/ccer/ccerschema/domain/ccer/user_model/v2/user_model.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ll.mit.edu/2012/ccer/domain/ccer/user_model/v1/ccer_account.owl#" uri="file:/Users/su22797/ccer/ccerschema/domain/ccer/user_model/v1/ccer_account.owl"/>
+    <uri id="User Entered Import Resolution" name="http://purl.org/net/opmv/ns#" uri="file:/Users/su22797/ccer/ccerschema/core/third_party/provenance/opmv_ns.rdf"/>
+    <uri id="User Entered Import Resolution" name="http://purl.org/net/opmv/types/attribution#" uri="file:/Users/su22797/ccer/ccerschema/core/third_party/provenance/reuse-attribution.owl"/>
+    <uri id="User Entered Import Resolution" name="http://openprovenance.org/model/opmo" uri="file:/Users/su22797/ccer/ccerschema/core/third_party/provenance/opmo-20101012.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ll.mit.edu/2013/ccer/domain/ccer/provenance/v1/ccer_provenance.owl" uri="file:/Users/su22797/ccer/ccerschema/domain/ccer/provenance/v1/ccer_provenance.owl"/>
+    <uri id="Imports Wizard Entry" name="http://ll.mit.edu/2014/ccer/usecase/ccer/provenance/v1/provenance_instance.rdf" uri="file:/Users/su22797/ccer/ccerschema/usecase/ccer/provenance/v1/provenance_instance.rdf"/>
+    <uri id="User Entered Import Resolution" name="http://ll.mit.edu/2013/ccer/domain/ccer/instrumentation/v1/layer2_MAC_probe.owl" uri="file:/Users/su22797/ccer/ccerschema/domain/ccer/instrumentation/v1/layer2_MAC_probe.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ll.mit.edu/2013/ccer/domain/ccer/instrumentation/v1/instrumentation_computer.owl" uri="file:/Users/su22797/ccer/ccerschema/domain/ccer/instrumentation/v1/instrumentation_computer.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ll.mit.edu/2013/ccer/domain/ccer/instrumentation/v1/probe.owl" uri="file:/Users/su22797/ccer/ccerschema/domain/ccer/instrumentation/v1/probe.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ll.mit.edu/2013/ccer/domain/ccer/instrumentation/v1/instrumentation_network.owl" uri="file:/Users/su22797/ccer/ccerschema/domain/ccer/instrumentation/v1/instrumentation_network.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ll.mit.edu/2013/ccer/domain/ccer/instrumentation/v1/layer3_IP_probe.owl" uri="file:/Users/su22797/ccer/ccerschema/domain/ccer/instrumentation/v1/layer3_IP_probe.owl"/>
+    <uri id="Imports Wizard Entry" name="http://ll.mit.edu/2014/ccer/usecase/ccer/instrumentation/v1/instrumentation_instance.owl" uri="file:/Users/su22797/ccer/ccerschema/usecase/ccer/instrumentation/v1/instrumentation_instance.owl"/>
+    <uri id="User Entered Import Resolution" name="http://sweet.jpl.nasa.gov/2.3/reprSpaceDirection.owl" uri="file:/Users/su22797/ccer/ccerschema/domain/third_party/sweet/v2.31/reprSpaceDirection.owl"/>
+    <uri id="User Entered Import Resolution" name="http://sweet.jpl.nasa.gov/2.3/relaSpace.owl" uri="file:/Users/su22797/ccer/ccerschema/domain/third_party/sweet/v2.31/relaSpace.owl"/>
+    <uri id="User Entered Import Resolution" name="http://sweet.jpl.nasa.gov/2.3/propSpaceDirection.owl" uri="file:/Users/su22797/ccer/ccerschema/domain/third_party/sweet/v2.31/propSpaceDirection.owl"/>
+    <uri id="User Entered Import Resolution" name="http://sweet.jpl.nasa.gov/2.3/reprSpaceCoordinate.owl" uri="file:/Users/su22797/ccer/ccerschema/domain/third_party/sweet/v2.31/reprSpaceCoordinate.owl"/>
+    <uri id="User Entered Import Resolution" name="http://sweet.jpl.nasa.gov/2.3/propSpace.owl" uri="file:/Users/su22797/ccer/ccerschema/domain/third_party/sweet/v2.31/propSpace.owl"/>
+    <uri id="User Entered Import Resolution" name="http://sweet.jpl.nasa.gov/2.3/relaMath.owl" uri="file:/Users/su22797/ccer/ccerschema/domain/third_party/sweet/v2.31/relaMath.owl"/>
+    <uri id="User Entered Import Resolution" name="http://sweet.jpl.nasa.gov/2.3/repr.owl" uri="file:/Users/su22797/ccer/ccerschema/domain/third_party/sweet/v2.31/repr.owl"/>
+    <uri id="User Entered Import Resolution" name="http://sweet.jpl.nasa.gov/2.3/reprMath.owl" uri="file:/Users/su22797/ccer/ccerschema/domain/third_party/sweet/v2.31/reprMath.owl"/>
+    <uri id="Imports Wizard Entry" name="http://ll.mit.edu/2014/ccer/usecase/ccer/visual_instance.owl" uri="file:/Users/su22797/ccer/ccerschema/usecase/ccer/visual/v1/visual_instance.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ll.mit.edu/2013/ccer/domain/ccer/host/v1/computer.owl" uri="/Users/su22797/ccer/ccerschema/domain/ccer/host/v1/computer.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ll.mit.edu/2013/ccer/domain/ccer/k0ala/v1/k0alaControlProtocol.owl" uri="/Users/su22797/ccer/ccerschema/domain/ccer/k0ala/v1/k0alaControlProtocol.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ll.mit.edu/2013/ccer/domain/ccer/k0ala/v1/k0alaBlackBoxSUT.owl" uri="/Users/su22797/ccer/ccerschema/domain/ccer/k0ala/v1/k0alaBlackBoxSUT.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ll.mit.edu/2013/ccer/domain/ccer/k0ala/v1/k0alaControlProtocolMap.owl" uri="/Users/su22797/ccer/ccerschema/domain/ccer/k0ala/v1/k0alaControlProtocolMap.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ll.mit.edu/2013/ccer/domain/ccer/k0ala/v1/k0alaService.owl" uri="/Users/su22797/ccer/ccerschema/domain/ccer/k0ala/v1/k0alaService.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ll.mit.edu/2014/ccer/domain/ccer/services/v2/FileService.owl" uri="/Users/su22797/ccer/ccerschema/domain/ccer/services/v2/FileService.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ll.mit.edu/2014/ccer/domain/ccer/services/v2/ProxyService.owl" uri="/Users/su22797/ccer/ccerschema/domain/ccer/services/v2/ProxyService.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ll.mit.edu/2014/ccer/core/ccer/v1/base.owl" uri="/Users/su22797/ccer/ccerschema/core/ccer/ccer/v1/base.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/cyber_range.owl" uri="/Users/su22797/ccer/ccerschema/domain/ccer/network/v1/cyber_range.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/control_network.owl" uri="/Users/su22797/ccer/ccerschema/domain/ccer/network/v1/control_network.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ll.mit.edu/2013/ccer/domain/ccer/host/v1/control_computer.owl" uri="/Users/su22797/ccer/ccerschema/domain/ccer/host/v1/control_computer.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ll.mit.edu/2013/ccer/domain/ccer/services/v2/MailService.owl" uri="/Users/su22797/ccer/ccerschema/domain/ccer/services/v2/MailService.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ll.mit.edu/2013/ccer/domain/ccer/services/v2/ADDS.owl" uri="/Users/su22797/ccer/ccerschema/domain/ccer/services/v2/ADDS.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ll.mit.edu/2013/ccer/domain/ccer/services/v2/DNSService.owl" uri="/Users/su22797/ccer/ccerschema/domain/ccer/services/v2/DNSService.owl"/>
+    <uri id="User Entered Import Resolution" name="http://purl.org/dc/terms" uri="/Users/su22797/ccer/ccerschema/core/third_party/dc/dcterms.rdf"/>
+    <uri id="User Entered Import Resolution" name="http://ll.mit.edu/2013/ccer/core/third_party/scap/cpe.owl" uri="/Users/su22797/ccer/ccerschema/core/third_party/scap/cpe.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ll.mit.edu/2013/ccer/domain/ccer/services/v2/DHCPService.owl" uri="/Users/su22797/ccer/ccerschema/domain/ccer/services/v2/DHCPService.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ll.mit.edu/2013/ccer/domain/ccer/services/v2/base.owl" uri="/Users/su22797/ccer/ccerschema/domain/ccer/services/v2/base.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ll.mit.edu/2013/ccer/domain/ccer/services/v2/ContentService.owl" uri="/Users/su22797/ccer/ccerschema/domain/ccer/services/v2/ContentService.owl"/>
+    <uri id="Imports Wizard Entry" name="http://ll.mit.edu/2013/ccer/usecase/ccer/services/services_instance.rdf" uri="/Users/su22797/ccer/ccerschema/usecase/ccer/services/v2/services_instance.rdf"/>
+    <uri id="Imports Wizard Entry" name="http://ll.mit.edu/2013/ccer/domain/ccer/services/v1/ContentService.owl" uri="/Users/su22797/ccer/ccerschema/domain/ccer/services/v1/ContentService.owl"/>
+    <uri id="User Entered Import Resolution" name="http://www.w3.org/2006/timezone-us" uri="/Users/su22797/ccer/ccerschema/core/third_party/time/timezone-us.rdf"/>
+    <uri id="User Entered Import Resolution" name="http://www.w3.org/2006/timezone" uri="/Users/su22797/ccer/ccerschema/core/third_party/time/timezone.owl"/>
+    <uri id="Imports Wizard Entry" name="http://ll.mit.edu/2013/ccer/usecase/ccer/networkhost/v2/networkhost_single_instance.rdf" uri="/Users/su22797/ccer/ccerschema/usecase/ccer/networkhost/v2/networkhost_single_instance.rdf"/>
+    <uri id="Imports Wizard Entry" name="http://ll.mit.edu/2013/ccer/domain/ccer/host/v1/computerGroup.owl" uri="/Users/su22797/ccer/ccerschema/domain/ccer/host/v1/computerGroup.owl"/>
+    <uri id="Imports Wizard Entry" name="http://ll.mit.edu/2013/ccer/domain/ccer/networkBridge/v1/hostNetworkBridge.owl" uri="/Users/su22797/ccer/ccerschema/domain/ccer/networkBridge/v1/hostNetworkBridge.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ll.mit.edu/2012/ccer/domain/ccer/user_model/v2/user_model.owl" uri="/Users/su22797/ccer/ccerschema/domain/ccer/user_model/v2/user_model.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ll.mit.edu/2012/ccer/domain/ccer/user_model/v1/ccer_account.owl" uri="/Users/su22797/ccer/ccerschema/domain/ccer/user_model/v1/ccer_account.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ll.mit.edu/2013/ccer/domain/ccer/host/v1/host.owl" uri="/Users/su22797/ccer/ccerschema/domain/ccer/host/v1/host.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/vpn" uri="/Users/su22797/ccer/ccerschema/domain/ccer/network/v1/vpn.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/physical.owl" uri="/Users/su22797/ccer/ccerschema/domain/ccer/network/v1/physical.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/domain" uri="/Users/su22797/ccer/ccerschema/domain/ccer/network/v1/domain.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl" uri="/Users/su22797/ccer/ccerschema/domain/ccer/network/v1/network_layer3.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/capability" uri="/Users/su22797/ccer/ccerschema/domain/ccer/network/v1/capability.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/ip" uri="/Users/su22797/ccer/ccerschema/domain/ccer/network/v1/ip.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/atm" uri="/Users/su22797/ccer/ccerschema/domain/ccer/network/v1/atm.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/ethernet" uri="/Users/su22797/ccer/ccerschema/domain/ccer/network/v1/ethernet.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/vlan.owl" uri="/Users/su22797/ccer/ccerschema/domain/ccer/network/v1/vlan.owl"/>
+    <uri id="User Entered Import Resolution" name="http://www.w3.org/2003/01/geo/wgs84_pos" uri="/Users/su22797/ccer/ccerschema/core/third_party/geo/wgs84_pos.rdf"/>
+    <uri id="User Entered Import Resolution" name="http://schemas.ogf.org/nml/2013/05/base" uri="/Users/su22797/ccer/ccerschema/core/third_party/nml/base.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ll.mit.edu/2013/ccer/domain/ccer/applications/v1/applications.owl" uri="/Users/su22797/ccer/ccerschema/domain/ccer/applications/v1/applications.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ll.mit.edu/2013/ccer/domain/ccer/os/v1/os.owl" uri="/Users/su22797/ccer/ccerschema/domain/ccer/os/v1/os.owl"/>
+    <uri id="User Entered Import Resolution" name="http://www.daml.org/2001/09/countries/country-ont" uri="/Users/su22797/ccer/ccerschema/core/third_party/geo/country-ont.rdf"/>
+    <uri id="User Entered Import Resolution" name="http://www.daml.org/2001/09/countries/iso-3166-ont" uri="/Users/su22797/ccer/ccerschema/core/third_party/geo/iso-3166-ont.rdf"/>
+    <uri id="User Entered Import Resolution" name="http://www.w3.org/2006/time" uri="/Users/su22797/ccer/ccerschema/core/third_party/time/time.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ontology.ihmc.us/temporalAggregates.owl" uri="/Users/su22797/ccer/ccerschema/core/third_party/time/temporalAggregates.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ontology.ihmc.us/Action.owl" uri="/Users/su22797/ccer/ccerschema/core/third_party/kaos/Action.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ontology.ihmc.us/ActionStatus.owl" uri="/Users/su22797/ccer/ccerschema/core/third_party/kaos/ActionStatus.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ontology.ihmc.us/Actor.owl" uri="/Users/su22797/ccer/ccerschema/core/third_party/kaos/Actor.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ontology.ihmc.us/Document.owl" uri="/Users/su22797/ccer/ccerschema/core/third_party/kaos/Document.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ontology.ihmc.us/Entity.owl" uri="/Users/su22797/ccer/ccerschema/core/third_party/kaos/Entity.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ontology.ihmc.us/Group.owl" uri="/Users/su22797/ccer/ccerschema/core/third_party/kaos/Group.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ontology.ihmc.us/Information.owl" uri="/Users/su22797/ccer/ccerschema/core/third_party/kaos/Information.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ontology.ihmc.us/PhysicalUnit.owl" uri="/Users/su22797/ccer/ccerschema/core/third_party/kaos/PhysicalUnit.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ontology.ihmc.us/Place.owl" uri="/Users/su22797/ccer/ccerschema/core/third_party/kaos/Place.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ontology.ihmc.us/Policy.owl" uri="/Users/su22797/ccer/ccerschema/core/third_party/kaos/Policy.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ontology.ihmc.us/Policy.owl" uri="/Users/su22797/ccer/ccerschema/core/third_party/kaos/Policy.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ontology.ihmc.us/PolicyAction.owl" uri="/Users/su22797/ccer/ccerschema/core/third_party/kaos/PolicyAction.owl"/>
+    <uri id="User Entered Import Resolution" name="http://ontology.ihmc.us/Service.owl" uri="/Users/su22797/ccer/ccerschema/core/third_party/kaos/Service.owl"/>
+    <uri id="User Entered Import Resolution" name="http://xmlns.com/foaf/0.1/" uri="/Users/su22797/ccer/ccerschema/core/third_party/foaf/foaf-20100809.rdf"/>
+    <uri id="User Entered Import Resolution" name="http://ll.mit.edu/2014/ccer/domain/third_party/sweet/v2.31/visualShape.owl" uri="file:/Users/su22797/ccer/ccerschema/domain/third_party/sweet/v2.31/visualShape.owl"/>
+    <uri id="User Entered Import Resolution" name="http://purl.org/dc/terms" uri="file:/Users/su22797/ccer/ccerschema/core/third_party/dc/dcterms.rdf"/>
+    <uri id="Imports Wizard Entry" name="http://ll.mit.edu/2014/ccer/core/ccer/v1/base.owl" uri="file:/Users/su22797/ccer/ccerschema/core/ccer/ccer/v1/base.owl"/>
+    <group id="Folder Repository, directory=/Users/su22797/ccer/ccerschema/usecase/ccer/usermodel/v2/, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base=""/>
+</catalog>

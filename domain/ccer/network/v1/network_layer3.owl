@@ -1,0 +1,462 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY base "http://schemas.ogf.org/nml/2013/05/base#" >
+    <!ENTITY wgs84_pos "http://www.w3.org/2003/01/geo/wgs84_pos#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY ip "http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/ip#" >
+    <!ENTITY ethernet "http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/ethernet#" >
+    <!ENTITY capability "http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/capability#" >
+    <!ENTITY physical "http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/physical.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#"
+     xml:base="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:physical="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/physical.owl#"
+     xmlns:ethernet="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/ethernet#"
+     xmlns:wgs84_pos="http://www.w3.org/2003/01/geo/wgs84_pos#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:base="http://schemas.ogf.org/nml/2013/05/base#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:capability="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/capability#"
+     xmlns:ip="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/ip#">
+    <owl:Ontology rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl">
+        <owl:imports rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/capability"/>
+        <owl:imports rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/domain"/>
+        <owl:imports rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/ethernet"/>
+        <owl:imports rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/ip"/>
+        <owl:imports rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/physical.owl"/>
+        <owl:imports rdf:resource="http://schemas.ogf.org/nml/2013/05/base"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#controlIPAddressRange -->
+
+    <owl:ObjectProperty rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#controlIPAddressRange">
+        <rdfs:range rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#IPAddressRange"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#dataIPAddressRange -->
+
+    <owl:ObjectProperty rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#dataIPAddressRange"/>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#hasIPAddress -->
+
+    <owl:ObjectProperty rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#hasIPAddress">
+        <rdfs:range rdf:resource="&ip;IPAddress"/>
+        <rdfs:domain rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#IPHost"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#hasLinkToRouterInterface -->
+
+    <owl:ObjectProperty rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#hasLinkToRouterInterface">
+        <rdfs:range rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#RouterInterface"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#hasRouter -->
+
+    <owl:ObjectProperty rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#hasRouter">
+        <rdfs:range rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#Router"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#hasRouterInterface -->
+
+    <owl:ObjectProperty rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#hasRouterInterface">
+        <rdfs:domain rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#Router"/>
+        <rdfs:range rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#RouterInterface"/>
+        <rdfs:subPropertyOf rdf:resource="&base;hasPort"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#hasRouterPort -->
+
+    <owl:ObjectProperty rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#hasRouterPort">
+        <rdfs:range rdf:resource="&ethernet;EthernetPort"/>
+        <rdfs:subPropertyOf rdf:resource="&base;hasPort"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#hasSwitchToRouterInterface -->
+
+    <owl:ObjectProperty rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#hasSwitchToRouterInterface">
+        <rdfs:domain rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#Router"/>
+        <rdfs:range rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#RouterInterface"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#inInterface -->
+
+    <owl:ObjectProperty rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#inInterface">
+        <rdfs:domain rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#VirtualInterface"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#locationType -->
+
+    <owl:ObjectProperty rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#locationType">
+        <rdfs:range rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#LocationType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#subnetMask -->
+
+    <owl:ObjectProperty rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#subnetMask"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#controlIPAddress -->
+
+    <owl:DatatypeProperty rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#controlIPAddress"/>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#controlSubnetMask -->
+
+    <owl:DatatypeProperty rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#controlSubnetMask"/>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#dataIPAddress -->
+
+    <owl:DatatypeProperty rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#dataIPAddress"/>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#dataSubnetMask -->
+
+    <owl:DatatypeProperty rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#dataSubnetMask"/>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#defaultGateway -->
+
+    <owl:DatatypeProperty rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#defaultGateway"/>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#dnsDomain -->
+
+    <owl:DatatypeProperty rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#dnsDomain">
+        <rdfs:comment rdf:datatype="&xsd;string">DNS domain, usually of a Subnet</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#domainName -->
+
+    <owl:DatatypeProperty rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#domainName">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#endingControlIPAddress -->
+
+    <owl:DatatypeProperty rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#endingControlIPAddress"/>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#endingDataIPAddress -->
+
+    <owl:DatatypeProperty rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#endingDataIPAddress"/>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#exceptionControlIPAddress -->
+
+    <owl:DatatypeProperty rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#exceptionControlIPAddress"/>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#exceptionDataIPAddress -->
+
+    <owl:DatatypeProperty rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#exceptionDataIPAddress"/>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#hasHostName -->
+
+    <owl:DatatypeProperty rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#hasHostName">
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#IPHost"/>
+                    <rdf:Description rdf:about="&base;NetworkObject"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#hasRouterPort -->
+
+    <owl:DatatypeProperty rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#hasRouterPort"/>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#hasRoutingProtocol -->
+
+    <owl:DatatypeProperty rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#hasRoutingProtocol"/>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#latency -->
+
+    <owl:DatatypeProperty rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#latency">
+        <rdfs:comment>Latency of a particular RouterInterface. This value will be used to make Routers behave realistically.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#startingControlIPAddress -->
+
+    <owl:DatatypeProperty rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#startingControlIPAddress"/>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#startingDataIPAddress -->
+
+    <owl:DatatypeProperty rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#startingDataIPAddress"/>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#subnetDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#subnetDescription">
+        <rdfs:comment rdf:datatype="&xsd;string">Description of a Subnet. Could be also used for Edge Network or ControlSubnet</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/capability#SwitchMatrix -->
+
+    <rdf:Description rdf:about="&capability;SwitchMatrix">
+        <owl:equivalentClass rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#Subnet"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#IPAddressRange -->
+
+    <owl:Class rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#IPAddressRange">
+        <rdfs:comment rdf:datatype="&xsd;string">The range of IP Addresses. All addresses within the range including the boundaries are in the IP Address range. The starting IP Address is the StartingIPAddress and the ending IP Address is EndingIPAddress. For example [5.5.5.1...5.5.5.240]. The StartingIPAddress is 5.5.5.1, and EndingIPAddress is 5.5.5.240</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#IPHost -->
+
+    <owl:Class rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#IPHost">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Links host name with ip addresses</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#LocationType -->
+
+    <owl:Class rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#LocationType">
+        <rdfs:subClassOf rdf:resource="&wgs84_pos;SpatialThing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#MultilayerSwitch -->
+
+    <owl:Class rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#MultilayerSwitch">
+        <rdfs:subClassOf rdf:resource="&physical;Device"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#Router -->
+
+    <owl:Class rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#Router">
+        <rdfs:subClassOf rdf:resource="&physical;Device"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#RouterInterface -->
+
+    <owl:Class rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#RouterInterface">
+        <rdfs:subClassOf rdf:resource="&base;Port"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#RouterTrunkPort -->
+
+    <owl:Class rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#RouterTrunkPort">
+        <rdfs:subClassOf rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#RouterInterface"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#SimulatedSwitchMatrix -->
+
+    <owl:Class rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#SimulatedSwitchMatrix">
+        <rdfs:subClassOf rdf:resource="&capability;SwitchMatrix"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Virtual SwitchMatrix is used to model subnets that are simulated/emulated in the range. For example, this class is helpful to model the Internet with several subnets, all of which are connected to a single router interface physically, in a test range, and have Virtual Interfaces (such as eth0:1)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#Subnet -->
+
+    <owl:Class rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#Subnet">
+        <rdfs:subClassOf rdf:resource="&base;NetworkObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#VirtualInterface -->
+
+    <owl:Class rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#VirtualInterface"/>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#VirtualRouterInterface -->
+
+    <owl:Class rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#VirtualRouterInterface">
+        <rdfs:subClassOf rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#RouterInterface"/>
+        <rdfs:subClassOf rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#VirtualInterface"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#ANY -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#ANY">
+        <rdf:type rdf:resource="&physical;Device"/>
+        <rdfs:comment rdf:datatype="&rdfs;Literal">ANY is any Device on the network. It is a valid entry for firewall rules, and ANY is interpreted when the firewall rules are interpreted.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#DMZ -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#DMZ">
+        <rdf:type rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#LocationType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#External -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#External">
+        <rdf:type rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#LocationType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#ICMP -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#ICMP">
+        <rdf:type rdf:resource="&ip;NetworkProtocol"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#Internal -->
+
+    <owl:NamedIndividual rdf:about="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#Internal">
+        <rdf:type rdf:resource="http://ll.mit.edu/2013/ccer/domain/ccer/network/v1/network_layer3.owl#LocationType"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.2.1789) http://owlapi.sourceforge.net -->
+

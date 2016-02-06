@@ -1,0 +1,5 @@
+../../ccerschema-2013-07-01/model_extensions/network
+../../ccerschema/model_extensions/network/
+catalog-v001.xml|CVS|^\.
+# this file shows teh files that are changed or added in the CVS wrt the git
+#normally use this to update the git

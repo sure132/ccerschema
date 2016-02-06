@@ -1,0 +1,1787 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE Ontology [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://ll.mit.edu/2014/ccer/usecase/ccer/llcysa/v2/registry_instance.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     ontologyIRI="http://ll.mit.edu/2014/ccer/usecase/ccer/llcysa/v2/registry_instance.owl">
+    <Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Import>http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl</Import>
+    <Declaration>
+        <NamedIndividual IRI="#COMPOSE"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DELETE"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DELIVER"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DSN"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DUPLICATEDELIVER"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#EXPAND"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#FAIL"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#LOAD"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#REDIRECT"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#REPLY"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SEND"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#TEXT_PLAIN"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#attachment"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#byte_count"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#class"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#client"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#client_hostname"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#client_ip"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#context"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#count"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#da"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#da_city"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#da_country_code"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#da_country_name"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#da_latitude"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#da_longitude"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#da_region_name"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#da_time_zone"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#datetime"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#dest"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#dp"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#email_address"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#email_attachment"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#email_body"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#email_content_type"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#email_event"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#email_message"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#email_message_table"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#email_reference"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#email_subject"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#email_type"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#emailmessage"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#event_id"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#firstName"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#flg"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#folder"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#geo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#header"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#hostname"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ibyt"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#id"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ipkt"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ipv4"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#lastName"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#latitude"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#llcysa_netflow"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#longitude"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#message_body"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#message_context"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#message_folder"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#message_id"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#message_mailbox"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#message_subject"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#netflow"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#obyt"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#opkt"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#packets"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#port"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#pr"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#protocol"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#protocol_tag"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#received_time"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#recipient"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#recipient_address"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#recipient_count"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#reference"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#sa"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#sa_city"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#sa_country_code"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#sa_country_name"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#sa_latitude"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#sa_longitude"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#sa_region_name"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#sa_time_zone"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#sender"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#sender_address"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#sent_time"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#server"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#server_hostname"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#server_ip"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#source"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#source_context"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#sp"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#te"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#total"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#total_bytes"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ts"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#user"/>
+    </Declaration>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#DimensionEnumeration"/>
+        <NamedIndividual IRI="#COMPOSE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#DimensionEnumeration"/>
+        <NamedIndividual IRI="#DELETE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#DimensionEnumeration"/>
+        <NamedIndividual IRI="#DELIVER"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#DimensionEnumeration"/>
+        <NamedIndividual IRI="#DSN"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#DimensionEnumeration"/>
+        <NamedIndividual IRI="#DUPLICATEDELIVER"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#DimensionEnumeration"/>
+        <NamedIndividual IRI="#EXPAND"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#DimensionEnumeration"/>
+        <NamedIndividual IRI="#FAIL"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#DimensionEnumeration"/>
+        <NamedIndividual IRI="#LOAD"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#DimensionEnumeration"/>
+        <NamedIndividual IRI="#REDIRECT"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#DimensionEnumeration"/>
+        <NamedIndividual IRI="#REPLY"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#DimensionEnumeration"/>
+        <NamedIndividual IRI="#SEND"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#DimensionEnumeration"/>
+        <NamedIndividual IRI="#TEXT_PLAIN"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Dimension"/>
+        <NamedIndividual IRI="#attachment"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Dimension"/>
+        <NamedIndividual IRI="#byte_count"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Dimension"/>
+        <NamedIndividual IRI="#class"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Tag"/>
+        <NamedIndividual IRI="#client"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Field"/>
+        <NamedIndividual IRI="#client_hostname"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Field"/>
+        <NamedIndividual IRI="#client_ip"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Dimension"/>
+        <NamedIndividual IRI="#context"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Dimension"/>
+        <NamedIndividual IRI="#count"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Field"/>
+        <NamedIndividual IRI="#da"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Field"/>
+        <NamedIndividual IRI="#da_city"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Field"/>
+        <NamedIndividual IRI="#da_country_code"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Field"/>
+        <NamedIndividual IRI="#da_country_name"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Field"/>
+        <NamedIndividual IRI="#da_latitude"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Field"/>
+        <NamedIndividual IRI="#da_longitude"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Field"/>
+        <NamedIndividual IRI="#da_region_name"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Field"/>
+        <NamedIndividual IRI="#da_time_zone"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Dimension"/>
+        <NamedIndividual IRI="#datetime"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Tag"/>
+        <NamedIndividual IRI="#dest"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Field"/>
+        <NamedIndividual IRI="#dp"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Dimension"/>
+        <NamedIndividual IRI="#email_address"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Field"/>
+        <NamedIndividual IRI="#email_attachment"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Tag"/>
+        <NamedIndividual IRI="#email_body"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#ContentType"/>
+        <NamedIndividual IRI="#email_content_type"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Event"/>
+        <NamedIndividual IRI="#email_event"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Tag"/>
+        <NamedIndividual IRI="#email_message"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Table"/>
+        <NamedIndividual IRI="#email_message_table"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Tag"/>
+        <NamedIndividual IRI="#email_reference"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Tag"/>
+        <NamedIndividual IRI="#email_subject"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#EventType"/>
+        <NamedIndividual IRI="#email_type"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#DimensionSet"/>
+        <NamedIndividual IRI="#emailmessage"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Field"/>
+        <NamedIndividual IRI="#event_id"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Dimension"/>
+        <NamedIndividual IRI="#firstName"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Field"/>
+        <NamedIndividual IRI="#flg"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Dimension"/>
+        <NamedIndividual IRI="#folder"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Tag"/>
+        <NamedIndividual IRI="#geo"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Dimension"/>
+        <NamedIndividual IRI="#header"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Dimension"/>
+        <NamedIndividual IRI="#hostname"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Field"/>
+        <NamedIndividual IRI="#ibyt"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Dimension"/>
+        <NamedIndividual IRI="#id"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Field"/>
+        <NamedIndividual IRI="#ipkt"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Dimension"/>
+        <NamedIndividual IRI="#ipv4"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Dimension"/>
+        <NamedIndividual IRI="#lastName"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Dimension"/>
+        <NamedIndividual IRI="#latitude"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Table"/>
+        <NamedIndividual IRI="#llcysa_netflow"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Dimension"/>
+        <NamedIndividual IRI="#longitude"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Field"/>
+        <NamedIndividual IRI="#message_body"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Field"/>
+        <NamedIndividual IRI="#message_context"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Field"/>
+        <NamedIndividual IRI="#message_folder"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Field"/>
+        <NamedIndividual IRI="#message_id"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Field"/>
+        <NamedIndividual IRI="#message_mailbox"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Field"/>
+        <NamedIndividual IRI="#message_subject"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#DimensionSet"/>
+        <NamedIndividual IRI="#netflow"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Field"/>
+        <NamedIndividual IRI="#obyt"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Field"/>
+        <NamedIndividual IRI="#opkt"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Dimension"/>
+        <NamedIndividual IRI="#packets"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Dimension"/>
+        <NamedIndividual IRI="#port"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Field"/>
+        <NamedIndividual IRI="#pr"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Dimension"/>
+        <NamedIndividual IRI="#protocol"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Tag"/>
+        <NamedIndividual IRI="#protocol_tag"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Field"/>
+        <NamedIndividual IRI="#received_time"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Tag"/>
+        <NamedIndividual IRI="#recipient"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Field"/>
+        <NamedIndividual IRI="#recipient_address"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Field"/>
+        <NamedIndividual IRI="#recipient_count"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Field"/>
+        <NamedIndividual IRI="#reference"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Field"/>
+        <NamedIndividual IRI="#sa"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Field"/>
+        <NamedIndividual IRI="#sa_city"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Field"/>
+        <NamedIndividual IRI="#sa_country_code"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Field"/>
+        <NamedIndividual IRI="#sa_country_name"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Field"/>
+        <NamedIndividual IRI="#sa_latitude"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Field"/>
+        <NamedIndividual IRI="#sa_longitude"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Field"/>
+        <NamedIndividual IRI="#sa_region_name"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Field"/>
+        <NamedIndividual IRI="#sa_time_zone"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Tag"/>
+        <NamedIndividual IRI="#sender"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Field"/>
+        <NamedIndividual IRI="#sender_address"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Field"/>
+        <NamedIndividual IRI="#sent_time"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Tag"/>
+        <NamedIndividual IRI="#server"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Field"/>
+        <NamedIndividual IRI="#server_hostname"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Field"/>
+        <NamedIndividual IRI="#server_ip"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Tag"/>
+        <NamedIndividual IRI="#source"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Field"/>
+        <NamedIndividual IRI="#source_context"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Field"/>
+        <NamedIndividual IRI="#sp"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Field"/>
+        <NamedIndividual IRI="#te"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Tag"/>
+        <NamedIndividual IRI="#total"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Field"/>
+        <NamedIndividual IRI="#total_bytes"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Field"/>
+        <NamedIndividual IRI="#ts"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#Tag"/>
+        <NamedIndividual IRI="#user"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimensionEnumeration"/>
+        <NamedIndividual IRI="#TEXT_PLAIN"/>
+        <NamedIndividual IRI="#TEXT_PLAIN"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#client_hostname"/>
+        <NamedIndividual IRI="#hostname"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasTag"/>
+        <NamedIndividual IRI="#client_hostname"/>
+        <NamedIndividual IRI="#client"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#client_ip"/>
+        <NamedIndividual IRI="#ipv4"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasTag"/>
+        <NamedIndividual IRI="#client_ip"/>
+        <NamedIndividual IRI="#client"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasField"/>
+        <NamedIndividual IRI="#context"/>
+        <NamedIndividual IRI="#message_context"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#da"/>
+        <NamedIndividual IRI="#ipv4"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasTag"/>
+        <NamedIndividual IRI="#da"/>
+        <NamedIndividual IRI="#dest"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#da_city"/>
+        <NamedIndividual IRI="#id"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasTag"/>
+        <NamedIndividual IRI="#da_city"/>
+        <NamedIndividual IRI="#dest"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasTag"/>
+        <NamedIndividual IRI="#da_city"/>
+        <NamedIndividual IRI="#geo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#da_country_code"/>
+        <NamedIndividual IRI="#id"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasTag"/>
+        <NamedIndividual IRI="#da_country_code"/>
+        <NamedIndividual IRI="#dest"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasTag"/>
+        <NamedIndividual IRI="#da_country_code"/>
+        <NamedIndividual IRI="#geo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#da_country_name"/>
+        <NamedIndividual IRI="#id"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasTag"/>
+        <NamedIndividual IRI="#da_country_name"/>
+        <NamedIndividual IRI="#dest"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasTag"/>
+        <NamedIndividual IRI="#da_country_name"/>
+        <NamedIndividual IRI="#geo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#da_latitude"/>
+        <NamedIndividual IRI="#latitude"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasTag"/>
+        <NamedIndividual IRI="#da_latitude"/>
+        <NamedIndividual IRI="#dest"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasTag"/>
+        <NamedIndividual IRI="#da_latitude"/>
+        <NamedIndividual IRI="#geo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#da_longitude"/>
+        <NamedIndividual IRI="#longitude"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasTag"/>
+        <NamedIndividual IRI="#da_longitude"/>
+        <NamedIndividual IRI="#dest"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasTag"/>
+        <NamedIndividual IRI="#da_longitude"/>
+        <NamedIndividual IRI="#geo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#da_region_name"/>
+        <NamedIndividual IRI="#id"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasTag"/>
+        <NamedIndividual IRI="#da_region_name"/>
+        <NamedIndividual IRI="#geo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasTag"/>
+        <NamedIndividual IRI="#da_region_name"/>
+        <NamedIndividual IRI="#dest"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#da_time_zone"/>
+        <NamedIndividual IRI="#id"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasTag"/>
+        <NamedIndividual IRI="#da_time_zone"/>
+        <NamedIndividual IRI="#geo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasTag"/>
+        <NamedIndividual IRI="#da_time_zone"/>
+        <NamedIndividual IRI="#dest"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#dp"/>
+        <NamedIndividual IRI="#port"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasTag"/>
+        <NamedIndividual IRI="#dp"/>
+        <NamedIndividual IRI="#source"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#email_attachment"/>
+        <NamedIndividual IRI="#attachment"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasTag"/>
+        <NamedIndividual IRI="#email_attachment"/>
+        <NamedIndividual IRI="#email_message"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimensionEnumeration"/>
+        <NamedIndividual IRI="#email_content_type"/>
+        <NamedIndividual IRI="#TEXT_PLAIN"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#email_event"/>
+        <NamedIndividual IRI="#byte_count"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#email_event"/>
+        <NamedIndividual IRI="#count"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#email_event"/>
+        <NamedIndividual IRI="#header"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#email_event"/>
+        <NamedIndividual IRI="#datetime"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#email_event"/>
+        <NamedIndividual IRI="#id"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#email_event"/>
+        <NamedIndividual IRI="#ipv4"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#email_event"/>
+        <NamedIndividual IRI="#hostname"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#email_event"/>
+        <NamedIndividual IRI="#attachment"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#email_event"/>
+        <NamedIndividual IRI="#email_address"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#email_event"/>
+        <NamedIndividual IRI="#context"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasField"/>
+        <NamedIndividual IRI="#email_message_table"/>
+        <NamedIndividual IRI="#reference"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasField"/>
+        <NamedIndividual IRI="#email_message_table"/>
+        <NamedIndividual IRI="#server_hostname"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasField"/>
+        <NamedIndividual IRI="#email_message_table"/>
+        <NamedIndividual IRI="#sender_address"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasField"/>
+        <NamedIndividual IRI="#email_message_table"/>
+        <NamedIndividual IRI="#server_ip"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasField"/>
+        <NamedIndividual IRI="#email_message_table"/>
+        <NamedIndividual IRI="#total_bytes"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasField"/>
+        <NamedIndividual IRI="#email_message_table"/>
+        <NamedIndividual IRI="#recipient_address"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasField"/>
+        <NamedIndividual IRI="#email_message_table"/>
+        <NamedIndividual IRI="#client_hostname"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasField"/>
+        <NamedIndividual IRI="#email_message_table"/>
+        <NamedIndividual IRI="#received_time"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasField"/>
+        <NamedIndividual IRI="#email_message_table"/>
+        <NamedIndividual IRI="#event_id"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasField"/>
+        <NamedIndividual IRI="#email_message_table"/>
+        <NamedIndividual IRI="#message_id"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasField"/>
+        <NamedIndividual IRI="#email_message_table"/>
+        <NamedIndividual IRI="#recipient_count"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasField"/>
+        <NamedIndividual IRI="#email_message_table"/>
+        <NamedIndividual IRI="#client_ip"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasField"/>
+        <NamedIndividual IRI="#email_message_table"/>
+        <NamedIndividual IRI="#sent_time"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasField"/>
+        <NamedIndividual IRI="#email_message_table"/>
+        <NamedIndividual IRI="#source_context"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasField"/>
+        <NamedIndividual IRI="#email_message_table"/>
+        <NamedIndividual IRI="#message_subject"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimensionEnumeration"/>
+        <NamedIndividual IRI="#email_type"/>
+        <NamedIndividual IRI="#SEND"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimensionEnumeration"/>
+        <NamedIndividual IRI="#email_type"/>
+        <NamedIndividual IRI="#DUPLICATEDELIVER"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimensionEnumeration"/>
+        <NamedIndividual IRI="#email_type"/>
+        <NamedIndividual IRI="#FAIL"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimensionEnumeration"/>
+        <NamedIndividual IRI="#email_type"/>
+        <NamedIndividual IRI="#DSN"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimensionEnumeration"/>
+        <NamedIndividual IRI="#email_type"/>
+        <NamedIndividual IRI="#DELETE"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimensionEnumeration"/>
+        <NamedIndividual IRI="#email_type"/>
+        <NamedIndividual IRI="#DELIVER"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimensionEnumeration"/>
+        <NamedIndividual IRI="#email_type"/>
+        <NamedIndividual IRI="#EXPAND"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimensionEnumeration"/>
+        <NamedIndividual IRI="#email_type"/>
+        <NamedIndividual IRI="#REDIRECT"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimensionEnumeration"/>
+        <NamedIndividual IRI="#email_type"/>
+        <NamedIndividual IRI="#REPLY"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimensionEnumeration"/>
+        <NamedIndividual IRI="#email_type"/>
+        <NamedIndividual IRI="#COMPOSE"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#emailmessage"/>
+        <NamedIndividual IRI="#id"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#emailmessage"/>
+        <NamedIndividual IRI="#email_content_type"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#emailmessage"/>
+        <NamedIndividual IRI="#datetime"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#emailmessage"/>
+        <NamedIndividual IRI="#header"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#emailmessage"/>
+        <NamedIndividual IRI="#count"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#emailmessage"/>
+        <NamedIndividual IRI="#email_address"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#emailmessage"/>
+        <NamedIndividual IRI="#attachment"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#emailmessage"/>
+        <NamedIndividual IRI="#folder"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#event_id"/>
+        <NamedIndividual IRI="#email_type"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#flg"/>
+        <NamedIndividual IRI="#class"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasTag"/>
+        <NamedIndividual IRI="#flg"/>
+        <NamedIndividual IRI="#source"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasTag"/>
+        <NamedIndividual IRI="#flg"/>
+        <NamedIndividual IRI="#protocol_tag"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasTag"/>
+        <NamedIndividual IRI="#flg"/>
+        <NamedIndividual IRI="#dest"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#ibyt"/>
+        <NamedIndividual IRI="#byte_count"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasTag"/>
+        <NamedIndividual IRI="#ibyt"/>
+        <NamedIndividual IRI="#source"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasTag"/>
+        <NamedIndividual IRI="#ibyt"/>
+        <NamedIndividual IRI="#dest"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#ipkt"/>
+        <NamedIndividual IRI="#packets"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasTag"/>
+        <NamedIndividual IRI="#ipkt"/>
+        <NamedIndividual IRI="#dest"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasTag"/>
+        <NamedIndividual IRI="#ipkt"/>
+        <NamedIndividual IRI="#source"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasField"/>
+        <NamedIndividual IRI="#llcysa_netflow"/>
+        <NamedIndividual IRI="#dp"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasField"/>
+        <NamedIndividual IRI="#llcysa_netflow"/>
+        <NamedIndividual IRI="#sa_region_name"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasField"/>
+        <NamedIndividual IRI="#llcysa_netflow"/>
+        <NamedIndividual IRI="#ts"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasField"/>
+        <NamedIndividual IRI="#llcysa_netflow"/>
+        <NamedIndividual IRI="#da_region_name"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasField"/>
+        <NamedIndividual IRI="#llcysa_netflow"/>
+        <NamedIndividual IRI="#sa_latitude"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasField"/>
+        <NamedIndividual IRI="#llcysa_netflow"/>
+        <NamedIndividual IRI="#ipkt"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasField"/>
+        <NamedIndividual IRI="#llcysa_netflow"/>
+        <NamedIndividual IRI="#obyt"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasField"/>
+        <NamedIndividual IRI="#llcysa_netflow"/>
+        <NamedIndividual IRI="#sa_time_zone"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasField"/>
+        <NamedIndividual IRI="#llcysa_netflow"/>
+        <NamedIndividual IRI="#ibyt"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasField"/>
+        <NamedIndividual IRI="#llcysa_netflow"/>
+        <NamedIndividual IRI="#sa"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasField"/>
+        <NamedIndividual IRI="#llcysa_netflow"/>
+        <NamedIndividual IRI="#da_country_name"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasField"/>
+        <NamedIndividual IRI="#llcysa_netflow"/>
+        <NamedIndividual IRI="#opkt"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasField"/>
+        <NamedIndividual IRI="#llcysa_netflow"/>
+        <NamedIndividual IRI="#da_country_code"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasField"/>
+        <NamedIndividual IRI="#llcysa_netflow"/>
+        <NamedIndividual IRI="#sa_country_code"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasField"/>
+        <NamedIndividual IRI="#llcysa_netflow"/>
+        <NamedIndividual IRI="#da_longitude"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasField"/>
+        <NamedIndividual IRI="#llcysa_netflow"/>
+        <NamedIndividual IRI="#da_city"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasField"/>
+        <NamedIndividual IRI="#llcysa_netflow"/>
+        <NamedIndividual IRI="#te"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasField"/>
+        <NamedIndividual IRI="#llcysa_netflow"/>
+        <NamedIndividual IRI="#sa_city"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasField"/>
+        <NamedIndividual IRI="#llcysa_netflow"/>
+        <NamedIndividual IRI="#flg"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasField"/>
+        <NamedIndividual IRI="#llcysa_netflow"/>
+        <NamedIndividual IRI="#sa_country_name"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasField"/>
+        <NamedIndividual IRI="#llcysa_netflow"/>
+        <NamedIndividual IRI="#da_latitude"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasField"/>
+        <NamedIndividual IRI="#llcysa_netflow"/>
+        <NamedIndividual IRI="#sp"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasField"/>
+        <NamedIndividual IRI="#llcysa_netflow"/>
+        <NamedIndividual IRI="#da"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasField"/>
+        <NamedIndividual IRI="#llcysa_netflow"/>
+        <NamedIndividual IRI="#sa_longitude"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasField"/>
+        <NamedIndividual IRI="#llcysa_netflow"/>
+        <NamedIndividual IRI="#da_time_zone"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasField"/>
+        <NamedIndividual IRI="#llcysa_netflow"/>
+        <NamedIndividual IRI="#pr"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#message_body"/>
+        <NamedIndividual IRI="#email_content_type"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasTag"/>
+        <NamedIndividual IRI="#message_body"/>
+        <NamedIndividual IRI="#email_message"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#message_folder"/>
+        <NamedIndividual IRI="#folder"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasTag"/>
+        <NamedIndividual IRI="#message_folder"/>
+        <NamedIndividual IRI="#email_message"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#message_id"/>
+        <NamedIndividual IRI="#id"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasTag"/>
+        <NamedIndividual IRI="#message_id"/>
+        <NamedIndividual IRI="#email_message"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#message_mailbox"/>
+        <NamedIndividual IRI="#id"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasTag"/>
+        <NamedIndividual IRI="#message_mailbox"/>
+        <NamedIndividual IRI="#sender"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasTag"/>
+        <NamedIndividual IRI="#message_mailbox"/>
+        <NamedIndividual IRI="#user"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#message_subject"/>
+        <NamedIndividual IRI="#header"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasTag"/>
+        <NamedIndividual IRI="#message_subject"/>
+        <NamedIndividual IRI="#email_subject"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#netflow"/>
+        <NamedIndividual IRI="#port"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#netflow"/>
+        <NamedIndividual IRI="#class"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#netflow"/>
+        <NamedIndividual IRI="#protocol"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#netflow"/>
+        <NamedIndividual IRI="#id"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#netflow"/>
+        <NamedIndividual IRI="#longitude"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#netflow"/>
+        <NamedIndividual IRI="#byte_count"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#netflow"/>
+        <NamedIndividual IRI="#latitude"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#netflow"/>
+        <NamedIndividual IRI="#packets"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#netflow"/>
+        <NamedIndividual IRI="#ipv4"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#netflow"/>
+        <NamedIndividual IRI="#datetime"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#obyt"/>
+        <NamedIndividual IRI="#byte_count"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasTag"/>
+        <NamedIndividual IRI="#obyt"/>
+        <NamedIndividual IRI="#source"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasTag"/>
+        <NamedIndividual IRI="#obyt"/>
+        <NamedIndividual IRI="#dest"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#opkt"/>
+        <NamedIndividual IRI="#packets"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasTag"/>
+        <NamedIndividual IRI="#opkt"/>
+        <NamedIndividual IRI="#source"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasTag"/>
+        <NamedIndividual IRI="#opkt"/>
+        <NamedIndividual IRI="#dest"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#pr"/>
+        <NamedIndividual IRI="#protocol"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasTag"/>
+        <NamedIndividual IRI="#pr"/>
+        <NamedIndividual IRI="#source"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasTag"/>
+        <NamedIndividual IRI="#pr"/>
+        <NamedIndividual IRI="#dest"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#received_time"/>
+        <NamedIndividual IRI="#datetime"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasTag"/>
+        <NamedIndividual IRI="#received_time"/>
+        <NamedIndividual IRI="#recipient"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#recipient_address"/>
+        <NamedIndividual IRI="#email_address"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasTag"/>
+        <NamedIndividual IRI="#recipient_address"/>
+        <NamedIndividual IRI="#recipient"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#recipient_count"/>
+        <NamedIndividual IRI="#count"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasTag"/>
+        <NamedIndividual IRI="#recipient_count"/>
+        <NamedIndividual IRI="#recipient"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#reference"/>
+        <NamedIndividual IRI="#id"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasTag"/>
+        <NamedIndividual IRI="#reference"/>
+        <NamedIndividual IRI="#email_message"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasTag"/>
+        <NamedIndividual IRI="#reference"/>
+        <NamedIndividual IRI="#email_reference"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#sa"/>
+        <NamedIndividual IRI="#ipv4"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasTag"/>
+        <NamedIndividual IRI="#sa"/>
+        <NamedIndividual IRI="#source"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#sa_city"/>
+        <NamedIndividual IRI="#id"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasTag"/>
+        <NamedIndividual IRI="#sa_city"/>
+        <NamedIndividual IRI="#geo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasTag"/>
+        <NamedIndividual IRI="#sa_city"/>
+        <NamedIndividual IRI="#source"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#sa_country_code"/>
+        <NamedIndividual IRI="#id"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasTag"/>
+        <NamedIndividual IRI="#sa_country_code"/>
+        <NamedIndividual IRI="#geo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasTag"/>
+        <NamedIndividual IRI="#sa_country_code"/>
+        <NamedIndividual IRI="#source"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#sa_country_name"/>
+        <NamedIndividual IRI="#id"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasTag"/>
+        <NamedIndividual IRI="#sa_country_name"/>
+        <NamedIndividual IRI="#source"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasTag"/>
+        <NamedIndividual IRI="#sa_country_name"/>
+        <NamedIndividual IRI="#geo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#sa_latitude"/>
+        <NamedIndividual IRI="#latitude"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasTag"/>
+        <NamedIndividual IRI="#sa_latitude"/>
+        <NamedIndividual IRI="#geo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasTag"/>
+        <NamedIndividual IRI="#sa_latitude"/>
+        <NamedIndividual IRI="#source"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#sa_longitude"/>
+        <NamedIndividual IRI="#longitude"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasTag"/>
+        <NamedIndividual IRI="#sa_longitude"/>
+        <NamedIndividual IRI="#geo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasTag"/>
+        <NamedIndividual IRI="#sa_longitude"/>
+        <NamedIndividual IRI="#source"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#sa_region_name"/>
+        <NamedIndividual IRI="#id"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasTag"/>
+        <NamedIndividual IRI="#sa_region_name"/>
+        <NamedIndividual IRI="#geo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasTag"/>
+        <NamedIndividual IRI="#sa_region_name"/>
+        <NamedIndividual IRI="#source"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#sa_time_zone"/>
+        <NamedIndividual IRI="#id"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasTag"/>
+        <NamedIndividual IRI="#sa_time_zone"/>
+        <NamedIndividual IRI="#geo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasTag"/>
+        <NamedIndividual IRI="#sa_time_zone"/>
+        <NamedIndividual IRI="#source"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#sender_address"/>
+        <NamedIndividual IRI="#email_address"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasTag"/>
+        <NamedIndividual IRI="#sender_address"/>
+        <NamedIndividual IRI="#source"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasTag"/>
+        <NamedIndividual IRI="#sender_address"/>
+        <NamedIndividual IRI="#sender"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#sent_time"/>
+        <NamedIndividual IRI="#datetime"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasTag"/>
+        <NamedIndividual IRI="#sent_time"/>
+        <NamedIndividual IRI="#sender"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#server_hostname"/>
+        <NamedIndividual IRI="#hostname"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasTag"/>
+        <NamedIndividual IRI="#server_hostname"/>
+        <NamedIndividual IRI="#server"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#server_ip"/>
+        <NamedIndividual IRI="#ipv4"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasTag"/>
+        <NamedIndividual IRI="#server_ip"/>
+        <NamedIndividual IRI="#server"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#source_context"/>
+        <NamedIndividual IRI="#context"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasTag"/>
+        <NamedIndividual IRI="#source_context"/>
+        <NamedIndividual IRI="#source"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#sp"/>
+        <NamedIndividual IRI="#port"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#te"/>
+        <NamedIndividual IRI="#datetime"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#total_bytes"/>
+        <NamedIndividual IRI="#byte_count"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasTag"/>
+        <NamedIndividual IRI="#total_bytes"/>
+        <NamedIndividual IRI="#total"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ll.mit.edu/2014/ccer/domain/ccer/cysa/v1/registry.owl#hasDimension"/>
+        <NamedIndividual IRI="#ts"/>
+        <NamedIndividual IRI="#datetime"/>
+    </ObjectPropertyAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#COMPOSE</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A message was composed by a client.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#DELETE</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A message is deleted.
+</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#DELIVER</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A message was delivered to a local mailbox.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#DSN</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A delivery status notification (DSN) was generated.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#DUPLICATEDELIVER</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A duplicate message was delivered to the recipient. Duplication may occur if a recipient is a member of multiple nested distribution groups.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#EXPAND</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A distribution group was expanded.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#FAIL</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Message delivery failed.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#LOAD</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A message was successfully loaded at boot.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#REDIRECT</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A message was redirected to an alternative recipient after an Active Directory lookup.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#REPLY</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A reply message was sent.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SEND</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A new message was sent.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#datetime</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The UTC date-time of the message tracking event. The UTC date-time is represented in the ISO 8601 date-time format: yyyy-mm-ddThh:mm:ss.fffZ, where yyyy = year, mm = month, dd = day, T indicates the beginning of the time component, hh = hour, mm = minute, ss = second, fff = fractions of a second, and Z signifies Zulu, which is another way to denote UTC.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#email_reference</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">If the event-id is DSN, it  contains the report link, which is the Message-Id value of the associated delivery status notification (DSN) if a DSN is generated subsequent to this event. If this is a DSN message, the Reference field contains the Message-Id value of the original message for which this DNS was generated.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#email_type</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The email event type.  See the table below those that are logged – we may increase the scope of logging to include other  event-ids later.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#email_type</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">email event-id</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#folder</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Folder names such as Inbox, Sent, or user created</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#header</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Message header such as subject</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#id</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">An id for an object</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#message_body</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The body of an email message.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#message_id</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The value of the Message-Id: header field found in the message header. For messages created in Exchange, the value is in the format &lt;GUID@ServerFQDN&gt;, including the angle brackets (&lt; &gt;). For example, &lt;4867a3d78a50438bad95c0f6d072fca5@mailbox01.ll.mit.edu&gt;. Other messaging systems may use different syntax or values.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#recipient_count</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The number of recipients in the message.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#user</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">user with id (Dimension) can be used to find the userID. </Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 3.5.0) http://owlapi.sourceforge.net -->
+

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=1" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1375363551428" name="http://ontology.ihmc.us/Action.owl" uri="Action.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1375363551428" name="http://ontology.ihmc.us/ActionStatus.owl" uri="ActionStatus.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1375363551428" name="http://ontology.ihmc.us/Actor.owl" uri="Actor.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1375363551428" name="http://ontology.ihmc.us/Document.owl" uri="Document.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1375363551428" name="http://ontology.ihmc.us/Entity.owl" uri="Entity.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1375363551428" name="http://ontology.ihmc.us/Group.owl" uri="Group.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1375363551428" name="http://ontology.ihmc.us/Information.owl" uri="Information.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1375363551428" name="http://ontology.ihmc.us/PhysicalUnit.owl" uri="PhysicalUnit.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1375363551428" name="http://ontology.ihmc.us/Place.owl" uri="Place.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1375363551428" name="http://ontology.ihmc.us/Policy.owl" uri="Policy.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1375363551428" name="http://ontology.ihmc.us/PolicyAction.owl" uri="PolicyAction.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1375363551428" name="http://ontology.ihmc.us/Service.owl" uri="Service.owl"/>
+    </group>
+</catalog>
